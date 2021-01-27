@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 272287531547417061}
   - component: {fileID: 272287531547417060}
   - component: {fileID: 272287531547417063}
+  - component: {fileID: 7267962277688060690}
+  - component: {fileID: 331372299518729733}
   m_Layer: 0
   m_Name: small
   m_TagString: Enemy
@@ -93,3 +95,32 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7267962277688060690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 272287531547417062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ff3f8c0d14dd164393765f72a968003, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  current: 0
+  speed: 1
+  target: {fileID: 0}
+  wayPoint: []
+--- !u!114 &331372299518729733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 272287531547417062}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc321615b3d106a428a043204593f179, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1

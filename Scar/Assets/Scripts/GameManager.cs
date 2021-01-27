@@ -103,7 +103,7 @@ public class GameManager : MonoBehaviour
             randomCircle.z = 0;
 
             var clone = Instantiate(mob, selectedSpawn.transform.position, selectedSpawn.transform.rotation);
-            clone.GetComponent<waypoints>().wayPoint = new[] { wayPoint[spawnIndex], tower };
+            clone.GetComponent<waypoints>().wayPoint = new[] { wayPoint[spawnIndex], tower};
             clone.GetComponent<waypoints>().speed = speed;
 
             yield return new WaitForSeconds(1.5f);
