@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
     
     private Vector3 lastDirectionIntent;
     private DashDirection dashDirection;
-    
+
     enum DashDirection
     {
         Left,
@@ -33,7 +33,6 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         theRB = GetComponent<Rigidbody>();
-        dashDirection = DashDirection.NoDirection;
     }
 
 
@@ -45,30 +44,35 @@ public class PlayerController : MonoBehaviour
         {
             lastDirectionIntent += Vector3.right;
         }
-        else if (Input.GetKey(KeyCode.Q))
+        if (Input.GetKey(KeyCode.Q))
         {
             lastDirectionIntent +=  Vector3.left;
         }
-        else if (Input.GetKey(KeyCode.Z))
+        if (Input.GetKey(KeyCode.Z))
         {
             lastDirectionIntent +=  Vector3.forward;
         }
-        else if (Input.GetKey(KeyCode.S))
+        if (Input.GetKey(KeyCode.S))
         {
             lastDirectionIntent +=  Vector3.back;
         }
-        // Si on lâche la touche on s'arrête
-        else
+        if (!Input.anyKey)
         {
+            // Si on lâche la touche on s'arrête
             lastDirectionIntent = Vector3.zero;
         }
+        Dashing();
 
         lastDirectionIntent = lastDirectionIntent.normalized;
     }
 
     private void Dashing()
     {
-        
+        if (Input.GetMouseButton(1))
+        {
+            float dashDistance = 0.5f;
+            playerTransform.position += lastDirectionIntent * dashDistance;
+        }
     }
 
     private void FixedUpdate()
