@@ -13,31 +13,59 @@ public class PlayerController : MonoBehaviour
     private  float playerSpeed;
 
     [SerializeField] 
-    private float playerDash;
+    private Camera mainCamera;
 
-    [SerializeField] 
-    private Rigidbody theRB;
+    [SerializeField] private GunController theGun;
     
+    //Movement and Dash variables
     private Vector3 lastDirectionIntent;
-    private DashDirection dashDirection;
-
-    enum DashDirection
+    
+    private void FixedUpdate()
     {
-        Left,
-        Right,
-        Up,
-        Down,
-        NoDirection
+        playerTransform.localPosition += lastDirectionIntent * (Time.deltaTime * playerSpeed);
     }
-
-    private void Start()
-    {
-        theRB = GetComponent<Rigidbody>();
-    }
-
-
-    // Update is called once per frame
+    
     void Update()
+    {
+        Movement();
+        View();
+        Dashing();
+
+        if (Input.GetMouseButtonDown(0))
+            theGun.isFiring = true;
+
+        if (Input.GetMouseButtonUp(0))
+            theGun.isFiring = false;
+
+
+        lastDirectionIntent = lastDirectionIntent.normalized;
+    }
+
+    private void Dashing()
+    {
+        if (Input.GetMouseButton(1))
+        {
+            float dashDistance = 0.2f;
+            playerTransform.position += lastDirectionIntent * dashDistance;
+        }
+    }
+
+    private void View()
+    {
+        Ray cameraRay = mainCamera.ScreenPointToRay(Input.mousePosition);
+        Plane groundPlane = new Plane(Vector3.up, Vector3.zero);
+        float rayLength;
+
+        if (groundPlane.Raycast(cameraRay, out rayLength))
+        {
+            Vector3 pointToLook = cameraRay.GetPoint(rayLength);
+            Debug.DrawLine(cameraRay.origin, pointToLook, Color.blue);
+            
+            playerTransform.LookAt(new Vector3(pointToLook.x, playerTransform.position.y, pointToLook.z));
+        }
+    }
+
+    private void Movement()
     {
         // Get key down (Z,Q,S,D) 
         if (Input.GetKey(KeyCode.D))
@@ -61,22 +89,5 @@ public class PlayerController : MonoBehaviour
             // Si on lâche la touche on s'arrête
             lastDirectionIntent = Vector3.zero;
         }
-        Dashing();
-
-        lastDirectionIntent = lastDirectionIntent.normalized;
-    }
-
-    private void Dashing()
-    {
-        if (Input.GetMouseButton(1))
-        {
-            float dashDistance = 0.5f;
-            playerTransform.position += lastDirectionIntent * dashDistance;
-        }
-    }
-
-    private void FixedUpdate()
-    {
-        playerTransform.localPosition += lastDirectionIntent * (Time.deltaTime * playerSpeed);
     }
 }
