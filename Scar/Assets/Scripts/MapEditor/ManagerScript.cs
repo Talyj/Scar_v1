@@ -15,7 +15,7 @@ public class ManagerScript : MonoBehaviour
     public Animator loadUIAnimation;
     public MeshFilter mouseObject;
     public MouseScript user;
-    public Mesh playerMarker;
+    //public Mesh playerMarker;
     public Slider rotSlider;
     public GameObject rotUI;
     public InputField levelNameSave;
@@ -117,32 +117,32 @@ public class ManagerScript : MonoBehaviour
     //TODO A MODIFIER METTRE OBJET A PLACER
     public void ChooseCylinder()
     {
-        user.itemOption = MouseScript.ItemList.Cylinder; // set object to place as cylinder
+        /*user.itemOption = MouseScript.ItemList.Cylinder; // set object to place as cylinder
         GameObject cylinder = GameObject.CreatePrimitive(PrimitiveType.Cylinder); // create object, get new object's mesh and set mouse object's mesh to that, then destroy
         mouseObject.mesh = cylinder.GetComponent<MeshFilter>().mesh;
-        Destroy(cylinder);
+        Destroy(cylinder);*/
     }
     
     public void ChooseCube()
     {
-        user.itemOption = MouseScript.ItemList.Cube; // set object to place as cube
+        /*user.itemOption = MouseScript.ItemList.Cube; // set object to place as cube
         GameObject cube = GameObject.CreatePrimitive(PrimitiveType.Cube); // create object, get new object's mesh and set mouse object's mesh to that, then destroy
         mouseObject.mesh = cube.GetComponent<MeshFilter>().mesh;
-        Destroy(cube);
+        Destroy(cube);*/
     }
 
     public void ChooseSphere()
     {
-        user.itemOption = MouseScript.ItemList.Sphere; // set object to place as sphere
+        /*user.itemOption = MouseScript.ItemList.Sphere; // set object to place as sphere
         GameObject sphere = GameObject.CreatePrimitive(PrimitiveType.Sphere); // create object, get new object's mesh and set mouse object's mesh to that, then destroy
         mouseObject.mesh = sphere.GetComponent<MeshFilter>().mesh;
-        Destroy(sphere);
+        Destroy(sphere);*/
     }
 
     public void ChoosePlayerStart()
     {
-        user.itemOption = MouseScript.ItemList.Player; // set object to place as player marker
-        mouseObject.mesh = playerMarker; // set mouse object's mesh to playerMarker (player object mesh).
+        /*user.itemOption = MouseScript.ItemList.Player; // set object to place as player marker
+        mouseObject.mesh = playerMarker; // set mouse object's mesh to playerMarker (player object mesh).*/
     }
 
 

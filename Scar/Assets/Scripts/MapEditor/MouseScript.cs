@@ -16,7 +16,7 @@ public class MouseScript : MonoBehaviour
 
     public Material goodPlace;
     public Material badPlace;
-    public GameObject Player;
+    //public GameObject Player;
     public ManagerScript ms;
 
     private Vector3 mousePos;
