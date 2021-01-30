@@ -66,6 +66,11 @@
      <Compile Include="Assets\Scripts\GunController.cs" />
      <Compile Include="Assets\Scripts\HealthEnemy.cs" />
      <Compile Include="Assets\Scripts\HealthPlayer.cs" />
+     <Compile Include="Assets\Scripts\MapEditor\CameraMove.cs" />
+     <Compile Include="Assets\Scripts\MapEditor\EditorObject.cs" />
+     <Compile Include="Assets\Scripts\MapEditor\LevelEditor.cs" />
+     <Compile Include="Assets\Scripts\MapEditor\ManagerScript.cs" />
+     <Compile Include="Assets\Scripts\MapEditor\MouseScript.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Scripts\SpawnLevel.cs" />
      <Compile Include="Assets\Scripts\WaveSpawner.cs" />

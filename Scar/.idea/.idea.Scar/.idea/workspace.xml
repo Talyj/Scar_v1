@@ -36,8 +36,8 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/MapEditor/EditorObject.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MapEditor/LevelEditor.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MapEditor/CameraMove.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/MapEditor/ManagerScript.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MapEditor/MouseScript.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/MapEditor/ManagerScript.cs" />
       </list>
     </option>
   </component>
@@ -88,6 +88,7 @@
       <option name="presentableId" value="Default" />
       <updated>1612022921237</updated>
       <workItem from="1612022924847" duration="7033000" />
+      <workItem from="1612031851353" duration="503000" />
     </task>
     <servers />
   </component>
@@ -106,6 +107,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
