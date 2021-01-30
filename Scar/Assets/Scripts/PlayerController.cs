@@ -8,18 +8,20 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField]
     private Transform playerTransform;
-    
-    [SerializeField]
-    private  float playerSpeed;
-
-    [SerializeField] 
-    private Camera mainCamera;
-
+    [SerializeField] private  float playerSpeed;
+    [SerializeField] private Camera mainCamera;
     [SerializeField] private GunController theGun;
-    
+    [SerializeField] private float timeBetweenDash;
+
     //Movement and Dash variables
     private Vector3 lastDirectionIntent;
-    
+    private float dashCounter;
+
+
+    private void Start()
+    {
+    }
+
     private void FixedUpdate()
     {
         playerTransform.localPosition += lastDirectionIntent * (Time.deltaTime * playerSpeed);
@@ -30,12 +32,8 @@ public class PlayerController : MonoBehaviour
         Movement();
         View();
         Dashing();
+        Firing();
 
-        if (Input.GetMouseButtonDown(0))
-            theGun.isFiring = true;
-
-        if (Input.GetMouseButtonUp(0))
-            theGun.isFiring = false;
 
 
         lastDirectionIntent = lastDirectionIntent.normalized;
@@ -45,9 +43,27 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetMouseButton(1))
         {
-            float dashDistance = 0.2f;
-            playerTransform.position += lastDirectionIntent * dashDistance;
+            dashCounter -= Time.deltaTime;
+            if (dashCounter <= 0)
+            {
+                dashCounter = timeBetweenDash;
+                float dashDistance = 1;
+                playerTransform.position += lastDirectionIntent * dashDistance;
+            }
         }
+        else
+        {
+            dashCounter = 0;
+        }
+    }
+
+    private void Firing()
+    {
+        if (Input.GetMouseButtonDown(0))
+            theGun.isFiring = true;
+
+        if (Input.GetMouseButtonUp(0))
+            theGun.isFiring = false;
     }
 
     private void View()
