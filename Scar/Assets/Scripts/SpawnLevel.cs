@@ -14,5 +14,5 @@ public class SpawnLevel : MonoBehaviour
             Instantiate( rooms[Random.Range(0, rooms.Length)], spawnPoint.transform.position, spawnPoint.transform.rotation);
         }
     }
-    
+
 }

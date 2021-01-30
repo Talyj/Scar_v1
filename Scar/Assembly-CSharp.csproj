@@ -68,6 +68,8 @@
     <Compile Include="Assets\Scripts\CameraFollowScript.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\GunController.cs" />
+    <Compile Include="Assets\Scripts\HealthEnemy.cs" />
+    <Compile Include="Assets\Scripts\HealthPlayer.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\SpawnLevel.cs" />
     <Compile Include="Assets\Scripts\WaveSpawner.cs" />
@@ -612,6 +614,9 @@
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>A:/Scar/Scar_v1/Scar/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Cinemachine">
+      <HintPath>A:/Scar/Scar_v1/Scar/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.VSCode.Editor">
       <HintPath>A:/Scar/Scar_v1/Scar/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
@@ -630,17 +635,14 @@
     <Reference Include="Unity.Rider.Editor">
       <HintPath>A:/Scar/Scar_v1/Scar/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="com.unity.cinemachine.editor">
+      <HintPath>A:/Scar/Scar_v1/Scar/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.TextMeshPro">
       <HintPath>A:/Scar/Scar_v1/Scar/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
       <HintPath>A:/Scar/Scar_v1/Scar/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="Cinemachine">
-      <HintPath>A:/Scar/Scar_v1/Scar/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
-    </Reference>
-    <Reference Include="com.unity.cinemachine.editor">
-      <HintPath>A:/Scar/Scar_v1/Scar/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup></ItemGroup>
