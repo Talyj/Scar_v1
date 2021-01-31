@@ -4,7 +4,7 @@ using UnityEngine.EventSystems;
 public class MouseScript : MonoBehaviour
 {
     public enum LevelManipulation { Create, Rotate, Destroy }; // the possible level manipulation types
-    public enum ItemList {  }; // TODO AJOUTER OBJET A PLACER
+    public enum ItemList { Cylinder }; // TODO AJOUTER OBJET A PLACER
 
     // we hide these to make them known to the rest of the project without them appearing in the Unity editor.
     //TODO AJOUTER OBJET PAR DEFAUT
@@ -92,7 +92,7 @@ public class MouseScript : MonoBehaviour
             eo.data.pos = newObj.transform.position;
             eo.data.rot = newObj.transform.rotation;
             eo.data.objectType = EditorObject.ObjectType.Cylinder;
-        }
+        }/*
         else if (itemOption == ItemList.Cube) // cube
         {
             //Create object

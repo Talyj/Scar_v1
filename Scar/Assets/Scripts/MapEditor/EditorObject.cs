@@ -3,7 +3,7 @@ using System;
 
 public class EditorObject : MonoBehaviour 
 {
-    public enum ObjectType {}; // the different objects this could be attached to.
+    public enum ObjectType {Cylinder}; // the different objects this could be attached to.
 
     [Serializable]
     public struct Data

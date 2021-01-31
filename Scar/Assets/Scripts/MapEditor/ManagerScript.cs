@@ -261,8 +261,7 @@ public class ManagerScript : MonoBehaviour
         // TODO A MODIFIER LES OBJETS PR2C2DEMMENT D2CLARER 0 PLACER ICI
         for (int i = 0; i < level.editorObjects.Count; i++)
         {
-            //
-            /*if (level.editorObjects[i].objectType == EditorObject.ObjectType.Cylinder) // if a cylinder object
+            if (level.editorObjects[i].objectType == EditorObject.ObjectType.Cylinder) // if a cylinder object
             {
                 // create cylinder
                 newObj = GameObject.CreatePrimitive(PrimitiveType.Cylinder);
@@ -275,7 +274,7 @@ public class ManagerScript : MonoBehaviour
                 eo.data.pos = newObj.transform.position;
                 eo.data.rot = newObj.transform.rotation;
                 eo.data.objectType = EditorObject.ObjectType.Cylinder;
-            }
+            }/*
             else if (level.editorObjects[i].objectType == EditorObject.ObjectType.Cube)
             {
                 // create cube

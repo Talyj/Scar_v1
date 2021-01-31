@@ -33,12 +33,12 @@
       <list>
         <option value="$PROJECT_DIR$/Assets/Scripts/SpawnLevel.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MapEditor.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/MapEditor/EditorObject.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MapEditor/LevelEditor.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/MapEditor/MouseScript.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/MapEditor/ManagerScript.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MapEditor/CameraMove.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/MapEditor/EditorObject.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/MapEditor/MouseScript.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/MapEditor/ManagerScript.cs" />
       </list>
     </option>
   </component>
@@ -91,7 +91,7 @@
       <workItem from="1612022924847" duration="7033000" />
       <workItem from="1612031851353" duration="807000" />
       <workItem from="1612039420743" duration="2625000" />
-      <workItem from="1612084782993" duration="1107000" />
+      <workItem from="1612084782993" duration="3214000" />
     </task>
     <servers />
   </component>

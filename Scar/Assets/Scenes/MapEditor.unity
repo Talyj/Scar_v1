@@ -832,7 +832,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraSpeed: 30
   zoomSpeed: 0.001
-  cameraSpeedSlide: {fileID: 0}
   ms: {fileID: 1061849029}
 --- !u!1 &392005151
 GameObject:
