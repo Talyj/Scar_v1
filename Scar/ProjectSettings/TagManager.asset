@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - WayPoint
   - Ennemy
+  - bulBasic
   layers:
   - Default
   - TransparentFX
