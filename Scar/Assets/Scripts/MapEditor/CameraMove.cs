@@ -1,9 +1,15 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.UI;
 
 
 public class CameraMove : MonoBehaviour
 {
+    [SerializeField] private  float cameraSpeed;
+    [SerializeField] private float zoomSpeed;
+    private Vector3 lastDirectionIntent;
+
+    
     public Slider cameraSpeedSlide;
     public ManagerScript ms;
 
@@ -12,10 +18,52 @@ public class CameraMove : MonoBehaviour
     private float zoom;
     private Camera cam;
 
+    
+    //Movement FROM PlayerController.cs
+    private void CameraMovement()
+    {
+        // Get key down (Z,Q,S,D) 
+        if (Input.GetKey(KeyCode.D))
+        {
+            lastDirectionIntent += Vector3.right;
+        }
+        if (Input.GetKey(KeyCode.Q))
+        {
+            lastDirectionIntent +=  Vector3.left;
+        }
+        if (Input.GetKey(KeyCode.Z))
+        {
+            lastDirectionIntent +=  Vector3.forward;
+        }
+        if (Input.GetKey(KeyCode.S))
+        {
+            lastDirectionIntent +=  Vector3.back;
+        }
+        if (!Input.anyKey)
+        {
+            // Si on lâche la touche on s'arrête
+            lastDirectionIntent = Vector3.zero;
+        }
+    }
+
+    private void CameraZoom()
+    {
+        zoom = Input.GetAxis("Mouse ScrollWheel");
+        transform.LookAt(cam.transform);
+        transform.Translate(0, 0, zoom * zoomSpeed, Space.Self);
+    }
+    
+    
+    
     // Start is called before the first frame update
     void Start()
     {
         cam = GetComponent<Camera>(); // get the camera component for later use
+    }
+
+    private void FixedUpdate()
+    {
+        cam.transform.position += lastDirectionIntent * (Time.deltaTime * cameraSpeed);
     }
 
     // Update is called once per frame
@@ -23,10 +71,10 @@ public class CameraMove : MonoBehaviour
     {
         if (ms.saveLoadMenuOpen == false) // if no save or load menus are open.
         {
-            xAxis = Input.GetAxis("Horizontal"); // get user input
-            yAxis = Input.GetAxis("Vertical");
+            CameraMovement();
+            CameraZoom();
 
-            zoom = Input.GetAxis("Mouse ScrollWheel") * 10;
+            /*zoom = Input.GetAxis("Mouse ScrollWheel") * 10;
 
             // move camera based on info from xAxis and yAxis
             transform.Translate(new Vector3(xAxis * -cameraSpeedSlide.value, yAxis * -cameraSpeedSlide.value, 0.0f));
@@ -40,7 +88,8 @@ public class CameraMove : MonoBehaviour
                 cam.orthographicSize -= zoom * -cameraSpeedSlide.value;
 
             if (zoom > 0 && cam.orthographicSize <= -5)
-                cam.orthographicSize += zoom * cameraSpeedSlide.value;
+                cam.orthographicSize += zoom * cameraSpeedSlide.value;*/
         }
+        lastDirectionIntent = lastDirectionIntent.normalized;
     }
 }

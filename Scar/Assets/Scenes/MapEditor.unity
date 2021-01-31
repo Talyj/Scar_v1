@@ -830,7 +830,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce731fc35e0b4ce41b9c0077d5da81e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraSpeedSlide: {fileID: 802951014}
+  cameraSpeed: 30
+  zoomSpeed: 0.001
+  cameraSpeedSlide: {fileID: 0}
   ms: {fileID: 1061849029}
 --- !u!1 &392005151
 GameObject:
@@ -869,7 +871,6 @@ MonoBehaviour:
   rotObject: {fileID: 0}
   goodPlace: {fileID: 2100000, guid: ad48021c4c8c2744181179f8fe67424e, type: 2}
   badPlace: {fileID: 2100000, guid: 9c912851960e48042ad5062356aea17d, type: 2}
-  Player: {fileID: 0}
   ms: {fileID: 1061849029}
 --- !u!65 &392005153
 BoxCollider:
@@ -2035,7 +2036,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &978931705
 Transform:
   m_ObjectHideFlags: 0
@@ -2349,7 +2350,6 @@ MonoBehaviour:
   loadUIAnimation: {fileID: 1137201014}
   mouseObject: {fileID: 392005155}
   user: {fileID: 392005152}
-  playerMarker: {fileID: 0}
   rotSlider: {fileID: 1495991854}
   rotUI: {fileID: 1312080301}
   levelNameSave: {fileID: 972192547}
@@ -3190,7 +3190,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -5761,8 +5761,8 @@ RectTransform:
   m_Father: {fileID: 1619052118}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}

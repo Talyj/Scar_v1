@@ -35,9 +35,10 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/MapEditor.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MapEditor/EditorObject.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MapEditor/LevelEditor.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/MapEditor/CameraMove.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MapEditor/MouseScript.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/MapEditor/ManagerScript.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/MapEditor/CameraMove.cs" />
       </list>
     </option>
   </component>
@@ -89,7 +90,8 @@
       <updated>1612022921237</updated>
       <workItem from="1612022924847" duration="7033000" />
       <workItem from="1612031851353" duration="807000" />
-      <workItem from="1612039420743" duration="2479000" />
+      <workItem from="1612039420743" duration="2625000" />
+      <workItem from="1612084782993" duration="1107000" />
     </task>
     <servers />
   </component>
@@ -112,5 +114,11 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="-1358" y="-16" width="1376" height="1027" maximized="true" key="dock-window-1" timestamp="1612085269440">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="-1358" y="-16" width="1376" height="1027" maximized="true" key="dock-window-1/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1612085269440" />
   </component>
 </project>
