@@ -4,11 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - SpawnPoint
   - Enemy
-  - WayPoint
-  - Ennemy
   - bulBasic
+  - bulEnemy
   layers:
   - Default
   - TransparentFX
@@ -18,8 +16,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - 'Player '
+  - Enemy
   - 
   - 
   - 

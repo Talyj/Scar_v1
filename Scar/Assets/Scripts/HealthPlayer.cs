@@ -11,14 +11,36 @@ public class HealthPlayer : MonoBehaviour
     public float maxHealth = 100;
     public float currentHealth = 100;
 
+    public GameObject death;
+
     void Start()
     {
-
+        Time.timeScale = 1f;
     }
     void Update()
     {
         healthFill.fillAmount = currentHealth / maxHealth;
         statHealth.text = currentHealth + "/100";
 
+        if (currentHealth <= 0)
+        {
+            Time.timeScale = 0f;
+            death.SetActive(true);
+        }
+
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("bulEnemy"))
+        {
+            currentHealth -= 5;
+        }
+        
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            currentHealth -= 10;
+        }
+    }
+
 }
