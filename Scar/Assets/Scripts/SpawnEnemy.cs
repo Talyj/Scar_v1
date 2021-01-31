@@ -10,8 +10,8 @@ public class SpawnEnemy : MonoBehaviour
     public int xPos;
     public int zPos;
 
-    public int numBig;
-    public int numSmall;
+    public int numBig; // Nombre de mobs gros
+    public int numSmall; // Nombre de mobs petits
     void Start()
     {
         StartCoroutine(Spawn());
@@ -19,7 +19,7 @@ public class SpawnEnemy : MonoBehaviour
 
     IEnumerator Spawn()
     {
-        for (int i =1; i < numBig + 1; i++)
+        for (int i =1; i < numBig + 1; i++)  // Spawn des gros mobs 
         {
             xPos = Random.Range(-20, 20);
             zPos = Random.Range(-15, 22);
@@ -27,7 +27,7 @@ public class SpawnEnemy : MonoBehaviour
             yield return new WaitForSeconds(2);
         }
 
-        for (int i = 1; i < numSmall + 1; i++)
+        for (int i = 1; i < numSmall + 1; i++) // Spawn des petits mobs
         {
             xPos = Random.Range(-20, 20);
             zPos = Random.Range(-15, 22);
