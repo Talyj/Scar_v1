@@ -5,13 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class MenuButtons : MonoBehaviour
 {
+    public string scene;
 
     public void DoExitGame() {
         Application.Quit();
     }
 
-    public void LoadScene(string level) {
-        SceneManager.LoadScene(level, LoadSceneMode.Single);
+    public void LoadScene() {
+        SceneManager.LoadScene(scene);
     }
 
     public void LoadOption() {
