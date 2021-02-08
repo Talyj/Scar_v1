@@ -12,28 +12,31 @@ public class SpawnEnemy : MonoBehaviour
 
     public int numBig; // Nombre de mobs gros
     public int numSmall; // Nombre de mobs petits
+    
     void Start()
     {
-        StartCoroutine(Spawn());
-    }
+        StartCoroutine(SpawnBig());
+        StartCoroutine(SpawnLittle());
 
-    IEnumerator Spawn()
+    }
+    
+    IEnumerator SpawnBig()
     {
         for (int i =1; i < numBig + 1; i++)  // Spawn des gros mobs 
         {
-            xPos = Random.Range(-20, 20);
-            zPos = Random.Range(-15, 22);
-            Instantiate(big, new Vector3(xPos, 2, zPos), Quaternion.identity);
-            yield return new WaitForSeconds(2);
+            Instantiate(big, new Vector3(Random.Range(-20, 20), 2, Random.Range(17, 25)), Quaternion.identity);
+            yield return new WaitForSeconds(1);
         }
+    }
 
-        for (int i = 1; i < numSmall + 1; i++) // Spawn des petits mobs
+    IEnumerator SpawnLittle()
+    {
+        for (int j = 1; j < numSmall + 1; j++) // Spawn des petits mobs
         {
             xPos = Random.Range(-20, 20);
-            zPos = Random.Range(-15, 22);
+            zPos = Random.Range(17, 25);
             Instantiate(small, new Vector3(xPos, 2, zPos), Quaternion.identity);
-            yield return new WaitForSeconds(2);
+            yield return new WaitForSeconds(1);
         }
-
     }
 }
