@@ -7,19 +7,23 @@ public class HealthEnemy : MonoBehaviour
 {
     [SerializeField]
     public Image healthFill;
-    public float maxHealth = 100;
-    public float currentHealth = 100;
-
-    void Start()
-    {
-        
-    }
+    public float maxHealth;
+    public float currentHealth;
+    
     void Update()
     {
         healthFill.fillAmount = currentHealth / maxHealth;
 
         if(currentHealth <= 0)
         {
+            if (maxHealth > 200)
+            {
+                PlayerController.score += 30;
+            }
+            else
+            {
+                PlayerController.score += 10;
+            }
             Destroy(gameObject);
         }
     }
@@ -29,6 +33,7 @@ public class HealthEnemy : MonoBehaviour
         if (collision.gameObject.CompareTag("bulBasic"))
         {
             currentHealth -= 35;
+            PlayerController.numberDamagesDealt += 35;
             Destroy(collision.gameObject);
         }
     }
