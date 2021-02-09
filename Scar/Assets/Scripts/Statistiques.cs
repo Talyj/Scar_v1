@@ -13,17 +13,9 @@ public class Statistiques : MonoBehaviour
     
     void Start()
     {
-        nbDamageReceivedText = GetComponent<Text>();
-        nbDamageDealtText = GetComponent<Text>();
-        scoreText = GetComponent<Text>();
-    }
-
-    private void Update()
-    {
         nbBulletText.text = "Nombre de bullet : " + PlayerController.numberBullets.ToString();
-        nbDamageReceivedText.text = PlayerController.numberDamagesReceived.ToString();
-        nbDamageDealtText.text = PlayerController.numberDamagesDealt.ToString();
-        scoreText.text = PlayerController.score.ToString();
-
+        nbDamageReceivedText.text = "Dégât reçu : " + PlayerController.numberDamagesReceived.ToString();
+        nbDamageDealtText.text = "Dégât Effectué : " + PlayerController.numberDamagesDealt.ToString();
+        scoreText.text ="Score : " +  PlayerController.score.ToString();
     }
 }
