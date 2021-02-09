@@ -12,6 +12,9 @@ public class SpawnEnemy : MonoBehaviour
 
     public int numBig;
     public int numSmall;
+    
+    public static int nbMonster;
+    
     void Start()
     {
         StartCoroutine(Spawn());
@@ -24,6 +27,7 @@ public class SpawnEnemy : MonoBehaviour
             xPos = Random.Range(-20, 20);
             zPos = Random.Range(-15, 22);
             Instantiate(big, new Vector3(xPos, 2, zPos), Quaternion.identity);
+            nbMonster += 1;
             yield return new WaitForSeconds(2);
         }
 
@@ -32,6 +36,7 @@ public class SpawnEnemy : MonoBehaviour
             xPos = Random.Range(-20, 20);
             zPos = Random.Range(-15, 22);
             Instantiate(small, new Vector3(xPos, 2, zPos), Quaternion.identity);
+            nbMonster += 1;
             yield return new WaitForSeconds(2);
         }
 

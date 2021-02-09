@@ -12,6 +12,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Camera mainCamera;
     [SerializeField] private GunController theGun;
     [SerializeField] private float timeBetweenDash;
+    
+    //Statistiques
+    public static int numberBullets = 0;
+    public static int numberDamagesReceived = 0;
+    public static int numberDamagesDealt = 0;
+    public static int score = 0;
 
     //Movement and Dash variables
     private Vector3 lastDirectionIntent;
