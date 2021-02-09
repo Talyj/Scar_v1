@@ -1,40 +1,30 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 public class Restart : MonoBehaviour
 {
-
     public string scene;
-    
-    [SerializeField]
-    private GameObject panel;
-    private bool active;
-
+    public GameObject pause;
     public void Reload()
     {
         SceneManager.LoadScene(scene);
     }
 
-   
-    
-
-
-    public void onClick()
+    public void Continue()
     {
-        if (active)
+        Time.timeScale = 1f;
+        pause.SetActive(false);
+    }
+
+    public void Update()
+    {
+        if(Input.GetKey(KeyCode.Escape))
         {
-            panel.SetActive(false);
-            active = false;
-        }
-        else
-        {
-            panel.SetActive(true);
-            active = true;
+            Time.timeScale = 0f;
+            pause.SetActive(true);
         }
     }
+
 }
