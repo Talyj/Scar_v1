@@ -24,8 +24,13 @@ public class PlayerController : MonoBehaviour
     private float dashCounter;
 
 
-    private void Start()
+    private void Awake()
     {
+        numberBullets = 0;
+        numberDamagesReceived = 0;
+        numberDamagesDealt = 0;
+        score = 0;
+        SpawnEnemy.nbMonster = 0;
     }
 
     private void FixedUpdate()

@@ -1088,7 +1088,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scene: Village
-  pause: {fileID: 1917962412}
+  panel: {fileID: 1917962412}
+  active: 0
 --- !u!114 &1205845619
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1989,7 +1990,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1787031187}
-  m_LocalRotation: {x: 0.478449, y: 0.000000015109174, z: -0.000000008232346, w: 0.87811536}
+  m_LocalRotation: {x: 0.478449, y: -0.000000015109203, z: 0.000000008232406, w: 0.87811536}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2500,7 +2501,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scene: Main
-  pause: {fileID: 1917962412}
+  panel: {fileID: 1917962412}
+  active: 0
 --- !u!114 &1917962415
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2630,7 +2632,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1930986290}
-  m_LocalRotation: {x: 0.478449, y: 0.000000030218377, z: -0.000000016464753, w: 0.87811536}
+  m_LocalRotation: {x: 0.478449, y: -0.000000030218377, z: 0.000000016464753, w: 0.87811536}
   m_LocalPosition: {x: 1.4749416, y: 60.599934, z: -38.894836}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
