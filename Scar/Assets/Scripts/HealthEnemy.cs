@@ -25,6 +25,7 @@ public class HealthEnemy : MonoBehaviour
                 PlayerController.score += 10;
             }
             Destroy(gameObject);
+            SpawnEnemy.nbMonster -= 1;
         }
     }
 

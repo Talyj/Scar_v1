@@ -69,6 +69,7 @@
      <Compile Include="Assets\Scripts\SpawnEnemy.cs" />
      <Compile Include="Assets\Scripts\SpawnLevel.cs" />
      <Compile Include="Assets\Scripts\Statistiques.cs" />
+     <Compile Include="Assets\Scripts\VictoryCondition.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>D:/ESGI/Projet_final/Scar_v1/Scar/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
