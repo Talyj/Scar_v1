@@ -1,0 +1,90 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using System.Globalization;
+using UnityEngine;
+
+public class BossBehaviour : MonoBehaviour
+{
+    // Param principaux
+    [SerializeField] private GameObject Boss;
+    [SerializeField] private HealthEnemy BossHealth;
+    [SerializeField] private BulletController bullet;
+    [SerializeField] private int numBullets;
+    [SerializeField] private Transform firepoint;
+    [SerializeField] private Transform player;
+    
+    // Derniere Chance
+    [SerializeField] private GameObject small;
+    [SerializeField] private GameObject big;
+    private bool premiereChance = true;
+    private bool derniereChance = true;
+    private bool enervax = true;
+    private HealthEnemy currentHealth;
+    
+    public float bulletSpeed;
+    private float radius = -3;
+    
+    // Start is called before the first frame update
+    void Start()
+    {
+        StartCoroutine(SpawnBoss());
+    }
+
+    // Script principal du boss, ses actions se trouve dans cette méthode
+    IEnumerator SpawnBoss()
+    {
+        // Tant que le boss est en vie on le fait agir
+        while(Boss != null)
+        {
+            SimpleShoot();
+    
+            // Condition actions du boss 75% de vie = spawn petit groupe de monstre 
+            if (BossHealth.currentHealth <= BossHealth.maxHealth * 0.75 && premiereChance)
+            {
+                SpawnEnemy.Spawn(2, big);
+                yield return new WaitForSeconds(2);
+                SpawnEnemy.Spawn(3, small);
+                premiereChance = false;
+                enervax = false;
+            }
+            // Enervax quand 25% >= BossHealth.currentHealth >= 75%
+            if (enervax)
+            {
+                CircleShoot();
+            }
+            // 25% de vie = spawn groupe de monstre medium réactive enervax
+            if (BossHealth.currentHealth <= BossHealth.maxHealth * 0.25 && derniereChance)
+            {
+                enervax = true;
+                SpawnEnemy.Spawn(5, big);
+                yield return new WaitForSeconds(2);
+                SpawnEnemy.Spawn(8, small);
+                derniereChance = false;
+            }
+            yield return new WaitForSeconds(1);
+        }
+    }
+
+    void SimpleShoot()
+    {
+        // Vise le player depuis le firepoint
+        // Tire sur le player
+        Quaternion targetRotation = Quaternion.LookRotation(player.transform.position - firepoint.position);
+        firepoint.rotation = Quaternion.Slerp(firepoint.rotation, targetRotation, 1 * Time.deltaTime);
+        BulletController newBullet = Instantiate(bullet, firepoint.position , firepoint.rotation);
+        newBullet.speed = bulletSpeed;
+    }
+
+    void CircleShoot()
+    {
+        // spawn les balles en cercle autour du boss
+        for (int i = 0; i < numBullets; i++)
+        {
+            // Determine la position de spawn des balles
+            BulletController newBullet = Instantiate(bullet, Boss.transform.position + Vector3.up * radius,new Quaternion(0,0,0,0)) as BulletController;
+            newBullet.speed = bulletSpeed;
+            // Modifie la manière de spawn des balles (ici en cercle)
+            newBullet.transform.RotateAround(Boss.transform.position, Vector3.up, 360/(float)numBullets*i);
+        }
+    }
+}
