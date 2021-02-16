@@ -5,14 +5,16 @@ using UnityEngine;
 
 public class SpawnEnemy : MonoBehaviour
 {
-    [SerializeField] public GameObject big;
-    public GameObject small;
+    public GameObject big;
+    public  GameObject small;
+    public  GameObject boss;
     private static int xPos;
     private static int zPos;
 
     private int numBig;
     private  int numSmall;
 
+    public int numBoss = 0;
     public int numSmallGroup = 0;
     public int numMediumGroup = 0;
     public int numBigGroup = 0;
@@ -72,6 +74,11 @@ public class SpawnEnemy : MonoBehaviour
                 Spawn(numSmall, small);
                 yield return new WaitForSeconds(timeBetweenGroups);
             }
+        }
+
+        if (numBoss != 0)
+        {
+            Spawn(numBoss, boss);
         }
     }
 }

@@ -1,35 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &7990430382786019656
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7990430382786019659}
-  m_Layer: 9
-  m_Name: FirePointBoss
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7990430382786019659
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7990430382786019656}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.3, z: 0.5}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 7990430383819660193}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7990430382810028503
 GameObject:
   m_ObjectHideFlags: 0
@@ -119,9 +89,10 @@ GameObject:
   - component: {fileID: 7990430383819660192}
   - component: {fileID: 7990430383819660218}
   - component: {fileID: 7990430383819660220}
+  - component: {fileID: 3443788096180028602}
   m_Layer: 9
   m_Name: bOss
-  m_TagString: Untagged
+  m_TagString: boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -133,12 +104,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7990430383819660219}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0.0043872194, y: -0.60459006, z: 0.02340569, w: 0.7961808}
   m_LocalPosition: {x: 0, y: 5, z: 26.47}
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children:
   - {fileID: 7990430384339762885}
-  - {fileID: 7990430382786019659}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -218,7 +188,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  speed: 10
+  speed: 8
 --- !u!114 &7990430383819660218
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -247,6 +217,28 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &3443788096180028602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7990430383819660219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bb9aa8ff6426b84e9acb621bb81dfa4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Boss: {fileID: 7990430383819660219}
+  BossHealth: {fileID: 7990430383819660218}
+  bullet: {fileID: 7064619592068957810, guid: 53979ef7430e11c469c32220d363511a, type: 3}
+  numBullets: 50
+  firepoint: {fileID: 7990430383819660193}
+  player: {fileID: 8421110334287959700, guid: 352b241cf3799724181cc51d2c6bb982, type: 3}
+  small: {fileID: 272287531547417062, guid: ed0bb92d1d4c1464ba1fbfc0df8c7401, type: 3}
+  big: {fileID: 2301001059543078486, guid: 56db3ed06a1fd154c8df1c44b5bcd991, type: 3}
+  enervax: 1
+  bulletSpeed: 25
 --- !u!1 &7990430384116625337
 GameObject:
   m_ObjectHideFlags: 0

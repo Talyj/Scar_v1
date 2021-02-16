@@ -771,10 +771,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   big: {fileID: 2301001059543078486, guid: 56db3ed06a1fd154c8df1c44b5bcd991, type: 3}
   small: {fileID: 272287531547417062, guid: ed0bb92d1d4c1464ba1fbfc0df8c7401, type: 3}
-  xPos: 0
-  zPos: 0
-  numBig: 1
-  numSmall: 0
+  boss: {fileID: 7990430383819660219, guid: 0b24264f5d68e4749acd942710434c8f, type: 3}
+  numBoss: 1
+  numSmallGroup: 0
+  numMediumGroup: 0
+  numBigGroup: 0
+  timeBetweenGroups: 0
 --- !u!4 &319829356
 Transform:
   m_ObjectHideFlags: 0
@@ -3457,7 +3459,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1366239362}
-  m_LocalRotation: {x: 0.4943423, y: 2.2015382e-12, z: -3.8712557e-12, w: 0.86926734}
+  m_LocalRotation: {x: 0.4943423, y: 2.2015386e-12, z: -3.8712557e-12, w: 0.86926734}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:

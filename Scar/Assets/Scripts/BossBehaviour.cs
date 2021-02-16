@@ -10,7 +10,7 @@ public class BossBehaviour : MonoBehaviour
     [SerializeField] private HealthEnemy BossHealth;
     [SerializeField] private BulletController bullet;
     [SerializeField] private int numBullets;
-    [SerializeField] private Transform firepoint;
+    public Transform firepoint;
     [SerializeField] private Transform player;
     
     // Derniere Chance
@@ -18,7 +18,7 @@ public class BossBehaviour : MonoBehaviour
     [SerializeField] private GameObject big;
     private bool premiereChance = true;
     private bool derniereChance = true;
-    private bool enervax = true;
+    public bool enervax = true;
     private HealthEnemy currentHealth;
     
     public float bulletSpeed;
@@ -27,6 +27,7 @@ public class BossBehaviour : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //firepoint = GameObject.FindGameObjectWithTag("boss").ge;
         StartCoroutine(SpawnBoss());
     }
 
@@ -37,7 +38,6 @@ public class BossBehaviour : MonoBehaviour
         while(Boss != null)
         {
             SimpleShoot();
-    
             // Condition actions du boss 75% de vie = spawn petit groupe de monstre 
             if (BossHealth.currentHealth <= BossHealth.maxHealth * 0.75 && premiereChance)
             {
@@ -65,7 +65,7 @@ public class BossBehaviour : MonoBehaviour
         }
     }
 
-    void SimpleShoot()
+   void SimpleShoot()
     {
         // Vise le player depuis le firepoint
         // Tire sur le player
