@@ -7,8 +7,8 @@ public class SpawnEnemy : MonoBehaviour
 {
     [SerializeField] public GameObject big;
     public GameObject small;
-    private int xPos;
-    private int zPos;
+    private static int xPos;
+    private static int zPos;
 
     private int numBig;
     private  int numSmall;
@@ -25,7 +25,7 @@ public class SpawnEnemy : MonoBehaviour
         StartCoroutine(MonstersGrrr());
     }
 
-    void Spawn(int numSpawn, GameObject typeMonster)
+    public static void Spawn(int numSpawn, GameObject typeMonster)
     {
         for (int i = 1; i < numSpawn + 1; i++)
         {

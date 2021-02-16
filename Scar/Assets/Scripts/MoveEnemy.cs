@@ -14,7 +14,7 @@ public class MoveEnemy : MonoBehaviour
     void Update()
     {
         Quaternion targetRotation = Quaternion.LookRotation(player.transform.position - transform.position);
-        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 1 * Time.deltaTime);
+        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 3 * Time.deltaTime);
         transform.position += transform.forward * Time.deltaTime * speed;
     }
 }
