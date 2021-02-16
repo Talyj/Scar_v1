@@ -12,6 +12,7 @@ public class VictoryCondition : MonoBehaviour
         if (SpawnEnemy.nbMonster == 0)
         {
             panel.SetActive(true);
+            Time.timeScale = 0f;
         }
     }
 }

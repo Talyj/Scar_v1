@@ -7,8 +7,8 @@ public class SpawnEnemy : MonoBehaviour
     [SerializeField]
     public GameObject big;
     public GameObject small;
-    public int xPos;
-    public int zPos;
+    private int xPos;
+    private int zPos;
 
     public int numBig;
     public int numSmall;

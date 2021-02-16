@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Inventaire : MonoBehaviour
 {
-    
+    [SerializeField] private GameObject inventaire;
+    private bool active;
     void Start()
     {
         
@@ -13,6 +14,18 @@ public class Inventaire : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            if (active)
+            {
+                active = false;
+                inventaire.SetActive(false);
+            }
+            else
+            {
+                active = true;
+                inventaire.SetActive(true);
+            }
+        }
     }
 }

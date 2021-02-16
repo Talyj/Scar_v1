@@ -10,6 +10,7 @@ public class HealthPlayer : MonoBehaviour
     public Text statHealth;
     public float maxHealth = 100;
     public float currentHealth = 100;
+    public float degats = 10;
 
     public GameObject death;
 
