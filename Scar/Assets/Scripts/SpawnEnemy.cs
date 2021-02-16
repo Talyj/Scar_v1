@@ -8,8 +8,8 @@ public class SpawnEnemy : MonoBehaviour
     public GameObject big;
     public  GameObject small;
     public  GameObject boss;
-    private static int xPos;
-    private static int zPos;
+    private static float xPos;
+    private static float zPos;
 
     private int numBig;
     private  int numSmall;
@@ -21,9 +21,13 @@ public class SpawnEnemy : MonoBehaviour
     public int timeBetweenGroups;
     
     public static int nbMonster;
+
+    public GameObject room;
     
     void Start()
     {
+        xPos = Random.Range(-15, 20);
+        zPos = Random.Range(-20, 15);
         StartCoroutine(MonstersGrrr());
     }
 
@@ -31,8 +35,6 @@ public class SpawnEnemy : MonoBehaviour
     {
         for (int i = 1; i < numSpawn + 1; i++)
         {
-            xPos = Random.Range(-20, 20);
-            zPos = Random.Range(-15, 22);
             Instantiate(typeMonster, new Vector3(xPos, 2, zPos), Quaternion.identity);
             nbMonster += 1;
         }
