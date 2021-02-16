@@ -21,23 +21,24 @@
   <component name="ChangeListManager">
     <list default="true" id="f197db03-e0f5-4c36-9f24-b711dabea71a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Scar/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Scar/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Scar/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Scar/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Scar/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Scar/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assembly-CSharp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Village.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Village.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Restart.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Restart.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/BulEnemy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/BulEnemy.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SpawnEnemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SpawnEnemy.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/ArtifactDB" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ArtifactDB" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/11/119a49deff757a950d60788cdc19d462" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/Artifacts/19/1973cf731b12c9d0cf99605db82ad500" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/Artifacts/2d/2d6038fcba4e8e1dadb58c5df6c64646" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/1a/1aad54592ea7e22fc4e37c6f48d20d39" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/95/9501ab0ef81123816e61d9200a54ac8e" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/CurrentLayout-default.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/Library/CurrentLayout-default.dwlt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/CurrentMaximizeLayout.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/Library/CurrentMaximizeLayout.dwlt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/SceneVisibilityState.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Library/SceneVisibilityState.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/BuiltinAssemblies.stamp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/ShaderCache/EditorEncounteredVariants" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ShaderCache/EditorEncounteredVariants" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/SourceAssetDB" beforeDir="false" afterPath="$PROJECT_DIR$/Library/SourceAssetDB" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/StateCache/Hierarchy/8e0b36-mainStage.json" beforeDir="false" afterPath="$PROJECT_DIR$/Library/StateCache/Hierarchy/8e0b36-mainStage.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/StateCache/SceneView/0d40fb-mainStage.json" beforeDir="false" afterPath="$PROJECT_DIR$/Library/StateCache/SceneView/0d40fb-mainStage.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler.exe0.log" beforeDir="false" afterPath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler.exe0.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler.exe3.log" beforeDir="false" afterPath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler.exe3.log" afterDir="false" />
@@ -54,6 +55,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Statistiques.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/VictoryCondition.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/BossBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -63,11 +65,15 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/HealthPlayer.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/FinDeJeu.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Statistiques.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/SpawnEnemy.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/HealthEnemy.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Restart.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/VictoryCondition.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SpawnEnemy.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ShootEnemy.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/MoveEnemy.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/BossBullets.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/HealthEnemy.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/BossBehaviour.cs" />
       </list>
     </option>
   </component>
@@ -122,6 +128,8 @@
       <workItem from="1612889908218" duration="2666000" />
       <workItem from="1612893603676" duration="505000" />
       <workItem from="1612905238508" duration="3507000" />
+      <workItem from="1613425075140" duration="1537000" />
+      <workItem from="1613426645962" duration="7381000" />
     </task>
     <servers />
   </component>
