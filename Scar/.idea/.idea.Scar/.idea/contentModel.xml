@@ -13,6 +13,7 @@
           <e p="HealthEnemy.cs" t="Include" />
           <e p="HealthPlayer.cs" t="Include" />
           <e p="LoadDonjon.cs" t="Include" />
+          <e p="MenuButtons.cs" t="Include" />
           <e p="MoveEnemy.cs" t="Include" />
           <e p="PlayerController.cs" t="Include" />
           <e p="Restart.cs" t="Include" />

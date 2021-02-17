@@ -770,7 +770,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: d1752c0bcdeff2844bb94c4111f7ab88, type: 3}
+    m_Font: {fileID: 12800000, guid: 703732e92abc6624c8c2da425b929aa3, type: 3}
     m_FontSize: 125
     m_FontStyle: 0
     m_BestFit: 0
@@ -857,7 +857,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed71a2081394b1b45b3d819bbfd6d7e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scene: 
 --- !u!1 &1247769030
 GameObject:
   m_ObjectHideFlags: 0
@@ -1317,7 +1316,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: d1752c0bcdeff2844bb94c4111f7ab88, type: 3}
+    m_Font: {fileID: 12800000, guid: 703732e92abc6624c8c2da425b929aa3, type: 3}
     m_FontSize: 125
     m_FontStyle: 0
     m_BestFit: 0
@@ -1404,7 +1403,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed71a2081394b1b45b3d819bbfd6d7e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scene: 
 --- !u!1 &1884919501
 GameObject:
   m_ObjectHideFlags: 0
@@ -1685,7 +1683,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: d1752c0bcdeff2844bb94c4111f7ab88, type: 3}
+    m_Font: {fileID: 12800000, guid: 703732e92abc6624c8c2da425b929aa3, type: 3}
     m_FontSize: 125
     m_FontStyle: 0
     m_BestFit: 0
@@ -1769,10 +1767,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2132629537}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed71a2081394b1b45b3d819bbfd6d7e6, type: 3}
+  m_Script: {fileID: 11500000, guid: 1c1169bd189e64942b596e14f7fc27aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scene: SampleScene
+  scene: Main
 --- !u!1 &2135315823
 GameObject:
   m_ObjectHideFlags: 0
