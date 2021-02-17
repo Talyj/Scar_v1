@@ -16,6 +16,7 @@
           <e p="MoveEnemy.cs" t="Include" />
           <e p="PlayerController.cs" t="Include" />
           <e p="Restart.cs" t="Include" />
+          <e p="shootBoss.cs" t="Include" />
           <e p="ShootEnemy.cs" t="Include" />
           <e p="SpawnEnemy.cs" t="Include" />
           <e p="SpawnLevel.cs" t="Include" />

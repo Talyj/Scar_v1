@@ -7,6 +7,9 @@ TagManager:
   - Enemy
   - bulBasic
   - bulEnemy
+  - boss
+  - PlateformeDepart
+  - Gate
   layers:
   - Default
   - TransparentFX

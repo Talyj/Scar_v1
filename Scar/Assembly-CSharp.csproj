@@ -72,6 +72,7 @@
      <Compile Include="Assets\Scripts\SpawnLevel.cs" />
      <Compile Include="Assets\Scripts\Statistiques.cs" />
      <Compile Include="Assets\Scripts\VictoryCondition.cs" />
+     <Compile Include="Assets\Scripts\shootBoss.cs" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />
