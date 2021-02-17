@@ -1,7 +1,10 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
+using Cinemachine;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class SpawnEnemy : MonoBehaviour
 {
@@ -22,13 +25,21 @@ public class SpawnEnemy : MonoBehaviour
     
     public static int nbMonster;
 
-    public GameObject room;
+    private GameObject door;
+    private GameObject spawnPoint;
     
     void Start()
     {
-        xPos = Random.Range(-15, 20);
-        zPos = Random.Range(-20, 15);
+        /*xPos = Random.Range(-15, 20);
+        zPos = Random.Range(-20, 15);*/
         StartCoroutine(MonstersGrrr());
+    }
+
+    private void Update()
+    {
+        spawnPoint = GameObject.FindGameObjectWithTag("Gate");
+        xPos = Random.Range(spawnPoint.transform.position.x + 20, spawnPoint.transform.position.x - 20) ;
+        zPos = Random.Range(spawnPoint.transform.position.z - 2, spawnPoint.transform.position.z - 20) ;
     }
 
     public static void Spawn(int numSpawn, GameObject typeMonster)
