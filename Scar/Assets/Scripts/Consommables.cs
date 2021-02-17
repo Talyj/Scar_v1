@@ -26,10 +26,4 @@ public class Consommables : MonoBehaviour
 
     }
   
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

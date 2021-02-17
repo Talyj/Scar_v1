@@ -10,13 +10,24 @@ public class HealthPlayer : MonoBehaviour
     public Text statHealth;
     public float maxHealth = 100;
     public float currentHealth = 100;
-    public float degats = 10;
+    public float degatsBalle = 10;
+    public float degatsCol = 5;
+    private int degB;
+    private int degC;
 
     public GameObject death;
 
     void Start()
     {
         Time.timeScale = 1f;
+        degB.Equals(degatsBalle);
+        degC.Equals(degatsCol);
+
+        if (GameObject.FindGameObjectWithTag("Shield"))
+        {
+            degatsBalle = degatsBalle * 90/100;
+            degatsCol = degatsCol * 90 / 100;
+        }
     }
     void Update()
     {
@@ -35,15 +46,15 @@ public class HealthPlayer : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("bulEnemy"))
         {
-            currentHealth -= 5;
-            PlayerController.numberDamagesReceived += 5;
+            currentHealth -= degatsCol;
+            PlayerController.numberDamagesReceived += degC;
             PlayerController.score -= 1;
         }
         
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            currentHealth -= 10;
-            PlayerController.numberDamagesReceived += 10;
+            currentHealth -= degatsBalle;
+            PlayerController.numberDamagesReceived += degB;
             PlayerController.score -= 5;
         }
     }

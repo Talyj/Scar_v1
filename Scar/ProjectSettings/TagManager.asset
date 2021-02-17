@@ -8,6 +8,9 @@ TagManager:
   - bulBasic
   - bulEnemy
   - Potion1
+  - Shield
+  - Attaque
+  - Actif
   layers:
   - Default
   - TransparentFX

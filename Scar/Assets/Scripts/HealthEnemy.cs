@@ -9,7 +9,17 @@ public class HealthEnemy : MonoBehaviour
     public Image healthFill;
     public float maxHealth;
     public float currentHealth;
-    
+    public float degats = 35;
+    private int deg;
+
+    private void Start()
+    {
+        deg.Equals(degats);
+        if (GameObject.FindGameObjectWithTag("Attaque"))
+        {
+            degats = degats * 110 / 100;
+        }
+    }
     void Update()
     {
         healthFill.fillAmount = currentHealth / maxHealth;
@@ -27,14 +37,15 @@ public class HealthEnemy : MonoBehaviour
             Destroy(gameObject);
             SpawnEnemy.nbMonster -= 1;
         }
+
     }
 
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("bulBasic"))
         {
-            currentHealth -= 35;
-            PlayerController.numberDamagesDealt += 35;
+            currentHealth -= degats;
+            PlayerController.numberDamagesDealt += deg;
             Destroy(collision.gameObject);
         }
     }
