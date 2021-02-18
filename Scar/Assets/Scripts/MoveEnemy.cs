@@ -20,6 +20,10 @@ public class MoveEnemy : MonoBehaviour
         if (transform.position.y <= -20)
         {
             Destroy(gameObject);
+            if (gameObject.CompareTag("boss"))
+            {
+                BossBehaviour.isAlive = 0;
+            }
             SpawnEnemy.nbMonster -= 1;
         }
     }
