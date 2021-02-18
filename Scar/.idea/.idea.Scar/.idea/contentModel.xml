@@ -7,14 +7,22 @@
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
+          <e p="ActifRaffale.cs" t="Include" />
+          <e p="BossBehaviour.cs" t="Include" />
           <e p="BulletController.cs" t="Include" />
+          <e p="Consommables.cs" t="Include" />
           <e p="GunController.cs" t="Include" />
           <e p="HealthEnemy.cs" t="Include" />
           <e p="HealthPlayer.cs" t="Include" />
+          <e p="Inventaire.cs" t="Include" />
+          <e p="LoadDonjon.cs" t="Include" />
+          <e p="MenuButtons.cs" t="Include" />
           <e p="MoveEnemy.cs" t="Include" />
           <e p="PlayerController.cs" t="Include" />
           <e p="Restart.cs" t="Include" />
+          <e p="shootBoss.cs" t="Include" />
           <e p="ShootEnemy.cs" t="Include" />
+          <e p="SlotsInventaire.cs" t="Include" />
           <e p="SpawnEnemy.cs" t="Include" />
           <e p="SpawnLevel.cs" t="Include" />
           <e p="Statistiques.cs" t="Include" />

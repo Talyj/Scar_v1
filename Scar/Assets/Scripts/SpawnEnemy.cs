@@ -1,44 +1,97 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
+using Cinemachine;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class SpawnEnemy : MonoBehaviour
 {
-    [SerializeField]
     public GameObject big;
-    public GameObject small;
-    private int xPos;
-    private int zPos;
+    public  GameObject small;
+    public  GameObject boss;
+    private static float xPos;
+    private static float zPos;
 
-    public int numBig;
-    public int numSmall;
+    private int numBig;
+    private  int numSmall;
+
+    public int numBoss = 0;
+    public int numSmallGroup = 0;
+    public int numMediumGroup = 0;
+    public int numBigGroup = 0;
+    public int timeBetweenGroups;
     
     public static int nbMonster;
+
+    private GameObject door;
+    private GameObject spawnPoint;
     
     void Start()
     {
-        StartCoroutine(Spawn());
+        /*xPos = Random.Range(-15, 20);
+        zPos = Random.Range(-20, 15);*/
+        StartCoroutine(MonstersGrrr());
     }
 
-    IEnumerator Spawn()
+    private void Update()
     {
-        for (int i =1; i < numBig + 1; i++)
+        spawnPoint = GameObject.FindGameObjectWithTag("Gate");
+        xPos = Random.Range(spawnPoint.transform.position.x + 20, spawnPoint.transform.position.x - 20) ;
+        zPos = Random.Range(spawnPoint.transform.position.z - 2, spawnPoint.transform.position.z - 20) ;
+    }
+
+    public static void Spawn(int numSpawn, GameObject typeMonster)
+    {
+        for (int i = 1; i < numSpawn + 1; i++)
         {
-            xPos = Random.Range(-20, 20);
-            zPos = Random.Range(-15, 22);
-            Instantiate(big, new Vector3(xPos, 2, zPos), Quaternion.identity);
+            Instantiate(typeMonster, new Vector3(xPos, 2, zPos), Quaternion.identity);
             nbMonster += 1;
-            yield return new WaitForSeconds(2);
+        }
+    }
+    
+    IEnumerator MonstersGrrr()
+    {
+        if (numSmallGroup != 0)
+        {
+            numBig = Random.Range(1, 2);
+            numSmall = Random.Range(2, 4);
+            for (var i = 0; i < numSmallGroup; i++)
+            {
+                Spawn(numBig, big);
+                Spawn(numSmall, small);
+                yield return new WaitForSeconds(timeBetweenGroups);
+            }
+        }
+        
+        if (numMediumGroup != 0)
+        {
+            numBig = Random.Range(2, 3);
+            numSmall = Random.Range(4, 6);
+            for (var i = 0; i < numSmallGroup; i++)
+            {
+                Spawn(numBig, big);
+                Spawn(numSmall, small);
+                yield return new WaitForSeconds(timeBetweenGroups);
+            }
+        }
+        
+        if (numBigGroup != 0)
+        {
+            numBig = Random.Range(4, 5);
+            numSmall = Random.Range(8, 10);
+            for (var i = 0; i < numSmallGroup; i++)
+            {
+                Spawn(numBig, big);
+                Spawn(numSmall, small);
+                yield return new WaitForSeconds(timeBetweenGroups);
+            }
         }
 
-        for (int i = 1; i < numSmall + 1; i++)
+        if (numBoss != 0)
         {
-            xPos = Random.Range(-20, 20);
-            zPos = Random.Range(-15, 22);
-            Instantiate(small, new Vector3(xPos, 2, zPos), Quaternion.identity);
-            nbMonster += 1;
-            yield return new WaitForSeconds(2);
+            Spawn(numBoss, boss);
         }
-
     }
 }
