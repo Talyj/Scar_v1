@@ -23,6 +23,7 @@ public class BossBehaviour : MonoBehaviour
     
     public float bulletSpeed;
     private float radius = -3;
+    public static int isAlive = 1;
     
     // Start is called before the first frame update
     void Start()
