@@ -23,7 +23,8 @@ public class PlayerController : MonoBehaviour
     private Vector3 lastDirectionIntent;
     private float dashCounter;
 
-
+    public static int cpt = 0;
+    
     private void Awake()
     {
         numberBullets = 0;

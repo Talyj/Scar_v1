@@ -13,14 +13,13 @@ public class SpawnLevel : MonoBehaviour
     public GameObject spawnPoint;
     [SerializeField] private int maxRoom;
     [SerializeField] private GameObject bossRoom;
-    private int cpt = 0;
 
 
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            if (cpt >= maxRoom)
+            if (PlayerController.cpt >= maxRoom)
             {
                 Instantiate(bossRoom, spawnPoint.transform.position, spawnPoint.transform.rotation);
             }
@@ -28,7 +27,7 @@ public class SpawnLevel : MonoBehaviour
             {
                 int typeRoom = Random.Range(0, rooms.Length);
                 Instantiate( rooms[typeRoom], spawnPoint.transform.position, spawnPoint.transform.rotation);
-                cpt++;
+                PlayerController.cpt++;
             }
         }
     }

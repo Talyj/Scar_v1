@@ -34,8 +34,8 @@ public class SpawnEnemy : MonoBehaviour
     private void Update()
     {
         spawnPoint = GameObject.FindGameObjectWithTag("Gate");
-        xPos = Random.Range(spawnPoint.transform.position.x - 20, spawnPoint.transform.position.x + 20) ;
-        zPos = Random.Range(spawnPoint.transform.position.z, spawnPoint.transform.position.z - 50) ;
+        xPos = Random.Range(spawnPoint.transform.position.x - 10, spawnPoint.transform.position.x + 10) ;
+        zPos = Random.Range(spawnPoint.transform.position.z, spawnPoint.transform.position.z - 30) ;
     }
 
     public static void Spawn(int numSpawn, GameObject typeMonster)
