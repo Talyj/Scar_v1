@@ -197,6 +197,7 @@ GameObject:
   - component: {fileID: 3335607417883024007}
   - component: {fileID: 2203027574074329573}
   - component: {fileID: 9172943085640549815}
+  - component: {fileID: 818041266174087620}
   m_Layer: 8
   m_Name: Porte (1)
   m_TagString: Untagged
@@ -245,8 +246,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rooms:
-  - {fileID: 0}
+  - {fileID: 7496383149291222961, guid: 91682580f5f80c947b4fadbe636a70b6, type: 3}
+  - {fileID: 3599568711376165339, guid: db9e2f0df5eae364fbda922938a4cfc5, type: 3}
+  - {fileID: 5065347065166804356}
   spawnPoint: {fileID: 5938982438330550879}
+--- !u!114 &818041266174087620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3627248117695071378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 824733d183d7b2f44b5bf8cd95aa48ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  big: {fileID: 2301001059543078486, guid: 56db3ed06a1fd154c8df1c44b5bcd991, type: 3}
+  small: {fileID: 272287531547417062, guid: ed0bb92d1d4c1464ba1fbfc0df8c7401, type: 3}
+  boss: {fileID: 0}
+  numMonsters: 4
+  numBoss: 0
+  timeBetweenGroups: 7
 --- !u!1 &3898683035539598721
 GameObject:
   m_ObjectHideFlags: 0
