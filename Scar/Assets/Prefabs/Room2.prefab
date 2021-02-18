@@ -707,9 +707,9 @@ MonoBehaviour:
   big: {fileID: 2301001059543078486, guid: 56db3ed06a1fd154c8df1c44b5bcd991, type: 3}
   small: {fileID: 272287531547417062, guid: ed0bb92d1d4c1464ba1fbfc0df8c7401, type: 3}
   boss: {fileID: 0}
-  numMonsters: 1
+  numMonsters: 5
   numBoss: 0
-  timeBetweenGroups: 1
+  timeBetweenGroups: 10
 --- !u!1 &8455740750952441860
 GameObject:
   m_ObjectHideFlags: 0
