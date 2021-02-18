@@ -9,7 +9,7 @@ public class VictoryCondition : MonoBehaviour
 
     void Update()
     {
-        if (SpawnEnemy.nbMonster == 0)
+        if (BossBehaviour.isAlive == 0)
         {
             panel.SetActive(true);
             Time.timeScale = 0f;

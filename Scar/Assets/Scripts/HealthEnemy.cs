@@ -35,11 +35,14 @@ public class HealthEnemy : MonoBehaviour
                 PlayerController.score += 10;
             }
             Destroy(gameObject);
+            if (gameObject.CompareTag("boss"))
+            {
+                BossBehaviour.isAlive = 0;
+            }
             SpawnEnemy.nbMonster -= 1;
         }
-
     }
-
+    
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("bulBasic"))

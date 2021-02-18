@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6699080537593837433}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.488, z: 0.478}
+  m_LocalPosition: {x: 0, y: -0.488, z: 2.75}
   m_LocalScale: {x: 0.5760111, y: 0.6602305, z: 1.0924852}
   m_Children: []
   m_Father: {fileID: 1423670341714028647}
@@ -117,7 +117,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7496383149291222961}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.88877, y: 1.72, z: 0.01}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 4.9341426, y: 2.4983, z: 4.4037533}
   m_Children:
   - {fileID: 1423670341714028647}
@@ -139,11 +139,9 @@ MonoBehaviour:
   big: {fileID: 2301001059543078486, guid: 56db3ed06a1fd154c8df1c44b5bcd991, type: 3}
   small: {fileID: 272287531547417062, guid: ed0bb92d1d4c1464ba1fbfc0df8c7401, type: 3}
   boss: {fileID: 0}
+  numMonsters: 3
   numBoss: 0
-  numSmallGroup: 0
-  numMediumGroup: 0
-  numBigGroup: 0
-  timeBetweenGroups: 0
+  timeBetweenGroups: 2
 --- !u!1 &8247628868632625282
 GameObject:
   m_ObjectHideFlags: 0
@@ -172,7 +170,7 @@ Transform:
   m_GameObject: {fileID: 8247628868632625282}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.3413276, y: -0.49727103, z: -8.3600235}
-  m_LocalScale: {x: 1.0442064, y: 0.6060158, z: 1.7675931}
+  m_LocalScale: {x: 1, y: 0.6060158, z: 2.2}
   m_Children: []
   m_Father: {fileID: 1423670341714028647}
   m_RootOrder: 1

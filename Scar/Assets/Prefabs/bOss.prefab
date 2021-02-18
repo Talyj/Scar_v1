@@ -188,7 +188,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  speed: 8
+  speed: 4
 --- !u!114 &7990430383819660218
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -204,6 +204,7 @@ MonoBehaviour:
   healthFill: {fileID: 7990430382810028502}
   maxHealth: 2000
   currentHealth: 2000
+  degats: 35
 --- !u!135 &7990430383819660220
 SphereCollider:
   m_ObjectHideFlags: 0
