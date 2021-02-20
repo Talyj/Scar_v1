@@ -8,6 +8,7 @@ public class SpawnEnemy : MonoBehaviour
     public GameObject big;
     public  GameObject small;
     public  GameObject boss;
+    public GameObject spawnMonster;
     private static float xPos;
     private static float zPos;
 
@@ -36,9 +37,10 @@ public class SpawnEnemy : MonoBehaviour
 
     private void Update()
     {
-        spawnPoint = GameObject.FindGameObjectWithTag("Gate");
-        xPos = Random.Range(spawnPoint.transform.position.x - 10, spawnPoint.transform.position.x + 10) ;
-        zPos = Random.Range(spawnPoint.transform.position.z, spawnPoint.transform.position.z - 30) ;
+        spawnPoint = spawnMonster;
+        
+        xPos = Random.Range(spawnPoint.transform.position.x - 15, spawnPoint.transform.position.x) + 15;
+        zPos = Random.Range(spawnPoint.transform.position.z - 15, spawnPoint.transform.position.z + 15) ;
     }
 
     public static void Spawn(int numSpawn, GameObject typeMonster)
@@ -57,6 +59,7 @@ public class SpawnEnemy : MonoBehaviour
         {
             if (sizeGroup > 0)
             {
+                yield return new WaitForSeconds(3);
                 numBig = Random.Range(1, monstreRecup);
                 numSmall = Random.Range(2, monstreRecup * 2);
                 for (var i = 0; i < monstreRecup; i++)
