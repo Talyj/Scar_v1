@@ -11,15 +11,14 @@ public class SpawnLevel : MonoBehaviour
 {
     public GameObject[] rooms;
     public GameObject spawnPoint;
-    [SerializeField] public static int maxRoom;
+    private int maxRoom = 3;
     [SerializeField] private GameObject bossRoom;
-    public static int roomRecup;
- 
+    
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            if (PlayerController.cpt >= roomRecup)
+            if (PlayerController.cpt >= maxRoom)
             {
                 Instantiate(bossRoom, spawnPoint.transform.position, spawnPoint.transform.rotation);
             }

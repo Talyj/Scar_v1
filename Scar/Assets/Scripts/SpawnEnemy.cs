@@ -17,8 +17,8 @@ public class SpawnEnemy : MonoBehaviour
     private int numBig;
     private  int numSmall;
 
-    public static int numMonsters = 3;
-    public static int monstreRecup = numMonsters;
+    [SerializeField] private int numMonsters;
+    private int monstreRecup;
     public int numBoss;
     public int timeBetweenGroups;
     
@@ -26,7 +26,12 @@ public class SpawnEnemy : MonoBehaviour
 
     private GameObject door;
     private GameObject spawnPoint;
-    
+
+    private void Awake()
+    {
+        monstreRecup = numMonsters;
+    }
+
     void Start()
     {
         StartCoroutine(MonstersGrrr(monstreRecup));
@@ -53,7 +58,7 @@ public class SpawnEnemy : MonoBehaviour
     IEnumerator MonstersGrrr(int sizeGroup)
     {
         {
-            if (sizeGroup >= 0)
+            if (sizeGroup > 0)
             {
                 numBig = Random.Range(1, monstreRecup);
                 numSmall = Random.Range(2, monstreRecup * 2);
