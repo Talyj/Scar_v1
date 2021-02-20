@@ -608,9 +608,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 824733d183d7b2f44b5bf8cd95aa48ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  big: {fileID: 0}
-  small: {fileID: 0}
+  big: {fileID: 2301001059543078486, guid: 56db3ed06a1fd154c8df1c44b5bcd991, type: 3}
+  small: {fileID: 272287531547417062, guid: ed0bb92d1d4c1464ba1fbfc0df8c7401, type: 3}
   boss: {fileID: 7990430383819660219, guid: 0b24264f5d68e4749acd942710434c8f, type: 3}
-  numMonsters: 0
   numBoss: 1
   timeBetweenGroups: 0

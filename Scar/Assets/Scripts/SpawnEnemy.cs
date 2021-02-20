@@ -17,7 +17,8 @@ public class SpawnEnemy : MonoBehaviour
     private int numBig;
     private  int numSmall;
 
-    public int numMonsters;
+    public static int numMonsters = 3;
+    public static int monstreRecup = numMonsters;
     public int numBoss;
     public int timeBetweenGroups;
     
@@ -28,7 +29,7 @@ public class SpawnEnemy : MonoBehaviour
     
     void Start()
     {
-        StartCoroutine(MonstersGrrr(numMonsters));
+        StartCoroutine(MonstersGrrr(monstreRecup));
     }
 
     private void Update()
@@ -54,9 +55,9 @@ public class SpawnEnemy : MonoBehaviour
         {
             if (sizeGroup >= 0)
             {
-                numBig = Random.Range(1, numMonsters);
-                numSmall = Random.Range(2, numMonsters * 2);
-                for (var i = 0; i < numMonsters; i++)
+                numBig = Random.Range(1, monstreRecup);
+                numSmall = Random.Range(2, monstreRecup * 2);
+                for (var i = 0; i < monstreRecup; i++)
                 {
                     Spawn(numBig, big);
                     Spawn(numSmall, small);

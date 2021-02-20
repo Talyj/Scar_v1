@@ -14,6 +14,7 @@ public class HealthEnemy : MonoBehaviour
 
     private void Start()
     {
+        BossBehaviour.isAlive = 1;
         deg.Equals(degats);
         if (GameObject.FindGameObjectWithTag("Attaque"))
         {

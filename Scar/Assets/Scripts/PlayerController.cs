@@ -32,6 +32,10 @@ public class PlayerController : MonoBehaviour
         numberDamagesDealt = 0;
         score = 0;
         SpawnEnemy.nbMonster = 0;
+        SpawnEnemy.monstreRecup = SpawnEnemy.numMonsters;
+        BossBehaviour.isAlive = 1;
+        SpawnLevel.roomRecup = SpawnLevel.maxRoom;
+
     }
 
     private void FixedUpdate()
