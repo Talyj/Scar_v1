@@ -15,8 +15,8 @@ public class PlayerController : MonoBehaviour
     
     //Statistiques
     public static int numberBullets = 0;
-    public static int numberDamagesReceived = 0;
-    public static int numberDamagesDealt = 0;
+    public static float numberDamagesReceived = 0;
+    public static float numberDamagesDealt = 0;
     public static int score = 0;
 
     //Movement and Dash variables

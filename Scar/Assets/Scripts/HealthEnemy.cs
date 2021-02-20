@@ -10,12 +10,10 @@ public class HealthEnemy : MonoBehaviour
     public float maxHealth;
     public float currentHealth;
     public float degats = 35;
-    private int deg;
 
     private void Start()
     {
         BossBehaviour.isAlive = 1;
-        deg.Equals(degats);
         if (GameObject.FindGameObjectWithTag("Attaque"))
         {
             degats = degats * 110 / 100;
@@ -35,11 +33,14 @@ public class HealthEnemy : MonoBehaviour
             {
                 PlayerController.score += 10;
             }
+
             Destroy(gameObject);
+
             if (gameObject.CompareTag("boss"))
             {
                 BossBehaviour.isAlive = 0;
             }
+
             SpawnEnemy.nbMonster -= 1;
         }
     }
@@ -49,7 +50,7 @@ public class HealthEnemy : MonoBehaviour
         if (collision.gameObject.CompareTag("bulBasic"))
         {
             currentHealth -= degats;
-            PlayerController.numberDamagesDealt += deg;
+            PlayerController.numberDamagesDealt += degats;
             Destroy(collision.gameObject);
         }
     }
