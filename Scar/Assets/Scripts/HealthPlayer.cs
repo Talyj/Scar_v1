@@ -36,6 +36,11 @@ public class HealthPlayer : MonoBehaviour
             death.SetActive(true);
         }
 
+        if (gameObject.transform.position.y <= -10)
+        {
+            Time.timeScale = 0f;
+            death.SetActive(true);
+        }
     }
 
     private void OnCollisionEnter(Collision collision)

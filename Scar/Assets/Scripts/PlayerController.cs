@@ -48,7 +48,7 @@ public class PlayerController : MonoBehaviour
         Dashing();
         Firing();
 
-
+        
 
         lastDirectionIntent = lastDirectionIntent.normalized;
     }
@@ -119,5 +119,7 @@ public class PlayerController : MonoBehaviour
             // Si on lâche la touche on s'arrête
             lastDirectionIntent = Vector3.zero;
         }
+
+       
     }
 }
