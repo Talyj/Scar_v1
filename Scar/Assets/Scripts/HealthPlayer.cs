@@ -28,6 +28,12 @@ public class HealthPlayer : MonoBehaviour
             degatsBalle = degatsBalle * 90/100;
             degatsCol = degatsCol * 90 / 100;
         }
+
+        if (GameObject.FindGameObjectWithTag("Shield2"))
+        {
+            degatsBalle = degatsBalle * 80 / 100;
+            degatsCol = degatsCol * 80 / 100;
+        }
     }
     void Update()
     {

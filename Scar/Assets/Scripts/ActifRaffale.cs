@@ -1,6 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class ActifRaffale : MonoBehaviour
 {
@@ -9,15 +8,38 @@ public class ActifRaffale : MonoBehaviour
     public float bulletSpeed;
     private float radius = 1;
 
-    // Update is called once per frame
+    public Image manaa;
+    public float currentMana = 200;
+    public float maxMana = 200;
+
+    void Start()
+    {
+        //Fais en sorte que la barre de mana ne deborde pas de son encoche
+        if (currentMana <= 0)
+        {
+            currentMana = 0;
+        }
+
+        if (currentMana >= 200)
+        {
+            currentMana = 200;
+        }
+
+    }
+
     void Update()
     {
+        //Update la barre de mana
+        manaa.fillAmount = currentMana / maxMana;
+        currentMana += 2 * Time.deltaTime;
+
         if(GameObject.FindGameObjectWithTag("Actif"))
         {
-            if (Input.GetKeyDown(KeyCode.Alpha1))
+            if (Input.GetKeyDown(KeyCode.Alpha1) && currentMana >= 50)
             {
                 CircleShoot();
                 PlayerController.numberBullets += numBullets;
+                currentMana -= 50;
             }
         }
      
