@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Camera mainCamera;
     [SerializeField] private GunController theGun;
     [SerializeField] private float timeBetweenDash;
+    [SerializeField] private Transform swordTransform;
     
     //Statistiques
     public static int numberBullets = 0;
@@ -55,7 +56,7 @@ public class PlayerController : MonoBehaviour
 
     private void Dashing()
     {
-        if (Input.GetMouseButton(1))
+        if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             dashCounter -= Time.deltaTime;
             if (dashCounter <= 0)
@@ -119,7 +120,5 @@ public class PlayerController : MonoBehaviour
             // Si on lâche la touche on s'arrête
             lastDirectionIntent = Vector3.zero;
         }
-
-       
     }
 }
