@@ -3,14 +3,18 @@
 public class SwitchCartes : MonoBehaviour
 {
     [SerializeField] public GameObject Shield2;
-    public Transform spawnShield;
+    [SerializeField] public GameObject Shield1;
+
+    public Transform spawnShieldInv;
+    public Transform spawnShieldHot;
     public void SwitchShield()
     {
-        Destroy(gameObject);
-        Instantiate<GameObject>(Shield2, spawnShield);
+        Destroy(spawnShieldInv.GetChild(0));
+        Instantiate<GameObject>(Shield1, spawnShieldInv);
+        Destroy(spawnShieldHot.GetChild(0));
+        Instantiate<GameObject>(Shield2, spawnShieldHot);
     }
 
-    // Update is called once per frame
     void Update()
     {
         

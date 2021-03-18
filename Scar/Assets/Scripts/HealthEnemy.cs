@@ -20,10 +20,10 @@ public class HealthEnemy : MonoBehaviour
             degats = degats * 110 / 100;
         }
 
-        if (GameObject.FindGameObjectWithTag("Attaque2"))
-        {
-            degats = degats * 120 / 100;
-        }
+        //if (GameObject.FindGameObjectWithTag("Attaque2"))
+        //{
+            //degats = degats * 120 / 100;
+        //}
     }
     void Update()
     {
