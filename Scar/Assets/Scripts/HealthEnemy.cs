@@ -54,11 +54,5 @@ public class HealthEnemy : MonoBehaviour
             PlayerController.numberDamagesDealt += degatsBullet;
             Destroy(collision.gameObject);
         }
-
-        if (collision.gameObject.CompareTag("ZoneAttaqueNormal"))
-        {
-            currentHealth -= degatWeapon;
-            PlayerController.numberDamagesDealt += degatWeapon;
-        }
     }
 }

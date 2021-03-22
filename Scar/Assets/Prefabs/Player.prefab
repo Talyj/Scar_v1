@@ -220,6 +220,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hittingZone: {fileID: 0}
   timeBetweenHits: 3
+  weapon: {fileID: 2005093901426720206}
+  Player: {fileID: 8421110334287959700}
   isFighting: 0
 --- !u!1 &5601852746858556871
 GameObject:
