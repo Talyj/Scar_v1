@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private  float playerSpeed;
     [SerializeField] private Camera mainCamera;
     [SerializeField] private GunController theGun;
+    [SerializeField] private WeaponController theWeapon;
     [SerializeField] private float timeBetweenDash;
     
     //Statistiques
@@ -18,6 +19,7 @@ public class PlayerController : MonoBehaviour
     public static float numberDamagesReceived = 0;
     public static float numberDamagesDealt = 0;
     public static int score = 0;
+    private static bool ArmeAuCaC = true;
 
     //Movement and Dash variables
     private Vector3 lastDirectionIntent;
@@ -46,16 +48,21 @@ public class PlayerController : MonoBehaviour
         Movement();
         View();
         Dashing();
-        Firing();
-
+        if (ArmeAuCaC)
+        {
+            Hitting();
+        }
+        else
+        {
+            Firing();    
+        }
         
-
         lastDirectionIntent = lastDirectionIntent.normalized;
     }
 
     private void Dashing()
     {
-        if (Input.GetMouseButton(1))
+        if (Input.GetMouseButtonDown(1))
         {
             dashCounter -= Time.deltaTime;
             if (dashCounter <= 0)
@@ -78,6 +85,15 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetMouseButtonUp(0))
             theGun.isFiring = false;
+    }
+
+    private void Hitting()
+    {
+        if (Input.GetMouseButtonDown(0))
+            theWeapon.isFighting = true;
+
+        if (Input.GetMouseButtonUp(0))
+            theWeapon.isFighting = false;
     }
 
     private void View()
@@ -119,7 +135,5 @@ public class PlayerController : MonoBehaviour
             // Si on lâche la touche on s'arrête
             lastDirectionIntent = Vector3.zero;
         }
-
-       
     }
 }
