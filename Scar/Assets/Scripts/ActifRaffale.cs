@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using UnityEngine.UI;
 using UnityEngine;
 
 public class ActifRaffale : MonoBehaviour
@@ -9,15 +8,22 @@ public class ActifRaffale : MonoBehaviour
     public float bulletSpeed;
     private float radius = 1;
 
+    Mana mana;
+
+    public 
+
+
     // Update is called once per frame
     void Update()
     {
+
         if(GameObject.FindGameObjectWithTag("Actif"))
         {
-            if (Input.GetKeyDown(KeyCode.Alpha1))
+            if (Input.GetKeyDown(KeyCode.Alpha1) && mana.currentMana >= 50)
             {
                 CircleShoot();
                 PlayerController.numberBullets += numBullets;
+                mana.currentMana -= 50;
             }
         }
      
