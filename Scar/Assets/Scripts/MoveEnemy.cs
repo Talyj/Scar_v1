@@ -17,7 +17,7 @@ public class MoveEnemy : MonoBehaviour
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 3 * Time.deltaTime);
         transform.position += transform.forward * Time.deltaTime * speed;
 
-        if (transform.position.y <= -20)
+        if (transform.position.y <= -2)
         {
             Destroy(gameObject);
             if (gameObject.CompareTag("boss"))

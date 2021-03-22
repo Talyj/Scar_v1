@@ -12,16 +12,12 @@ public class HealthPlayer : MonoBehaviour
     public float currentHealth = 100;
     public float degatsBalle = 10;
     public float degatsCol = 5;
-    private int degB;
-    private int degC;
 
     public GameObject death;
 
     void Start()
     {
         Time.timeScale = 1f;
-        degB.Equals(degatsBalle);
-        degC.Equals(degatsCol);
 
         if (GameObject.FindGameObjectWithTag("Shield"))
         {
@@ -38,7 +34,7 @@ public class HealthPlayer : MonoBehaviour
     void Update()
     {
         healthFill.fillAmount = currentHealth / maxHealth;
-        statHealth.text = currentHealth + "/100";
+        statHealth.text = currentHealth + "/150";
 
         if (currentHealth <= 0)
         {
@@ -46,6 +42,11 @@ public class HealthPlayer : MonoBehaviour
             death.SetActive(true);
         }
 
+        if (gameObject.transform.position.y <= -10)
+        {
+            Time.timeScale = 0f;
+            death.SetActive(true);
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -53,14 +54,14 @@ public class HealthPlayer : MonoBehaviour
         if (collision.gameObject.CompareTag("bulEnemy"))
         {
             currentHealth -= degatsCol;
-            PlayerController.numberDamagesReceived += degC;
+            PlayerController.numberDamagesReceived += degatsCol;
             PlayerController.score -= 1;
         }
         
         if (collision.gameObject.CompareTag("Enemy"))
         {
             currentHealth -= degatsBalle;
-            PlayerController.numberDamagesReceived += degB;
+            PlayerController.numberDamagesReceived += degatsBalle;
             PlayerController.score -= 5;
         }
     }

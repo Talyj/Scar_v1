@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Threading;
+﻿using System.Collections;
 using Cinemachine;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -11,13 +8,15 @@ public class SpawnEnemy : MonoBehaviour
     public GameObject big;
     public  GameObject small;
     public  GameObject boss;
+    public GameObject spawnMonster;
     private static float xPos;
     private static float zPos;
 
     private int numBig;
     private  int numSmall;
 
-    public int numMonsters;
+    [SerializeField] private int numMonsters;
+    private int monstreRecup;
     public int numBoss;
     public int timeBetweenGroups;
     
@@ -25,17 +24,23 @@ public class SpawnEnemy : MonoBehaviour
 
     private GameObject door;
     private GameObject spawnPoint;
-    
+
+    private void Awake()
+    {
+        monstreRecup = numMonsters;
+    }
+
     void Start()
     {
-        StartCoroutine(MonstersGrrr(numMonsters));
+        StartCoroutine(MonstersGrrr(monstreRecup));
     }
 
     private void Update()
     {
-        spawnPoint = GameObject.FindGameObjectWithTag("Gate");
-        xPos = Random.Range(spawnPoint.transform.position.x - 10, spawnPoint.transform.position.x + 10) ;
-        zPos = Random.Range(spawnPoint.transform.position.z, spawnPoint.transform.position.z - 30) ;
+        spawnPoint = spawnMonster;
+        
+        xPos = Random.Range(spawnPoint.transform.position.x - 15, spawnPoint.transform.position.x) + 15;
+        zPos = Random.Range(spawnPoint.transform.position.z - 15, spawnPoint.transform.position.z + 15) ;
     }
 
     public static void Spawn(int numSpawn, GameObject typeMonster)
@@ -52,11 +57,12 @@ public class SpawnEnemy : MonoBehaviour
     IEnumerator MonstersGrrr(int sizeGroup)
     {
         {
-            if (sizeGroup >= 0)
+            if (sizeGroup > 0)
             {
-                numBig = Random.Range(1, numMonsters);
-                numSmall = Random.Range(2, numMonsters * 2);
-                for (var i = 0; i < numMonsters; i++)
+                yield return new WaitForSeconds(3);
+                numBig = Random.Range(1, monstreRecup);
+                numSmall = Random.Range(2, monstreRecup * 2);
+                for (var i = 0; i < monstreRecup; i++)
                 {
                     Spawn(numBig, big);
                     Spawn(numSmall, small);

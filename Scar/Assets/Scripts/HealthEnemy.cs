@@ -9,15 +9,15 @@ public class HealthEnemy : MonoBehaviour
     public Image healthFill;
     public float maxHealth;
     public float currentHealth;
-    public float degats = 35;
-    private int deg;
+    public float degatsBullet = 35;
+    public float degatWeapon = 50;
 
     private void Start()
     {
-        deg.Equals(degats);
+        BossBehaviour.isAlive = 1;
         if (GameObject.FindGameObjectWithTag("Attaque"))
         {
-            degats = degats * 110 / 100;
+            degatsBullet = degatsBullet * 110 / 100;
         }
 
         //if (GameObject.FindGameObjectWithTag("Attaque2"))
@@ -39,11 +39,14 @@ public class HealthEnemy : MonoBehaviour
             {
                 PlayerController.score += 10;
             }
+
             Destroy(gameObject);
+
             if (gameObject.CompareTag("boss"))
             {
                 BossBehaviour.isAlive = 0;
             }
+
             SpawnEnemy.nbMonster -= 1;
         }
     }
@@ -52,9 +55,15 @@ public class HealthEnemy : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("bulBasic"))
         {
-            currentHealth -= degats;
-            PlayerController.numberDamagesDealt += deg;
+            currentHealth -= degatsBullet;
+            PlayerController.numberDamagesDealt += degatsBullet;
             Destroy(collision.gameObject);
+        }
+
+        if (collision.gameObject.CompareTag("ZoneAttaqueNormal"))
+        {
+            currentHealth -= degatWeapon;
+            PlayerController.numberDamagesDealt += degatWeapon;
         }
     }
 }

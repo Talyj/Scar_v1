@@ -11,10 +11,9 @@ public class SpawnLevel : MonoBehaviour
 {
     public GameObject[] rooms;
     public GameObject spawnPoint;
-    [SerializeField] private int maxRoom;
+    private int maxRoom = 3;
     [SerializeField] private GameObject bossRoom;
-
-
+    
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))

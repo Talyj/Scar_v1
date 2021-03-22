@@ -7,6 +7,7 @@ public class VictoryCondition : MonoBehaviour
 {
     [SerializeField] private GameObject panel;
 
+    
     void Update()
     {
         if (BossBehaviour.isAlive == 0)

@@ -59,6 +59,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\ActifRaffale.cs" />
+     <Compile Include="Assets\Scripts\AttackZoneController.cs" />
      <Compile Include="Assets\Scripts\BossBehaviour.cs" />
      <Compile Include="Assets\Scripts\BulletController.cs" />
      <Compile Include="Assets\Scripts\Consommables.cs" />
@@ -70,6 +71,7 @@
      <Compile Include="Assets\Scripts\MenuButtons.cs" />
      <Compile Include="Assets\Scripts\MoveEnemy.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
+     <Compile Include="Assets\Scripts\PlayerFollow.cs" />
      <Compile Include="Assets\Scripts\Restart.cs" />
      <Compile Include="Assets\Scripts\ShootEnemy.cs" />
      <Compile Include="Assets\Scripts\SlotsInventaire.cs" />
@@ -77,6 +79,7 @@
      <Compile Include="Assets\Scripts\SpawnLevel.cs" />
      <Compile Include="Assets\Scripts\Statistiques.cs" />
      <Compile Include="Assets\Scripts\VictoryCondition.cs" />
+     <Compile Include="Assets\Scripts\WeaponController.cs" />
      <Compile Include="Assets\Scripts\shootBoss.cs" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
