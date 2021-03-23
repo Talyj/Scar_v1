@@ -25,6 +25,8 @@ public class SpawnEnemy : MonoBehaviour
     private GameObject door;
     private GameObject spawnPoint;
 
+    private GameObject[] portes;
+
     private void Awake()
     {
         monstreRecup = numMonsters;
@@ -49,7 +51,7 @@ public class SpawnEnemy : MonoBehaviour
         {
             xPos = Random.Range(xPos - 5, xPos + 5);
             zPos = Random.Range(zPos - 5, zPos + 5);
-            Instantiate(typeMonster, new Vector3(xPos, 2, zPos), Quaternion.identity);
+            Instantiate(typeMonster, new Vector3(xPos, 6, zPos), Quaternion.identity);
             nbMonster += 1;
         }
     }
@@ -72,6 +74,11 @@ public class SpawnEnemy : MonoBehaviour
             }
             if (sizeGroup == 0)
             {
+                portes = GameObject.FindGameObjectsWithTag("BloquePorte");
+                foreach (var gameobject in portes)
+                {
+                    Destroy(gameobject, 1);
+                }
                 yield return new WaitForSeconds(3);
                 Spawn(numBoss, boss);
                 numBoss -= 1;

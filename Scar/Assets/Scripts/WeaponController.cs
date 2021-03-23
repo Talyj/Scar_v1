@@ -18,7 +18,7 @@ public class WeaponController : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        colliderHittingZone = hittingZone.GetComponent<Collider>();
+        //colliderHittingZone = hittingZone.GetComponent<Collider>();
     }
 
     // Update is called once per frame
