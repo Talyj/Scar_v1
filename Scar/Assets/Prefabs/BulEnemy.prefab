@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2291022694939038470}
   - component: {fileID: 8351145693889219766}
   - component: {fileID: 7064619592068957810}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: BulEnemy
   m_TagString: bulEnemy
   m_Icon: {fileID: 0}
