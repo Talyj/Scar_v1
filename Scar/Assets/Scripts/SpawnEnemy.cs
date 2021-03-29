@@ -6,16 +6,18 @@ using Random = UnityEngine.Random;
 
 public class SpawnEnemy : MonoBehaviour
 {
-    public GameObject big;
-    public  GameObject small;
+    public GameObject pot;
+    public  GameObject pat;
+    public GameObject put;
     public  GameObject boss;
     public GameObject spawnMonster;
     private static float xPos;
     private static float zPos;
 
-    private int numBig;
-    private  int numSmall;
-
+    private int numPot;
+    private  int numPat;
+    private int numPut;
+    
     [SerializeField] private int numMonsters;
     [SerializeField] private int numWave; 
     private int cptWave;
@@ -107,12 +109,14 @@ public class SpawnEnemy : MonoBehaviour
         {
             if (sizeGroup > 0 && nbMonster <= 0)
             {
-                numBig = Random.Range(1, monstreRecup);
-                numSmall = Random.Range(2, monstreRecup * 2);
+                numPot = Random.Range(1, monstreRecup);
+                numPat = Random.Range(2, monstreRecup * 2);
+                numPut = Random.Range(1, monstreRecup);
                 for (var i = 0; i < monstreRecup; i++)
                 {
-                    Spawn(numBig, big);
-                    Spawn(numSmall, small);
+                    Spawn(numPot, pot);
+                    Spawn(numPat, pat);
+                    Spawn(numPut, put);
                     sizeGroup -= 1;
                 }
             }

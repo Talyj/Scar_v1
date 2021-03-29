@@ -11,7 +11,8 @@ public class SpawnLevel : MonoBehaviour
 {
     public GameObject[] rooms;
     public GameObject spawnPoint;
-    private int firstPart = 3;
+    private int firstPart = Random.Range(3, 4);
+    private int secondPart = Random.Range(1, 3);
     [SerializeField] private GameObject bossRoom;
     [SerializeField] private GameObject porte;
     

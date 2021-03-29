@@ -187,8 +187,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca6e3abf440c9dc4a8ec45d88ccf3d85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Pit: {fileID: 6197662284072629232, guid: 19efecdc44f2a1f459fcd22703bca32d, type: 3}
   player: {fileID: 0}
-  speed: 4
+  health: {fileID: 7990430383819660218}
+  defaultSpeedMonster: 4
 --- !u!114 &7990430383819660218
 MonoBehaviour:
   m_ObjectHideFlags: 0

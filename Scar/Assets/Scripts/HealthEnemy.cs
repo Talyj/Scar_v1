@@ -5,8 +5,7 @@ using UnityEngine.UI;
 
 public class HealthEnemy : MonoBehaviour
 {
-    [SerializeField]
-    public Image healthFill;
+    [SerializeField] public Image healthFill;
     public float maxHealth;
     public float currentHealth;
     public float degatsBullet = 35;
