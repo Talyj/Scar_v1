@@ -17,9 +17,9 @@ public class SpawnEnemy : MonoBehaviour
     private  int numSmall;
 
     [SerializeField] private int numMonsters;
-    [SerializeField] int cptWave = 3;
+    [SerializeField] private int numWave; 
+    private int cptWave;
     private int monstreRecup;
-    private int nbMonstreDirect = 0;
     public int numBoss;
     
     public static int nbMonster;
@@ -32,6 +32,7 @@ public class SpawnEnemy : MonoBehaviour
     private void Awake()
     {
         monstreRecup = numMonsters;
+        cptWave = numWave;
     }
 
     void Start()
@@ -114,7 +115,6 @@ public class SpawnEnemy : MonoBehaviour
                     Spawn(numSmall, small);
                     sizeGroup -= 1;
                 }
-
             }
             if (sizeGroup == 0)
             {

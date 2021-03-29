@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
     public static float numberDamagesReceived = 0;
     public static float numberDamagesDealt = 0;
     public static int score = 0;
-    private static bool ArmeAuCaC = true;
+    private static bool ArmeAuCaC = false;
 
     //Movement and Dash variables
     private Vector3 lastDirectionIntent;
