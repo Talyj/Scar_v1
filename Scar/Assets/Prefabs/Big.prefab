@@ -472,7 +472,8 @@ MonoBehaviour:
   healthFill: {fileID: 816260892}
   maxHealth: 250
   currentHealth: 250
-  degats: 35
+  degatsBullet: 35
+  degatWeapon: 50
 --- !u!114 &2212001040454711724
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -485,7 +486,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca6e3abf440c9dc4a8ec45d88ccf3d85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 3271635425619162287, guid: c59d45ca5e32d954197b6c7ebfe15611, type: 3}
   speed: 4
 --- !u!54 &1489761709086624720
 Rigidbody:
