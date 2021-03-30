@@ -11,11 +11,19 @@ public class SpawnLevel : MonoBehaviour
 {
     public GameObject[] rooms;
     public GameObject spawnPoint;
-    private int firstPart = Random.Range(3, 4);
-    private int secondPart = Random.Range(1, 3);
+    private int firstPart;
+    private int secondPart;
     [SerializeField] private GameObject bossRoom;
     [SerializeField] private GameObject porte;
-    
+    [SerializeField] private GameObject room;
+
+
+    private void Awake()
+    {
+        firstPart = Random.Range(3, 4);
+        secondPart = Random.Range(1, 3);
+    }
+
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -37,8 +45,8 @@ public class SpawnLevel : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Destroy(gameObject, 1);
-            Instantiate(porte, spawnPoint.transform.position, spawnPoint.transform.rotation);
+            Debug.Log("Exit");
+            Destroy(room, 1);
         }
     }
 }

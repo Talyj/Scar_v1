@@ -310,6 +310,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1470789704374244375
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6403041041671829250}
+  m_Layer: 8
+  m_Name: entree
+  m_TagString: Untagged
+  m_Icon: {fileID: 4162164826716764455, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6403041041671829250
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1470789704374244375}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.13416718, y: -0.50294495, z: -13.55}
+  m_LocalScale: {x: 0.9064952, y: 0.68045014, z: 0.45382607}
+  m_Children: []
+  m_Father: {fileID: 5361639990497422114}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2479671663950971937
 GameObject:
   m_ObjectHideFlags: 0
@@ -414,7 +444,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3707008467106902591}
   m_Layer: 8
-  m_Name: SpawnLevel
+  m_Name: sortie
   m_TagString: Untagged
   m_Icon: {fileID: 4162164826716764455, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -479,7 +509,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   porte: {fileID: 5609969776779275046, guid: 19ef8bc1accaee34cb91ad0d76ad2994, type: 3}
-  sortie: {fileID: 6229807173260064055}
+  sorties:
+  - {fileID: 3911846196557790202}
+  entree: {fileID: 1470789704374244375}
 --- !u!65 &6476005826364023933
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -626,6 +658,7 @@ Transform:
   - {fileID: 7390717655894735693}
   - {fileID: 2949313978935139118}
   - {fileID: 7076226549518700168}
+  - {fileID: 6403041041671829250}
   m_Father: {fileID: 6614491614534837695}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -659,9 +692,11 @@ MonoBehaviour:
   - {fileID: 3863299923043075493, guid: db9e2f0df5eae364fbda922938a4cfc5, type: 3}
   - {fileID: 1368298629727023493}
   - {fileID: 362459328455236653, guid: 03154af0eb7f5054e8efe6233b2c1b0c, type: 3}
+  - {fileID: 4569220351077464686, guid: a896a3808a31f9441b92dd5a3cf32f79, type: 3}
   spawnPoint: {fileID: 3911846196557790202}
   bossRoom: {fileID: 302773669089673456, guid: 2dbb5704b32bf3f46a454dbb758c9496, type: 3}
   porte: {fileID: 5609969776779275046, guid: 19ef8bc1accaee34cb91ad0d76ad2994, type: 3}
+  room: {fileID: 1368298629727023493}
 --- !u!114 &8032291288035958881
 MonoBehaviour:
   m_ObjectHideFlags: 0
