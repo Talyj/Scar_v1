@@ -128,7 +128,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   health: {fileID: 5001790579331337866}
-  defaultSpeedMonster: 4
+  defaultSpeedMonster: 8
   timeBetweenShots: 3
 --- !u!54 &2570743984119851681
 Rigidbody:

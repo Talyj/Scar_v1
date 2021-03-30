@@ -187,10 +187,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca6e3abf440c9dc4a8ec45d88ccf3d85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Pit: {fileID: 6197662284072629232, guid: 19efecdc44f2a1f459fcd22703bca32d, type: 3}
   player: {fileID: 0}
   health: {fileID: 7990430383819660218}
   defaultSpeedMonster: 4
+  timeBetweenShots: 3
 --- !u!114 &7990430383819660218
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -208,6 +208,7 @@ MonoBehaviour:
   currentHealth: 2000
   degatsBullet: 35
   degatWeapon: 50
+  pit: {fileID: 0}
 --- !u!135 &7990430383819660220
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -239,8 +240,8 @@ MonoBehaviour:
   numBullets: 50
   firepoint: {fileID: 7990430383819660193}
   player: {fileID: 8421110334287959700, guid: 352b241cf3799724181cc51d2c6bb982, type: 3}
-  small: {fileID: 272287531547417062, guid: ed0bb92d1d4c1464ba1fbfc0df8c7401, type: 3}
-  big: {fileID: 2301001059543078486, guid: 56db3ed06a1fd154c8df1c44b5bcd991, type: 3}
+  pot: {fileID: 2301001059543078486, guid: 56db3ed06a1fd154c8df1c44b5bcd991, type: 3}
+  pit: {fileID: 6197662284072629232, guid: 19efecdc44f2a1f459fcd22703bca32d, type: 3}
   enervax: 1
   bulletSpeed: 25
 --- !u!1 &7990430384116625337

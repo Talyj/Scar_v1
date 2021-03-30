@@ -263,6 +263,7 @@ GameObject:
   - component: {fileID: 4288565006761036381}
   - component: {fileID: 6295700763443731466}
   - component: {fileID: 6719646787284938358}
+  - component: {fileID: 5717528397778629982}
   m_Layer: 9
   m_Name: Pit
   m_TagString: Enemy
@@ -279,7 +280,7 @@ Transform:
   m_GameObject: {fileID: 6197662284072629232}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.28253934, y: 2.799, z: -0.64}
-  m_LocalScale: {x: 1, y: 2.258007, z: 1}
+  m_LocalScale: {x: 2, y: 2.258007, z: 2}
   m_Children:
   - {fileID: 5326713029811453802}
   m_Father: {fileID: 0}
@@ -362,6 +363,7 @@ MonoBehaviour:
   currentHealth: 300
   degatsBullet: 35
   degatWeapon: 50
+  pit: {fileID: 7194346021980281851, guid: ccbac71ebb8fbb94c899c41eae6145ce, type: 3}
 --- !u!114 &6295700763443731466
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -374,10 +376,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca6e3abf440c9dc4a8ec45d88ccf3d85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Pit: {fileID: 6197662284072629232}
   player: {fileID: 0}
   health: {fileID: 4288565006761036381}
   defaultSpeedMonster: 4
+  timeBetweenShots: 3
 --- !u!54 &6719646787284938358
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -394,3 +396,17 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &5717528397778629982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6197662284072629232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5543dedf95aa58f47a47259e85fdd9b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthPit: {fileID: 4288565006761036381}
+  pit: {fileID: 7194346021980281851, guid: ccbac71ebb8fbb94c899c41eae6145ce, type: 3}

@@ -14,8 +14,9 @@ public class BossBehaviour : MonoBehaviour
     [SerializeField] private Transform player;
     
     // Derniere Chance
-    [SerializeField] private GameObject small;
-    [SerializeField] private GameObject big;
+    //[SerializeField] private GameObject pat;
+    [SerializeField] private GameObject pot;
+    [SerializeField] private GameObject pit;
     private bool premiereChance = true;
     private bool derniereChance = true;
     public bool enervax = true;
@@ -42,9 +43,9 @@ public class BossBehaviour : MonoBehaviour
             // Condition actions du boss 75% de vie = spawn petit groupe de monstre 
             if (BossHealth.currentHealth <= BossHealth.maxHealth * 0.75 && premiereChance)
             {
-                SpawnEnemy.Spawn(2, big);
+                SpawnEnemy.Spawn(3, pit);
                 yield return new WaitForSeconds(2);
-                SpawnEnemy.Spawn(3, small);
+                SpawnEnemy.Spawn(5, pot);
                 premiereChance = false;
                 enervax = false;
             }
@@ -57,9 +58,9 @@ public class BossBehaviour : MonoBehaviour
             if (BossHealth.currentHealth <= BossHealth.maxHealth * 0.25 && derniereChance)
             {
                 enervax = true;
-                SpawnEnemy.Spawn(5, big);
+                SpawnEnemy.Spawn(5, pit);
                 yield return new WaitForSeconds(2);
-                SpawnEnemy.Spawn(8, small);
+                SpawnEnemy.Spawn(8, pot);
                 derniereChance = false;
             }
             yield return new WaitForSeconds(1);
