@@ -644,5 +644,5 @@ MonoBehaviour:
   boss: {fileID: 7990430383819660219, guid: 0b24264f5d68e4749acd942710434c8f, type: 3}
   spawnMonster: {fileID: 6993997810037618016}
   numMonsters: 0
+  numWave: 1
   numBoss: 1
-  timeBetweenGroups: 0

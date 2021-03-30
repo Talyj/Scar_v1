@@ -9,6 +9,7 @@ public class WeaponController : MonoBehaviour
     [SerializeField] private AttackZoneController hittingZone;
     [SerializeField] private float timeBetweenHits;
     [SerializeField] private Transform weapon;
+    [SerializeField] private Transform Player;
 
 
     public bool isFighting;
@@ -18,7 +19,7 @@ public class WeaponController : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        colliderHittingZone = hittingZone.GetComponent<Collider>();
+        //colliderHittingZone = hittingZone.GetComponent<Collider>();
     }
 
     // Update is called once per frame
@@ -30,7 +31,7 @@ public class WeaponController : MonoBehaviour
             if (hitCounter <= 0)
             {
                 hitCounter = timeBetweenHits;
-                AttackZoneController newZone = Instantiate(hittingZone, weapon.position + new Vector3(0.5f, 0, 2), weapon.rotation) as AttackZoneController;
+                AttackZoneController newZone = Instantiate(hittingZone, weapon.position, weapon.rotation) as AttackZoneController;
                 PlayerController.numberBullets += 1;
             }
         }
