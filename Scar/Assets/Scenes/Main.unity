@@ -474,7 +474,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!4 &135826268
 Transform:
@@ -882,7 +882,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!4 &210234644
 Transform:
@@ -1004,8 +1004,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 988bc0b1dacf7af45b20557f79ac8596, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerTransform: {fileID: 3271635425619162287, guid: c59d45ca5e32d954197b6c7ebfe15611,
-    type: 3}
+  playerTransform: {fileID: 1097950956}
   playerSpeed: 8
   mainCamera: {fileID: 1767481348}
   theGun: {fileID: 81222740}
@@ -1728,7 +1727,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!4 &502942275
 Transform:
@@ -2258,7 +2257,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!114 &712218883
 MonoBehaviour:
@@ -2324,8 +2323,8 @@ MonoBehaviour:
   small: {fileID: 272287531547417062, guid: ed0bb92d1d4c1464ba1fbfc0df8c7401, type: 3}
   boss: {fileID: 0}
   spawnMonster: {fileID: 1322627554}
-  numMonsters: 1
-  numWave: 2
+  numMonsters: 0
+  numWave: 0
   numBoss: 0
 --- !u!1 &750975496
 GameObject:
@@ -4893,7 +4892,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!4 &1322627555
 Transform:
@@ -5649,6 +5648,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Porte
       objectReference: {fileID: 0}
+    - target: {fileID: 5609969776779275046, guid: 19ef8bc1accaee34cb91ad0d76ad2994,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 7856168163992409186, guid: 19ef8bc1accaee34cb91ad0d76ad2994,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5744,7 +5748,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!4 &1484480215
 Transform:
@@ -5989,7 +5993,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!4 &1596678762
 Transform:
@@ -6433,7 +6437,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!4 &1676690108
 Transform:
@@ -6759,7 +6763,7 @@ GameObject:
   m_TagString: Gate
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!64 &1743881359
 MeshCollider:

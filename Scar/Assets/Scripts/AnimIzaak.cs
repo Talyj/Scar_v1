@@ -14,9 +14,47 @@ public class AnimIzaak : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetAxis("Vertical") != 0 || Input.GetAxis("Horizontal") != 0)
+        if (Input.GetAxis("Dash") > 0.5)
         {
-            izaak.SetBool("isRuning", true);
+            izaak.SetBool("dodge", true);
         }
+
+        if (Input.GetKey(KeyCode.Z))
+        {
+            izaak.SetBool("isRuningF", true);
+            izaak.SetBool("isRuningB", false);
+            izaak.SetBool("isRuningL", false);
+            izaak.SetBool("isRuningR", false);
+        }
+        else if (Input.GetKey(KeyCode.S))
+        {
+            izaak.SetBool("isRuningF", false);
+            izaak.SetBool("isRuningB", true);
+            izaak.SetBool("isRuningL", false);
+            izaak.SetBool("isRuningR", false);
+        }
+        else if (Input.GetKey(KeyCode.Q))
+        {
+            izaak.SetBool("isRuningF", false);
+            izaak.SetBool("isRuningB", false);
+            izaak.SetBool("isRuningL", true);
+            izaak.SetBool("isRuningR", false);
+        }
+        else if (Input.GetKey(KeyCode.D))
+        {
+            izaak.SetBool("isRuningF", false);
+            izaak.SetBool("isRuningB", false);
+            izaak.SetBool("isRuningL", false);
+            izaak.SetBool("isRuningR", true);
+        }
+        else
+        {
+            izaak.SetBool("isRuningF", false);
+            izaak.SetBool("isRuningB", false);
+            izaak.SetBool("isRuningL", false);
+            izaak.SetBool("isRuningR", false);
+            izaak.SetBool("dodge", false);
+        }
+        
     }
 }
