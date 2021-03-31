@@ -783,7 +783,7 @@ MonoBehaviour:
   numMonsters: 0
   numWave: 1
   numBoss: 0
-  numMiniBoss: 2
+  numMiniBoss: 5
 --- !u!1 &7830287758303086672
 GameObject:
   m_ObjectHideFlags: 0
