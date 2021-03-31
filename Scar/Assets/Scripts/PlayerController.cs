@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour
     private Vector3 lastDirectionIntent;
     private float dashCounter;
 
-    public static int cpt = 0;
+    public static int cpt;
     
     private void Awake()
     {

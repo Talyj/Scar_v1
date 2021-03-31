@@ -6,21 +6,27 @@ using Random = UnityEngine.Random;
 
 public class SpawnEnemy : MonoBehaviour
 {
-    public GameObject big;
-    public  GameObject small;
+    public GameObject pot;
+    public  GameObject pat;
+    public GameObject put;
+    public GameObject pit;
     public  GameObject boss;
+    public GameObject miniBoss;
     public GameObject spawnMonster;
     private static float xPos;
     private static float zPos;
 
-    private int numBig;
-    private  int numSmall;
-
+    private int numPot;
+    private  int numPat;
+    private int numPut;
+    private int numPit;
+    
     [SerializeField] private int numMonsters;
     [SerializeField] private int numWave; 
     private int cptWave;
     private int monstreRecup;
     public int numBoss;
+    public int numMiniBoss;
     
     public static int nbMonster;
 
@@ -29,15 +35,20 @@ public class SpawnEnemy : MonoBehaviour
 
     private GameObject[] portes;
 
-    private void Awake()
-    {
-        monstreRecup = numMonsters;
-        cptWave = numWave;
-    }
-
     void Start()
     {
-        //StartCoroutine(MonstersGrrr(monstreRecup));
+        
+        if (numMiniBoss > 0 || numBoss > 0)
+        {
+            cptWave = 1;
+            monstreRecup = 0;
+        }
+        else
+        {
+            cptWave = Random.Range(1, 4);
+            monstreRecup = Random.Range(2, 4);    
+        }
+        
     }
 
     private void Update()
@@ -107,19 +118,34 @@ public class SpawnEnemy : MonoBehaviour
         {
             if (sizeGroup > 0 && nbMonster <= 0)
             {
-                numBig = Random.Range(1, monstreRecup);
-                numSmall = Random.Range(2, monstreRecup * 2);
+                numPot = Random.Range(1, monstreRecup);
+                numPat = Random.Range(2, monstreRecup * 2);
+                numPut = Random.Range(0, monstreRecup);
+                numPit = Random.Range(0, monstreRecup);
                 for (var i = 0; i < monstreRecup; i++)
                 {
-                    Spawn(numBig, big);
-                    Spawn(numSmall, small);
+                    Spawn(numPot, pot);
+                    Spawn(numPat, pat);
+                    Spawn(numPut, put);
+                    Spawn(numPit, pit);
                     sizeGroup -= 1;
                 }
             }
             if (sizeGroup == 0)
             {
-                Spawn(numBoss, boss);
-                numBoss -= 1;
+                if (numBoss > 0)
+                {
+                    Spawn(numBoss, boss);
+                    numBoss -= 1;
+                }
+
+                if (numMiniBoss > 0)
+                {
+                    Spawn(numMiniBoss, miniBoss);
+                    numMiniBoss -= 1;
+                }
+                
+                
             }
         }
     }

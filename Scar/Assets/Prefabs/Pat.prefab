@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 3514831677796831148}
   - component: {fileID: 8534705852016515783}
   m_Layer: 9
-  m_Name: small
+  m_Name: Pat
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -110,8 +110,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthFill: {fileID: 129288752180628126}
-  maxHealth: 100
-  currentHealth: 100
+  maxHealth: 150
+  currentHealth: 150
   degatsBullet: 35
   degatWeapon: 50
 --- !u!114 &3514831677796831148
@@ -126,8 +126,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca6e3abf440c9dc4a8ec45d88ccf3d85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 3271635425619162287, guid: c59d45ca5e32d954197b6c7ebfe15611, type: 3}
-  speed: 5
+  player: {fileID: 0}
+  health: {fileID: 8441117567010817131}
+  defaultSpeedMonster: 9
+  timeBetweenShots: 3
 --- !u!54 &8534705852016515783
 Rigidbody:
   m_ObjectHideFlags: 0
