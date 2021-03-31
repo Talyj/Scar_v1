@@ -8,8 +8,6 @@ public class MoveEnemy : MonoBehaviour
     [SerializeField] private HealthEnemy health;
     [SerializeField] private float defaultSpeedMonster;
     private float speed;
-    
-    [SerializeField] private float timeBetweenShots = 3;
     private float shotCounter;
 
     void Start()
@@ -28,7 +26,7 @@ public class MoveEnemy : MonoBehaviour
             }
         }
 
-        Quaternion targetRotation = Quaternion.LookRotation(player.transform.position - transform.position);
+        Quaternion targetRotation = Quaternion.LookRotation(new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z) - new Vector3(transform.position.x, transform.position.y, transform.position.z));
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 3 * Time.deltaTime);
         transform.position += transform.forward * Time.deltaTime * speed;
 
