@@ -15,12 +15,6 @@ public class WeaponController : MonoBehaviour
     public bool isFighting;
     private float hitCounter;
     private Collider colliderHittingZone;
-    
-    // Start is called before the first frame update
-    private void Start()
-    {
-        //colliderHittingZone = hittingZone.GetComponent<Collider>();
-    }
 
     // Update is called once per frame
     void Update()
