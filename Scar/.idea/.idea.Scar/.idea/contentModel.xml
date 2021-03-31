@@ -8,7 +8,9 @@
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
           <e p="ActifRaffale.cs" t="Include" />
+          <e p="AnimIzaak.cs" t="Include" />
           <e p="AttackZoneController.cs" t="Include" />
+          <e p="BloquerSortie.cs" t="Include" />
           <e p="BossBehaviour.cs" t="Include" />
           <e p="BulletController.cs" t="Include" />
           <e p="Consommables.cs" t="Include" />
@@ -17,8 +19,10 @@
           <e p="HealthPlayer.cs" t="Include" />
           <e p="Inventaire.cs" t="Include" />
           <e p="LoadDonjon.cs" t="Include" />
+          <e p="Mana.cs" t="Include" />
           <e p="MenuButtons.cs" t="Include" />
           <e p="MoveEnemy.cs" t="Include" />
+          <e p="PitBehaviour.cs" t="Include" />
           <e p="PlayerController.cs" t="Include" />
           <e p="PlayerFollow.cs" t="Include" />
           <e p="Restart.cs" t="Include" />
@@ -28,6 +32,7 @@
           <e p="SpawnEnemy.cs" t="Include" />
           <e p="SpawnLevel.cs" t="Include" />
           <e p="Statistiques.cs" t="Include" />
+          <e p="SwitchCartes.cs" t="Include" />
           <e p="VictoryCondition.cs" t="Include" />
           <e p="WeaponController.cs" t="Include" />
         </e>

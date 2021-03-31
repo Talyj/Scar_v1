@@ -1005,7 +1005,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerTransform: {fileID: 1097950956}
-  playerSpeed: 8
+  playerSpeed: 16
   mainCamera: {fileID: 1767481348}
   theGun: {fileID: 81222740}
   theWeapon: {fileID: 551462011}
@@ -1057,6 +1057,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1058714810411081605, guid: c59d45ca5e32d954197b6c7ebfe15611,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 3271635425619162287, guid: c59d45ca5e32d954197b6c7ebfe15611,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1112,6 +1117,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4196223977769979845, guid: c59d45ca5e32d954197b6c7ebfe15611,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 5205013124493867662, guid: c59d45ca5e32d954197b6c7ebfe15611,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 116
+      objectReference: {fileID: 0}
+    - target: {fileID: 5454410102946449030, guid: c59d45ca5e32d954197b6c7ebfe15611,
+        type: 3}
+      propertyPath: timeBetweenShots
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 6434272947277942509, guid: c59d45ca5e32d954197b6c7ebfe15611,
         type: 3}
       propertyPath: healthFill
@@ -1127,6 +1147,16 @@ PrefabInstance:
       propertyPath: death
       value: 
       objectReference: {fileID: 817165409}
+    - target: {fileID: 6434272947277942509, guid: c59d45ca5e32d954197b6c7ebfe15611,
+        type: 3}
+      propertyPath: maxHealth
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 6434272947277942509, guid: c59d45ca5e32d954197b6c7ebfe15611,
+        type: 3}
+      propertyPath: currentHealth
+      value: 150
+      objectReference: {fileID: 0}
     - target: {fileID: 7168926420540891165, guid: c59d45ca5e32d954197b6c7ebfe15611,
         type: 3}
       propertyPath: manaa
@@ -1136,6 +1166,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9000516414345754255, guid: c59d45ca5e32d954197b6c7ebfe15611,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c59d45ca5e32d954197b6c7ebfe15611, type: 3}
@@ -2272,10 +2307,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rooms:
+  - {fileID: 8929544030514046634, guid: 91682580f5f80c947b4fadbe636a70b6, type: 3}
   - {fileID: 3863299923043075493, guid: db9e2f0df5eae364fbda922938a4cfc5, type: 3}
+  - {fileID: 1368298629727023493, guid: 6dbe5477e85b2f040a3bc17e0dd8ca5a, type: 3}
+  - {fileID: 362459328455236653, guid: 03154af0eb7f5054e8efe6233b2c1b0c, type: 3}
+  - {fileID: 4569220351077464686, guid: a896a3808a31f9441b92dd5a3cf32f79, type: 3}
   spawnPoint: {fileID: 1676690107}
   bossRoom: {fileID: 302773669089673456, guid: 2dbb5704b32bf3f46a454dbb758c9496, type: 3}
+  miniBossRoom: {fileID: 3201818116445742577, guid: 8323930a716e9f045ad46e6f20180d4d,
+    type: 3}
   porte: {fileID: 5609969776779275046, guid: 19ef8bc1accaee34cb91ad0d76ad2994, type: 3}
+  room: {fileID: 712218882}
 --- !u!65 &712218884
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2287,8 +2329,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.3944044, y: 1, z: 0.9999999}
-  m_Center: {x: -0.13704082, y: 0, z: 0}
+  m_Size: {x: 8, y: 1, z: 0.9999999}
+  m_Center: {x: 0, y: 0, z: 1.5}
 --- !u!4 &712218885
 Transform:
   m_ObjectHideFlags: 0
@@ -2319,13 +2361,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 824733d183d7b2f44b5bf8cd95aa48ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  big: {fileID: 2301001059543078486, guid: 56db3ed06a1fd154c8df1c44b5bcd991, type: 3}
-  small: {fileID: 272287531547417062, guid: ed0bb92d1d4c1464ba1fbfc0df8c7401, type: 3}
-  boss: {fileID: 0}
+  pot: {fileID: 2301001059543078486, guid: 56db3ed06a1fd154c8df1c44b5bcd991, type: 3}
+  pat: {fileID: 272287531547417062, guid: ed0bb92d1d4c1464ba1fbfc0df8c7401, type: 3}
+  put: {fileID: 2949682024625288999, guid: e49602583d1c23446b28cc9e81633c13, type: 3}
+  pit: {fileID: 6197662284072629232, guid: 19efecdc44f2a1f459fcd22703bca32d, type: 3}
+  boss: {fileID: 7990430383819660219, guid: 0b24264f5d68e4749acd942710434c8f, type: 3}
+  miniBoss: {fileID: 6197662284072629232, guid: 19efecdc44f2a1f459fcd22703bca32d,
+    type: 3}
   spawnMonster: {fileID: 1322627554}
-  numMonsters: 0
-  numWave: 0
   numBoss: 0
+  numMiniBoss: 0
 --- !u!1 &750975496
 GameObject:
   m_ObjectHideFlags: 0
@@ -6932,7 +6977,7 @@ GameObject:
   - component: {fileID: 1767481347}
   - component: {fileID: 1767481346}
   m_Layer: 0
-  m_Name: CameraTest
+  m_Name: MainCamera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7011,7 +7056,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1767481345}
   m_LocalRotation: {x: 0.38268343, y: 0, z: 0, w: 0.92387956}
-  m_LocalPosition: {x: 0, y: 25, z: -35}
+  m_LocalPosition: {x: 0, y: 30, z: -50}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

@@ -21,8 +21,6 @@ public class SpawnEnemy : MonoBehaviour
     private int numPut;
     private int numPit;
     
-    [SerializeField] private int numMonsters;
-    [SerializeField] private int numWave; 
     private int cptWave;
     private int monstreRecup;
     public int numBoss;
@@ -46,7 +44,7 @@ public class SpawnEnemy : MonoBehaviour
         else
         {
             cptWave = Random.Range(1, 4);
-            monstreRecup = Random.Range(2, 4);    
+            monstreRecup = Random.Range(2, 3);    
         }
         
     }

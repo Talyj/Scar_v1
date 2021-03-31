@@ -392,8 +392,6 @@ MonoBehaviour:
   miniBoss: {fileID: 6197662284072629232, guid: 19efecdc44f2a1f459fcd22703bca32d,
     type: 3}
   spawnMonster: {fileID: 6195011462893866357}
-  numMonsters: 3
-  numWave: 2
   numBoss: 0
   numMiniBoss: 0
 --- !u!1 &6051760227298763912
@@ -968,7 +966,7 @@ MonoBehaviour:
   - {fileID: 4569220351077464686}
   spawnPoint: {fileID: 6051760227298763912}
   bossRoom: {fileID: 302773669089673456, guid: 2dbb5704b32bf3f46a454dbb758c9496, type: 3}
-  miniBossRoom: {fileID: 3201818116445742577, guid: 216323c643643c944b1e63efeddc5bde,
+  miniBossRoom: {fileID: 3201818116445742577, guid: 8323930a716e9f045ad46e6f20180d4d,
     type: 3}
   porte: {fileID: 5609969776779275046, guid: 19ef8bc1accaee34cb91ad0d76ad2994, type: 3}
   room: {fileID: 4569220351077464686}
@@ -1131,7 +1129,7 @@ MonoBehaviour:
   - {fileID: 4569220351077464686}
   spawnPoint: {fileID: 2007944121254637585}
   bossRoom: {fileID: 302773669089673456, guid: 2dbb5704b32bf3f46a454dbb758c9496, type: 3}
-  miniBossRoom: {fileID: 3201818116445742577, guid: 216323c643643c944b1e63efeddc5bde,
+  miniBossRoom: {fileID: 3201818116445742577, guid: 8323930a716e9f045ad46e6f20180d4d,
     type: 3}
   porte: {fileID: 5609969776779275046, guid: 19ef8bc1accaee34cb91ad0d76ad2994, type: 3}
   room: {fileID: 4569220351077464686}
