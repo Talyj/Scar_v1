@@ -53,14 +53,14 @@ public class HealthPlayer : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("bulEnemy"))
         {
-            currentHealth -= degatsCol;
+            currentHealth -= degatsBalle;
             PlayerController.numberDamagesReceived += degatsCol;
             PlayerController.score -= 1;
         }
         
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            currentHealth -= degatsBalle;
+            currentHealth -= degatsCol;
             PlayerController.numberDamagesReceived += degatsBalle;
             PlayerController.score -= 5;
         }

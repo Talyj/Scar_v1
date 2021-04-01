@@ -59,7 +59,9 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\ActifRaffale.cs" />
+     <Compile Include="Assets\Scripts\AnimIzaak.cs" />
      <Compile Include="Assets\Scripts\AttackZoneController.cs" />
+     <Compile Include="Assets\Scripts\BloquerSortie.cs" />
      <Compile Include="Assets\Scripts\BossBehaviour.cs" />
      <Compile Include="Assets\Scripts\BulletController.cs" />
      <Compile Include="Assets\Scripts\Consommables.cs" />
@@ -68,8 +70,10 @@
      <Compile Include="Assets\Scripts\HealthPlayer.cs" />
      <Compile Include="Assets\Scripts\Inventaire.cs" />
      <Compile Include="Assets\Scripts\LoadDonjon.cs" />
+     <Compile Include="Assets\Scripts\Mana.cs" />
      <Compile Include="Assets\Scripts\MenuButtons.cs" />
      <Compile Include="Assets\Scripts\MoveEnemy.cs" />
+     <Compile Include="Assets\Scripts\PitBehaviour.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Scripts\PlayerFollow.cs" />
      <Compile Include="Assets\Scripts\Restart.cs" />
@@ -78,6 +82,7 @@
      <Compile Include="Assets\Scripts\SpawnEnemy.cs" />
      <Compile Include="Assets\Scripts\SpawnLevel.cs" />
      <Compile Include="Assets\Scripts\Statistiques.cs" />
+     <Compile Include="Assets\Scripts\SwitchCartes.cs" />
      <Compile Include="Assets\Scripts\VictoryCondition.cs" />
      <Compile Include="Assets\Scripts\WeaponController.cs" />
      <Compile Include="Assets\Scripts\shootBoss.cs" />
