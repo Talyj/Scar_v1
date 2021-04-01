@@ -234,7 +234,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Boss: {fileID: 7990430383819660219}
   BossHealth: {fileID: 7990430383819660218}
-  bullet: {fileID: 7064619592068957810, guid: 53979ef7430e11c469c32220d363511a, type: 3}
+  bullet: {fileID: 6524475635305536283, guid: 998a932b6d8bd714c8a4ba4cc33e2c33, type: 3}
   numBullets: 50
   firepoint: {fileID: 7990430383819660193}
   player: {fileID: 3271635425619162287, guid: c59d45ca5e32d954197b6c7ebfe15611, type: 3}
@@ -251,10 +251,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 7990430383819660219}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da88991e5e3b6734bb70c537acba6ace, type: 3}
+  m_Script: {fileID: 11500000, guid: 5464427177352914c8ad368403e0cbff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  degats: 30
+  degats: 40
 --- !u!1 &7990430384116625337
 GameObject:
   m_ObjectHideFlags: 0

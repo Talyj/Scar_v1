@@ -1127,10 +1127,15 @@ PrefabInstance:
       propertyPath: m_Constraints
       value: 116
       objectReference: {fileID: 0}
+    - target: {fileID: 5205013124493867662, guid: c59d45ca5e32d954197b6c7ebfe15611,
+        type: 3}
+      propertyPath: m_Mass
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5454410102946449030, guid: c59d45ca5e32d954197b6c7ebfe15611,
         type: 3}
       propertyPath: timeBetweenShots
-      value: 0.1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6434272947277942509, guid: c59d45ca5e32d954197b6c7ebfe15611,
         type: 3}
@@ -1150,12 +1155,12 @@ PrefabInstance:
     - target: {fileID: 6434272947277942509, guid: c59d45ca5e32d954197b6c7ebfe15611,
         type: 3}
       propertyPath: maxHealth
-      value: 150
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 6434272947277942509, guid: c59d45ca5e32d954197b6c7ebfe15611,
         type: 3}
       propertyPath: currentHealth
-      value: 150
+      value: 5555555
       objectReference: {fileID: 0}
     - target: {fileID: 7168926420540891165, guid: c59d45ca5e32d954197b6c7ebfe15611,
         type: 3}
@@ -2365,7 +2370,7 @@ MonoBehaviour:
   pat: {fileID: 272287531547417062, guid: ed0bb92d1d4c1464ba1fbfc0df8c7401, type: 3}
   put: {fileID: 2949682024625288999, guid: e49602583d1c23446b28cc9e81633c13, type: 3}
   pit: {fileID: 6197662284072629232, guid: 19efecdc44f2a1f459fcd22703bca32d, type: 3}
-  boss: {fileID: 7990430383819660219, guid: 0b24264f5d68e4749acd942710434c8f, type: 3}
+  boss: {fileID: 3021718926569913754, guid: edab4c2b9f17fe14c840620d3862b0a9, type: 3}
   miniBoss: {fileID: 6197662284072629232, guid: 19efecdc44f2a1f459fcd22703bca32d,
     type: 3}
   spawnMonster: {fileID: 1322627554}

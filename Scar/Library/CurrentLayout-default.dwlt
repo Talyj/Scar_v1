@@ -21,7 +21,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 2}
-  m_MinSize: {x: 875, y: 471}
+  m_MinSize: {x: 875, y: 492}
   m_MaxSize: {x: 10000, y: 10000}
   m_Maximized: 1
 --- !u!114 &2
@@ -114,10 +114,10 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 947
-  m_MinSize: {x: 911, y: 421}
+  m_MinSize: {x: 911, y: 442}
   m_MaxSize: {x: 22006, y: 10021}
   vertical: 0
-  controlID: 194
+  controlID: 101
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -139,10 +139,10 @@ MonoBehaviour:
     y: 0
     width: 952
     height: 947
-  m_MinSize: {x: 201, y: 421}
-  m_MaxSize: {x: 4001, y: 8021}
+  m_MinSize: {x: 201, y: 442}
+  m_MaxSize: {x: 4001, y: 8042}
   vertical: 1
-  controlID: 84
+  controlID: 34
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -402,9 +402,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -24.473848, y: -85.06944, z: -0.8116417}
+    m_Target: {x: -0.103065014, y: 2.6537008, z: 317.46994}
     speed: 2
-    m_Value: {x: 2.932847, y: -0.16734982, z: 1.8262248}
+    m_Value: {x: -0.103065014, y: 2.6537008, z: 317.46994}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -450,13 +450,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.63659334, y: -0.093674675, z: 0.07831265, w: -0.76147574}
+    m_Target: {x: -0.3901399, y: 0.010217565, z: -0.004329628, w: -0.9206898}
     speed: 2
-    m_Value: {x: -0.22264588, y: 0.7763419, z: -0.3938671, w: -0.43885174}
+    m_Value: {x: -0.39013955, y: 0.010217556, z: -0.0043296237, w: -0.9206889}
   m_Size:
-    m_Target: 91.3128
+    m_Target: 34.184017
     speed: 2
-    m_Value: 7.718647
+    m_Value: 34.184017
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -538,18 +538,18 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: a2d7feff14e6feff6206ffff1ad6ffff84efffff8cefffffa4efffffacf1ffff2e420000
+      m_ExpandedIDs: 58fbffff64fbffff7c360000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: Korinh
-        m_OriginalName: Korinh
+        m_Name: LifeEnemy
+        m_OriginalName: LifeEnemy
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 32432
+        m_UserData: 29098
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
         m_OriginalEventType: 0
@@ -612,9 +612,9 @@ MonoBehaviour:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: c8440000
-    m_LastClickedID: 17608
-    m_ExpandedIDs: 00000000b6440000b8440000ba44000000ca9a3b
+    m_SelectedIDs: 64400000
+    m_LastClickedID: 16484
+    m_ExpandedIDs: 000000004e400000504000005240000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -642,7 +642,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000b6440000b8440000ba440000
+    m_ExpandedIDs: 000000004e4000005040000052400000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

@@ -14,10 +14,12 @@
           <e p="BossBehaviour.cs" t="Include" />
           <e p="BulletController.cs" t="Include" />
           <e p="Consommables.cs" t="Include" />
+          <e p="EnemyDamages.cs" t="Include" />
           <e p="GunController.cs" t="Include" />
           <e p="HealthEnemy.cs" t="Include" />
           <e p="HealthPlayer.cs" t="Include" />
           <e p="Inventaire.cs" t="Include" />
+          <e p="KorinhBehaviour.cs" t="Include" />
           <e p="LoadDonjon.cs" t="Include" />
           <e p="Mana.cs" t="Include" />
           <e p="MenuButtons.cs" t="Include" />
@@ -26,7 +28,6 @@
           <e p="PlayerController.cs" t="Include" />
           <e p="PlayerFollow.cs" t="Include" />
           <e p="Restart.cs" t="Include" />
-          <e p="shootBoss.cs" t="Include" />
           <e p="ShootEnemy.cs" t="Include" />
           <e p="SlotsInventaire.cs" t="Include" />
           <e p="SpawnEnemy.cs" t="Include" />
