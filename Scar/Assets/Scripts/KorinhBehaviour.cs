@@ -25,7 +25,6 @@ public class KorinhBehaviour : MonoBehaviour
     
     //Cooldown attaque basique
     private float hitCounter; 
-    private float timeBetweenHits;
     [SerializeField] private AttackZoneController bossBaseAttack;
     [SerializeField] private Transform[] hitPoints;
     [SerializeField] private Transform BasePoint;
@@ -40,7 +39,6 @@ public class KorinhBehaviour : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        timeBetweenHits = 5;
         speed = defaultSpeedMonster;
         player = GameObject.FindGameObjectWithTag("Player").transform;
         //firepoint = GameObject.FindGameObjectWithTag("boss").ge;
@@ -64,7 +62,7 @@ public class KorinhBehaviour : MonoBehaviour
             {
                 BasicAttack();
                 BigAssAttackOfDoom();
-                hitCounter = timeBetweenHits;
+                hitCounter = Random.Range(5, 20);
             }
             else
             {

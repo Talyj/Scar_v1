@@ -48,22 +48,4 @@ public class HealthPlayer : MonoBehaviour
             death.SetActive(true);
         }
     }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("bulEnemy"))
-        {
-            currentHealth -= degatsBalle;
-            PlayerController.numberDamagesReceived += degatsCol;
-            PlayerController.score -= 1;
-        }
-        
-        if (collision.gameObject.CompareTag("Enemy"))
-        {
-            currentHealth -= degatsCol;
-            PlayerController.numberDamagesReceived += degatsBalle;
-            PlayerController.score -= 5;
-        }
-    }
-
 }

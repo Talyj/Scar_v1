@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MoveEnemy : MonoBehaviour
 {
-    [SerializeField] public Transform player;
+    private Transform player;
     [SerializeField] private HealthEnemy health;
     [SerializeField] private float defaultSpeedMonster;
     private float speed;
