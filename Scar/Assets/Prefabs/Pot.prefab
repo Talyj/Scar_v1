@@ -263,7 +263,7 @@ GameObject:
   - component: {fileID: 8177643884309140035}
   - component: {fileID: 1489761709086624720}
   m_Layer: 9
-  m_Name: Big
+  m_Name: Pot
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -328,8 +328,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca6e3abf440c9dc4a8ec45d88ccf3d85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 3271635425619162287, guid: c59d45ca5e32d954197b6c7ebfe15611, type: 3}
-  speed: 4
+  health: {fileID: 8243912106073223163}
+  defaultSpeedMonster: 6
 --- !u!114 &8177643884309140035
 MonoBehaviour:
   m_ObjectHideFlags: 0
