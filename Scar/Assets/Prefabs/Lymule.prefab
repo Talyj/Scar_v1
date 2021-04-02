@@ -86,7 +86,6 @@ GameObject:
   - component: {fileID: 7990430383819660222}
   - component: {fileID: 7990430383819660223}
   - component: {fileID: 7990430383819660221}
-  - component: {fileID: 7990430383819660192}
   - component: {fileID: 7990430383819660220}
   - component: {fileID: 3443788096180028602}
   - component: {fileID: -3214023871494306165}
@@ -176,20 +175,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &7990430383819660192
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7990430383819660219}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca6e3abf440c9dc4a8ec45d88ccf3d85, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: {fileID: 0}
-  defaultSpeedMonster: 7
 --- !u!135 &7990430383819660220
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -225,6 +210,7 @@ MonoBehaviour:
   pit: {fileID: 6197662284072629232, guid: 19efecdc44f2a1f459fcd22703bca32d, type: 3}
   enervax: 1
   bulletSpeed: 25
+  defaultSpeedMonster: 12
 --- !u!114 &-3214023871494306165
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -247,7 +233,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7990430383819660219}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63207ebada1b37b48aef4d1b11fedeba, type: 3}
+  m_Script: {fileID: 11500000, guid: e13fe0d51d08759479c464648d40bbff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   healthFill: {fileID: 7990430382810028502}

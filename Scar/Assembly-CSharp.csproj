@@ -60,18 +60,26 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\ActifRaffale.cs" />
      <Compile Include="Assets\Scripts\AnimIzaak.cs" />
+     <Compile Include="Assets\Scripts\AttackRotate.cs" />
+     <Compile Include="Assets\Scripts\AttackTentacule.cs" />
      <Compile Include="Assets\Scripts\AttackZoneController.cs" />
      <Compile Include="Assets\Scripts\BloquerSortie.cs" />
+     <Compile Include="Assets\Scripts\BobbBehaviour.cs" />
+     <Compile Include="Assets\Scripts\BobbHealth.cs" />
      <Compile Include="Assets\Scripts\BossBehaviour.cs" />
      <Compile Include="Assets\Scripts\BulletController.cs" />
      <Compile Include="Assets\Scripts\Consommables.cs" />
      <Compile Include="Assets\Scripts\EnemyDamages.cs" />
+     <Compile Include="Assets\Scripts\FlueBehaviour.cs" />
+     <Compile Include="Assets\Scripts\FlueHealth.cs" />
      <Compile Include="Assets\Scripts\GunController.cs" />
      <Compile Include="Assets\Scripts\HealthEnemy.cs" />
      <Compile Include="Assets\Scripts\HealthPlayer.cs" />
      <Compile Include="Assets\Scripts\Inventaire.cs" />
      <Compile Include="Assets\Scripts\KorinhBehaviour.cs" />
+     <Compile Include="Assets\Scripts\KorinhHealth.cs" />
      <Compile Include="Assets\Scripts\LoadDonjon.cs" />
+     <Compile Include="Assets\Scripts\LymuleHealth.cs" />
      <Compile Include="Assets\Scripts\Mana.cs" />
      <Compile Include="Assets\Scripts\MenuButtons.cs" />
      <Compile Include="Assets\Scripts\MoveEnemy.cs" />

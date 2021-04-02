@@ -33,8 +33,11 @@ public class SpawnEnemy : MonoBehaviour
 
     private GameObject[] portes;
 
+    private static Transform player;
+
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player").transform;
         
         if (numMiniBoss > 0 || numBoss > 0)
         {
@@ -81,7 +84,7 @@ public class SpawnEnemy : MonoBehaviour
         {
             xPos = Random.Range(xPos - 5, xPos + 5);
             zPos = Random.Range(zPos - 5, zPos + 5);
-            Instantiate(typeMonster, new Vector3(xPos, 6, zPos), Quaternion.identity);
+            Instantiate(typeMonster, new Vector3(xPos, player.transform.position.y + 2, zPos), Quaternion.identity);
             nbMonster += 1;
         }
     }
@@ -122,10 +125,10 @@ public class SpawnEnemy : MonoBehaviour
                 numPit = Random.Range(0, monstreRecup);
                 for (var i = 0; i < monstreRecup; i++)
                 {
-                    Spawn(numPot, pot);
+                    /*Spawn(numPot, pot);
                     Spawn(numPat, pat);
                     Spawn(numPut, put);
-                    Spawn(numPit, pit);
+                    Spawn(numPit, pit);*/
                     sizeGroup -= 1;
                 }
             }

@@ -18,6 +18,7 @@ TagManager:
   - Actif
   - Attaque
   - Potion1
+  - Tentacule
   layers:
   - Default
   - TransparentFX

@@ -82,7 +82,7 @@ public class KorinhBehaviour : MonoBehaviour
                 SpawnEnemy.Spawn(8, pat);
                 derniereChance = false;
             }
-            yield return new WaitForSeconds(0);
+            yield return new WaitForSeconds(2);
         }
     }
 

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
 using UnityEngine;
@@ -11,7 +12,7 @@ public class BossBehaviour : MonoBehaviour
     [SerializeField] private BulletController bullet;
     [SerializeField] private int numBullets;
     public Transform firepoint;
-    [SerializeField] private Transform player;
+    private Transform playerPos;
     
     // Derniere Chance
     //[SerializeField] private GameObject pat;
@@ -25,12 +26,21 @@ public class BossBehaviour : MonoBehaviour
     public float bulletSpeed;
     private float radius = -3;
     public static int isAlive = 1;
+    [SerializeField] private float defaultSpeedMonster;
+    private float speed;
     
     // Start is called before the first frame update
     void Start()
     {
+        playerPos = GameObject.FindGameObjectWithTag("Player").transform;
+        speed = defaultSpeedMonster;
         //firepoint = GameObject.FindGameObjectWithTag("boss").ge;
         StartCoroutine(SpawnBoss());
+    }
+
+    private void Update()
+    {
+        Deplacement();
     }
 
     // Script principal du boss, ses actions se trouve dans cette méthode
@@ -61,7 +71,7 @@ public class BossBehaviour : MonoBehaviour
                 SpawnEnemy.Spawn(8, pot);
                 derniereChance = false;
             }
-            yield return new WaitForSeconds(0);
+            yield return new WaitForSeconds(2);
         }
     }
 
@@ -69,7 +79,7 @@ public class BossBehaviour : MonoBehaviour
     {
         // Vise le player depuis le firepoint
         // Tire sur le player
-        Quaternion targetRotation = Quaternion.LookRotation(player.transform.position - firepoint.position);
+        Quaternion targetRotation = Quaternion.LookRotation(playerPos.transform.position - firepoint.position);
         firepoint.rotation = Quaternion.Slerp(firepoint.rotation, targetRotation, 1 * Time.deltaTime);
         BulletController newBullet = Instantiate(bullet, firepoint.position , firepoint.rotation);
         newBullet.speed = bulletSpeed;
@@ -85,6 +95,23 @@ public class BossBehaviour : MonoBehaviour
             newBullet.speed = bulletSpeed;
             // Modifie la manière de spawn des balles (ici en cercle)
             newBullet.transform.RotateAround(Boss.transform.position, Vector3.up, 360/(float)numBullets*i);
+        }
+    }
+    
+    private void Deplacement()
+    {
+        Quaternion targetRotation = Quaternion.LookRotation(new Vector3(playerPos.transform.position.x, transform.position.y, playerPos.transform.position.z) - new Vector3(transform.position.x, transform.position.y, transform.position.z));
+        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 3 * Time.deltaTime);
+        transform.position += transform.forward * Time.deltaTime * speed;
+        
+        if (transform.position.y <= -2)
+        {
+            Destroy(gameObject);
+            if (gameObject.CompareTag("boss"))
+            {
+                isAlive = 0;
+            }
+            SpawnEnemy.nbMonster -= 1;
         }
     }
 }
