@@ -1,11 +1,11 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-public class BobbBehaviour : MonoBehaviour
+public class FlueBehaviour : MonoBehaviour
 {
     // Param principaux
     [SerializeField] private GameObject Boss;
-    [SerializeField] private BobbHealth BossHealth;
+    [SerializeField] private FlueHealth BossHealth;
     private Transform player;
     
     // Derniere Chance
@@ -13,7 +13,7 @@ public class BobbBehaviour : MonoBehaviour
     [SerializeField] private GameObject put;
     private bool premiereChance = true;
     private bool derniereChance = true;
-    private BobbHealth currentHealth;
+    private FlueHealth currentHealth;
     
     public static int isAlive = 1;
     
@@ -26,20 +26,20 @@ public class BobbBehaviour : MonoBehaviour
     [SerializeField] private float defaultSpeedMonster;
     private float speed;
 
-    //Attaques
+    //Attaques Bobb
     [SerializeField] private AttackTentacule TentaculeDeMort;
-    [SerializeField] private AttackRotate TentaculeDeMortHorizontal;
-    private float speedRotation = 50.0f;
-
-    //Attaque Ulti
-    [SerializeField] private Transform[] attackPoints;
-    private bool hasUlti;
     
+    //Attaque Lymule
+    [SerializeField] private BulletController bullet;
+    private int numBullets = 50;
+    private float radius = -3;
+    private float bulletSpeed = 25;
+
+
     // Start is called before the first frame update
     void Start()
     {
         speed = defaultSpeedMonster;
-        hasUlti = false;
         player = GameObject.FindGameObjectWithTag("Player").transform;
         StartCoroutine(BossBehaviour());
     }
@@ -56,13 +56,12 @@ public class BobbBehaviour : MonoBehaviour
         while(Boss != null)
         {
             // Attaque en cas de distance élevé avec le joueur
-            Ratatatata();
-            UltiEnervax();
+            CircleShoot();
             hitCounter -= Time.deltaTime;
             if (hitCounter <= 0)
             {
                 // Attaque avec delai de base
-                CoupDeTentacule();
+                //Ratatatata();
                 hitCounter = Random.Range(5, 20);
             }
             else
@@ -84,37 +83,20 @@ public class BobbBehaviour : MonoBehaviour
                 SpawnEnemy.Spawn(8, pat);
                 derniereChance = false;
             }
-            yield return new WaitForSeconds(0);
+            yield return new WaitForSeconds(1);
         }
     }
-
-    private void CoupDeTentacule()
+    
+    void CircleShoot()
     {
-        float dist = Vector3.Distance(gameObject.transform.position, player.position);
-        if (dist <= 15)
+        // spawn les balles en cercle autour du boss
+        for (int i = 0; i < numBullets; i++)
         {
-            AttackRotate newTentacule = Instantiate(TentaculeDeMortHorizontal, transform.position,
-                transform.rotation);
-            newTentacule.transform.Rotate(90, 0, 0);
-        }
-    }
-
-    private void UltiEnervax()
-    {
-        if (BossHealth.currentHealth <= BossHealth.maxHealth * 0.1 && hasUlti == false)
-        {
-            foreach (var point in attackPoints)
-            {
-                var cpt = Random.Range(10, 30);
-                for (int i = 0; i < cpt; i++)
-                {
-                    var xPos = point.transform.position.x + Random.Range(-10, 10);
-                    var zPos = point.transform.position.z + Random.Range(-10, 10);
-                    AttackTentacule newTentacule = Instantiate(TentaculeDeMort,
-                        new Vector3(xPos, point.transform.position.y, zPos), point.transform.rotation);
-                }
-            }
-            hasUlti = true;
+            // Determine la position de spawn des balles
+            BulletController newBullet = Instantiate(bullet, Boss.transform.position + Vector3.up * radius,new Quaternion(0,0,0,0)) as BulletController;
+            newBullet.speed = bulletSpeed;
+            // Modifie la manière de spawn des balles (ici en cercle)
+            newBullet.transform.RotateAround(Boss.transform.position, Vector3.up, 360/(float)numBullets*i);
         }
     }
 

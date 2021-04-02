@@ -208,7 +208,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5464427177352914c8ad368403e0cbff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  degats: 50
+  degats: 35
 --- !u!114 &4253006778111087437
 MonoBehaviour:
   m_ObjectHideFlags: 0

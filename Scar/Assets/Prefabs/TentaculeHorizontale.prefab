@@ -140,7 +140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5464427177352914c8ad368403e0cbff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  degats: 100
+  degats: 75
 --- !u!114 &4172843783117272288
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -153,6 +153,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2ba3176f5c17ec45be2d6f8b3d969d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToFollow: {fileID: 4253006778111087446, guid: d5f4b9a6f9fb2a846ae3e25c6bcc0c60,
-    type: 3}
-  offset: {x: 0, y: 0, z: 0}

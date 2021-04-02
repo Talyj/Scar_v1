@@ -10,7 +10,7 @@ public class VictoryCondition : MonoBehaviour
     
     void Update()
     {
-        if (BossBehaviour.isAlive == 0)
+        if (BossBehaviour.isAlive == 0 || KorinhBehaviour.isAlive == 0)
         {
             panel.SetActive(true);
             Time.timeScale = 0f;

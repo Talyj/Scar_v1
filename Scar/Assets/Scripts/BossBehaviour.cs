@@ -44,7 +44,6 @@ public class BossBehaviour : MonoBehaviour
             if (BossHealth.currentHealth <= BossHealth.maxHealth * 0.75 && premiereChance)
             {
                 SpawnEnemy.Spawn(3, pit);
-                yield return new WaitForSeconds(2);
                 SpawnEnemy.Spawn(5, pot);
                 premiereChance = false;
                 enervax = false;
@@ -59,11 +58,10 @@ public class BossBehaviour : MonoBehaviour
             {
                 enervax = true;
                 SpawnEnemy.Spawn(5, pit);
-                yield return new WaitForSeconds(2);
                 SpawnEnemy.Spawn(8, pot);
                 derniereChance = false;
             }
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(0);
         }
     }
 

@@ -72,7 +72,6 @@ public class KorinhBehaviour : MonoBehaviour
             if (BossHealth.currentHealth <= BossHealth.maxHealth * 0.75 && premiereChance)
             {
                 SpawnEnemy.Spawn(3, put);
-                yield return new WaitForSeconds(2);
                 SpawnEnemy.Spawn(5, pat);
                 premiereChance = false;
             }
@@ -80,11 +79,10 @@ public class KorinhBehaviour : MonoBehaviour
             if (BossHealth.currentHealth <= BossHealth.maxHealth * 0.25 && derniereChance)
             {
                 SpawnEnemy.Spawn(5, put);
-                yield return new WaitForSeconds(2);
                 SpawnEnemy.Spawn(8, pat);
                 derniereChance = false;
             }
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(0);
         }
     }
 
