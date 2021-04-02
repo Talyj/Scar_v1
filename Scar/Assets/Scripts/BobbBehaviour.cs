@@ -1,16 +1,11 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Globalization;
+﻿using System.Collections;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
-public class KorinhBehaviour : MonoBehaviour
+public class BobbBehaviour : MonoBehaviour
 {
     // Param principaux
     [SerializeField] private GameObject Boss;
-    [SerializeField] private KorinhHealth BossHealth;
+    [SerializeField] private BobbHealth BossHealth;
     private Transform player;
     
     // Derniere Chance
@@ -18,29 +13,34 @@ public class KorinhBehaviour : MonoBehaviour
     [SerializeField] private GameObject put;
     private bool premiereChance = true;
     private bool derniereChance = true;
-    private KorinhHealth currentHealth;
+    private BobbHealth currentHealth;
     
     public static int isAlive = 1;
     
-    //Cooldown attaque basique
+    //Cooldown attaques basiques
     private float hitCounter; 
-    [SerializeField] private AttackZoneController bossBaseAttack;
-    [SerializeField] private Transform[] hitPoints;
-    [SerializeField] private Transform BasePoint;
+    /*[SerializeField] private Transform[] hitPoints;
+    [SerializeField] private Transform BasePoint;*/
     
     //Deplacement du boss pour la charge
     [SerializeField] private float defaultSpeedMonster;
     private float speed;
 
-    //BigAss Attaque
-    [SerializeField] private AttackZoneController bossLongAttack;
+    //Attaques
+    [SerializeField] private AttackTentacule TentaculeDeMort;
+    [SerializeField] private AttackRotate TentaculeDeMortHorizontal;
+    private float speedRotation = 50.0f;
 
+    //Attaque Ulti
+    [SerializeField] private Transform[] attackPoints;
+    private bool hasUlti;
+    
     // Start is called before the first frame update
     void Start()
     {
         speed = defaultSpeedMonster;
+        hasUlti = false;
         player = GameObject.FindGameObjectWithTag("Player").transform;
-        //firepoint = GameObject.FindGameObjectWithTag("boss").ge;
         StartCoroutine(BossBehaviour());
     }
 
@@ -55,12 +55,14 @@ public class KorinhBehaviour : MonoBehaviour
         // Tant que le boss est en vie on le fait agir
         while(Boss != null)
         {
-            Charge();
+            // Attaque en cas de distance élevé avec le joueur
+            Ratatatata();
+            UltiEnervax();
             hitCounter -= Time.deltaTime;
             if (hitCounter <= 0)
             {
-                BasicAttack();
-                BigAssAttackOfDoom();
+                // Attaque avec delai de base
+                CoupDeTentacule();
                 hitCounter = Random.Range(5, 20);
             }
             else
@@ -88,53 +90,51 @@ public class KorinhBehaviour : MonoBehaviour
         }
     }
 
-    private void BigAssAttackOfDoom()
+    private void CoupDeTentacule()
     {
         float dist = Vector3.Distance(gameObject.transform.position, player.position);
-        if (dist <= 40 && dist >= 20)
+        if (dist <= 15)
         {
-            int nbAttack = Random.Range(1, 3);
-            if (nbAttack == 1)
-            {
-                foreach (var point in hitPoints)
-                {
-                    AttackZoneController newZone = Instantiate(bossLongAttack, point.position, point.rotation) as AttackZoneController;
-                }   
-            }
-            else if (nbAttack == 2)
-            {
-                for (int i = 1; i <= 2; i++)
-                {
-                    AttackZoneController newZone = Instantiate(bossLongAttack, hitPoints[i].position, hitPoints[i].rotation) as AttackZoneController;
-                }
-            }
-            else
-            {
-                AttackZoneController newZone = Instantiate(bossLongAttack, hitPoints[0].position, hitPoints[0].rotation) as AttackZoneController;
-            }
+            AttackRotate newTentacule = Instantiate(TentaculeDeMortHorizontal, transform.position,
+                transform.rotation);
+            newTentacule.transform.Rotate(90, 0, 0);
         }
     }
-    
-    private void BasicAttack()
-   {
-       float dist = Vector3.Distance(gameObject.transform.position, player.position);
-       if (dist <= 20)
-       {
-           AttackZoneController newZone =
-           Instantiate(bossBaseAttack, BasePoint.position, BasePoint.rotation) as AttackZoneController;
-       }
-   }
 
-    private void Charge()
+    private void UltiEnervax()
+    {
+        if (BossHealth.currentHealth <= BossHealth.maxHealth * 0.1 && hasUlti == false)
+        {
+            foreach (var point in attackPoints)
+            {
+                var cpt = Random.Range(10, 30);
+                for (int i = 0; i < cpt; i++)
+                {
+                    var xPos = point.transform.position.x + Random.Range(-10, 10);
+                    var zPos = point.transform.position.z + Random.Range(-10, 10);
+                    AttackTentacule newTentacule = Instantiate(TentaculeDeMort,
+                        new Vector3(xPos, point.transform.position.y, zPos), point.transform.rotation);
+                }
+            }
+            hasUlti = true;
+        }
+    }
+
+    private void Ratatatata()
     {
         float dist = Vector3.Distance(gameObject.transform.position, player.position);
         if (dist >= 45)
         {
-            speed = 30;
-        }
-        if (dist <= 20)
-        {
-            speed = defaultSpeedMonster;
+            var nbTentacule = Random.Range(10, 20);
+            for (int i = 0; i < nbTentacule; i++)
+            {
+                var xPos = player.position.x + Random.Range(-20, 20);
+                var zPos = player.position.z + Random.Range(-20, 20);
+                
+                AttackTentacule newTentacule = Instantiate(TentaculeDeMort,
+                    new Vector3(xPos, player.position.y + 20, zPos),
+                    player.rotation) as AttackTentacule;
+            }
         }
     }
 

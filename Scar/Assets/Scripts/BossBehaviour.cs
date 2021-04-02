@@ -7,7 +7,7 @@ public class BossBehaviour : MonoBehaviour
 {
     // Param principaux
     [SerializeField] private GameObject Boss;
-    [SerializeField] private HealthEnemy BossHealth;
+    [SerializeField] private LymuleHealth BossHealth;
     [SerializeField] private BulletController bullet;
     [SerializeField] private int numBullets;
     public Transform firepoint;
@@ -20,7 +20,7 @@ public class BossBehaviour : MonoBehaviour
     private bool premiereChance = true;
     private bool derniereChance = true;
     public bool enervax = true;
-    private HealthEnemy currentHealth;
+    private LymuleHealth currentHealth;
     
     public float bulletSpeed;
     private float radius = -3;
