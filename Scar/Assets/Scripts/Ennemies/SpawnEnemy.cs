@@ -125,10 +125,10 @@ public class SpawnEnemy : MonoBehaviour
                 numPit = Random.Range(0, monstreRecup);
                 for (var i = 0; i < monstreRecup; i++)
                 {
-                    /*Spawn(numPot, pot);
+                    Spawn(numPot, pot);
                     Spawn(numPat, pat);
-                    Spawn(numPut, put);
-                    Spawn(numPit, pit);*/
+                    //Spawn(numPut, put);
+                    //Spawn(numPit, pit);
                     sizeGroup -= 1;
                 }
             }

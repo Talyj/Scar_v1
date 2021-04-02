@@ -1135,7 +1135,7 @@ PrefabInstance:
     - target: {fileID: 5454410102946449030, guid: c59d45ca5e32d954197b6c7ebfe15611,
         type: 3}
       propertyPath: timeBetweenShots
-      value: 0
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 6434272947277942509, guid: c59d45ca5e32d954197b6c7ebfe15611,
         type: 3}
@@ -1498,7 +1498,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.2705783, y: 0.108384416}
   m_AnchorMax: {x: 0.7212472, y: 0.42664117}
-  m_AnchoredPosition: {x: -0.65374756, y: 0.5}
+  m_AnchoredPosition: {x: -0.65374756, y: 0.49998474}
   m_SizeDelta: {x: -5.995758, y: -1.3793602}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &452481550
@@ -8555,14 +8555,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6444e4500e0f4ff44a3b6d911f1dcd10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Boss: {fileID: 5203091357376192565}
-  BossHealth: {fileID: 5203091357376192567}
-  pat: {fileID: 272287531547417062, guid: ed0bb92d1d4c1464ba1fbfc0df8c7401, type: 3}
-  put: {fileID: 6197662284072629232, guid: 19efecdc44f2a1f459fcd22703bca32d, type: 3}
-  defaultSpeedMonster: 15
-  TentaculeDeMort: {fileID: 4170433274131245732, guid: e457e91ba100afd48886ad186f82564b,
-    type: 3}
-  bullet: {fileID: 6524475635305536283, guid: 998a932b6d8bd714c8a4ba4cc33e2c33, type: 3}
 --- !u!114 &5203091357376192567
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8575,11 +8567,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e6620610b6b0e6498d2cb87a5592f71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthFill: {fileID: 5203091358373274200}
-  maxHealth: 10000
-  currentHealth: 10000
-  degatsBullet: 35
-  degatWeapon: 50
 --- !u!224 &5203091358373274198
 RectTransform:
   m_ObjectHideFlags: 0
