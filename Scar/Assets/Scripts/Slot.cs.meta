@@ -1,11 +1,9 @@
 fileFormatVersion: 2
-guid: 041ee08b2d0005e4d95d39633b44dcf4
+guid: 9b33691a7c991424b87a5ad9f2f49335
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences:
-  - healthFill: {instanceID: 0}
-  - coin: {instanceID: 0}
+  defaultReferences: []
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
