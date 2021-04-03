@@ -34,7 +34,6 @@ public class BossBehaviour : MonoBehaviour
     {
         playerPos = GameObject.FindGameObjectWithTag("Player").transform;
         speed = defaultSpeedMonster;
-        //firepoint = GameObject.FindGameObjectWithTag("boss").ge;
         StartCoroutine(SpawnBoss());
     }
 

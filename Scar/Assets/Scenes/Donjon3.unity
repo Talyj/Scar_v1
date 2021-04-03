@@ -752,7 +752,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17e05c8543ccbaf4299dc03e683644ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scene: Main
+  scene: Village3
   panel: {fileID: 186498412}
 --- !u!114 &186498415
 MonoBehaviour:
@@ -1130,7 +1130,7 @@ PrefabInstance:
     - target: {fileID: 5205013124493867662, guid: c59d45ca5e32d954197b6c7ebfe15611,
         type: 3}
       propertyPath: m_Mass
-      value: 100
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5454410102946449030, guid: c59d45ca5e32d954197b6c7ebfe15611,
         type: 3}
@@ -1897,7 +1897,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17e05c8543ccbaf4299dc03e683644ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scene: Village2
+  scene: Village4
   panel: {fileID: 30354813}
 --- !u!114 &545215342
 MonoBehaviour:
@@ -2322,8 +2322,10 @@ MonoBehaviour:
     type: 3}
   KorinhRoom: {fileID: 7067520651999495149, guid: ff33c8be38f9b9d4e8a3408f18620011,
     type: 3}
-  BobbRoom: {fileID: 0}
-  FlueRoom: {fileID: 0}
+  BobbRoom: {fileID: 4705855998380642238, guid: 3c0433a96b425314caf41955a7d18de0,
+    type: 3}
+  FlueRoom: {fileID: 7962581779079097406, guid: a2d0fc8f603103748998db74194d908f,
+    type: 3}
   miniBossRoom: {fileID: 3201818116445742577, guid: 8323930a716e9f045ad46e6f20180d4d,
     type: 3}
   porte: {fileID: 5609969776779275046, guid: 19ef8bc1accaee34cb91ad0d76ad2994, type: 3}
@@ -2857,7 +2859,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17e05c8543ccbaf4299dc03e683644ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scene: Village
+  scene: Village3
   panel: {fileID: 54992420}
 --- !u!114 &817165411
 MonoBehaviour:

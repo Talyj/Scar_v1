@@ -86,7 +86,6 @@ public class FlueBehaviour : MonoBehaviour
         // Tant que le boss est en vie on le fait agir
         while(Boss != null)
         {
-            Debug.Log(BossHealth.currentHealth);
             // Attaque en cas de distance élevé avec le joueur
             UltiOfDoomTheApocalypse();
             CircleShoot();

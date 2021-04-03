@@ -752,7 +752,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17e05c8543ccbaf4299dc03e683644ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scene: Main
+  scene: MainMenu
   panel: {fileID: 186498412}
 --- !u!114 &186498415
 MonoBehaviour:
@@ -1130,7 +1130,7 @@ PrefabInstance:
     - target: {fileID: 5205013124493867662, guid: c59d45ca5e32d954197b6c7ebfe15611,
         type: 3}
       propertyPath: m_Mass
-      value: 100
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5454410102946449030, guid: c59d45ca5e32d954197b6c7ebfe15611,
         type: 3}
@@ -1897,7 +1897,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17e05c8543ccbaf4299dc03e683644ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scene: Village2
+  scene: Village
   panel: {fileID: 30354813}
 --- !u!114 &545215342
 MonoBehaviour:
@@ -2318,7 +2318,7 @@ MonoBehaviour:
   - {fileID: 362459328455236653, guid: 03154af0eb7f5054e8efe6233b2c1b0c, type: 3}
   - {fileID: 4569220351077464686, guid: a896a3808a31f9441b92dd5a3cf32f79, type: 3}
   spawnPoint: {fileID: 1676690107}
-  LymuleRoom: {fileID: 6512943219682756327, guid: 2dbb5704b32bf3f46a454dbb758c9496,
+  LymuleRoom: {fileID: 302773669089673456, guid: 2dbb5704b32bf3f46a454dbb758c9496,
     type: 3}
   KorinhRoom: {fileID: 7067520651999495149, guid: ff33c8be38f9b9d4e8a3408f18620011,
     type: 3}
@@ -2857,7 +2857,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17e05c8543ccbaf4299dc03e683644ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scene: Village
+  scene: Village4
   panel: {fileID: 54992420}
 --- !u!114 &817165411
 MonoBehaviour:
@@ -3743,7 +3743,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 545215341}
+      - m_Target: {fileID: 186498414}
         m_MethodName: Reload
         m_Mode: 1
         m_Arguments:

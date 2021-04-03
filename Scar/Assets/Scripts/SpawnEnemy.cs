@@ -64,10 +64,7 @@ public class SpawnEnemy : MonoBehaviour
             SpawnMonster(monstreRecup);
             cptWave -= 1;
         }
-    }
-
-    private void FixedUpdate()
-    {
+        
         portes = GameObject.FindGameObjectsWithTag("BloquePorte");
         if (nbMonster <= 0 && cptWave <= 0)
         {
@@ -76,6 +73,11 @@ public class SpawnEnemy : MonoBehaviour
                 Destroy(gameobject, 1);
             }   
         }
+    }
+
+    private void FixedUpdate()
+    {
+        
     }
 
     public static void Spawn(int numSpawn, GameObject typeMonster)
@@ -117,7 +119,7 @@ public class SpawnEnemy : MonoBehaviour
     private void SpawnMonster(int sizeGroup)
     {
         {
-            if (sizeGroup > 0 && nbMonster <= 0)
+            if (sizeGroup > 0 && nbMonster <= 1)
             {
                 numPot = Random.Range(1, monstreRecup);
                 numPat = Random.Range(2, monstreRecup * 2);

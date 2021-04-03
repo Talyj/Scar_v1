@@ -45,6 +45,8 @@ public class PlayerController : MonoBehaviour
     
     void Update()
     {
+        Debug.Log(SpawnEnemy.nbMonster);
+
         Movement();
         View();
         Dashing();
