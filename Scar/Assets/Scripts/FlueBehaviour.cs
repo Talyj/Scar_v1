@@ -70,7 +70,7 @@ public class FlueBehaviour : MonoBehaviour
     private void Update()
     {
         Deplacement();
-        if (BossHealth.currentHealth <= BossHealth.maxHealth * 1 && lastChanceUsed == false)
+        if (BossHealth.currentHealth <= BossHealth.maxHealth * 0.1 && lastChanceUsed == false)
         {
             for (int i = 0; i < 10; i++)
             {
@@ -86,10 +86,16 @@ public class FlueBehaviour : MonoBehaviour
         // Tant que le boss est en vie on le fait agir
         while(Boss != null)
         {
+            Debug.Log(BossHealth.currentHealth);
             // Attaque en cas de distance élevé avec le joueur
             UltiOfDoomTheApocalypse();
             CircleShoot();
-            Ratatatata();
+            float dist = Vector3.Distance(gameObject.transform.position, player.position);
+            if (dist >= 30)
+            {
+                Ratatatata();
+            }
+
             BigAssAttackOfDoom();
             SpawnInfini();
             yield return new WaitForSeconds(1);
@@ -138,19 +144,15 @@ public class FlueBehaviour : MonoBehaviour
 
     private void Ratatatata()
     {
-        float dist = Vector3.Distance(gameObject.transform.position, player.position);
-        if (dist >= 30)
+        var nbTentacule = Random.Range(7, 15);
+        for (int i = 0; i < nbTentacule; i++)
         {
-            var nbTentacule = Random.Range(5, 10);
-            for (int i = 0; i < nbTentacule; i++)
-            {
-                var xPos = player.position.x + Random.Range(-20, 20);
-                var zPos = player.position.z + Random.Range(-20, 20);
-                
-                AttackTentacule newTentacule = Instantiate(TentaculeDeMort,
-                    new Vector3(xPos, player.position.y + 20, zPos),
-                    player.rotation) as AttackTentacule;
-            }
+            var xPos = player.position.x + Random.Range(-20, 20);
+            var zPos = player.position.z + Random.Range(-20, 20);
+            
+            AttackTentacule newTentacule = Instantiate(TentaculeDeMort,
+                new Vector3(xPos, player.position.y + 20, zPos),
+                player.rotation) as AttackTentacule;
         }
     }
 
