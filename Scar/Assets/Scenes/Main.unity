@@ -1163,7 +1163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67274491af4f5894aab9a6eb9fa88968, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amount_slot_hotbar_hotbar: {fileID: 1026017577}
+  hotBar: {fileID: 508607681}
 --- !u!4 &319829356
 Transform:
   m_ObjectHideFlags: 0
@@ -5754,7 +5754,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: /150
+  m_Text: /200
 --- !u!222 &1374596795
 CanvasRenderer:
   m_ObjectHideFlags: 0

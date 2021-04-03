@@ -11,4 +11,22 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Village.unity
     guid: 54665fad06a5bb947a780dec6807b314
+  - enabled: 1
+    path: Assets/Scenes/Donjon2.unity
+    guid: c7f140dea47982a40a64639f1485fa8d
+  - enabled: 1
+    path: Assets/Scenes/Donjon3.unity
+    guid: ee3e8eaa11b329e48865bde0954e7aa6
+  - enabled: 1
+    path: Assets/Scenes/Donjon4.unity
+    guid: f70b809ae2be70742b527c6710078ffb
+  - enabled: 1
+    path: Assets/Scenes/Village4.unity
+    guid: 5b86d230cbf78a940bc4ede578c2a74c
+  - enabled: 1
+    path: Assets/Scenes/Village3.unity
+    guid: cf75ab92f1845aa4a8d8a65e6d49d5a6
+  - enabled: 1
+    path: Assets/Scenes/Village2.unity
+    guid: 68752a5d5af0cf743aa27895ac15bef1
   m_configObjects: {}

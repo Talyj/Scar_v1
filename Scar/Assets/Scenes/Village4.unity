@@ -190,7 +190,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: /150
+  m_Text: /200
 --- !u!222 &77938339
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -888,6 +888,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scene: 
   panel: {fileID: 1461745619}
+  panel2: {fileID: 0}
 --- !u!114 &380029347
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2254,6 +2255,7 @@ MonoBehaviour:
   - {fileID: 546732685}
   - {fileID: 546732685}
   - {fileID: 546732685}
+  slotType: 
 --- !u!114 &841314770
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3397,6 +3399,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scene: Village
   panel: {fileID: 1917962412}
+  panel2: {fileID: 0}
 --- !u!114 &1205845619
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5800,6 +5803,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scene: 
   panel: {fileID: 877915573}
+  panel2: {fileID: 0}
 --- !u!1 &1886831282
 GameObject:
   m_ObjectHideFlags: 0
@@ -5934,6 +5938,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scene: MainMenu
   panel: {fileID: 1917962412}
+  panel2: {fileID: 0}
 --- !u!114 &1917962415
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -754,6 +754,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scene: Village3
   panel: {fileID: 186498412}
+  panel2: {fileID: 0}
 --- !u!114 &186498415
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1037,6 +1038,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scene: Village
   panel: {fileID: 186498412}
+  panel2: {fileID: 0}
 --- !u!114 &319829360
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1606,6 +1608,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scene: 
   panel: {fileID: 30354813}
+  panel2: {fileID: 0}
 --- !u!1 &489606688
 GameObject:
   m_ObjectHideFlags: 0
@@ -1900,6 +1903,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scene: Village4
   panel: {fileID: 30354813}
+  panel2: {fileID: 0}
 --- !u!114 &545215342
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2862,6 +2866,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scene: Village3
   panel: {fileID: 54992420}
+  panel2: {fileID: 0}
 --- !u!114 &817165411
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4771,6 +4776,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scene: 
   panel: {fileID: 54992420}
+  panel2: {fileID: 0}
 --- !u!114 &1292800233
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5109,7 +5115,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: /150
+  m_Text: /200
 --- !u!222 &1374596795
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5694,6 +5700,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scene: 
   panel: {fileID: 30354813}
+  panel2: {fileID: 0}
 --- !u!1001 &1484233012
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6730,6 +6737,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scene: 
   panel: {fileID: 54992420}
+  panel2: {fileID: 0}
 --- !u!1 &1736547629
 GameObject:
   m_ObjectHideFlags: 0

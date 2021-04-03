@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -23,8 +24,19 @@ public class Pickup : MonoBehaviour
     public GameObject itemButton;
     public GameObject itemDisplay;
 
-    private void Start() {
-    } 
+
+    private void Start()
+    {
+        Destroy(gameObject, 60);
+    }
+
+    private void Update()
+    {
+        if (gameObject.transform.position.y <= -5)
+        {
+            Destroy(gameObject);
+        }
+    }
 
     void OnTriggerEnter(Collider col) {
         if(col.CompareTag("Player")) {

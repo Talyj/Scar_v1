@@ -10,6 +10,7 @@
           <e p="AmountBoard.cs" t="Include" />
           <e p="BloquerSortie.cs" t="Include" />
           <e p="BulletController.cs" t="Include" />
+          <e p="ConsoHotbar.cs" t="Include" />
           <e p="Consommables.cs" t="Include" />
           <e p="Ennemies" t="Include">
             <e p="AttackRotate.cs" t="Include" />

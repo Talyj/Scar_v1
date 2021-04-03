@@ -84,8 +84,8 @@ public class SpawnEnemy : MonoBehaviour
     {
         for (int i = 0; i < numSpawn; i++)
         {
-            xPos = Random.Range(xPos - 5, xPos + 5);
-            zPos = Random.Range(zPos - 5, zPos + 5);
+            xPos = Random.Range(xPos - 10, xPos + 10);
+            zPos = Random.Range(zPos - 10, zPos + 10);
             Instantiate(typeMonster, new Vector3(xPos, player.transform.position.y + 2, zPos), Quaternion.identity);
             nbMonster += 1;
         }
