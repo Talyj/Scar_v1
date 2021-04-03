@@ -127,8 +127,8 @@ public class SpawnEnemy : MonoBehaviour
                 {
                     Spawn(numPot, pot);
                     Spawn(numPat, pat);
-                    //Spawn(numPut, put);
-                    //Spawn(numPit, pit);
+                    Spawn(numPut, put);
+                    Spawn(numPit, pit);
                     sizeGroup -= 1;
                 }
             }
