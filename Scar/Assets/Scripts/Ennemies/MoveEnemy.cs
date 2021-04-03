@@ -16,15 +16,26 @@ public class MoveEnemy : MonoBehaviour
     }
     void Update()
     {
+        float dist = Vector3.Distance(gameObject.transform.position, player.position);
+
+        //Pot
         speed = defaultSpeedMonster;
         if (health.maxHealth == 70)
         {
-            float dist = Vector3.Distance(gameObject.transform.position, player.position);
             if (dist <= 20)
             {
                 speed = 0;
             }
         }
+        
+        //Put
+        /*if (health.maxHealth == 1000)
+        {
+            if (dist <= 20)
+            {
+                gameObject.transform.rotation = 90;
+            }   
+        }*/
 
         Quaternion targetRotation = Quaternion.LookRotation(new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z) - new Vector3(transform.position.x, transform.position.y, transform.position.z));
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 3 * Time.deltaTime);

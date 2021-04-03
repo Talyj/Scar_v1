@@ -459,7 +459,14 @@ MonoBehaviour:
   - {fileID: 362459328455236653}
   - {fileID: 4569220351077464686, guid: a896a3808a31f9441b92dd5a3cf32f79, type: 3}
   spawnPoint: {fileID: 2428339529944110674}
-  bossRoom: {fileID: 302773669089673456, guid: 2dbb5704b32bf3f46a454dbb758c9496, type: 3}
+  LymuleRoom: {fileID: 6512943219682756327, guid: 2dbb5704b32bf3f46a454dbb758c9496,
+    type: 3}
+  KorinhRoom: {fileID: 7067520651999495149, guid: ff33c8be38f9b9d4e8a3408f18620011,
+    type: 3}
+  BobbRoom: {fileID: 4705855998380642238, guid: 3c0433a96b425314caf41955a7d18de0,
+    type: 3}
+  FlueRoom: {fileID: 7962581779079097406, guid: a2d0fc8f603103748998db74194d908f,
+    type: 3}
   miniBossRoom: {fileID: 3201818116445742577, guid: 8323930a716e9f045ad46e6f20180d4d,
     type: 3}
   porte: {fileID: 5609969776779275046, guid: 19ef8bc1accaee34cb91ad0d76ad2994, type: 3}
@@ -606,7 +613,14 @@ MonoBehaviour:
   - {fileID: 362459328455236653}
   - {fileID: 4569220351077464686, guid: a896a3808a31f9441b92dd5a3cf32f79, type: 3}
   spawnPoint: {fileID: 7607350223833531083}
-  bossRoom: {fileID: 302773669089673456, guid: 2dbb5704b32bf3f46a454dbb758c9496, type: 3}
+  LymuleRoom: {fileID: 6512943219682756327, guid: 2dbb5704b32bf3f46a454dbb758c9496,
+    type: 3}
+  KorinhRoom: {fileID: 7067520651999495149, guid: ff33c8be38f9b9d4e8a3408f18620011,
+    type: 3}
+  BobbRoom: {fileID: 4705855998380642238, guid: 3c0433a96b425314caf41955a7d18de0,
+    type: 3}
+  FlueRoom: {fileID: 7962581779079097406, guid: a2d0fc8f603103748998db74194d908f,
+    type: 3}
   miniBossRoom: {fileID: 3201818116445742577, guid: 8323930a716e9f045ad46e6f20180d4d,
     type: 3}
   porte: {fileID: 5609969776779275046, guid: 19ef8bc1accaee34cb91ad0d76ad2994, type: 3}
@@ -862,7 +876,14 @@ MonoBehaviour:
   - {fileID: 362459328455236653}
   - {fileID: 4569220351077464686, guid: a896a3808a31f9441b92dd5a3cf32f79, type: 3}
   spawnPoint: {fileID: 417889632706065656}
-  bossRoom: {fileID: 302773669089673456, guid: 2dbb5704b32bf3f46a454dbb758c9496, type: 3}
+  LymuleRoom: {fileID: 6512943219682756327, guid: 2dbb5704b32bf3f46a454dbb758c9496,
+    type: 3}
+  KorinhRoom: {fileID: 7067520651999495149, guid: ff33c8be38f9b9d4e8a3408f18620011,
+    type: 3}
+  BobbRoom: {fileID: 4705855998380642238, guid: 3c0433a96b425314caf41955a7d18de0,
+    type: 3}
+  FlueRoom: {fileID: 7962581779079097406, guid: a2d0fc8f603103748998db74194d908f,
+    type: 3}
   miniBossRoom: {fileID: 3201818116445742577, guid: 8323930a716e9f045ad46e6f20180d4d,
     type: 3}
   porte: {fileID: 5609969776779275046, guid: 19ef8bc1accaee34cb91ad0d76ad2994, type: 3}

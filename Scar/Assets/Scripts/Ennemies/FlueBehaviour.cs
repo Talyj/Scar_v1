@@ -1,5 +1,7 @@
 ﻿using System.Collections;
+using System.Diagnostics;
 using UnityEngine;
+using Debug = UnityEngine.Debug;
 
 public class FlueBehaviour : MonoBehaviour
 {
@@ -31,14 +33,35 @@ public class FlueBehaviour : MonoBehaviour
     
     //Attaque Lymule
     [SerializeField] private BulletController bullet;
-    private int numBullets = 50;
+    private int numBullets = 30;
     private float radius = -3;
     private float bulletSpeed = 25;
+    
+    //Attaque K'orinh
+    [SerializeField] private Transform[] hitPoints;
+    [SerializeField] private AttackZoneController bossLongAttack;
+    
+    //Attaque Flue
+    //Spawn Infini
+    [SerializeField] private Transform[] spawnPoints;
+    [SerializeField] private GameObject[] monsters;
+    private int WaveCounter;
+    private int EnemyCounter = 0;
+    
+    //Ulti
+    [SerializeField] private Transform[] ultiPoints;
+    [SerializeField] private LymuleBulletController lymuleBullet;
+    private bool ultiUsed;
+    private bool lastChanceUsed;
+    
 
 
     // Start is called before the first frame update
     void Start()
     {
+        ultiUsed = false;
+        lastChanceUsed = false;
+        WaveCounter = Random.Range(30, 50);
         speed = defaultSpeedMonster;
         player = GameObject.FindGameObjectWithTag("Player").transform;
         StartCoroutine(BossBehaviour());
@@ -47,6 +70,14 @@ public class FlueBehaviour : MonoBehaviour
     private void Update()
     {
         Deplacement();
+        if (BossHealth.currentHealth <= BossHealth.maxHealth * 0.1 && lastChanceUsed == false)
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                Ratatatata();   
+            }
+            lastChanceUsed = true;
+        }
     }
 
     // Script principal du boss, ses actions se trouve dans cette méthode
@@ -56,33 +87,16 @@ public class FlueBehaviour : MonoBehaviour
         while(Boss != null)
         {
             // Attaque en cas de distance élevé avec le joueur
+            UltiOfDoomTheApocalypse();
             CircleShoot();
-            hitCounter -= Time.deltaTime;
-            if (hitCounter <= 0)
+            float dist = Vector3.Distance(gameObject.transform.position, player.position);
+            if (dist >= 30)
             {
-                // Attaque avec delai de base
-                //Ratatatata();
-                hitCounter = Random.Range(5, 20);
+                Ratatatata();
             }
-            else
-            {
-                hitCounter = 0;
-            }
-            
-            // Condition actions du boss 75% de vie = spawn petit groupe de monstre 
-            if (BossHealth.currentHealth <= BossHealth.maxHealth * 0.75 && premiereChance)
-            {
-                SpawnEnemy.Spawn(3, put);
-                SpawnEnemy.Spawn(5, pat);
-                premiereChance = false;
-            }
-            // 25% de vie = spawn groupe de monstre medium
-            if (BossHealth.currentHealth <= BossHealth.maxHealth * 0.25 && derniereChance)
-            {
-                SpawnEnemy.Spawn(5, put);
-                SpawnEnemy.Spawn(8, pat);
-                derniereChance = false;
-            }
+
+            BigAssAttackOfDoom();
+            SpawnInfini();
             yield return new WaitForSeconds(1);
         }
     }
@@ -99,31 +113,101 @@ public class FlueBehaviour : MonoBehaviour
             newBullet.transform.RotateAround(Boss.transform.position, Vector3.up, 360/(float)numBullets*i);
         }
     }
+    
+    private void BigAssAttackOfDoom()
+    {
+        float dist = Vector3.Distance(gameObject.transform.position, player.position);
+        if (dist <= 10)
+        {
+            int nbAttack = Random.Range(1, 3);
+            if (nbAttack == 1)
+            {
+                foreach (var point in hitPoints)
+                {
+                    AttackZoneController newZone = Instantiate(bossLongAttack, point.position, point.rotation) as AttackZoneController;
+                }   
+            }
+            else if (nbAttack == 2)
+            {
+                for (int i = 1; i <= 2; i++)
+                {
+                    AttackZoneController newZone = Instantiate(bossLongAttack, hitPoints[i].position, hitPoints[i].rotation) as AttackZoneController;
+                }
+            }
+            else
+            {
+                AttackZoneController newZone = Instantiate(bossLongAttack, hitPoints[0].position, hitPoints[0].rotation) as AttackZoneController;
+            }
+        }
+    }
 
     private void Ratatatata()
     {
-        float dist = Vector3.Distance(gameObject.transform.position, player.position);
-        if (dist >= 30)
+        var nbTentacule = Random.Range(7, 15);
+        for (int i = 0; i < nbTentacule; i++)
         {
-            var nbTentacule = Random.Range(10, 20);
-            for (int i = 0; i < nbTentacule; i++)
+            var xPos = player.position.x + Random.Range(-20, 20);
+            var zPos = player.position.z + Random.Range(-20, 20);
+            
+            AttackTentacule newTentacule = Instantiate(TentaculeDeMort,
+                new Vector3(xPos, player.position.y + 20, zPos),
+                player.rotation) as AttackTentacule;
+        }
+    }
+
+    private void SpawnInfini()
+    {
+        if (WaveCounter >= 0 && SpawnEnemy.nbMonster <= 1)
+        {
+            foreach (var monster in monsters)
             {
-                var xPos = player.position.x + Random.Range(-20, 20);
-                var zPos = player.position.z + Random.Range(-20, 20);
-                
-                AttackTentacule newTentacule = Instantiate(TentaculeDeMort,
-                    new Vector3(xPos, player.position.y + 20, zPos),
-                    player.rotation) as AttackTentacule;
+                foreach (var spawnPoint in spawnPoints)
+                {
+                    var xPos = spawnPoint.position.x + Random.Range(-10, 10);
+                    var zPos = spawnPoint.position.z + Random.Range(-10, 10);
+                    Instantiate(monster, new Vector3(xPos, spawnPoint.transform.position.y, zPos), spawnPoint.rotation);
+                    SpawnEnemy.nbMonster++;
+                }
+                WaveCounter--;
             }
+        }
+        if (BossHealth.currentHealth <= BossHealth.maxHealth * 0.75 && premiereChance)
+        {
+            SpawnEnemy.Spawn(3, put);
+            SpawnEnemy.Spawn(5, pat);
+            premiereChance = false;
+        }
+    }
+
+    private void UltiOfDoomTheApocalypse()
+    {
+        if (BossHealth.currentHealth <= BossHealth.maxHealth * 0.2 && ultiUsed == false)
+        {
+            foreach (var point in ultiPoints)
+            {
+                LymuleBulletController newLymuleBulletController = Instantiate(lymuleBullet, point.position, point.rotation);
+            }
+
+            ultiUsed = true;
         }
     }
 
     private void Deplacement()
     {
-        Quaternion targetRotation = Quaternion.LookRotation(new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z) - new Vector3(transform.position.x, transform.position.y, transform.position.z));
-        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 3 * Time.deltaTime);
-        transform.position += transform.forward * Time.deltaTime * speed;
-        
+        float dist = Vector3.Distance(player.transform.position, gameObject.transform.position);
+        if (dist <= 20)
+        {
+            Quaternion targetRotation = Quaternion.LookRotation(new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z) - new Vector3(transform.position.x, transform.position.y, transform.position.z));
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 3 * Time.deltaTime);
+            transform.position += -transform.forward * Time.deltaTime * speed; 
+        }
+        else
+        {
+            Quaternion targetRotation = Quaternion.LookRotation(new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z) - new Vector3(transform.position.x, transform.position.y, transform.position.z));
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 3 * Time.deltaTime);
+            transform.position += transform.forward * Time.deltaTime * speed;   
+        }
+
         if (transform.position.y <= -2)
         {
             Destroy(gameObject);
