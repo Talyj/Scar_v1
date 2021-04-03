@@ -45,8 +45,6 @@ public class PlayerController : MonoBehaviour
     
     void Update()
     {
-        Debug.Log(SpawnEnemy.nbMonster);
-
         Movement();
         View();
         Dashing();
@@ -70,7 +68,7 @@ public class PlayerController : MonoBehaviour
             if (dashCounter <= 0)
             {
                 dashCounter = timeBetweenDash;
-                float dashDistance = 1;
+                float dashDistance = 2;
                 playerTransform.position += lastDirectionIntent * dashDistance;
             }
         }

@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 272287531547417058}
   - component: {fileID: 8441117567010817131}
-  - component: {fileID: 3514831677796831148}
   - component: {fileID: 8534705852016515783}
   - component: {fileID: -1211243275148074539}
   - component: {fileID: 642805994069975969}
+  - component: {fileID: 7857150622484560162}
   m_Layer: 9
   m_Name: Pat
   m_TagString: Enemy
@@ -60,20 +60,6 @@ MonoBehaviour:
     type: 3}
   health_potion: {fileID: 744696440934349665, guid: c246b1e682ad69247bfa58f217abf37e,
     type: 3}
---- !u!114 &3514831677796831148
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 272287531547417062}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca6e3abf440c9dc4a8ec45d88ccf3d85, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: {fileID: 8441117567010817131}
-  defaultSpeedMonster: 10
 --- !u!54 &8534705852016515783
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -116,6 +102,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4.024076, y: 1.5513071, z: 4.2599897}
   m_Center: {x: -0.23914108, y: 1.5084866, z: -1.7586478}
+--- !u!114 &7857150622484560162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 272287531547417062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e91ff56c8e7e797469e0fcd223cfdc01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3364759502447271142
 GameObject:
   m_ObjectHideFlags: 0

@@ -1135,7 +1135,7 @@ PrefabInstance:
     - target: {fileID: 5454410102946449030, guid: c59d45ca5e32d954197b6c7ebfe15611,
         type: 3}
       propertyPath: timeBetweenShots
-      value: 0.1
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 6434272947277942509, guid: c59d45ca5e32d954197b6c7ebfe15611,
         type: 3}
@@ -1750,6 +1750,7 @@ MonoBehaviour:
   - {fileID: 843373166}
   - {fileID: 1457164727}
   - {fileID: 143913352}
+  slotType: 
 --- !u!1 &502942274
 GameObject:
   m_ObjectHideFlags: 0
@@ -8018,6 +8019,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  slotType: 
 --- !u!1 &2088046744
 GameObject:
   m_ObjectHideFlags: 0

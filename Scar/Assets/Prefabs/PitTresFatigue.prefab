@@ -86,7 +86,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: {fileID: 2687909775472654294}
-  defaultSpeedMonster: 12
+  defaultSpeedMonster: 15
 --- !u!54 &4866614057417298941
 Rigidbody:
   m_ObjectHideFlags: 0

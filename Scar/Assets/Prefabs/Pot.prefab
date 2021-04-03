@@ -312,8 +312,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthFill: {fileID: 816260892}
-  maxHealth: 250
-  currentHealth: 250
+  maxHealth: 70
+  currentHealth: 70
   degatsBullet: 35
   degatWeapon: 50
   coin: {fileID: 7380146662539322634, guid: c03a7dc4c5cc24b44918cb4785881cf1, type: 3}

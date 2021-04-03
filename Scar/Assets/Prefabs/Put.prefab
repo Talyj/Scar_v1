@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2949682024625288998}
   - component: {fileID: 5001790579331337866}
   - component: {fileID: 3004806209780914397}
+  - component: {fileID: 7113781242991298742}
   - component: {fileID: 2570743984119851681}
   m_Layer: 9
   m_Name: Put
@@ -47,8 +48,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.1363925, y: 0.5219254, z: 4.8095427}
-  m_Center: {x: 0.06819625, y: -0.30175427, z: -1.6281343}
+  m_Size: {x: 1.1363925, y: 1.1576803, z: 4.8095427}
+  m_Center: {x: 0.06819625, y: 0.016123146, z: -1.6281343}
 --- !u!114 &5001790579331337866
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -86,6 +87,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: {fileID: 5001790579331337866}
   defaultSpeedMonster: 16
+--- !u!114 &7113781242991298742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2949682024625288999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e26090057131dd43ba31b9fa75bf3db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!54 &2570743984119851681
 Rigidbody:
   m_ObjectHideFlags: 0
