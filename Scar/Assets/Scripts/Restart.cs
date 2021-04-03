@@ -7,6 +7,7 @@ public class Restart : MonoBehaviour
     public string scene;
     public GameObject panel;
     private bool active;
+    public GameObject panel2;
     public void Reload()
     {
         SceneManager.LoadScene(scene);
@@ -31,18 +32,35 @@ public class Restart : MonoBehaviour
     {
         Application.Quit();
     }
-    public void Activate()
+    public void Activate(int choice)
     {
-        if (active)
+        if (choice == 0)
         {
-            panel.SetActive(false);
-            active = false;
+            if (active)
+            {
+                panel.SetActive(false);
+                active = false;
+            }
+            else
+            {
+                panel.SetActive(true);
+                active = true;
+            }    
         }
-        else
+        else if (choice == 1)
         {
-            panel.SetActive(true);
-            active = true;
+            if (active)
+            {
+                panel2.SetActive(false);
+                active = false;
+            }
+            else
+            {
+                panel2.SetActive(true);
+                active = true;
+            }
         }
+        
     }
     
 }
