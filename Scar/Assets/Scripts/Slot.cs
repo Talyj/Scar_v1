@@ -128,7 +128,7 @@ public class Slot : MonoBehaviour
                     slotsImage.SetActive(false);
                     Destroy(inventoryPart1.slots[1].transform.GetChild(0).gameObject);
                 } else if(hotbarPart.isFull[0] == true) {
-                    if(hotbarPart.slots[1].transform.GetChild(0).gameObject.name == "health_potion_hotbar(Clone)") {
+                    if(hotbarPart.slots[0].transform.GetChild(0).gameObject.name == "health_potion_hotbar(Clone)") {
                         if(amounts.GetAmountHotBar() < 10) {
                                 amounts.SetPotionSlot2(-1);
                                 amounts.SetHotBarMany(1);
@@ -221,17 +221,16 @@ public class Slot : MonoBehaviour
 
         if(inventoryPart1.slots[i].transform.GetChild(0).gameObject.name == "mana_potion_image(Clone)") {
             if((amounts.GetAmountSlot3() == 1 && i == 0) || (amounts.GetAmountSlot2() == 1 && i == 1) || (amounts.GetAmountSlot1() == 1 && i == 2)) {
-                Debug.Log("Test");
                 ChangeNumberOfPotion(i, inventoryPart1, lastChildIndex);
                 inventoryPart1.isFull[i] = false;
                 Destroy(inventoryPart1.slots[i].transform.GetChild(0).gameObject);
                 slotsImage = inventoryPart1.slots[i].transform.GetChild(lastChildIndex).gameObject;
                 slotsImage.SetActive(false);
-                Vector3 playerPos = new Vector3(player.position.x, player.position.y + 2, player.position.z);
+                Vector3 playerPos = new Vector3(player.position.x + 3, player.position.y + 2, player.position.z);
                 Instantiate(mana_potion, playerPos, Quaternion.identity);
             } else {
                 ChangeNumberOfPotion(i, inventoryPart1, lastChildIndex);
-                Vector3 playerPos = new Vector3(player.position.x, player.position.y + 2, player.position.z);
+                Vector3 playerPos = new Vector3(player.position.x + 3, player.position.y + 2, player.position.z);
                 Instantiate(mana_potion, playerPos, Quaternion.identity);
             }
         } else if(inventoryPart1.slots[i].transform.GetChild(0).gameObject.name == "health_potion_image(Clone)") {
@@ -241,11 +240,11 @@ public class Slot : MonoBehaviour
                 Destroy(inventoryPart1.slots[i].transform.GetChild(0).gameObject);
                 slotsImage = inventoryPart1.slots[i].transform.GetChild(lastChildIndex).gameObject;
                 slotsImage.SetActive(false);
-                Vector3 playerPos = new Vector3(player.position.x, player.position.y + 2, player.position.z);
+                Vector3 playerPos = new Vector3(player.position.x + 3, player.position.y + 2, player.position.z);
                 Instantiate(health_potion, playerPos, Quaternion.identity);
             } else {
                 ChangeNumberOfPotion(i, inventoryPart1, lastChildIndex);
-                Vector3 playerPos = new Vector3(player.position.x, player.position.y + 2, player.position.z);
+                Vector3 playerPos = new Vector3(player.position.x + 3, player.position.y + 2, player.position.z);
                 Instantiate(health_potion, playerPos, Quaternion.identity);
             }
         }
@@ -254,14 +253,14 @@ public class Slot : MonoBehaviour
     private void ChangeNumberOfPotion(int x, SlotsInventaire inventoryPart1, int lastChildIndex) {
         var slotAmounts = inventoryPart1.slots[x].transform.GetChild(lastChildIndex).GetComponent<Text>();
         if(x == 0) {
-            amounts.SetPotionSlot3(-1);
-            slotAmounts.text = amounts.GetAmountSlot3().ToString();
+            amounts.amount_slot_3 = amounts.amount_slot_3 - 1;
+            slotAmounts.text = amounts.amount_slot_3.ToString();
         } else if(x == 1) {
-            amounts.SetPotionSlot2(-1);
-            slotAmounts.text = amounts.GetAmountSlot2().ToString();
+            amounts.amount_slot_2 = amounts.amount_slot_2 - 1;
+            slotAmounts.text = amounts.amount_slot_2.ToString();
         } else if(x == 2) {
-            amounts.SetPotionSlot1(-1);
-            slotAmounts.text = amounts.GetAmountSlot1().ToString();
+            amounts.amount_slot_1 = amounts.amount_slot_1 - 1;
+            slotAmounts.text = amounts.amount_slot_1.ToString();
         }
     }
 }

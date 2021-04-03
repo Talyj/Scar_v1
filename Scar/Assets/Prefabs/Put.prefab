@@ -114,6 +114,12 @@ MonoBehaviour:
   currentHealth: 1000
   degatsBullet: 35
   degatWeapon: 50
+  coin: {fileID: 7380146662539322634, guid: c03a7dc4c5cc24b44918cb4785881cf1, type: 3}
+  rubis: {fileID: 7284450042278358748, guid: a258fc553ccd9304a9f5b7e66180e4f1, type: 3}
+  mana_potion: {fileID: 5378691844080798852, guid: afcf6338000a8904eb7df767e09beeb6,
+    type: 3}
+  health_potion: {fileID: 744696440934349665, guid: c246b1e682ad69247bfa58f217abf37e,
+    type: 3}
 --- !u!114 &3004806209780914397
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -126,10 +132,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca6e3abf440c9dc4a8ec45d88ccf3d85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
   health: {fileID: 5001790579331337866}
   defaultSpeedMonster: 16
-  timeBetweenShots: 3
 --- !u!54 &2570743984119851681
 Rigidbody:
   m_ObjectHideFlags: 0

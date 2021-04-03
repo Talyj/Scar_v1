@@ -72,13 +72,13 @@ public class HealthEnemy : MonoBehaviour
 
     private void dropCoinAndRubis(int x, int y, GameObject g) {
         int coins = Random.Range(x, y); 
-        transform.position = new Vector3(transform.position.x + Random.Range(-2, 2), transform.position.y, transform.position.z + Random.Range(-2, 2));
+        transform.position = new Vector3(transform.position.x + Random.Range(-2, 2), transform.position.y + 2, transform.position.z + Random.Range(-2, 2));
         Instantiate(g, transform.position, Quaternion.Euler (90f, Random.Range(-45f, 45f), 0f));
     }
 
     private void dropPotion() {
         int i = Random.Range(0, 3);
-        transform.position = new Vector3(transform.position.x + Random.Range(-2, 2), transform.position.y, transform.position.z + Random.Range(-2, 2));
+        transform.position = new Vector3(transform.position.x + Random.Range(-2, 2), transform.position.y + 2, transform.position.z + Random.Range(-2, 2));
         if(i == 1) {
             Instantiate(mana_potion, transform.position, Quaternion.Euler (90f, Random.Range(-45f, 45f), 0f));
         } else if(i == 2) {

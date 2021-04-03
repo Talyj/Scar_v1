@@ -166,4 +166,4 @@ MonoBehaviour:
     type: 3}
   health_potion: {fileID: 744696440934349665, guid: c246b1e682ad69247bfa58f217abf37e,
     type: 3}
-  itemDisplay: {fileID: 0}
+  itemDisplay: {fileID: 8904345617390538435}

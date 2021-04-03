@@ -115,6 +115,12 @@ MonoBehaviour:
   currentHealth: 75
   degatsBullet: 35
   degatWeapon: 50
+  coin: {fileID: 7380146662539322634, guid: c03a7dc4c5cc24b44918cb4785881cf1, type: 3}
+  rubis: {fileID: 7284450042278358748, guid: a258fc553ccd9304a9f5b7e66180e4f1, type: 3}
+  mana_potion: {fileID: 5378691844080798852, guid: afcf6338000a8904eb7df767e09beeb6,
+    type: 3}
+  health_potion: {fileID: 744696440934349665, guid: c246b1e682ad69247bfa58f217abf37e,
+    type: 3}
 --- !u!114 &5302855421441696129
 MonoBehaviour:
   m_ObjectHideFlags: 0

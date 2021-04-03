@@ -27,7 +27,7 @@ public class Pickup : MonoBehaviour
     } 
 
     void OnTriggerEnter(Collider col) {
-        if(col.name == "Player") {
+        if(col.CompareTag("Player")) {
             switch(itemButton.name) {
                 case "health_potion_loot(Clone)":
                     isPotion();
