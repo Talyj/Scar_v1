@@ -10,7 +10,7 @@ public class AmountBoard : MonoBehaviour {
     public int amount_slot_1 = 0;
     public int amount_slot_2 = 0;
     public int amount_slot_3 = 0;
-    public int amount_slot_hotbar = 0;
+    public static int amount_slot_hotbar = 0;
     public GameObject amount_piece_object;
     public GameObject amount_rubis_object;
     public GameObject amount_slot_object_1;

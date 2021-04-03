@@ -19,6 +19,13 @@ TagManager:
   - Attaque
   - Potion1
   - Tentacule
+  - InventoryPart5
+  - InventoryPart2
+  - AmountBoard
+  - InventoryPart4
+  - InventoryPart1
+  - Inventory
+  - InventoryPart3
   layers:
   - Default
   - TransparentFX
@@ -32,7 +39,7 @@ TagManager:
   - Enemy
   - Bullet
   - BulletEnemy
-  - 
+  - Loot
   - 
   - 
   - 

@@ -1143,6 +1143,7 @@ GameObject:
   - component: {fileID: 319829358}
   - component: {fileID: 319829359}
   - component: {fileID: 319829360}
+  - component: {fileID: 319829355}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -1150,6 +1151,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &319829355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 319829354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67274491af4f5894aab9a6eb9fa88968, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amount_slot_hotbar_hotbar: {fileID: 1026017577}
 --- !u!4 &319829356
 Transform:
   m_ObjectHideFlags: 0
@@ -1313,7 +1327,7 @@ PrefabInstance:
     - target: {fileID: 5454410102946449030, guid: c59d45ca5e32d954197b6c7ebfe15611,
         type: 3}
       propertyPath: timeBetweenShots
-      value: 0.3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6434272947277942509, guid: c59d45ca5e32d954197b6c7ebfe15611,
         type: 3}
@@ -4287,7 +4301,6 @@ MonoBehaviour:
   amount_slot_1: 0
   amount_slot_2: 0
   amount_slot_3: 0
-  amount_slot_hotbar: 0
   amount_piece_object: {fileID: 605318788}
   amount_rubis_object: {fileID: 1546823694}
   amount_slot_object_1: {fileID: 1024174659}
