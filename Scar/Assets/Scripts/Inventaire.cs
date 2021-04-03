@@ -5,10 +5,10 @@ using UnityEngine;
 public class Inventaire : MonoBehaviour
 {
     [SerializeField] private GameObject inventaire;
+
     private bool active;
-    void Start()
-    {
-        
+
+    public Inventaire() {
     }
 
     // Update is called once per frame
