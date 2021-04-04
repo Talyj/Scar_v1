@@ -215,7 +215,6 @@ public class Slot : MonoBehaviour
         }
 
         int lastChildIndex = inventoryPart1.slots[i].transform.childCount - 1;
-        Debug.Log(i);
 
         if(inventoryPart1.slots[i].transform.GetChild(0).gameObject.name == "mana_potion_image(Clone)") {
             if((amounts.GetAmountSlot3() == 1 && i == 0) || (amounts.GetAmountSlot2() == 1 && i == 1) || (amounts.GetAmountSlot1() == 1 && i == 2)) {

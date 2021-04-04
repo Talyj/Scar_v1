@@ -75,11 +75,6 @@ public class SpawnEnemy : MonoBehaviour
         }
     }
 
-    private void FixedUpdate()
-    {
-        
-    }
-
     public static void Spawn(int numSpawn, GameObject typeMonster)
     {
         for (int i = 0; i < numSpawn; i++)

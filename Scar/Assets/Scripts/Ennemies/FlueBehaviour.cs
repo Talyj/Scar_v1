@@ -13,8 +13,6 @@ public class FlueBehaviour : MonoBehaviour
     // Derniere Chance
     [SerializeField] private GameObject pat;
     [SerializeField] private GameObject put;
-    private bool premiereChance = true;
-    private bool derniereChance = true;
     private FlueHealth currentHealth;
     
     public static int isAlive = 1;
@@ -170,12 +168,6 @@ public class FlueBehaviour : MonoBehaviour
                 }
                 WaveCounter--;
             }
-        }
-        if (BossHealth.currentHealth <= BossHealth.maxHealth * 0.75 && premiereChance)
-        {
-            SpawnEnemy.Spawn(3, put);
-            SpawnEnemy.Spawn(5, pat);
-            premiereChance = false;
         }
     }
 

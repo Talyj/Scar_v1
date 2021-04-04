@@ -1387,6 +1387,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 387352656, guid: c59d45ca5e32d954197b6c7ebfe15611, type: 3}
+      propertyPath: mana
+      value: 
+      objectReference: {fileID: 1263675761}
     - target: {fileID: 1058714810411081605, guid: c59d45ca5e32d954197b6c7ebfe15611,
         type: 3}
       propertyPath: m_TagString

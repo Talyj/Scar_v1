@@ -8,7 +8,7 @@ public class HealthPlayer : MonoBehaviour
     [SerializeField]
     public Image healthFill;
     public Text statHealth;
-    public float maxHealth = 100;
+    public float maxHealth = 200;
     public float currentHealth = 100;
     public float degatsBalle = 10;
     public float degatsCol = 5;
@@ -34,7 +34,7 @@ public class HealthPlayer : MonoBehaviour
     void Update()
     {
         healthFill.fillAmount = currentHealth / maxHealth;
-        statHealth.text = currentHealth + "/150";
+        statHealth.text = currentHealth + "/200";
 
         if (currentHealth <= 0)
         {

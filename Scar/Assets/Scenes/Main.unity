@@ -1244,16 +1244,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1058714810411081605, guid: c59d45ca5e32d954197b6c7ebfe15611,
-        type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 1913524681424705143, guid: c59d45ca5e32d954197b6c7ebfe15611,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
+    - target: {fileID: 387352656, guid: c59d45ca5e32d954197b6c7ebfe15611, type: 3}
+      propertyPath: mana
+      value: 
+      objectReference: {fileID: 1263675761}
     - target: {fileID: 3271635425619162287, guid: c59d45ca5e32d954197b6c7ebfe15611,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1309,26 +1303,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4196223977769979845, guid: c59d45ca5e32d954197b6c7ebfe15611,
-        type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 5205013124493867662, guid: c59d45ca5e32d954197b6c7ebfe15611,
-        type: 3}
-      propertyPath: m_Constraints
-      value: 116
-      objectReference: {fileID: 0}
-    - target: {fileID: 5205013124493867662, guid: c59d45ca5e32d954197b6c7ebfe15611,
-        type: 3}
-      propertyPath: m_Mass
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 5454410102946449030, guid: c59d45ca5e32d954197b6c7ebfe15611,
-        type: 3}
-      propertyPath: timeBetweenShots
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6434272947277942509, guid: c59d45ca5e32d954197b6c7ebfe15611,
         type: 3}
       propertyPath: healthFill
@@ -1344,16 +1318,6 @@ PrefabInstance:
       propertyPath: death
       value: 
       objectReference: {fileID: 817165409}
-    - target: {fileID: 6434272947277942509, guid: c59d45ca5e32d954197b6c7ebfe15611,
-        type: 3}
-      propertyPath: maxHealth
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 6434272947277942509, guid: c59d45ca5e32d954197b6c7ebfe15611,
-        type: 3}
-      propertyPath: currentHealth
-      value: 200
-      objectReference: {fileID: 0}
     - target: {fileID: 7168926420540891165, guid: c59d45ca5e32d954197b6c7ebfe15611,
         type: 3}
       propertyPath: manaa
@@ -1364,47 +1328,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 9000516414345754255, guid: c59d45ca5e32d954197b6c7ebfe15611,
-        type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c59d45ca5e32d954197b6c7ebfe15611, type: 3}
---- !u!1 &387352654 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8704657203229393761, guid: c59d45ca5e32d954197b6c7ebfe15611,
-    type: 3}
-  m_PrefabInstance: {fileID: 387352653}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &387352655
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 387352654}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.02731763, y: 0.063559644, z: 0.028450098}
-  m_Center: {x: 0.004075777, y: 0.03153146, z: -0.00084720016}
---- !u!114 &387352656
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 387352654}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e43695b6c5d83214bac0fd9003bc6f8d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mana: {fileID: 1263675761}
-  currentMana: 200
-  maxMana: 200
 --- !u!1 &390286620
 GameObject:
   m_ObjectHideFlags: 0
@@ -7661,7 +7586,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1740109894
 RectTransform:
   m_ObjectHideFlags: 0

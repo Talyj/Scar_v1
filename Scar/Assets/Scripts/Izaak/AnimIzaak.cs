@@ -14,10 +14,10 @@ public class AnimIzaak : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetAxis("Dash") > 0.5)
+        /*if (Input.GetAxis("Dash") > 0.5)
         {
             izaak.SetBool("dodge", true);
-        }
+        }*/
 
         if (Input.GetKey(KeyCode.Z))
         {
@@ -53,7 +53,7 @@ public class AnimIzaak : MonoBehaviour
             izaak.SetBool("isRuningB", false);
             izaak.SetBool("isRuningL", false);
             izaak.SetBool("isRuningR", false);
-            izaak.SetBool("dodge", false);
+            //izaak.SetBool("dodge", false);
         }
         
     }
