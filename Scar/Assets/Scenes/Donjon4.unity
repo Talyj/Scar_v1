@@ -2622,8 +2622,7 @@ MonoBehaviour:
   spawnPoint: {fileID: 1676690107}
   LymuleRoom: {fileID: 302773669089673456, guid: 2dbb5704b32bf3f46a454dbb758c9496,
     type: 3}
-  KorinhRoom: {fileID: 7067520651999495149, guid: ff33c8be38f9b9d4e8a3408f18620011,
-    type: 3}
+  KorinhRoom: {fileID: 0}
   BobbRoom: {fileID: 0}
   FlueRoom: {fileID: 0}
   miniBossRoom: {fileID: 3201818116445742577, guid: 8323930a716e9f045ad46e6f20180d4d,

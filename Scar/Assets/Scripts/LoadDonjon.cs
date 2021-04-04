@@ -15,14 +15,16 @@ public class LoadDonjon : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
+        Debug.Log("out");
         if (other.gameObject.CompareTag("Player"))
         {
+            Debug.Log("player");
             confirmation.SetActive(true);
         }
     }
 
     public void Confirme()
     {
-        SceneManager.LoadScene(donjon);
+        SceneManager.LoadScene(donjon, LoadSceneMode.Single);
     }
 }

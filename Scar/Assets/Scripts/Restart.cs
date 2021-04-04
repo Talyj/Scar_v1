@@ -10,7 +10,7 @@ public class Restart : MonoBehaviour
     public GameObject panel2;
     public void Reload()
     {
-        SceneManager.LoadScene(scene);
+        SceneManager.LoadScene(scene, LoadSceneMode.Single);
     }
 
     public void Continue()
