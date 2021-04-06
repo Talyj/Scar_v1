@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class LymuleHealth : MonoBehaviour
+public class KorinhHealth : MonoBehaviour
 {
     [SerializeField] public Image healthFill;
     public float maxHealth;
@@ -13,7 +13,7 @@ public class LymuleHealth : MonoBehaviour
 
     private void Start()
     {
-        BossBehaviour.isAlive = 1;
+        KorinhBehaviour.isAlive = 1;
         if (GameObject.FindGameObjectWithTag("Attaque"))
         {
             degatsBullet = degatsBullet * 110 / 100;
@@ -32,12 +32,13 @@ public class LymuleHealth : MonoBehaviour
         {
             Destroy(gameObject);
 
-            if (gameObject.CompareTag("boss"))
+            if(currentHealth <= 0 && KorinhBehaviour.isAlive == 1)
             {
                 BossBehaviour.isAlive = 0;
+                SpawnEnemy.nbMonster -= 1;
+                new WaitForSeconds(1);
+                Destroy(gameObject);
             }
-
-            SpawnEnemy.nbMonster -= 1;
         }
     }
     

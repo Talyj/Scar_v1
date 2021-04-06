@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -56,6 +58,8 @@ public class PlayerController : MonoBehaviour
         {
             Firing();    
         }
+        //Debug.Log(lastDirectionIntent);
+        //Debug.Log(playerTransform.position);
         
         lastDirectionIntent = lastDirectionIntent.normalized;
     }

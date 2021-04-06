@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class BobbHealth : MonoBehaviour
+public class LymuleHealth : MonoBehaviour
 {
     [SerializeField] public Image healthFill;
     public float maxHealth;
@@ -28,16 +28,12 @@ public class BobbHealth : MonoBehaviour
     {
         healthFill.fillAmount = currentHealth / maxHealth;
 
-        if(currentHealth <= 0)
+        if(currentHealth <= 0 && BossBehaviour.isAlive == 1)
         {
-            Destroy(gameObject);
-
-            if (gameObject.CompareTag("boss"))
-            {
-                BobbBehaviour.isAlive = 0;
-            }
-
+            BossBehaviour.isAlive = 0;
             SpawnEnemy.nbMonster -= 1;
+            new WaitForSeconds(1);
+            Destroy(gameObject);
         }
     }
     

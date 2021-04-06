@@ -27,10 +27,10 @@ public class SpawnLevel : MonoBehaviour
 
     private void Awake()
     {
-        firstPart = Random.Range(3, 4);
-        //firstPart = 1;
-        secondPart = firstPart + Random.Range(2, 4);
-        //secondPart = firstPart + 1;
+        //firstPart = Random.Range(3, 4);
+        firstPart = 1;
+        //secondPart = firstPart + Random.Range(2, 4);
+        secondPart = firstPart + 1;
         endFirstPart = false;
         
     }

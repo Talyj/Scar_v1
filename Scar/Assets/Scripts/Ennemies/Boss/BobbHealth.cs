@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class KorinhHealth : MonoBehaviour
+public class BobbHealth : MonoBehaviour
 {
     [SerializeField] public Image healthFill;
     public float maxHealth;
@@ -13,7 +13,7 @@ public class KorinhHealth : MonoBehaviour
 
     private void Start()
     {
-        BossBehaviour.isAlive = 1;
+        BobbBehaviour.isAlive = 1;
         if (GameObject.FindGameObjectWithTag("Attaque"))
         {
             degatsBullet = degatsBullet * 110 / 100;
@@ -32,12 +32,13 @@ public class KorinhHealth : MonoBehaviour
         {
             Destroy(gameObject);
 
-            if (gameObject.CompareTag("boss"))
+            if(currentHealth <= 0 && BobbBehaviour.isAlive == 1)
             {
-                KorinhBehaviour.isAlive = 0;
+                BossBehaviour.isAlive = 0;
+                SpawnEnemy.nbMonster -= 1;
+                new WaitForSeconds(1);
+                Destroy(gameObject);
             }
-
-            SpawnEnemy.nbMonster -= 1;
         }
     }
     

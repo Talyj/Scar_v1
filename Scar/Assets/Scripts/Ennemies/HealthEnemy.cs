@@ -18,7 +18,6 @@ public class HealthEnemy : MonoBehaviour
 
     private void Start()
     {
-        BossBehaviour.isAlive = 1;
         if (GameObject.FindGameObjectWithTag("Attaque"))
         {
             degatsBullet = degatsBullet * 110 / 100;
@@ -50,12 +49,6 @@ public class HealthEnemy : MonoBehaviour
             dropPotion();
             dropCoinAndRubis(0, 2, rubis);
             dropCoinAndRubis(10, 50, coin);
-
-            if (gameObject.CompareTag("boss"))
-            {
-                BossBehaviour.isAlive = 0;
-            }
-
             SpawnEnemy.nbMonster -= 1;
         }
     }

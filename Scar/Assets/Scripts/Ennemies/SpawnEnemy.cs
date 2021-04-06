@@ -86,31 +86,6 @@ public class SpawnEnemy : MonoBehaviour
         }
     }
 
-    /*IEnumerator MonstersGrrr(int sizeGroup)
-    {
-        {
-            if (sizeGroup > 0 && nbMonster <= 0)
-            {
-                numBig = Random.Range(1, monstreRecup);
-                numSmall = Random.Range(2, monstreRecup * 2);
-                for (var i = 0; i < monstreRecup; i++)
-                {
-                    Spawn(numBig, big);
-                    Spawn(numSmall, small);
-                    sizeGroup -= 1;
-                }
-
-                yield return new WaitForSeconds(0);
-            }
-            if (sizeGroup == 0)
-            {
-                Spawn(numBoss, boss);
-                numBoss -= 1;
-                yield return new WaitForSeconds(0);
-            }
-        }
-    }*/
-    
     private void SpawnMonster(int sizeGroup)
     {
         {
@@ -122,10 +97,10 @@ public class SpawnEnemy : MonoBehaviour
                 numPit = Random.Range(0, monstreRecup);
                 for (var i = 0; i < monstreRecup; i++)
                 {
-                    Spawn(numPot, pot);
+                    /*Spawn(numPot, pot);
                     Spawn(numPat, pat);
                     Spawn(numPut, put);
-                    Spawn(numPit, pit);
+                    Spawn(numPit, pit);*/
                     sizeGroup -= 1;
                 }
             }

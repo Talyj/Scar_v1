@@ -13,7 +13,7 @@ public class FlueHealth : MonoBehaviour
 
     private void Start()
     {
-        BossBehaviour.isAlive = 1;
+        FlueBehaviour.isAlive = 1;
         if (GameObject.FindGameObjectWithTag("Attaque"))
         {
             degatsBullet = degatsBullet * 110 / 100;
@@ -32,12 +32,13 @@ public class FlueHealth : MonoBehaviour
         {
             Destroy(gameObject);
 
-            if (gameObject.CompareTag("boss"))
+            if(currentHealth <= 0 && FlueBehaviour.isAlive == 1)
             {
-                FlueBehaviour.isAlive = 0;
+                BossBehaviour.isAlive = 0;
+                SpawnEnemy.nbMonster -= 1;
+                new WaitForSeconds(1);
+                Destroy(gameObject);
             }
-
-            SpawnEnemy.nbMonster -= 1;
         }
     }
     
