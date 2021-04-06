@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,12 +8,16 @@ public class GunController : MonoBehaviour
     [SerializeField] private BulletController bullet;
     [SerializeField] private Transform firePoint;
     [SerializeField] private float bulletSpeed;
-    [SerializeField] private float timeBetweenShots;
+    private float timeBetweenShots;
     
     public bool isFiring;
     private float shotCounter;
-    
-    
+
+    private void Start()
+    {
+        timeBetweenShots = 0.3f;
+    }
+
 
     // Update is called once per frame
     void Update()

@@ -7,15 +7,13 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
-
-    [SerializeField]
     private Transform playerTransform;
     [SerializeField] private  float playerSpeed;
     [SerializeField] private Camera mainCamera;
     [SerializeField] private GunController theGun;
     [SerializeField] private WeaponController theWeapon;
     [SerializeField] private float timeBetweenDash;
-    
+
     //Statistiques
     public static int numberBullets = 0;
     public static float numberDamagesReceived = 0;
@@ -43,7 +41,7 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         Time.timeScale = 1f;
-
+        playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     private void FixedUpdate()
@@ -64,9 +62,7 @@ public class PlayerController : MonoBehaviour
         {
             Firing();    
         }
-        //Debug.Log(lastDirectionIntent);
-        //Debug.Log(playerTransform.position);
-        
+
         lastDirectionIntent = lastDirectionIntent.normalized;
     }
 
