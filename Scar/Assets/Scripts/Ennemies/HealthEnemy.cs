@@ -44,12 +44,12 @@ public class HealthEnemy : MonoBehaviour
                 PlayerController.score += 10;
             }
 
-
-            Destroy(gameObject);
             dropPotion();
             dropCoinAndRubis(0, 2, rubis);
             dropCoinAndRubis(10, 50, coin);
             SpawnEnemy.nbMonster -= 1;
+            new WaitForSeconds(0.1f);
+            Destroy(gameObject);
         }
     }
     

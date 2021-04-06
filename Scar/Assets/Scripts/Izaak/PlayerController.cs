@@ -40,6 +40,12 @@ public class PlayerController : MonoBehaviour
         cpt = 0;
     }
 
+    private void Start()
+    {
+        Time.timeScale = 1f;
+
+    }
+
     private void FixedUpdate()
     {
         playerTransform.localPosition += lastDirectionIntent * (Time.deltaTime * playerSpeed);
