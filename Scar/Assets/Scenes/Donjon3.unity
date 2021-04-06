@@ -1339,6 +1339,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67274491af4f5894aab9a6eb9fa88968, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 387352654}
+  amountBoard: {fileID: 811188888}
   hotBar: {fileID: 1521275767}
 --- !u!4 &319829356
 Transform:
@@ -1629,7 +1631,7 @@ PrefabInstance:
     - target: {fileID: 5205013124493867662, guid: c59d45ca5e32d954197b6c7ebfe15611,
         type: 3}
       propertyPath: m_Mass
-      value: 10
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 5454410102946449030, guid: c59d45ca5e32d954197b6c7ebfe15611,
         type: 3}
@@ -1678,6 +1680,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c59d45ca5e32d954197b6c7ebfe15611, type: 3}
+--- !u!1 &387352654 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8704657203229393761, guid: c59d45ca5e32d954197b6c7ebfe15611,
+    type: 3}
+  m_PrefabInstance: {fileID: 387352653}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &390286620
 GameObject:
   m_ObjectHideFlags: 0

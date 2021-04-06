@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
-    private Transform playerTransform;
+    [SerializeField] private Transform playerTransform;
     [SerializeField] private  float playerSpeed;
     [SerializeField] private Camera mainCamera;
     [SerializeField] private GunController theGun;
@@ -41,7 +41,6 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         Time.timeScale = 1f;
-        playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     private void FixedUpdate()

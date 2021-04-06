@@ -901,7 +901,7 @@ GameObject:
   - component: {fileID: 7325357221292244469}
   m_Layer: 8
   m_Name: porte2Room2
-  m_TagString: Untagged
+  m_TagString: room5
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1083,7 +1083,7 @@ GameObject:
   - component: {fileID: 3961743423277744121}
   m_Layer: 8
   m_Name: porte1Room2
-  m_TagString: Untagged
+  m_TagString: room5
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

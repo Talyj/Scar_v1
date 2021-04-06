@@ -35,8 +35,11 @@ public class SpawnEnemy : MonoBehaviour
 
     private static Transform player;
 
+    private bool hasEnded;
+
     void Start()
     {
+        hasEnded = false;
         player = GameObject.FindGameObjectWithTag("Player").transform;
         
         if (numMiniBoss > 0 || numBoss > 0)
@@ -58,20 +61,24 @@ public class SpawnEnemy : MonoBehaviour
         
         xPos = Random.Range(spawnPoint.transform.position.x - 15, spawnPoint.transform.position.x) + 15;
         zPos = Random.Range(spawnPoint.transform.position.z - 15, spawnPoint.transform.position.z + 15);
-
+        
         if (nbMonster <= 0 && cptWave > 0)
         {
             SpawnMonster(monstreRecup);
             cptWave -= 1;
         }
         
+        var test = GameObject.FindGameObjectsWithTag("Enemy");
         portes = GameObject.FindGameObjectsWithTag("BloquePorte");
-        if (nbMonster <= 0 && cptWave <= 0)
+        //if (nbMonster <= 0 && cptWave <= 0)
+        if (test.Length <= 0 && cptWave <= 0 && hasEnded == false)
         {
             foreach (var gameobject in portes)
             {
                 Destroy(gameobject, 1);
-            }   
+            }
+
+            hasEnded = true;
         }
     }
 
@@ -97,10 +104,10 @@ public class SpawnEnemy : MonoBehaviour
                 numPit = Random.Range(0, monstreRecup);
                 for (var i = 0; i < monstreRecup; i++)
                 {
-                    /*Spawn(numPot, pot);
+                    Spawn(numPot, pot);
                     Spawn(numPat, pat);
                     Spawn(numPut, put);
-                    Spawn(numPit, pit);*/
+                    Spawn(numPit, pit);
                     sizeGroup -= 1;
                 }
             }

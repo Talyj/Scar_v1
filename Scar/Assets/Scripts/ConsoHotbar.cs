@@ -5,15 +5,15 @@ using UnityEngine.UI;
 
 public class ConsoHotbar : MonoBehaviour
 {
-    private GameObject player;
-    private GameObject amountBoard;
+    [SerializeField] private GameObject player;
+    [SerializeField] private GameObject amountBoard;
     private AmountBoard amounts;
     [SerializeField] private SlotsInventaire hotBar;
 
     private void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
-        amountBoard = GameObject.FindWithTag("AmountBoard");
+        //player = GameObject.FindGameObjectWithTag("Player");
+        //amountBoard = GameObject.FindWithTag("AmountBoard");
         amounts = amountBoard.GetComponent<AmountBoard>();
     }
     public void Update()

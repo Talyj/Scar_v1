@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Security.Cryptography;
 using UnityEditor;
 using UnityEngine;
@@ -24,15 +25,16 @@ public class SpawnLevel : MonoBehaviour
     private bool hasSpawn;
     private bool endFirstPart;
 
+    private int typeRoom;
+
 
     private void Awake()
     {
-        //firstPart = Random.Range(3, 4);
-        firstPart = 1;
-        //secondPart = firstPart + Random.Range(2, 4);
-        secondPart = firstPart + 1;
+        firstPart = Random.Range(3, 4);
+        //firstPart = 1;
+        secondPart = firstPart + Random.Range(2, 4);
+        //secondPart = firstPart + 1;
         endFirstPart = false;
-        
     }
 
     private void Start()
@@ -76,19 +78,27 @@ public class SpawnLevel : MonoBehaviour
             }
             else
             {
-                int typeRoom = Random.Range(0, rooms.Length);
-                Instantiate( rooms[typeRoom], spawnPoint.transform.position, spawnPoint.transform.rotation);
+                /*if (gameObject.CompareTag("room1") || gameObject.CompareTag("room2") || gameObject.CompareTag("room4") || gameObject.CompareTag("room5"))
+                {
+                    typeRoom = 3;
+                }
+                else
+                {
+                    typeRoom = Random.Range(0, rooms.Length);
+                }*/
+                typeRoom = Random.Range(0, rooms.Length);
+                GameObject newRoom = Instantiate( rooms[typeRoom], spawnPoint.transform.position, spawnPoint.transform.rotation);
                 PlayerController.cpt++;
                 hasSpawn = true;
             }
         }
     }
 
-    private void OnTriggerExit(Collider other)
+    /*private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))
         {
             Destroy(room, 1);
         }
-    }
+    }*/
 }
