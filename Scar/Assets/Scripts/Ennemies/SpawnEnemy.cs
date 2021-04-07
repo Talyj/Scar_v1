@@ -2,6 +2,7 @@
 using System.Collections;
 using Cinemachine;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
 
 public class SpawnEnemy : MonoBehaviour
@@ -50,7 +51,22 @@ public class SpawnEnemy : MonoBehaviour
         else
         {
             cptWave = Random.Range(1, 4);
-            monstreRecup = Random.Range(2, 3);    
+            if (SceneManager.GetActiveScene().name == "Main")
+            {
+                monstreRecup = Random.Range(1, 2);
+            }
+            else if (SceneManager.GetActiveScene().name == "Donjon2")
+            {
+                monstreRecup = Random.Range(2, 3);
+            }
+            else if (SceneManager.GetActiveScene().name == "Donjon3")
+            {
+                monstreRecup = Random.Range(3, 4);
+            }
+            else if (SceneManager.GetActiveScene().name == "Donjon4")
+            {
+                monstreRecup = Random.Range(4, 5);
+            }
         }
         
     }
@@ -100,7 +116,7 @@ public class SpawnEnemy : MonoBehaviour
             {
                 numPot = Random.Range(1, monstreRecup);
                 numPat = Random.Range(2, monstreRecup * 2);
-                numPut = Random.Range(0, monstreRecup);
+                numPut = Random.Range(3, monstreRecup * 3);
                 numPit = Random.Range(0, monstreRecup);
                 for (var i = 0; i < monstreRecup; i++)
                 {

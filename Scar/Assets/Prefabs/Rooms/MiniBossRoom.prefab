@@ -756,7 +756,7 @@ MonoBehaviour:
   - {fileID: 362459328455236653, guid: 03154af0eb7f5054e8efe6233b2c1b0c, type: 3}
   - {fileID: 4569220351077464686, guid: a896a3808a31f9441b92dd5a3cf32f79, type: 3}
   spawnPoint: {fileID: 638283703690915726}
-  LymuleRoom: {fileID: 6512943219682756327, guid: 2dbb5704b32bf3f46a454dbb758c9496,
+  LymuleRoom: {fileID: 9214724944398390981, guid: 2dbb5704b32bf3f46a454dbb758c9496,
     type: 3}
   KorinhRoom: {fileID: 7067520651999495149, guid: ff33c8be38f9b9d4e8a3408f18620011,
     type: 3}

@@ -167,7 +167,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1216076492
 RectTransform:
   m_ObjectHideFlags: 0
@@ -259,9 +259,9 @@ GameObject:
   - component: {fileID: 2301001059543078442}
   - component: {fileID: 2301001059543078487}
   - component: {fileID: 8243912106073223163}
-  - component: {fileID: 2212001040454711724}
   - component: {fileID: 8177643884309140035}
   - component: {fileID: 1489761709086624720}
+  - component: {fileID: 3627264960617320311}
   m_Layer: 9
   m_Name: Pot
   m_TagString: Enemy
@@ -322,20 +322,6 @@ MonoBehaviour:
     type: 3}
   health_potion: {fileID: 744696440934349665, guid: c246b1e682ad69247bfa58f217abf37e,
     type: 3}
---- !u!114 &2212001040454711724
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2301001059543078486}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca6e3abf440c9dc4a8ec45d88ccf3d85, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: {fileID: 8243912106073223163}
-  defaultSpeedMonster: 6
 --- !u!114 &8177643884309140035
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -368,6 +354,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &3627264960617320311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2301001059543078486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 337e57e6788463044ae1a343678cbc41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4684148138566660013
 GameObject:
   m_ObjectHideFlags: 0

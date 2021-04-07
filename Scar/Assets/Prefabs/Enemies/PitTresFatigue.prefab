@@ -116,7 +116,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthPit: {fileID: 2687909775472654294}
   pit: {fileID: 5245516638623452795}
-  speedMonster: 15
   bullet: {fileID: 7064619592068957810, guid: 53979ef7430e11c469c32220d363511a, type: 3}
 --- !u!1 &6279458046190699237
 GameObject:
@@ -136,7 +135,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6279458046190699233
 RectTransform:
   m_ObjectHideFlags: 0

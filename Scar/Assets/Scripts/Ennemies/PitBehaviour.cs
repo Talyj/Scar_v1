@@ -6,7 +6,7 @@ public class PitBehaviour : MonoBehaviour
 {
     [SerializeField] private HealthEnemy healthPit;
     [SerializeField] private GameObject pit;
-    [SerializeField] private int speedMonster;
+    private int speedMonster = 8;
     [SerializeField] private BulletController bullet;
     private Transform player;
     private bool HasSpawn = false;
