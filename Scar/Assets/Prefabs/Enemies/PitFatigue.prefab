@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 7194346021980281735}
   - component: {fileID: 7194346021980281850}
   - component: {fileID: 1031884733420970582}
-  - component: {fileID: 7100809821861262337}
   - component: {fileID: 7535944613197743741}
   - component: {fileID: -3386122530283855300}
   - component: {fileID: -3230153259612278668}
@@ -74,20 +73,6 @@ MonoBehaviour:
     type: 3}
   health_potion: {fileID: 744696440934349665, guid: c246b1e682ad69247bfa58f217abf37e,
     type: 3}
---- !u!114 &7100809821861262337
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7194346021980281851}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca6e3abf440c9dc4a8ec45d88ccf3d85, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: {fileID: 1031884733420970582}
-  defaultSpeedMonster: 10
 --- !u!54 &7535944613197743741
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -118,6 +103,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthPit: {fileID: 1031884733420970582}
   pit: {fileID: 5245516638623452795, guid: 4562ae78629677b4698ae22f63953890, type: 3}
+  speedMonster: 10
+  bullet: {fileID: 7064619592068957810, guid: 53979ef7430e11c469c32220d363511a, type: 3}
 --- !u!114 &-3230153259612278668
 MonoBehaviour:
   m_ObjectHideFlags: 0

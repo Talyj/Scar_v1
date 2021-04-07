@@ -15,7 +15,8 @@ public class GunController : MonoBehaviour
 
     private void Start()
     {
-        timeBetweenShots = 0.3f;
+        timeBetweenShots = 0.2f;
+        //timeBetweenShots = 0;
     }
 
 
