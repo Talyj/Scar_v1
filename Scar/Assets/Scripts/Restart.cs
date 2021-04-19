@@ -5,12 +5,20 @@ using UnityEngine.UIElements;
 public class Restart : MonoBehaviour
 {
     public string scene;
+    public string scene2;
     public GameObject panel;
     private bool active;
     public GameObject panel2;
-    public void Reload()
+    public void Reload(int choice)
     {
-        SceneManager.LoadScene(scene, LoadSceneMode.Single);
+        if(choice ==0)
+        {
+            SceneManager.LoadScene(scene, LoadSceneMode.Single);
+        }
+        else if(choice == 1)
+        {
+            SceneManager.LoadScene(scene2, LoadSceneMode.Single);
+        }
     }
 
     public void Continue()
