@@ -8,7 +8,7 @@ public class GunController : MonoBehaviour
     [SerializeField] private BulletController bullet;
     [SerializeField] private Transform firePoint;
     [SerializeField] private float bulletSpeed;
-    private float timeBetweenShots;
+    public static float timeBetweenShots;
     
     public bool isFiring;
     private float shotCounter;

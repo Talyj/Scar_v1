@@ -12,8 +12,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Camera mainCamera;
     [SerializeField] private GunController theGun;
     [SerializeField] private WeaponController theWeapon;
-    [SerializeField] private float timeBetweenDash;
-
+    [SerializeField] private Rigidbody playerRigidbody;
+    
     //Statistiques
     public static int numberBullets = 0;
     public static float numberDamagesReceived = 0;
@@ -24,6 +24,8 @@ public class PlayerController : MonoBehaviour
     //Movement and Dash variables
     private Vector3 lastDirectionIntent;
     private float dashCounter;
+    private float dashDistance = 100000;
+
 
     public static int cpt;
     
@@ -67,19 +69,29 @@ public class PlayerController : MonoBehaviour
 
     private void Dashing()
     {
-        if (Input.GetMouseButtonDown(1))
+        dashCounter -= Time.deltaTime;
+        if (dashCounter <= 0)
         {
-            dashCounter -= Time.deltaTime;
-            if (dashCounter <= 0)
+            if (Input.GetMouseButtonDown(1))
             {
-                dashCounter = timeBetweenDash;
-                float dashDistance = 2;
-                playerTransform.position += lastDirectionIntent * dashDistance;
+                dashCounter = 2;
+                if (Input.GetKey(KeyCode.D))
+                {
+                    playerRigidbody.AddForce(Vector3.right * dashDistance);
+                }
+                if (Input.GetKey(KeyCode.Q))
+                {
+                    playerRigidbody.AddForce(Vector3.left * dashDistance);
+                }
+                if (Input.GetKey(KeyCode.Z))
+                {
+                    playerRigidbody.AddForce(Vector3.forward * dashDistance);
+                }
+                if (Input.GetKey(KeyCode.S))
+                {
+                    playerRigidbody.AddForce(Vector3.back * dashDistance);
+                }
             }
-        }
-        else
-        {
-            dashCounter = 0;
         }
     }
 

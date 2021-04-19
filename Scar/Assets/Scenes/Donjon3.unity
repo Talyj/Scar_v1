@@ -1728,6 +1728,7 @@ GameObject:
   - component: {fileID: 319829359}
   - component: {fileID: 319829360}
   - component: {fileID: 319829355}
+  - component: {fileID: 319829361}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -1781,7 +1782,7 @@ MonoBehaviour:
   mainCamera: {fileID: 1767481348}
   theGun: {fileID: 81222740}
   theWeapon: {fileID: 551462011}
-  timeBetweenDash: 10
+  playerRigidbody: {fileID: 387352656}
 --- !u!114 &319829358
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1824,6 +1825,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventaire: {fileID: 1125470941}
+--- !u!114 &319829361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 319829354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73c65a3ca6441cd4ca4b2ce15dcec222, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerHealth: {fileID: 387352655}
 --- !u!1 &321317620
 GameObject:
   m_ObjectHideFlags: 0
@@ -2092,6 +2106,24 @@ PrefabInstance:
 --- !u!1 &387352654 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8704657203229393761, guid: c59d45ca5e32d954197b6c7ebfe15611,
+    type: 3}
+  m_PrefabInstance: {fileID: 387352653}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &387352655 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6434272947277942509, guid: c59d45ca5e32d954197b6c7ebfe15611,
+    type: 3}
+  m_PrefabInstance: {fileID: 387352653}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 387352654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fbe372cd3ba0c84a9c2c7fadf765284, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!54 &387352656 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 5205013124493867662, guid: c59d45ca5e32d954197b6c7ebfe15611,
     type: 3}
   m_PrefabInstance: {fileID: 387352653}
   m_PrefabAsset: {fileID: 0}

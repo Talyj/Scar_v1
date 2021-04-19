@@ -94,11 +94,11 @@ public class SpawnLevel : MonoBehaviour
         }
     }
 
-    /*private void OnTriggerExit(Collider other)
+    private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))
         {
             Destroy(room, 1);
         }
-    }*/
+    }
 }
