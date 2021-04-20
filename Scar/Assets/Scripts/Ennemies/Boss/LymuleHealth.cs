@@ -31,6 +31,7 @@ public class LymuleHealth : MonoBehaviour
         if(currentHealth <= 0 && BossBehaviour.isAlive == 1)
         {
             BossBehaviour.isAlive = 0;
+            PlayerController.lymuleDead = true;
             SpawnEnemy.nbMonster -= 1;
             new WaitForSeconds(1);
             Destroy(gameObject);

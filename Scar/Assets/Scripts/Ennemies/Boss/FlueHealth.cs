@@ -34,7 +34,8 @@ public class FlueHealth : MonoBehaviour
 
             if(currentHealth <= 0 && FlueBehaviour.isAlive == 1)
             {
-                BossBehaviour.isAlive = 0;
+                FlueBehaviour.isAlive = 0;
+                PlayerController.flueDead = true;
                 SpawnEnemy.nbMonster -= 1;
                 new WaitForSeconds(1);
                 Destroy(gameObject);

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Security.Cryptography;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -20,6 +21,12 @@ public class PlayerController : MonoBehaviour
     public static float numberDamagesDealt = 0;
     public static int score = 0;
     private static bool ArmeAuCaC = false;
+    
+    //variable save
+    public static bool lymuleDead;
+    public static bool korinhDead;
+    public static bool bobbDead;
+    public static bool flueDead;
 
     //Movement and Dash variables
     private Vector3 lastDirectionIntent;
@@ -31,6 +38,16 @@ public class PlayerController : MonoBehaviour
     
     private void Awake()
     {
+        string destination = Application.persistentDataPath + "/game.dat";
+        if (File.Exists(destination))
+        {
+            var sr = File.ReadLines(destination);
+            foreach (var line in sr)
+            {
+                GunController.timeBetweenShots = float.Parse(line);
+                Debug.Log(line);
+            }
+        }
         numberBullets = 0;
         numberDamagesReceived = 0;
         numberDamagesDealt = 0;
@@ -38,6 +55,10 @@ public class PlayerController : MonoBehaviour
         SpawnEnemy.nbMonster = 0;
         BossBehaviour.isAlive = 1;
         cpt = 0;
+        lymuleDead = false;
+        korinhDead = false;
+        bobbDead = false;
+        flueDead = false;
     }
 
     private void Start()

@@ -34,7 +34,8 @@ public class BobbHealth : MonoBehaviour
 
             if(currentHealth <= 0 && BobbBehaviour.isAlive == 1)
             {
-                BossBehaviour.isAlive = 0;
+                BobbBehaviour.isAlive = 0;
+                PlayerController.bobbDead = true;
                 SpawnEnemy.nbMonster -= 1;
                 new WaitForSeconds(1);
                 Destroy(gameObject);

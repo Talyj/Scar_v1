@@ -34,7 +34,8 @@ public class KorinhHealth : MonoBehaviour
 
             if(currentHealth <= 0 && KorinhBehaviour.isAlive == 1)
             {
-                BossBehaviour.isAlive = 0;
+                KorinhBehaviour.isAlive = 0;
+                PlayerController.korinhDead = true;
                 SpawnEnemy.nbMonster -= 1;
                 new WaitForSeconds(1);
                 Destroy(gameObject);

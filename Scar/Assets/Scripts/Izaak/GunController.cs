@@ -8,14 +8,14 @@ public class GunController : MonoBehaviour
     [SerializeField] private BulletController bullet;
     [SerializeField] private Transform firePoint;
     [SerializeField] private float bulletSpeed;
-    public static float timeBetweenShots;
+    public static float timeBetweenShots = 0.2f;
     
     public bool isFiring;
     private float shotCounter;
 
     private void Start()
     {
-        timeBetweenShots = 0.2f;
+        //timeBetweenShots = 0.2f;
         //timeBetweenShots = 0;
     }
 
