@@ -22,9 +22,6 @@ public class PlayerController : MonoBehaviour
     public static int score = 0;
     private static bool ArmeAuCaC = false;
     
-    //variable save
-    public static int levelBoss;
-
     //Movement and Dash variables
     private Vector3 lastDirectionIntent;
     private float dashCounter;
@@ -42,7 +39,6 @@ public class PlayerController : MonoBehaviour
         SpawnEnemy.nbMonster = 0;
         BossBehaviour.isAlive = 1;
         cpt = 0;
-        levelBoss = 0;
     }
 
     private void Start()
@@ -71,7 +67,7 @@ public class PlayerController : MonoBehaviour
 
         lastDirectionIntent = lastDirectionIntent.normalized;
     }
-
+    
     private void Dashing()
     {
         dashCounter -= Time.deltaTime;

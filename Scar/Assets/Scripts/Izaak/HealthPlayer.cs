@@ -8,7 +8,7 @@ public class HealthPlayer : MonoBehaviour
     [SerializeField]
     public Image healthFill;
     public Text statHealth;
-    public float maxHealth = 200;
+    public float maxHealth = GameInfo.maxHealthPlayer;
     public float currentHealth = 100;
     public float degatsBalle = 10;
     public float degatsCol = 5;

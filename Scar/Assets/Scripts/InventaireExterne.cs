@@ -11,7 +11,6 @@ public class InventaireExterne : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             Save();
-            Load();
         }
     }
 
@@ -21,28 +20,14 @@ public class InventaireExterne : MonoBehaviour
         string destination = Application.persistentDataPath + "/game.dat";
         DataToSave dataToSave = new DataToSave
         {
-            shootDelay = GunController.timeBetweenShots,
-            maxHealthPlayer = 200,
+            shootDelay = GameInfo.shootDelay,
+            maxHealthPlayer = GameInfo.maxHealthPlayer,
             rangeDamage = GameInfo.rangedDamage,
             closeDamage = GameInfo.closedDamage,
-            levelBoss = PlayerController.levelBoss
+            levelBoss = GameInfo.levelBoss
         };
         string json = JsonUtility.ToJson(dataToSave);
         File.WriteAllText(destination, json);
         Debug.Log("Saved !");
-    }
-
-    private void Load()
-    {
-        string destination = Application.persistentDataPath + "/game.dat";
-        if (File.Exists(destination))
-        {
-            string saveString = File.ReadAllText(destination);
-            Debug.Log("File Loaded !");
-
-            DataToSave data = JsonUtility.FromJson<DataToSave>(saveString);
-            GameInfo.rangedDamage = data.rangeDamage;
-            GameInfo.closedDamage = data.closeDamage;
-        }
     }
 }

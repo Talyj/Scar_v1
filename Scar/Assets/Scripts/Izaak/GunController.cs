@@ -8,7 +8,7 @@ public class GunController : MonoBehaviour
     [SerializeField] private BulletController bullet;
     [SerializeField] private Transform firePoint;
     [SerializeField] private float bulletSpeed;
-    public static float timeBetweenShots = 0.2f;
+    public static float timeBetweenShots = GameInfo.shootDelay;
     
     public bool isFiring;
     private float shotCounter;
