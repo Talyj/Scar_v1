@@ -8,8 +8,8 @@ public class HealthEnemy : MonoBehaviour
     [SerializeField] public Image healthFill;
     public float maxHealth;
     public float currentHealth;
-    public static float degatsBullet = 35;
-    public static float degatWeapon = 50;
+    public float degatsBullet = GameInfo.rangedDamage;
+    public float degatWeapon = 50;
 
     public GameObject coin;
     public GameObject rubis;

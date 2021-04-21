@@ -5,14 +5,18 @@ using UnityEngine.UI;
 
 public class FlueHealth : MonoBehaviour
 {
+    private PlayerController player;
     [SerializeField] public Image healthFill;
     public float maxHealth;
     public float currentHealth;
-    public float degatsBullet = 35;
-    public float degatWeapon = 50;
+    public float degatsBullet = GameInfo.rangedDamage;
+    public float degatWeapon = GameInfo.closedDamage;
 
     private void Start()
     {
+        GameObject thePlayer = GameObject.Find("Player");
+        player = thePlayer.GetComponent<PlayerController>();
+        
         FlueBehaviour.isAlive = 1;
         if (GameObject.FindGameObjectWithTag("Attaque"))
         {
@@ -35,7 +39,7 @@ public class FlueHealth : MonoBehaviour
             if(currentHealth <= 0 && FlueBehaviour.isAlive == 1)
             {
                 FlueBehaviour.isAlive = 0;
-                PlayerController.flueDead = true;
+                PlayerController.levelBoss = 4;
                 SpawnEnemy.nbMonster -= 1;
                 new WaitForSeconds(1);
                 Destroy(gameObject);

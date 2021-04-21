@@ -23,10 +23,7 @@ public class PlayerController : MonoBehaviour
     private static bool ArmeAuCaC = false;
     
     //variable save
-    public static bool lymuleDead;
-    public static bool korinhDead;
-    public static bool bobbDead;
-    public static bool flueDead;
+    public static int levelBoss;
 
     //Movement and Dash variables
     private Vector3 lastDirectionIntent;
@@ -38,16 +35,6 @@ public class PlayerController : MonoBehaviour
     
     private void Awake()
     {
-        string destination = Application.persistentDataPath + "/game.dat";
-        if (File.Exists(destination))
-        {
-            var sr = File.ReadLines(destination);
-            foreach (var line in sr)
-            {
-                GunController.timeBetweenShots = float.Parse(line);
-                Debug.Log(line);
-            }
-        }
         numberBullets = 0;
         numberDamagesReceived = 0;
         numberDamagesDealt = 0;
@@ -55,10 +42,7 @@ public class PlayerController : MonoBehaviour
         SpawnEnemy.nbMonster = 0;
         BossBehaviour.isAlive = 1;
         cpt = 0;
-        lymuleDead = false;
-        korinhDead = false;
-        bobbDead = false;
-        flueDead = false;
+        levelBoss = 0;
     }
 
     private void Start()

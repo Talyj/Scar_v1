@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -8,8 +9,14 @@ public class LymuleHealth : MonoBehaviour
     [SerializeField] public Image healthFill;
     public float maxHealth;
     public float currentHealth;
-    public float degatsBullet = 35;
-    public float degatWeapon = 50;
+    public float degatsBullet = GameInfo.rangedDamage;
+    public float degatWeapon = GameInfo.closedDamage;
+
+
+    private void Awake()
+    {
+
+    }
 
     private void Start()
     {
@@ -31,7 +38,7 @@ public class LymuleHealth : MonoBehaviour
         if(currentHealth <= 0 && BossBehaviour.isAlive == 1)
         {
             BossBehaviour.isAlive = 0;
-            PlayerController.lymuleDead = true;
+            PlayerController.levelBoss = 1;
             SpawnEnemy.nbMonster -= 1;
             new WaitForSeconds(1);
             Destroy(gameObject);
