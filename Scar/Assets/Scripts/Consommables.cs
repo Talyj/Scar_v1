@@ -14,7 +14,7 @@ public class Consommables : MonoBehaviour
     {
         if (gameObject.CompareTag("Potion1"))
         {
-            player.currentHealth += 15; 
+            HealthPlayer.currentHealth += 15; 
             Destroy(gameObject);
         }
 

@@ -13,13 +13,6 @@ public class GunController : MonoBehaviour
     public bool isFiring;
     private float shotCounter;
 
-    private void Start()
-    {
-        //timeBetweenShots = 0.2f;
-        //timeBetweenShots = 0;
-    }
-
-
     // Update is called once per frame
     void Update()
     {

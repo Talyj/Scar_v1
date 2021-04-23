@@ -8,12 +8,10 @@ public class LoadSave : MonoBehaviour
     [SerializeField] private GameObject panel;
     private void Awake()
     {
-        Debug.Log("Awake");
         string destination = Application.persistentDataPath + "/game.dat";
         if (File.Exists(destination))
         {
-            Debug.Log("File exists");
-            panel.SetActive(true);
+            panel.SetActive(true);   
         }
     }
 
@@ -27,9 +25,11 @@ public class LoadSave : MonoBehaviour
             
             GameInfo.rangedDamage = data.rangeDamage;
             GameInfo.closedDamage = data.closeDamage;
+            GameInfo.maxHealthPlayer = data.maxHealthPlayer;
+            GunController.timeBetweenShots = data.shootDelay;
             if (data.levelBoss == 0)
             {
-                SceneManager.LoadScene("Village");
+                SceneManager.LoadScene("Village"); 
             }
             else if (data.levelBoss == 1)
             {
@@ -47,7 +47,6 @@ public class LoadSave : MonoBehaviour
             {
                 SceneManager.LoadScene("Village");
             }
-            Debug.Log("file loaded");
         }
     }
 

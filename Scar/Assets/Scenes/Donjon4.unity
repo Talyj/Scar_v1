@@ -1345,7 +1345,6 @@ MonoBehaviour:
   mainCamera: {fileID: 1767481348}
   theGun: {fileID: 81222740}
   theWeapon: {fileID: 551462011}
-  timeBetweenDash: 10
   playerRigidbody: {fileID: 387352657}
 --- !u!114 &319829358
 MonoBehaviour:
@@ -2297,7 +2296,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17e05c8543ccbaf4299dc03e683644ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scene: Village4
+  scene: Village
   scene2: 
   panel: {fileID: 30354813}
   panel2: {fileID: 0}
@@ -4731,8 +4730,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 545215341}
-        m_MethodName: Reload
-        m_Mode: 3
+        m_MethodName: loadScene
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -6011,8 +6010,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 817165410}
-        m_MethodName: Reload
-        m_Mode: 3
+        m_MethodName: loadScene
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

@@ -17,7 +17,7 @@ public class EnemyDamages : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            player.currentHealth -= degats;
+            HealthPlayer.currentHealth -= degats;
             PlayerController.numberDamagesReceived += degats;
             PlayerController.score -= 1;
         }

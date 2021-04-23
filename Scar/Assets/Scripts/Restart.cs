@@ -1,5 +1,7 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.IO;
 using UnityEngine.UIElements;
 
 public class Restart : MonoBehaviour
@@ -11,7 +13,7 @@ public class Restart : MonoBehaviour
     public GameObject panel2;
     public void Reload(int choice)
     {
-        if(choice ==0)
+        if(choice == 0)
         {
             SceneManager.LoadScene(scene, LoadSceneMode.Single);
         }
@@ -19,6 +21,11 @@ public class Restart : MonoBehaviour
         {
             SceneManager.LoadScene(scene2, LoadSceneMode.Single);
         }
+    }
+
+    public void loadScene()
+    {
+        SceneManager.LoadScene(scene);
     }
 
     public void Continue()
@@ -70,5 +77,4 @@ public class Restart : MonoBehaviour
         }
         
     }
-    
 }

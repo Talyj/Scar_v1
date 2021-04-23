@@ -17,12 +17,12 @@ public class GodMode : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.M))
         {
-            playerHealth.currentHealth = 9999999999;
+            HealthPlayer.currentHealth = 9999999999;
             GunController.timeBetweenShots = 0;
         }
         if (Input.GetKeyDown(KeyCode.N))
         {
-            playerHealth.currentHealth = 200;
+            HealthPlayer.currentHealth = 200;
             GunController.timeBetweenShots = 0.1f;
         }
     }

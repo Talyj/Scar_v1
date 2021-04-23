@@ -115,7 +115,7 @@ public class FlueBehaviour : MonoBehaviour
     private void BigAssAttackOfDoom()
     {
         float dist = Vector3.Distance(gameObject.transform.position, player.position);
-        if (dist <= 10)
+        if (dist <= 17)
         {
             int nbAttack = Random.Range(1, 3);
             if (nbAttack == 1)

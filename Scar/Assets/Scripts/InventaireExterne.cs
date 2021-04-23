@@ -20,14 +20,13 @@ public class InventaireExterne : MonoBehaviour
         string destination = Application.persistentDataPath + "/game.dat";
         DataToSave dataToSave = new DataToSave
         {
-            shootDelay = GameInfo.shootDelay,
-            maxHealthPlayer = GameInfo.maxHealthPlayer,
+            shootDelay = GunController.timeBetweenShots,
+            maxHealthPlayer = HealthPlayer.maxHealth,
             rangeDamage = GameInfo.rangedDamage,
             closeDamage = GameInfo.closedDamage,
-            levelBoss = GameInfo.levelBoss
+            levelBoss = GameInfo.levelBoss,
         };
         string json = JsonUtility.ToJson(dataToSave);
         File.WriteAllText(destination, json);
-        Debug.Log("Saved !");
     }
 }

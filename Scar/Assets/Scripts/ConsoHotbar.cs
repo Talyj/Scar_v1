@@ -19,7 +19,7 @@ public class ConsoHotbar : MonoBehaviour
     public void Update()
     {
         var playerHealth = FindObjectOfType<HealthPlayer>();
-        if (playerHealth.currentHealth < playerHealth.maxHealth)
+        if (HealthPlayer.currentHealth < HealthPlayer.maxHealth)
         {
             if(Input.GetKeyDown(KeyCode.F) && hotBar.isFull[0] == true) {
                 if(hotBar.slots[0].transform.GetChild(0).gameObject.name == "mana_potion_hotbar(Clone)") {
@@ -34,18 +34,18 @@ public class ConsoHotbar : MonoBehaviour
                     }
                 } else if(hotBar.slots[0].transform.GetChild(0).gameObject.name == "health_potion_hotbar(Clone)") {
                     if(amounts.amount_slot_hotbar == 1) {
-                        player.GetComponent<HealthPlayer>().currentHealth += player.GetComponent<HealthPlayer>().maxHealth * 0.4f;
+                        HealthPlayer.currentHealth += HealthPlayer.maxHealth * 0.4f;
                         amounts.SetHotBarMany(-1);
                         Destroy(hotBar.slots[0].transform.GetChild(0).gameObject);
                         hotBar.isFull[0] = false;
                     } else if(amounts.amount_slot_hotbar > 1) {
-                        player.GetComponent<HealthPlayer>().currentHealth += player.GetComponent<HealthPlayer>().maxHealth * 0.4f;
+                        HealthPlayer.currentHealth += HealthPlayer.maxHealth * 0.4f;
                         amounts.SetHotBarMany(-1);
                     }
-                    if (player.GetComponent<HealthPlayer>().currentHealth > 200)
+                    if (HealthPlayer.currentHealth > 200)
                     {
-                        var dif = playerHealth.GetComponent<HealthPlayer>().currentHealth - 200;
-                        player.GetComponent<HealthPlayer>().currentHealth -= dif;
+                        var dif = HealthPlayer.currentHealth - 200;
+                        HealthPlayer.currentHealth -= dif;
                     }
                 }
             }
