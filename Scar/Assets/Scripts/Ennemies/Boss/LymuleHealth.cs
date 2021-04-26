@@ -12,12 +12,6 @@ public class LymuleHealth : MonoBehaviour
     public float degatsBullet = GameInfo.rangedDamage;
     public float degatWeapon = GameInfo.closedDamage;
 
-
-    private void Awake()
-    {
-
-    }
-
     private void Start()
     {
         BossBehaviour.isAlive = 1;

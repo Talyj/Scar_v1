@@ -1,30 +1,46 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class LoadDonjon : MonoBehaviour
 {
-    [SerializeField] private string donjon;
     [SerializeField] private GameObject confirmation;
-    
-    void Start()
-    {
-        
-    }
 
-    void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("out");
         if (other.gameObject.CompareTag("Player"))
         {
-            Debug.Log("player");
             confirmation.SetActive(true);
+        }
+    }
+    
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            confirmation.SetActive(false);
         }
     }
 
     public void Confirme()
     {
-        SceneManager.LoadScene(donjon, LoadSceneMode.Single);
+        string currentScene = SceneManager.GetActiveScene().name;
+        switch (currentScene)
+        {
+            case "Village":
+                SceneManager.LoadScene("Main", LoadSceneMode.Single);
+                break;
+            case  "Village2":
+                SceneManager.LoadScene("Donjon2", LoadSceneMode.Single);
+                break;
+            case "Village3":
+                SceneManager.LoadScene("Donjon3", LoadSceneMode.Single);
+                break;
+            case "Village4":
+                SceneManager.LoadScene("Donjon4", LoadSceneMode.Single);
+                break;
+        }
     }
 }

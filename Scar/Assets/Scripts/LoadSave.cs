@@ -27,6 +27,8 @@ public class LoadSave : MonoBehaviour
             GameInfo.closedDamage = data.closeDamage;
             GameInfo.maxHealthPlayer = data.maxHealthPlayer;
             GunController.timeBetweenShots = data.shootDelay;
+            GameInfo.levelBoss = data.levelBoss;
+
             if (data.levelBoss == 0)
             {
                 SceneManager.LoadScene("Village"); 
