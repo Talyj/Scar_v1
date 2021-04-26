@@ -20,6 +20,8 @@ public class LoadVillages : MonoBehaviour
             confirmation.SetActive(true);
             switch (GameInfo.levelBoss)
             {
+                case 0:
+                    break;
                 case 1:
                     Village2Button.SetActive(true);
                     break;
@@ -27,7 +29,7 @@ public class LoadVillages : MonoBehaviour
                     Village2Button.SetActive(true);
                     Village3Button.SetActive(true);
                     break;
-                case 3:
+                default:
                     Village2Button.SetActive(true);
                     Village3Button.SetActive(true);
                     Village4Button.SetActive(true);

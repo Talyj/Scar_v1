@@ -63,6 +63,7 @@
      <Compile Include="Assets\Scripts\BulletController.cs" />
      <Compile Include="Assets\Scripts\ConsoHotbar.cs" />
      <Compile Include="Assets\Scripts\Consommables.cs" />
+     <Compile Include="Assets\Scripts\Data.cs" />
      <Compile Include="Assets\Scripts\Ennemies\Boss\AttackRotate.cs" />
      <Compile Include="Assets\Scripts\Ennemies\Boss\AttackTentacule.cs" />
      <Compile Include="Assets\Scripts\Ennemies\Boss\AttackZoneController.cs" />
@@ -84,8 +85,10 @@
      <Compile Include="Assets\Scripts\Ennemies\ShootEnemy.cs" />
      <Compile Include="Assets\Scripts\Ennemies\SpawnEnemy.cs" />
      <Compile Include="Assets\Scripts\FirstInList.cs" />
+     <Compile Include="Assets\Scripts\GameInfo.cs" />
      <Compile Include="Assets\Scripts\GodMode.cs" />
      <Compile Include="Assets\Scripts\Inventaire.cs" />
+     <Compile Include="Assets\Scripts\InventaireExterne.cs" />
      <Compile Include="Assets\Scripts\Izaak\ActifRaffale.cs" />
      <Compile Include="Assets\Scripts\Izaak\AnimIzaak.cs" />
      <Compile Include="Assets\Scripts\Izaak\GunController.cs" />
@@ -94,6 +97,8 @@
      <Compile Include="Assets\Scripts\Izaak\PlayerController.cs" />
      <Compile Include="Assets\Scripts\Izaak\WeaponController.cs" />
      <Compile Include="Assets\Scripts\LoadDonjon.cs" />
+     <Compile Include="Assets\Scripts\LoadSave.cs" />
+     <Compile Include="Assets\Scripts\LoadVillages.cs" />
      <Compile Include="Assets\Scripts\MenuButtons.cs" />
      <Compile Include="Assets\Scripts\Pickup.cs" />
      <Compile Include="Assets\Scripts\PlayerFollow.cs" />
