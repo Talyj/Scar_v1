@@ -979,7 +979,6 @@ MonoBehaviour:
   scene: 
   scene2: 
   panel: {fileID: 1461745619}
-  panel2: {fileID: 1461745619}
 --- !u!114 &380029347
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3620,7 +3619,6 @@ MonoBehaviour:
   scene: MainMenu
   scene2: 
   panel: {fileID: 2084398287}
-  panel2: {fileID: 877915573}
 --- !u!114 &1205845619
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3651,7 +3649,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7252bda4d8bf23d4bb428a1bb717d04c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventaire: {fileID: 0}
+  inventaire: {fileID: 1642337526}
 --- !u!4 &1205845621
 Transform:
   m_ObjectHideFlags: 0
@@ -4599,7 +4597,6 @@ MonoBehaviour:
   scene: Main
   scene2: 
   panel: {fileID: 1464552431}
-  panel2: {fileID: 1464552431}
 --- !u!114 &1464552434
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5556,7 +5553,6 @@ MonoBehaviour:
   scene: 
   scene2: 
   panel: {fileID: 877915573}
-  panel2: {fileID: 0}
 --- !u!1 &1919519359
 GameObject:
   m_ObjectHideFlags: 0
@@ -6162,7 +6158,6 @@ MonoBehaviour:
   scene: MainMenu
   scene2: 
   panel: {fileID: 2084398287}
-  panel2: {fileID: 2084398287}
 --- !u!114 &2084398290
 MonoBehaviour:
   m_ObjectHideFlags: 0

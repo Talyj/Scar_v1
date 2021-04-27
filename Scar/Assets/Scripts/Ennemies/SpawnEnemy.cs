@@ -28,7 +28,7 @@ public class SpawnEnemy : MonoBehaviour
     public int numMiniBoss;
     
     public static int nbMonster;
-
+    
     private GameObject door;
     private GameObject spawnPoint;
 
@@ -84,13 +84,14 @@ public class SpawnEnemy : MonoBehaviour
             cptWave -= 1;
         }
         
-        var test = GameObject.FindGameObjectsWithTag("Enemy");
+        var enemies = GameObject.FindGameObjectsWithTag("Enemy");
         portes = GameObject.FindGameObjectsWithTag("BloquePorte");
         //if (nbMonster <= 0 && cptWave <= 0)
-        if (test.Length <= 0 && cptWave <= 0 && hasEnded == false)
+        if (enemies.Length <= 0 && cptWave <= 0 && hasEnded == false)
         {
             foreach (var gameobject in portes)
             {
+                //TODO MODIFIER LE FIN DE SALLE ET JUSTE ACTIVER L'ANIMATION
                 Destroy(gameobject, 1);
             }
 

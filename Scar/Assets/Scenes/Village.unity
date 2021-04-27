@@ -1263,7 +1263,6 @@ MonoBehaviour:
   scene: 
   scene2: 
   panel: {fileID: 1461745619}
-  panel2: {fileID: 1461745619}
 --- !u!114 &380029347
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2153,7 +2152,6 @@ MonoBehaviour:
   scene: Main
   scene2: 
   panel: {fileID: 739463979}
-  panel2: {fileID: 739463979}
 --- !u!114 &739463981
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2876,7 +2874,6 @@ MonoBehaviour:
   scene: Main
   scene2: 
   panel: {fileID: 877915573}
-  panel2: {fileID: 877915573}
 --- !u!1 &913113514
 GameObject:
   m_ObjectHideFlags: 0
@@ -4267,7 +4264,6 @@ MonoBehaviour:
   scene: 
   scene2: 
   panel: {fileID: 0}
-  panel2: {fileID: 0}
 --- !u!1 &1339499078
 GameObject:
   m_ObjectHideFlags: 0
@@ -5714,7 +5710,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7252bda4d8bf23d4bb428a1bb717d04c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventaire: {fileID: 0}
+  inventaire: {fileID: 470691040}
 --- !u!114 &1740812405
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5730,7 +5726,6 @@ MonoBehaviour:
   scene: MainMenu
   scene2: 
   panel: {fileID: 1917962412}
-  panel2: {fileID: 1917962412}
 --- !u!114 &1740812406
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6826,7 +6821,6 @@ MonoBehaviour:
   scene: MainMenu
   scene2: 
   panel: {fileID: 1917962412}
-  panel2: {fileID: 1917962412}
 --- !u!114 &1917962415
 MonoBehaviour:
   m_ObjectHideFlags: 0

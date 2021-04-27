@@ -1278,7 +1278,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 387352654}
   amountBoard: {fileID: 1105695960}
-  hotBar: {fileID: 0}
+  hotBar: {fileID: 691715071}
 --- !u!4 &319829356
 Transform:
   m_ObjectHideFlags: 0
@@ -1339,7 +1339,6 @@ MonoBehaviour:
   scene: Village2
   scene2: 
   panel: {fileID: 1464924933}
-  panel2: {fileID: 0}
 --- !u!114 &319829360
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1352,7 +1351,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7252bda4d8bf23d4bb428a1bb717d04c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventaire: {fileID: 0}
+  inventaire: {fileID: 940773702}
 --- !u!114 &319829361
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2101,7 +2100,6 @@ MonoBehaviour:
   scene: Village2
   scene2: 
   panel: {fileID: 30354813}
-  panel2: {fileID: 0}
 --- !u!114 &545215342
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3420,7 +3418,6 @@ MonoBehaviour:
   scene: Village2
   scene2: 
   panel: {fileID: 54992420}
-  panel2: {fileID: 0}
 --- !u!114 &817165411
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4948,7 +4945,6 @@ MonoBehaviour:
   scene: MainMenu
   scene2: Village2
   panel: {fileID: 1171255345}
-  panel2: {fileID: 0}
 --- !u!114 &1171255348
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6038,7 +6034,6 @@ MonoBehaviour:
   scene: 
   scene2: 
   panel: {fileID: 30354813}
-  panel2: {fileID: 0}
 --- !u!1 &1482189756
 GameObject:
   m_ObjectHideFlags: 0
@@ -7301,7 +7296,6 @@ MonoBehaviour:
   scene: 
   scene2: 
   panel: {fileID: 54992420}
-  panel2: {fileID: 0}
 --- !u!1 &1743881358
 GameObject:
   m_ObjectHideFlags: 0

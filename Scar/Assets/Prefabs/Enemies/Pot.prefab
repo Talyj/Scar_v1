@@ -297,8 +297,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.0349605, y: 1.6090562, z: 1.5085328}
-  m_Center: {x: -0.11629093, y: 0.4490186, z: -0.63106894}
+  m_Size: {x: 2.0349605, y: 3.3487802, z: 1.5085328}
+  m_Center: {x: -0.11629093, y: 1.3188806, z: -0.63106894}
 --- !u!114 &8243912106073223163
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -314,8 +314,6 @@ MonoBehaviour:
   healthFill: {fileID: 816260892}
   maxHealth: 70
   currentHealth: 70
-  degatsBullet: 35
-  degatWeapon: 50
   coin: {fileID: 7380146662539322634, guid: c03a7dc4c5cc24b44918cb4785881cf1, type: 3}
   rubis: {fileID: 7284450042278358748, guid: a258fc553ccd9304a9f5b7e66180e4f1, type: 3}
   mana_potion: {fileID: 5378691844080798852, guid: afcf6338000a8904eb7df767e09beeb6,

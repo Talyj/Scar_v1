@@ -925,7 +925,6 @@ MonoBehaviour:
   scene: MainMenu
   scene2: Village
   panel: {fileID: 186498412}
-  panel2: {fileID: 0}
 --- !u!114 &186498415
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1298,7 +1297,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 387352654}
   amountBoard: {fileID: 1026017577}
-  hotBar: {fileID: 0}
+  hotBar: {fileID: 971591847}
 --- !u!4 &319829356
 Transform:
   m_ObjectHideFlags: 0
@@ -1359,7 +1358,6 @@ MonoBehaviour:
   scene: Village
   scene2: 
   panel: {fileID: 1067679953}
-  panel2: {fileID: 0}
 --- !u!114 &319829360
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1372,7 +1370,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7252bda4d8bf23d4bb428a1bb717d04c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventaire: {fileID: 0}
+  inventaire: {fileID: 993954904}
 --- !u!114 &319829361
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1396,7 +1394,7 @@ PrefabInstance:
     - target: {fileID: 387352656, guid: c59d45ca5e32d954197b6c7ebfe15611, type: 3}
       propertyPath: mana
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 571032246}
     - target: {fileID: 3271635425619162287, guid: c59d45ca5e32d954197b6c7ebfe15611,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1461,12 +1459,12 @@ PrefabInstance:
         type: 3}
       propertyPath: healthFill
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 218079501}
     - target: {fileID: 6434272947277942509, guid: c59d45ca5e32d954197b6c7ebfe15611,
         type: 3}
       propertyPath: statHealth
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1965295828}
     - target: {fileID: 6434272947277942509, guid: c59d45ca5e32d954197b6c7ebfe15611,
         type: 3}
       propertyPath: death
@@ -1476,7 +1474,7 @@ PrefabInstance:
         type: 3}
       propertyPath: manaa
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 571032246}
     - target: {fileID: 8704657203229393761, guid: c59d45ca5e32d954197b6c7ebfe15611,
         type: 3}
       propertyPath: m_Name
@@ -2244,7 +2242,6 @@ MonoBehaviour:
   scene: Village
   scene2: 
   panel: {fileID: 30354813}
-  panel2: {fileID: 0}
 --- !u!114 &545215342
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2412,7 +2409,7 @@ MonoBehaviour:
   m_FillCenter: 1
   m_FillMethod: 3
   m_FillAmount: 1
-  m_FillClockwise: 0
+  m_FillClockwise: 1
   m_FillOrigin: 1
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
@@ -3330,7 +3327,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFull: 00
   slots:
-  - {fileID: 25288690}
+  - {fileID: 756600910}
   slotType: 
 --- !u!114 &756600913
 MonoBehaviour:
@@ -3768,7 +3765,6 @@ MonoBehaviour:
   scene: Village
   scene2: 
   panel: {fileID: 54992420}
-  panel2: {fileID: 0}
 --- !u!114 &817165411
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4320,13 +4316,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d59a4117d8508d941b404375af61dc9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isFull: 0100000000
+  isFull: 000000
   slots:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1528555658}
+  - {fileID: 1963137784}
+  - {fileID: 756600910}
   slotType: 
 --- !u!114 &971591848
 MonoBehaviour:
@@ -4823,12 +4817,12 @@ MonoBehaviour:
   amount_slot_2: 0
   amount_slot_3: 0
   amount_slot_hotbar: 0
-  amount_piece_object: {fileID: 0}
-  amount_rubis_object: {fileID: 0}
-  amount_slot_object_1: {fileID: 0}
-  amount_slot_object_2: {fileID: 0}
-  amount_slot_object_3: {fileID: 0}
-  amount_slot_hotbar_hotbar: {fileID: 0}
+  amount_piece_object: {fileID: 481432283}
+  amount_rubis_object: {fileID: 1717069432}
+  amount_slot_object_1: {fileID: 19782677}
+  amount_slot_object_2: {fileID: 438969502}
+  amount_slot_object_3: {fileID: 1001827327}
+  amount_slot_hotbar_hotbar: {fileID: 1183317654}
 --- !u!4 &1026017579
 Transform:
   m_ObjectHideFlags: 0
