@@ -1296,7 +1296,6 @@ GameObject:
   - component: {fileID: 380029349}
   - component: {fileID: 380029348}
   - component: {fileID: 380029347}
-  - component: {fileID: 380029346}
   m_Layer: 5
   m_Name: toctoc
   m_TagString: Untagged
@@ -1324,22 +1323,6 @@ RectTransform:
   m_AnchoredPosition: {x: -0.6199951, y: 1.2799988}
   m_SizeDelta: {x: -1.6931381, y: -2.8253555}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &380029346
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 380029344}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17e05c8543ccbaf4299dc03e683644ad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scene: 
-  scene2: 
-  panel: {fileID: 1461745619}
-  panel2: {fileID: 0}
 --- !u!114 &380029347
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1383,9 +1366,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 380029346}
+      - m_Target: {fileID: 877915577}
         m_MethodName: Activate
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3509,7 +3492,7 @@ GameObject:
   - component: {fileID: 877915575}
   - component: {fileID: 877915577}
   m_Layer: 5
-  m_Name: Confirmation
+  m_Name: ConfirmationDonjon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3585,10 +3568,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 877915573}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2d356a3f260cfd4cb55fd170b942b37, type: 3}
+  m_Script: {fileID: 11500000, guid: 17e05c8543ccbaf4299dc03e683644ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  confirmation: {fileID: 877915573}
+  scene: Donjon2
+  scene2: 
+  panel: {fileID: 877915573}
+  panel2: {fileID: 1461745619}
 --- !u!1 &913113514
 GameObject:
   m_ObjectHideFlags: 0
@@ -6699,7 +6685,6 @@ GameObject:
   - component: {fileID: 1870899678}
   - component: {fileID: 1870899677}
   - component: {fileID: 1870899676}
-  - component: {fileID: 1870899679}
   m_Layer: 5
   m_Name: NON
   m_TagString: Untagged
@@ -6770,7 +6755,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1870899679}
+      - m_Target: {fileID: 877915577}
         m_MethodName: Continue
         m_Mode: 1
         m_Arguments:
@@ -6818,22 +6803,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1870899674}
   m_CullTransparentMesh: 0
---- !u!114 &1870899679
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1870899674}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17e05c8543ccbaf4299dc03e683644ad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scene: 
-  scene2: 
-  panel: {fileID: 877915573}
-  panel2: {fileID: 0}
 --- !u!1 &1886831282
 GameObject:
   m_ObjectHideFlags: 0

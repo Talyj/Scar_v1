@@ -53,12 +53,12 @@ public class Restart : MonoBehaviour
         {
             if (active)
             {
-                panel.SetActive(false);
+                panel2.SetActive(false);
                 active = false;
             }
             else
             {
-                panel.SetActive(true);
+                panel2.SetActive(true);
                 active = true;
             }    
         }
