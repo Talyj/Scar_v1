@@ -35,11 +35,14 @@ public class SpawnEnemy : MonoBehaviour
     private GameObject[] portes;
 
     private static Transform player;
+    //[SerializeField] private Animator porte;
 
-    private bool hasEnded;
+    public bool hasEnded;
+    public static bool open;
 
     void Start()
     {
+
         hasEnded = false;
         player = GameObject.FindGameObjectWithTag("Player").transform;
         
@@ -87,14 +90,12 @@ public class SpawnEnemy : MonoBehaviour
         var enemies = GameObject.FindGameObjectsWithTag("Enemy");
         portes = GameObject.FindGameObjectsWithTag("BloquePorte");
         //if (nbMonster <= 0 && cptWave <= 0)
-        if (enemies.Length <= 0 && cptWave <= 0 && hasEnded == false)
+        if(enemies.Length <= 0 && cptWave <= 0 && hasEnded == false)
         {
-            foreach (var gameobject in portes)
-            {
-                //TODO MODIFIER LE FIN DE SALLE ET JUSTE ACTIVER L'ANIMATION
-                Destroy(gameobject, 1);
-            }
-
+            //foreach (var gameobject in portes)
+            //{
+            //porte.Play("OuverturePorteDonjon", -1, 0f);
+            //}
             hasEnded = true;
         }
     }

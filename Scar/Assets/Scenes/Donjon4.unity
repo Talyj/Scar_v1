@@ -483,6 +483,7 @@ MonoBehaviour:
   scene: MainMenu
   scene2: Village4
   panel: {fileID: 36698292}
+  panel2: {fileID: 0}
 --- !u!114 &36698295
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1750,6 +1751,7 @@ MonoBehaviour:
   scene: Village
   scene2: 
   panel: {fileID: 1141454868}
+  panel2: {fileID: 0}
 --- !u!114 &319829360
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3311,6 +3313,7 @@ MonoBehaviour:
   scene: Village
   scene2: 
   panel: {fileID: 30354813}
+  panel2: {fileID: 0}
 --- !u!114 &545215342
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4037,6 +4040,7 @@ MonoBehaviour:
     type: 3}
   porte: {fileID: 5609969776779275046, guid: 19ef8bc1accaee34cb91ad0d76ad2994, type: 3}
   room: {fileID: 712218882}
+  ouverture: {fileID: 1484233015}
 --- !u!65 &712218884
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4661,6 +4665,7 @@ MonoBehaviour:
   scene: Village4
   scene2: 
   panel: {fileID: 54992420}
+  panel2: {fileID: 0}
 --- !u!114 &817165411
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8998,6 +9003,7 @@ MonoBehaviour:
   scene: 
   scene2: 
   panel: {fileID: 30354813}
+  panel2: {fileID: 0}
 --- !u!1001 &1484233012
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10255,6 +10261,7 @@ MonoBehaviour:
   scene: 
   scene2: 
   panel: {fileID: 54992420}
+  panel2: {fileID: 0}
 --- !u!1001 &1730070997
 PrefabInstance:
   m_ObjectHideFlags: 0

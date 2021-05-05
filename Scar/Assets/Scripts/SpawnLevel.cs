@@ -27,7 +27,6 @@ public class SpawnLevel : MonoBehaviour
 
     private int typeRoom;
 
-
     private void Awake()
     {
         firstPart = Random.Range(3, 4);

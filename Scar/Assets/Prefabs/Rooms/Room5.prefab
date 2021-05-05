@@ -394,6 +394,7 @@ MonoBehaviour:
   spawnMonster: {fileID: 6195011462893866357}
   numBoss: 0
   numMiniBoss: 0
+  porte: {fileID: 9134815774852814924, guid: 19ef8bc1accaee34cb91ad0d76ad2994, type: 3}
 --- !u!1 &6051760227298763912
 GameObject:
   m_ObjectHideFlags: 0

@@ -120,7 +120,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 926807036042213625}
   m_LocalRotation: {x: -0, y: -0.70266134, z: -0, w: 0.7115244}
-  m_LocalPosition: {x: -22, y: 1.9500002, z: 19.4}
+  m_LocalPosition: {x: -21.97, y: 1.9500002, z: 19.4}
   m_LocalScale: {x: 6, y: 5, z: 3}
   m_Children:
   - {fileID: 2268345955493325769}
@@ -148,8 +148,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.7315358, y: 1, z: 0.99999994}
-  m_Center: {x: -0.08720029, y: 0, z: 1.3233913e-10}
+  m_Size: {x: 1.7315358, y: 1, z: 2.116063}
+  m_Center: {x: -0.08720032, y: 0, z: -0.84657043}
 --- !u!114 &4739734891438062044
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -203,6 +203,7 @@ MonoBehaviour:
   spawnMonster: {fileID: 2319161672745728301}
   numBoss: 0
   numMiniBoss: 0
+  porte: {fileID: 9134815774852814924, guid: 19ef8bc1accaee34cb91ad0d76ad2994, type: 3}
 --- !u!1 &1472431978941902405
 GameObject:
   m_ObjectHideFlags: 0
