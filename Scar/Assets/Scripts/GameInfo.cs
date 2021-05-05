@@ -12,4 +12,14 @@ public class GameInfo : MonoBehaviour
     public static float shootDelay = 0.2f;
     public static float maxHealthPlayer = 200;
     public static int levelBoss = 0;
+    
+    //Liste de skills actifs :
+    // tourbilol, flailAttack, shieldStun
+    public static string activeSkill = "tourbilol";
+    public static int activeLevel = 1;
+    
+    //Liste de skills passifs :
+    // berserker, rempart, rewind
+    public static string passiveSkill = "berserker";
+    public static int passiveLevel = 2;
 }

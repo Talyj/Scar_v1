@@ -9,4 +9,9 @@ public class DataToSave
     public float rangeDamage;
     public float closeDamage;
     public int levelBoss;
+    
+    public string activeSkill;
+    public int activeLevel;
+    public string passiveSkill;
+    public int passiveLevel;
 }

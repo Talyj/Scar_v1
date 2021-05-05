@@ -25,6 +25,10 @@ public class InventaireExterne : MonoBehaviour
             rangeDamage = GameInfo.rangedDamage,
             closeDamage = GameInfo.closedDamage,
             levelBoss = GameInfo.levelBoss,
+            activeSkill = GameInfo.activeSkill,
+            activeLevel = GameInfo.activeLevel,
+            passiveSkill = GameInfo.passiveSkill,
+            passiveLevel = GameInfo.passiveLevel
         };
         string json = JsonUtility.ToJson(dataToSave);
         File.WriteAllText(destination, json);

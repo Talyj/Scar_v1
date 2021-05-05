@@ -1,33 +1,22 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 public class HealthEnemy : MonoBehaviour
 {
     [SerializeField] public Image healthFill;
     public float maxHealth;
     public float currentHealth;
-    private float degatsBullet = GameInfo.rangedDamage;
+    private float degatsBullet;
     private float degatWeapon = 50;
 
     public GameObject coin;
     public GameObject rubis;
     public GameObject mana_potion;
     public GameObject health_potion;
-
-    private void Start()
-    {
-        if (GameObject.FindGameObjectWithTag("Attaque"))
-        {
-            degatsBullet = degatsBullet * 110 / 100;
-        }
-
-        //if (GameObject.FindGameObjectWithTag("Attaque2"))
-        //{
-            //degats = degats * 120 / 100;
-        //}
-    }
 
     void Update()
     {
@@ -52,7 +41,12 @@ public class HealthEnemy : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    
+
+    private void FixedUpdate()
+    {
+        degatsBullet = GameInfo.rangedDamage;
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("bulBasic"))

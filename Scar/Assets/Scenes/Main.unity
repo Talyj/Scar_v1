@@ -925,6 +925,7 @@ MonoBehaviour:
   scene: MainMenu
   scene2: Village
   panel: {fileID: 186498412}
+  panel2: {fileID: 0}
 --- !u!114 &186498415
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1358,6 +1359,7 @@ MonoBehaviour:
   scene: Village
   scene2: 
   panel: {fileID: 1067679953}
+  panel2: {fileID: 0}
 --- !u!114 &319829360
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1506,6 +1508,31 @@ Rigidbody:
     type: 3}
   m_PrefabInstance: {fileID: 387352653}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &387352657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 387352654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 023bdedab6bd03e4d892d84937908c2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 7064619592068957810, guid: 42b584544d4a74f4eaa95c15f2449731, type: 3}
+--- !u!114 &387352658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 387352654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68a3ddf1f513a8747a6ce07ca05bba83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &390286620
 GameObject:
   m_ObjectHideFlags: 0
@@ -2242,6 +2269,7 @@ MonoBehaviour:
   scene: Village
   scene2: 
   panel: {fileID: 30354813}
+  panel2: {fileID: 0}
 --- !u!114 &545215342
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3765,6 +3793,7 @@ MonoBehaviour:
   scene: Village
   scene2: 
   panel: {fileID: 54992420}
+  panel2: {fileID: 0}
 --- !u!114 &817165411
 MonoBehaviour:
   m_ObjectHideFlags: 0
