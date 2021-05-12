@@ -35,7 +35,6 @@ public class SpawnEnemy : MonoBehaviour
     private GameObject[] portes;
 
     private static Transform player;
-    //[SerializeField] private Animator porte;
 
     public bool hasEnded;
     public static bool open;
@@ -89,13 +88,13 @@ public class SpawnEnemy : MonoBehaviour
         
         var enemies = GameObject.FindGameObjectsWithTag("Enemy");
         portes = GameObject.FindGameObjectsWithTag("BloquePorte");
-        //if (nbMonster <= 0 && cptWave <= 0)
+        if (nbMonster <= 0 && cptWave <= 0)
         if(enemies.Length <= 0 && cptWave <= 0 && hasEnded == false)
         {
-            //foreach (var gameobject in portes)
-            //{
-            //porte.Play("OuverturePorteDonjon", -1, 0f);
-            //}
+            foreach (var gameobject in portes)
+            
+            gameobject.GetComponent<Animator>().Play("OuverturePorteDonjon", -1, 0f);
+            
             hasEnded = true;
         }
     }
