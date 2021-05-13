@@ -10,8 +10,6 @@ public class HealthEnemy : MonoBehaviour
     [SerializeField] public Image healthFill;
     public float maxHealth;
     public float currentHealth;
-    private float degatsBullet;
-    private float degatWeapon = 50;
 
     public GameObject coin;
     public GameObject rubis;
@@ -39,21 +37,6 @@ public class HealthEnemy : MonoBehaviour
             SpawnEnemy.nbMonster -= 1;
             new WaitForSeconds(0.1f);
             Destroy(gameObject);
-        }
-    }
-
-    private void FixedUpdate()
-    {
-        degatsBullet = GameInfo.rangedDamage;
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("bulBasic"))
-        {
-            currentHealth -= degatsBullet;
-            PlayerController.numberDamagesDealt += degatsBullet;
-            Destroy(collision.gameObject);
         }
     }
 

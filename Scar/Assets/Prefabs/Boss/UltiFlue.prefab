@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 8528762439713695036}
   - component: {fileID: 4706861294453886080}
   - component: {fileID: 8607213585806825242}
-  - component: {fileID: 5367387937971644483}
+  - component: {fileID: 6941314128590459982}
   m_Layer: 11
   m_Name: UltiFlue
   m_TagString: bulEnemy
@@ -139,7 +139,7 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5367387937971644483
+--- !u!114 &6941314128590459982
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -151,6 +151,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adac45a7c26c5594f891fe774d065bbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 6
+  speed: 0
   bullet: {fileID: 6524475635305536283, guid: 998a932b6d8bd714c8a4ba4cc33e2c33, type: 3}
   firePoint: {fileID: 8102316596900982160}

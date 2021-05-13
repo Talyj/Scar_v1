@@ -6,8 +6,7 @@ using UnityEngine;
 
 public class GameInfo : MonoBehaviour
 {
-    //public static float rangedDamage = 35;
-    public static float rangedDamage = 350;
+    public static float rangedDamage = 35;
     public static float closedDamage = 50;
     public static float shootDelay = 0.2f;
     public static float maxHealthPlayer = 200;
@@ -20,6 +19,6 @@ public class GameInfo : MonoBehaviour
     
     //Liste de skills passifs :
     // berserker, rempart, rewind
-    public static string passiveSkill = "berserker";
+    public static string passiveSkill = "rewind";
     public static int passiveLevel = 2;
 }

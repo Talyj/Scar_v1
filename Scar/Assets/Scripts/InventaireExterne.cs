@@ -17,7 +17,7 @@ public class InventaireExterne : MonoBehaviour
     /*        SAUVEGARDE DES INFORMATIONS DU JOUEUR        */
     private void Save()
     {
-        string destination = Application.persistentDataPath + "/game.dat";
+        string destination = Application.persistentDataPath + "/game.json";
         DataToSave dataToSave = new DataToSave
         {
             shootDelay = GunController.timeBetweenShots,

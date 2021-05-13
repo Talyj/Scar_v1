@@ -8,7 +8,7 @@ public class LoadSave : MonoBehaviour
     [SerializeField] private GameObject panel;
     private void Awake()
     {
-        string destination = Application.persistentDataPath + "/game.dat";
+        string destination = Application.persistentDataPath + "/game.json";
         if (File.Exists(destination))
         {
             panel.SetActive(true);   
@@ -17,7 +17,7 @@ public class LoadSave : MonoBehaviour
 
     public void Load()
     {
-        string destination = Application.persistentDataPath + "/game.dat";
+        string destination = Application.persistentDataPath + "/game.json";
         if (File.Exists(destination))
         {
             string saveString = File.ReadAllText(destination);

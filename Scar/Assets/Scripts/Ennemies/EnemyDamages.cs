@@ -7,6 +7,7 @@ public class EnemyDamages : MonoBehaviour
 {
     private HealthPlayer player;
     [SerializeField] private float degats;
+    public static float damageMultiplication = 1f;
 
     private void Start()
     {
@@ -17,7 +18,7 @@ public class EnemyDamages : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            HealthPlayer.currentHealth -= degats;
+            HealthPlayer.currentHealth -= degats * damageMultiplication;
             PlayerController.numberDamagesReceived += degats;
             PlayerController.score -= 1;
         }

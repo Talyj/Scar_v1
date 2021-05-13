@@ -7,13 +7,12 @@ public class FlueBehaviour : MonoBehaviour
 {
     // Param principaux
     [SerializeField] private GameObject Boss;
-    [SerializeField] private FlueHealth BossHealth;
+    [SerializeField] private BossHealth BossHealth;
     private Transform player;
     
     // Derniere Chance
     [SerializeField] private GameObject pat;
     [SerializeField] private GameObject put;
-    private FlueHealth currentHealth;
     
     public static int isAlive = 1;
     
