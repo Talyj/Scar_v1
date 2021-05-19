@@ -17,7 +17,7 @@ public class InventaireExterne : MonoBehaviour
     /*        SAUVEGARDE DES INFORMATIONS DU JOUEUR        */
     private void Save()
     {
-        string destination = Application.persistentDataPath + "/game.dat";
+        string destination = Application.persistentDataPath + "/game.json";
         DataToSave dataToSave = new DataToSave
         {
             shootDelay = GunController.timeBetweenShots,
@@ -25,6 +25,10 @@ public class InventaireExterne : MonoBehaviour
             rangeDamage = GameInfo.rangedDamage,
             closeDamage = GameInfo.closedDamage,
             levelBoss = GameInfo.levelBoss,
+            activeSkill = GameInfo.activeSkill,
+            activeLevel = GameInfo.activeLevel,
+            passiveSkill = GameInfo.passiveSkill,
+            passiveLevel = GameInfo.passiveLevel
         };
         string json = JsonUtility.ToJson(dataToSave);
         File.WriteAllText(destination, json);

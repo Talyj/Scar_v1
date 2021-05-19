@@ -26,6 +26,7 @@ public class PlayerController : MonoBehaviour
     private Vector3 lastDirectionIntent;
     private float dashCounter;
     private float dashDistance = 100000;
+    public static bool isDashing;
 
 
     public static int cpt;
@@ -67,32 +68,34 @@ public class PlayerController : MonoBehaviour
 
         lastDirectionIntent = lastDirectionIntent.normalized;
     }
-    
+
     private void Dashing()
     {
         dashCounter -= Time.deltaTime;
-        if (dashCounter <= 0)
+        if (dashCounter <= 0 && Input.GetMouseButtonDown(1))
         {
-            if (Input.GetMouseButtonDown(1))
+            isDashing = true;
+            dashCounter = 2;
+            if (Input.GetKey(KeyCode.D))
             {
-                dashCounter = 2;
-                if (Input.GetKey(KeyCode.D))
-                {
-                    playerRigidbody.AddForce(Vector3.right * dashDistance);
-                }
-                if (Input.GetKey(KeyCode.Q))
-                {
-                    playerRigidbody.AddForce(Vector3.left * dashDistance);
-                }
-                if (Input.GetKey(KeyCode.Z))
-                {
-                    playerRigidbody.AddForce(Vector3.forward * dashDistance);
-                }
-                if (Input.GetKey(KeyCode.S))
-                {
-                    playerRigidbody.AddForce(Vector3.back * dashDistance);
-                }
+                playerRigidbody.AddForce(Vector3.right * dashDistance);
             }
+            if (Input.GetKey(KeyCode.Q))
+            {
+                playerRigidbody.AddForce(Vector3.left * dashDistance);
+            }
+            if (Input.GetKey(KeyCode.Z))
+            {
+                playerRigidbody.AddForce(Vector3.forward * dashDistance);
+            }
+            if (Input.GetKey(KeyCode.S))
+            {
+                playerRigidbody.AddForce(Vector3.back * dashDistance);
+            }
+        }
+        else if (dashCounter <= 1)
+        {
+            isDashing = false;
         }
     }
 

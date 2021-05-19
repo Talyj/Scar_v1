@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LymuleBulletController : MonoBehaviour
 {
-    public float speed;
+    private float speed = 10;
     private int numBullets = 10;
     [SerializeField] private BulletController bullet;
     [SerializeField] private Transform firePoint;

@@ -502,7 +502,7 @@ GameObject:
   - component: {fileID: 2781188672430667621}
   - component: {fileID: 3789158331052407529}
   - component: {fileID: 5222893837564701906}
-  - component: {fileID: 5222893837564701907}
+  - component: {fileID: 4375186952168798980}
   m_Layer: 9
   m_Name: Flue
   m_TagString: boss
@@ -589,7 +589,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Boss: {fileID: 5222893837564701904}
-  BossHealth: {fileID: 5222893837564701907}
+  BossHealth: {fileID: 4375186952168798980}
   pat: {fileID: 272287531547417062, guid: ed0bb92d1d4c1464ba1fbfc0df8c7401, type: 3}
   put: {fileID: 2949682024625288999, guid: e49602583d1c23446b28cc9e81633c13, type: 3}
   defaultSpeedMonster: 12
@@ -616,7 +616,7 @@ MonoBehaviour:
   - {fileID: 22071872801707213}
   lymuleBullet: {fileID: 5367387937971644483, guid: 6081b776162c022429ea619fc1a47fa9,
     type: 3}
---- !u!114 &5222893837564701907
+--- !u!114 &4375186952168798980
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -625,14 +625,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 5222893837564701904}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7efa5934da468664abacd1bad19be8ed, type: 3}
+  m_Script: {fileID: 11500000, guid: 0726fb28bab328344a05c17aa538f901, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   healthFill: {fileID: 5222893836236271293}
   maxHealth: 10000
   currentHealth: 10000
-  degatsBullet: 35
-  degatWeapon: 50
 --- !u!1001 &7646184420669564317
 PrefabInstance:
   m_ObjectHideFlags: 0

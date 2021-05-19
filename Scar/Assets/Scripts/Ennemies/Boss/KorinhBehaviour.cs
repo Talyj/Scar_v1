@@ -10,7 +10,7 @@ public class KorinhBehaviour : MonoBehaviour
 {
     // Param principaux
     [SerializeField] private GameObject Boss;
-    [SerializeField] private KorinhHealth BossHealth;
+    [SerializeField] private BossHealth BossHealth;
     private Transform player;
     
     // Derniere Chance
@@ -18,7 +18,6 @@ public class KorinhBehaviour : MonoBehaviour
     [SerializeField] private GameObject put;
     private bool premiereChance = true;
     private bool derniereChance = true;
-    private KorinhHealth currentHealth;
     
     public static int isAlive = 1;
     

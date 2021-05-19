@@ -5,7 +5,7 @@ public class BobbBehaviour : MonoBehaviour
 {
     // Param principaux
     [SerializeField] private GameObject Boss;
-    [SerializeField] private BobbHealth BossHealth;
+    [SerializeField] private BossHealth BossHealth;
     private Transform player;
     
     // Derniere Chance
@@ -13,7 +13,6 @@ public class BobbBehaviour : MonoBehaviour
     [SerializeField] private GameObject put;
     private bool premiereChance = true;
     private bool derniereChance = true;
-    private BobbHealth currentHealth;
     
     public static int isAlive = 1;
     
