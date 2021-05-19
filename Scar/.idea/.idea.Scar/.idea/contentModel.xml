@@ -19,14 +19,11 @@
               <e p="AttackTentacule.cs" t="Include" />
               <e p="AttackZoneController.cs" t="Include" />
               <e p="BobbBehaviour.cs" t="Include" />
-              <e p="BobbHealth.cs" t="Include" />
               <e p="BossBehaviour.cs" t="Include" />
+              <e p="BossHealth.cs" t="Include" />
               <e p="FlueBehaviour.cs" t="Include" />
-              <e p="FlueHealth.cs" t="Include" />
               <e p="KorinhBehaviour.cs" t="Include" />
-              <e p="KorinhHealth.cs" t="Include" />
               <e p="LymuleBulletController.cs" t="Include" />
-              <e p="LymuleHealth.cs" t="Include" />
             </e>
             <e p="EnemyDamages.cs" t="Include" />
             <e p="HealthEnemy.cs" t="Include" />
@@ -47,10 +44,16 @@
             <e p="AnimIzaak.cs" t="Include" />
             <e p="GunController.cs" t="Include" />
             <e p="HealthPlayer.cs" t="Include" />
+            <e p="IzaakDamages.cs" t="Include" />
             <e p="Mana.cs" t="Include" />
             <e p="PlayerController.cs" t="Include" />
+            <e p="Skills" t="Include">
+              <e p="ActiveSkills.cs" t="Include" />
+              <e p="PassiveSkills.cs" t="Include" />
+            </e>
             <e p="WeaponController.cs" t="Include" />
           </e>
+          <e p="LevelDecor.cs" t="Include" />
           <e p="LoadDonjon.cs" t="Include" />
           <e p="LoadSave.cs" t="Include" />
           <e p="LoadVillages.cs" t="Include" />

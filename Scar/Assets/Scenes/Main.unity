@@ -1533,6 +1533,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68a3ddf1f513a8747a6ce07ca05bba83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bullet: {fileID: 7064619592068957810, guid: 42b584544d4a74f4eaa95c15f2449731, type: 3}
 --- !u!1 &390286620
 GameObject:
   m_ObjectHideFlags: 0
@@ -3146,6 +3147,7 @@ MonoBehaviour:
   spawnMonster: {fileID: 1322627554}
   numBoss: 0
   numMiniBoss: 0
+  hasEnded: 0
 --- !u!1 &737678797
 GameObject:
   m_ObjectHideFlags: 0
