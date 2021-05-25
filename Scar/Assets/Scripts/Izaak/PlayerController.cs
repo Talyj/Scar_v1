@@ -25,7 +25,8 @@ public class PlayerController : MonoBehaviour
     //Movement and Dash variables
     private Vector3 lastDirectionIntent;
     private float dashCounter;
-    private float dashDistance = 100000;
+    //private float dashDistance = 100000;
+    private float dashDistance = 200000;
     public static bool isDashing;
 
 
@@ -74,23 +75,26 @@ public class PlayerController : MonoBehaviour
         dashCounter -= Time.deltaTime;
         if (dashCounter <= 0 && Input.GetMouseButtonDown(1))
         {
-            isDashing = true;
             dashCounter = 2;
             if (Input.GetKey(KeyCode.D))
             {
                 playerRigidbody.AddForce(Vector3.right * dashDistance);
+                isDashing = true;
             }
             if (Input.GetKey(KeyCode.Q))
             {
                 playerRigidbody.AddForce(Vector3.left * dashDistance);
+                isDashing = true;
             }
             if (Input.GetKey(KeyCode.Z))
             {
                 playerRigidbody.AddForce(Vector3.forward * dashDistance);
+                isDashing = true;
             }
             if (Input.GetKey(KeyCode.S))
             {
                 playerRigidbody.AddForce(Vector3.back * dashDistance);
+                isDashing = true;
             }
         }
         else if (dashCounter <= 1)
