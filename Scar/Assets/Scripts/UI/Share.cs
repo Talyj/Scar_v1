@@ -7,12 +7,12 @@ public class Share : MonoBehaviour
 {
     private string TWITTER_ADDRESS = "http://twitter.com/intent/tweet";
     private const string TWEET_LANGUAGE = "en";
-    private string FACEBOOK_ADDRESS = "https://www.facebook.com/statut";
+    private string MESSENGER_ADDRESS = "https://facebook.com/new";
 
     public void ShareToFB(string linkParameter)
     {
         string nameParameter = "Look at my score on Scar !";//this is limited in text length 
-        Application.OpenURL(FACEBOOK_ADDRESS +
+        Application.OpenURL(MESSENGER_ADDRESS +
            "?text=" + UnityWebRequest.EscapeURL(nameParameter + "\n" + "Score :" + PlayerController.score.ToString() + "\n" +
            "Damage dealt :" + PlayerController.numberDamagesDealt.ToString() + "\n" + "Damage recieved :" + PlayerController.numberDamagesReceived.ToString()));
     }
