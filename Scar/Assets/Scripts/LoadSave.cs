@@ -25,9 +25,16 @@ public class LoadSave : MonoBehaviour
             
             GameInfo.rangedDamage = data.rangeDamage;
             GameInfo.closedDamage = data.closeDamage;
+            GameInfo.shootDelay = data.shootDelay;
             GameInfo.maxHealthPlayer = data.maxHealthPlayer;
             GunController.timeBetweenShots = data.shootDelay;
             GameInfo.levelBoss = data.levelBoss;
+
+            GameInfo.activeSkill = data.activeSkill;
+            GameInfo.activeLevel = data.activeLevel;
+            
+            GameInfo.passiveSkill = data.passiveSkill;
+            GameInfo.passiveLevel = data.passiveLevel;
 
             if (data.levelBoss == 0)
             {

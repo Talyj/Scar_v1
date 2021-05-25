@@ -124,7 +124,6 @@ public class PassiveSkills : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("bulEnemy") && PlayerController.isDashing && GameInfo.passiveSkill == "rewind")
-        //if (other.gameObject.CompareTag("bulEnemy"))
         {
             other.gameObject.transform.Rotate(Vector3.up, 180);
             var direction = other.gameObject.transform.rotation;
