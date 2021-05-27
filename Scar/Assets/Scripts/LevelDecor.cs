@@ -1,12 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.SceneManagement;
+﻿using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class LevelDecor : MonoBehaviour
 {
     public GameObject marecage;
+    public GameObject arene;
     
 
     void Start()
@@ -20,11 +19,14 @@ public class LevelDecor : MonoBehaviour
         {
             marecage.SetActive(false);
         }
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-       
+        if (scene.name == "Donjon2")
+        {
+            arene.SetActive(true);
+        }
+        else
+        {
+            arene.SetActive(false);
+        }
     }
 }
