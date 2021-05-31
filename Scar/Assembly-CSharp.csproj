@@ -85,7 +85,6 @@
      <Compile Include="Assets\Scripts\GameInfo.cs" />
      <Compile Include="Assets\Scripts\GodMode.cs" />
      <Compile Include="Assets\Scripts\Inventaire.cs" />
-     <Compile Include="Assets\Scripts\InventaireExterne.cs" />
      <Compile Include="Assets\Scripts\Izaak\ActifRaffale.cs" />
      <Compile Include="Assets\Scripts\Izaak\AnimIzaak.cs" />
      <Compile Include="Assets\Scripts\Izaak\GunController.cs" />
@@ -94,6 +93,7 @@
      <Compile Include="Assets\Scripts\Izaak\Mana.cs" />
      <Compile Include="Assets\Scripts\Izaak\PlayerController.cs" />
      <Compile Include="Assets\Scripts\Izaak\Skills\ActiveSkills.cs" />
+     <Compile Include="Assets\Scripts\Izaak\Skills\ChangeSkill.cs" />
      <Compile Include="Assets\Scripts\Izaak\Skills\PassiveSkills.cs" />
      <Compile Include="Assets\Scripts\Izaak\WeaponController.cs" />
      <Compile Include="Assets\Scripts\LevelDecor.cs" />
@@ -103,12 +103,14 @@
      <Compile Include="Assets\Scripts\MenuButtons.cs" />
      <Compile Include="Assets\Scripts\Pickup.cs" />
      <Compile Include="Assets\Scripts\PlayerFollow.cs" />
-     <Compile Include="Assets\Scripts\Restart.cs" />
      <Compile Include="Assets\Scripts\Slot.cs" />
      <Compile Include="Assets\Scripts\SlotsInventaire.cs" />
      <Compile Include="Assets\Scripts\SpawnLevel.cs" />
-     <Compile Include="Assets\Scripts\Statistiques.cs" />
      <Compile Include="Assets\Scripts\SwitchCartes.cs" />
+     <Compile Include="Assets\Scripts\UI\InventaireExterne.cs" />
+     <Compile Include="Assets\Scripts\UI\Restart.cs" />
+     <Compile Include="Assets\Scripts\UI\Share.cs" />
+     <Compile Include="Assets\Scripts\UI\Statistiques.cs" />
      <Compile Include="Assets\Scripts\VictoryCondition.cs" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />

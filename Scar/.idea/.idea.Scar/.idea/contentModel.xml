@@ -38,7 +38,6 @@
           <e p="GameInfo.cs" t="Include" />
           <e p="GodMode.cs" t="Include" />
           <e p="Inventaire.cs" t="Include" />
-          <e p="InventaireExterne.cs" t="Include" />
           <e p="Izaak" t="Include">
             <e p="ActifRaffale.cs" t="Include" />
             <e p="AnimIzaak.cs" t="Include" />
@@ -49,6 +48,7 @@
             <e p="PlayerController.cs" t="Include" />
             <e p="Skills" t="Include">
               <e p="ActiveSkills.cs" t="Include" />
+              <e p="ChangeSkill.cs" t="Include" />
               <e p="PassiveSkills.cs" t="Include" />
             </e>
             <e p="WeaponController.cs" t="Include" />
@@ -60,12 +60,16 @@
           <e p="MenuButtons.cs" t="Include" />
           <e p="Pickup.cs" t="Include" />
           <e p="PlayerFollow.cs" t="Include" />
-          <e p="Restart.cs" t="Include" />
           <e p="Slot.cs" t="Include" />
           <e p="SlotsInventaire.cs" t="Include" />
           <e p="SpawnLevel.cs" t="Include" />
-          <e p="Statistiques.cs" t="Include" />
           <e p="SwitchCartes.cs" t="Include" />
+          <e p="UI" t="Include">
+            <e p="InventaireExterne.cs" t="Include" />
+            <e p="Restart.cs" t="Include" />
+            <e p="Share.cs" t="Include" />
+            <e p="Statistiques.cs" t="Include" />
+          </e>
           <e p="VictoryCondition.cs" t="Include" />
         </e>
         <e p="TextMesh Pro" t="Include">
