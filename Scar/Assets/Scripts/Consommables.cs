@@ -10,6 +10,7 @@ public class Consommables : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<HealthPlayer>();    
     }
+    
     public void Potion()
     {
         if (gameObject.CompareTag("Potion1"))

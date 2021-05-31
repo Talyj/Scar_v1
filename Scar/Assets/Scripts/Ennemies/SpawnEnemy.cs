@@ -36,7 +36,7 @@ public class SpawnEnemy : MonoBehaviour
 
     private static Transform player;
 
-    private bool hasEnded;
+    public bool hasEnded;
 
     void Start()
     {

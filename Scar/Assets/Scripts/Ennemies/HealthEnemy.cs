@@ -11,10 +11,21 @@ public class HealthEnemy : MonoBehaviour
     private float degatsBullet = GameInfo.rangedDamage;
     private float degatWeapon = 50;
 
-    public GameObject coin;
-    public GameObject rubis;
-    public GameObject mana_potion;
-    public GameObject health_potion;
+    [SerializeField] private GameObject coin;
+    [SerializeField] private GameObject rubis;
+    [SerializeField] private GameObject health_potion;
+    [SerializeField] private GameObject mana_potion;
+    [SerializeField] private GameObject damage_potion;
+    [SerializeField] private GameObject shield_potion;
+    [SerializeField] private GameObject destruct_potion;
+    private float percent_health_potion;
+    private float percent_mana_potion;
+    private float percent_damage_potion;
+    private float percent_shield_potion;
+    private float percent_destruct_potion;
+    private float percent_coin;
+    private float percent_rubis;
+
 
     private void Start()
     {
@@ -27,6 +38,13 @@ public class HealthEnemy : MonoBehaviour
         //{
             //degats = degats * 120 / 100;
         //}
+        percent_health_potion = 0.73f;
+        percent_mana_potion = 0.73f;
+        percent_damage_potion = 0.73f;
+        percent_shield_potion = 0.73f;
+        percent_destruct_potion = 0.73f;
+        percent_coin = 0.5f;
+        percent_rubis = 0.5f;
     }
 
     void Update()
@@ -44,9 +62,14 @@ public class HealthEnemy : MonoBehaviour
                 PlayerController.score += 10;
             }
 
-            dropPotion();
-            dropCoinAndRubis(0, 2, rubis);
-            dropCoinAndRubis(10, 50, coin);
+            DropItem(health_potion, percent_health_potion);
+            DropItem(mana_potion, percent_mana_potion);
+            DropItem(damage_potion, percent_damage_potion);
+            DropItem(shield_potion, percent_shield_potion);
+            DropItem(destruct_potion, percent_destruct_potion);
+            DropItem(coin, percent_coin);
+            DropItem(rubis, percent_rubis);
+
             SpawnEnemy.nbMonster -= 1;
             new WaitForSeconds(0.1f);
             Destroy(gameObject);
@@ -63,19 +86,11 @@ public class HealthEnemy : MonoBehaviour
         }
     }
 
-    private void dropCoinAndRubis(int x, int y, GameObject g) {
-        int coins = Random.Range(x, y); 
-        transform.position = new Vector3(transform.position.x + Random.Range(-2, 2), transform.position.y + 2, transform.position.z + Random.Range(-2, 2));
-        Instantiate(g, transform.position, Quaternion.Euler (90f, Random.Range(-45f, 45f), 0f));
-    }
-
-    private void dropPotion() {
-        int i = Random.Range(0, 3);
-        transform.position = new Vector3(transform.position.x + Random.Range(-2, 2), transform.position.y + 2, transform.position.z + Random.Range(-2, 2));
-        if(i == 1) {
-            Instantiate(mana_potion, transform.position, Quaternion.Euler (90f, Random.Range(-45f, 45f), 0f));
-        } else if(i == 2) {
-            Instantiate(health_potion, transform.position, Quaternion.Euler (90f, Random.Range(-45f, 45f), 0f));
+    //*** Permet de drop un item en fonction d'un pourcentage donné : Random.value donne un nombre entre 0.0 et 1.0 ***//
+    private void DropItem(GameObject items, float percent) {
+        transform.position = new Vector3(transform.position.x + Random.Range(-2, 2), transform.position.y + 2, transform.position.z + Random.Range(-2, 2)); // drop dans un diametre de 4m autour de l'ennemi
+        if(Random.value > percent) { //*** Exemple: si random > 0.7, 30% de chance ***//
+            Instantiate(items, transform.position, Quaternion.Euler (90f, Random.Range(-45f, 45f), 0f));
         }
     }
 }

@@ -51,13 +51,17 @@ MonoBehaviour:
   healthFill: {fileID: 3963638717580494445}
   maxHealth: 500
   currentHealth: 500
-  degatsBullet: 35
-  degatWeapon: 50
   coin: {fileID: 7380146662539322634, guid: c03a7dc4c5cc24b44918cb4785881cf1, type: 3}
   rubis: {fileID: 7284450042278358748, guid: a258fc553ccd9304a9f5b7e66180e4f1, type: 3}
+  health_potion: {fileID: 3375728837905036193, guid: e75e829f9cf63a746825d2c7378cc26e,
+    type: 3}
   mana_potion: {fileID: 5378691844080798852, guid: afcf6338000a8904eb7df767e09beeb6,
     type: 3}
-  health_potion: {fileID: 744696440934349665, guid: c246b1e682ad69247bfa58f217abf37e,
+  damage_potion: {fileID: 3375728837905036193, guid: b73ecb7901b7b45499dd46a850b5e4be,
+    type: 3}
+  shield_potion: {fileID: 3375728837905036193, guid: 8230175e82cd2e04688d9fd9480a9755,
+    type: 3}
+  destruct_potion: {fileID: 3375728837905036193, guid: fa84dc5f51401e14daa3697f8022e359,
     type: 3}
 --- !u!114 &6597827894603294986
 MonoBehaviour:

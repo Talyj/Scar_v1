@@ -6,24 +6,14 @@ public class Inventaire : MonoBehaviour
 {
     [SerializeField] private GameObject inventaire;
 
-    private bool active;
+    public Inventaire() {}
 
-    public Inventaire() {
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            if (active)
-            {
-                active = false;
+    // En appuyant sur "E", active/désactive l'inventaire.
+    void Update() {
+        if (Input.GetKeyDown(KeyCode.E)) {
+            if(inventaire.activeSelf) {
                 inventaire.SetActive(false);
-            }
-            else
-            {
-                active = true;
+            } else if(!inventaire.activeSelf) {
                 inventaire.SetActive(true);
             }
         }
