@@ -8,14 +8,14 @@ public class BloquerSortie : MonoBehaviour
     [SerializeField] private GameObject porte;
     [SerializeField] private GameObject[] sorties;
     [SerializeField] private GameObject entree;
-    
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
             foreach (var spawn in sorties)
             {
-                Instantiate(porte, spawn.transform.position, spawn.transform.rotation);   
+                Instantiate(porte, spawn.transform.position, spawn.transform.rotation);
             }
         }
     }
@@ -24,7 +24,7 @@ public class BloquerSortie : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Instantiate(porte, entree.transform.position, entree.transform.rotation);   
+            Instantiate(porte, entree.transform.position, entree.transform.rotation); 
         }
     }
 }

@@ -8,7 +8,7 @@ public class LoadSave : MonoBehaviour
     [SerializeField] private GameObject panel;
     private void Awake()
     {
-        string destination = Application.persistentDataPath + "/game.dat";
+        string destination = Application.persistentDataPath + "/game.json";
         if (File.Exists(destination))
         {
             panel.SetActive(true);   
@@ -17,7 +17,7 @@ public class LoadSave : MonoBehaviour
 
     public void Load()
     {
-        string destination = Application.persistentDataPath + "/game.dat";
+        string destination = Application.persistentDataPath + "/game.json";
         if (File.Exists(destination))
         {
             string saveString = File.ReadAllText(destination);
@@ -25,9 +25,16 @@ public class LoadSave : MonoBehaviour
             
             GameInfo.rangedDamage = data.rangeDamage;
             GameInfo.closedDamage = data.closeDamage;
+            GameInfo.shootDelay = data.shootDelay;
             GameInfo.maxHealthPlayer = data.maxHealthPlayer;
             GunController.timeBetweenShots = data.shootDelay;
             GameInfo.levelBoss = data.levelBoss;
+
+            GameInfo.activeSkill = data.activeSkill;
+            GameInfo.activeLevel = data.activeLevel;
+            
+            GameInfo.passiveSkill = data.passiveSkill;
+            GameInfo.passiveLevel = data.passiveLevel;
 
             if (data.levelBoss == 0)
             {
