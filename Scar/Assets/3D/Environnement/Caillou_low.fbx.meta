@@ -3,7 +3,27 @@ guid: 6189b088508755e41b393b98734302a5
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Caillou_001_Low
+    second: {fileID: 2100000, guid: 22401c7169007bc4d96229fa1cc19a8b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Caillou_002_Low
+    second: {fileID: 2100000, guid: 36ff2eaef00928440abc6a940c8c2737, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Caillou_003_Low
+    second: {fileID: 2100000, guid: 76d6b180618ad2d47a79fa591e599f19, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Caillou_004_Low
+    second: {fileID: 2100000, guid: 281d0440985a29e47b167abbca12a22f, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0

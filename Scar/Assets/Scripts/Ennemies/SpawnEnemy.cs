@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections;
-using Cinemachine;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
 
