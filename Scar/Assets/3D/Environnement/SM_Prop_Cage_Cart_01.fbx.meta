@@ -3,7 +3,12 @@ guid: 7d1810583d1125f41aa79fdbdaeccef1
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CastleSHD
+    second: {fileID: 2100000, guid: 1aee8dfe0fc702a429d6c60a77caff64, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
