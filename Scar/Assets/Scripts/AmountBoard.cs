@@ -6,8 +6,8 @@ using System.Linq;
 
 public class AmountBoard : MonoBehaviour {
 
-    private int amount_piece = 0;
-    private int amount_rubis = 0;
+    public int amount_piece = 0;
+    public int amount_rubis = 0;
     private int amount_slot_1 = 0;
     private int amount_slot_2 = 0;
     private int amount_slot_3 = 0;
