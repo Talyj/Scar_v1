@@ -11,6 +11,8 @@ public class SpawnEnemy : MonoBehaviour
     public  GameObject boss;
     public GameObject miniBoss;
     public GameObject spawnMonster;
+    public GameObject fontaine;
+    public Transform spawnpointFontaine;
     private static float xPos;
     private static float zPos;
 
@@ -89,9 +91,13 @@ public class SpawnEnemy : MonoBehaviour
         if(enemies.Length <= 0 && cptWave <= 0 && hasEnded == false)
         {
             foreach (var gameobject in portes)
-            
-            gameobject.GetComponent<Animator>().Play("OuverturePorteDonjon", -1, 0f);
-            
+            {
+                gameobject.GetComponent<Animator>().Play("OuverturePorteDonjon", -1, 0f);
+                if (fontaine != null)
+                {
+                    Instantiate(fontaine, spawnpointFontaine.position, Quaternion.identity);   
+                }
+            }
             hasEnded = true;
         }
     }

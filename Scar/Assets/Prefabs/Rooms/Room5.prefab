@@ -3539,6 +3539,8 @@ MonoBehaviour:
   miniBoss: {fileID: 6197662284072629232, guid: 19efecdc44f2a1f459fcd22703bca32d,
     type: 3}
   spawnMonster: {fileID: 6195011462893866357}
+  fontaine: {fileID: 0}
+  spawnpointFontaine: {fileID: 0}
   numBoss: 0
   numMiniBoss: 0
   hasEnded: 0
@@ -6392,8 +6394,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.7315358, y: 1, z: 0.99999994}
-  m_Center: {x: -0.08720029, y: 0, z: 1.3233913e-10}
+  m_Size: {x: 1.7315358, y: 1, z: 3.374645}
+  m_Center: {x: -0.12002809, y: 0, z: 8.996369}
 --- !u!114 &7325357221292244469
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7878,8 +7880,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.7315358, y: 1, z: 0.99999994}
-  m_Center: {x: -0.08720029, y: 0, z: 1.3233913e-10}
+  m_Size: {x: 1.7315358, y: 1, z: 0.39331907}
+  m_Center: {x: -0.087200254, y: 0, z: 2.86376}
 --- !u!114 &3961743423277744121
 MonoBehaviour:
   m_ObjectHideFlags: 0

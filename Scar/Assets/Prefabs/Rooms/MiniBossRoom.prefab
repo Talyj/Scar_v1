@@ -2499,6 +2499,7 @@ Transform:
   - {fileID: 673439514683364571}
   - {fileID: 952889085030774717}
   - {fileID: 6396253293829508718}
+  - {fileID: 1468973273242215157}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5017,6 +5018,36 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &5862165022027864555
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1468973273242215157}
+  m_Layer: 0
+  m_Name: spawnpointFontaine
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1468973273242215157
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5862165022027864555}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.2, y: 3.2, z: 18.4}
+  m_LocalScale: {x: 0.5, y: 1, z: 0.5}
+  m_Children: []
+  m_Father: {fileID: 7302989020802773451}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6059638134108453493
 GameObject:
   m_ObjectHideFlags: 0
@@ -5778,12 +5809,15 @@ MonoBehaviour:
   pat: {fileID: 272287531547417062, guid: ed0bb92d1d4c1464ba1fbfc0df8c7401, type: 3}
   put: {fileID: 2949682024625288999, guid: e49602583d1c23446b28cc9e81633c13, type: 3}
   pit: {fileID: 6197662284072629232, guid: 19efecdc44f2a1f459fcd22703bca32d, type: 3}
-  boss: {fileID: 7990430383819660219, guid: 0b24264f5d68e4749acd942710434c8f, type: 3}
+  boss: {fileID: 7224972151693396008, guid: 320d081cb3f512a468a0b4778bbd0e48, type: 3}
   miniBoss: {fileID: 6197662284072629232, guid: 19efecdc44f2a1f459fcd22703bca32d,
     type: 3}
   spawnMonster: {fileID: 5115842018053886698}
+  fontaine: {fileID: 7224972151693396008, guid: 320d081cb3f512a468a0b4778bbd0e48,
+    type: 3}
+  spawnpointFontaine: {fileID: 1468973273242215157}
   numBoss: 0
-  numMiniBoss: 5
+  numMiniBoss: 1
   hasEnded: 0
 --- !u!1 &7621208114356339818
 GameObject:

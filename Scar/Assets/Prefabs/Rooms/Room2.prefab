@@ -7223,8 +7223,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.7315358, y: 1, z: 1.1799048}
-  m_Center: {x: -0.087200254, y: 0, z: 1.7822163}
+  m_Size: {x: 1.7315358, y: 1, z: 0.8345911}
+  m_Center: {x: -0.08720025, y: 0, z: 2.9029074}
 --- !u!114 &4327646825311256626
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7276,6 +7276,8 @@ MonoBehaviour:
   miniBoss: {fileID: 6197662284072629232, guid: 19efecdc44f2a1f459fcd22703bca32d,
     type: 3}
   spawnMonster: {fileID: 6849140945128059582}
+  fontaine: {fileID: 0}
+  spawnpointFontaine: {fileID: 0}
   numBoss: 0
   numMiniBoss: 0
   hasEnded: 0
