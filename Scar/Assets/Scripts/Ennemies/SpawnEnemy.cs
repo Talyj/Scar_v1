@@ -14,10 +14,10 @@ public class SpawnEnemy : MonoBehaviour
     private static float xPos;
     private static float zPos;
 
-    private int numPot;
-    private  int numPat;
-    private int numPut;
-    private int numPit;
+    public static int numPot;
+    public static int numPat;
+    public static int numPut;
+    public static int numPit;
     
     private int cptWave;
     private int monstreRecup;

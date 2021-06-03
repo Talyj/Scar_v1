@@ -18,13 +18,13 @@ public class HealthEnemy : MonoBehaviour
     [SerializeField] private GameObject damage_potion;
     [SerializeField] private GameObject shield_potion;
     [SerializeField] private GameObject destruct_potion;
-    private float percent_health_potion;
-    private float percent_mana_potion;
-    private float percent_damage_potion;
-    private float percent_shield_potion;
-    private float percent_destruct_potion;
-    private float percent_coin;
-    private float percent_rubis;
+    public static float percent_health_potion;
+    public static float percent_mana_potion;
+    public static float percent_damage_potion;
+    public static float percent_shield_potion;
+    public static float percent_destruct_potion;
+    public static float percent_coin;
+    public static float percent_rubis;
 
 
     private void Start()

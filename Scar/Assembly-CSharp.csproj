@@ -122,6 +122,7 @@
     <Compile Include="Assets\Scripts\LoadVillages.cs" />
     <Compile Include="Assets\Scripts\MenuButtons.cs" />
     <Compile Include="Assets\Scripts\NoDestructionGameObject.cs" />
+    <Compile Include="Assets\Scripts\OutilDrop.cs" />
     <Compile Include="Assets\Scripts\Pickup.cs" />
     <Compile Include="Assets\Scripts\PlayerFollow.cs" />
     <Compile Include="Assets\Scripts\Shop.cs" />
