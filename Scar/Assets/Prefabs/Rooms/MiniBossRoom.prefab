@@ -5817,7 +5817,7 @@ MonoBehaviour:
     type: 3}
   spawnpointFontaine: {fileID: 1468973273242215157}
   numBoss: 0
-  numMiniBoss: 1
+  numMiniBoss: 5
   hasEnded: 0
 --- !u!1 &7621208114356339818
 GameObject:
