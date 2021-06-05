@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 7942018455855169889}
   m_Layer: 0
   m_Name: FontaineKiTue
-  m_TagString: Untagged
+  m_TagString: fontaine
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -247,8 +247,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 8.87805, y: 8.87805, z: 8.87805}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 8.87805, y: 1.7794724, z: 8.87805}
+  m_Center: {x: 0, y: 0.017624855, z: 0}
 --- !u!135 &7942018455855169889
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -286,7 +286,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7341163221718114356}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -11.29}
+  m_LocalPosition: {x: 0, y: 0, z: -19.77}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7224972151693396012}

@@ -26,6 +26,31 @@ TagManager:
   - InventoryPart1
   - Inventory
   - InventoryPart3
+  - avertissement
+  - ShieldPotionInventory
+  - shield_potion
+  - ShieldPotionHotbar
+  - HealthPotionInventory
+  - ManaPotionInventory
+  - DamagePotionInventory
+  - DestructPotionInventory
+  - destruct_potion
+  - DestructPotionHotbar
+  - health_potion
+  - HealthPotionHotbar
+  - damage_potion
+  - DamagePotionHotbar
+  - mana_potion
+  - ManaPotionHotbar
+  - piece
+  - rubis
+  - room1
+  - room2
+  - room3
+  - room4
+  - room5
+  - Wall
+  - fontaine
   layers:
   - Default
   - TransparentFX

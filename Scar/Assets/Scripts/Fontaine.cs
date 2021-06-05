@@ -17,10 +17,12 @@ public class Fontaine : MonoBehaviour
     
     private Boolean firstSpawn;
     private Boolean lootSpawned;
+    private int essai;
 
     // Update is called once per frame
     private void Start()
     {
+        essai = 0;
         firstSpawn = true;
         lootSpawned = false;
     }
@@ -34,22 +36,38 @@ public class Fontaine : MonoBehaviour
                 other.GetComponent<Transform>().position = new Vector3(respawn.position.x, other.GetComponent<Transform>().position.y, respawn.position.z);
                 firstSpawn = false;
             }
-            else if (!lootSpawned)
+        }
+    }
+
+    private void Update()
+    {
+        Debug.Log("spawn : " + firstSpawn);
+        Debug.Log("loot : " + lootSpawned);
+        Debug.Log("essai : " + essai);
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.CompareTag("Player") && essai <= 1 && Input.GetKeyUp(KeyCode.R))
+        //if (Input.GetKeyUp(KeyCode.R))
+        {
+            lootSpawned = true;
+            essai++;
+            Debug.Log("call");
+            foreach (var spawnpoint in spawnpointLoots)
             {
-                lootSpawned = true;
-                foreach (var spawnpoint in spawnpointLoots)
-                {
-                    Instantiate(coin, spawnpoint.position, Quaternion.identity);
-                    var xPos  = spawnpoint.position.x + Random.Range(-5, 5);
-                    var zPos  = spawnpoint.position.z + Random.Range(-5, 5);
-                    Instantiate(rubis, new Vector3(xPos, spawnpoint.position.y, zPos), Quaternion.identity);
-                    Instantiate(health_potion, new Vector3(xPos, spawnpoint.position.y, zPos), Quaternion.identity);   
-                    Instantiate(mana_potion, new Vector3(xPos, spawnpoint.position.y, zPos), Quaternion.identity);
-                    Instantiate(damage_potion, new Vector3(xPos, spawnpoint.position.y, zPos), Quaternion.identity);   
-                    Instantiate(shield_potion, new Vector3(xPos, spawnpoint.position.y, zPos), Quaternion.identity);
-                    Instantiate(destruct_potion, new Vector3(xPos, spawnpoint.position.y, zPos), Quaternion.identity);
-                }
+                Debug.Log("test");
+                Instantiate(coin, spawnpoint.position, Quaternion.identity);
+                var xPos  = spawnpoint.position.x + Random.Range(-10, 10);
+                var zPos  = spawnpoint.position.z + Random.Range(-10, 10);
+                Instantiate(rubis, new Vector3(xPos, spawnpoint.position.y, zPos), Quaternion.identity);
+                Instantiate(health_potion, new Vector3(xPos, spawnpoint.position.y, zPos), Quaternion.identity);   
+                Instantiate(mana_potion, new Vector3(xPos, spawnpoint.position.y, zPos), Quaternion.identity);
+                Instantiate(damage_potion, new Vector3(xPos, spawnpoint.position.y, zPos), Quaternion.identity);   
+                Instantiate(shield_potion, new Vector3(xPos, spawnpoint.position.y, zPos), Quaternion.identity);
+                Instantiate(destruct_potion, new Vector3(xPos, spawnpoint.position.y, zPos), Quaternion.identity);
             }
+            Destroy(gameObject, 1);
         }
     }
 }
