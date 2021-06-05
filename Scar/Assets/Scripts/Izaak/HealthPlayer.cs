@@ -8,8 +8,8 @@ public class HealthPlayer : MonoBehaviour
     [SerializeField]
     public Image healthFill;
     public Text statHealth;
-    public static float maxHealth = GameInfo.maxHealthPlayer;
-    public static float currentHealth = GameInfo.maxHealthPlayer;
+    public static float maxHealth;
+    public static float currentHealth;
     public float degatsBalle = 10;
     public float degatsCol = 5;
 
@@ -17,6 +17,9 @@ public class HealthPlayer : MonoBehaviour
 
     void Start()
     {
+        maxHealth = GameInfo.maxHealthPlayer;
+        currentHealth = GameInfo.maxHealthPlayer;
+        
         Time.timeScale = 1f;
 
         if (GameObject.FindGameObjectWithTag("Shield"))
