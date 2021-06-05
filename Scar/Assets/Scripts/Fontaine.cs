@@ -17,68 +17,38 @@ public class Fontaine : MonoBehaviour
     
     private Boolean firstSpawn;
     private Boolean lootSpawned;
-    private int numberLoots;
-    private int randomLoots;
-    
-    // Start is called before the first frame update
-    void Start()
+
+    // Update is called once per frame
+    private void Start()
     {
         firstSpawn = true;
         lootSpawned = false;
-        foreach (var spawnpoint in spawnpointLoots)
-        {
-            numberLoots = Random.Range(1, 5);
-            Instantiate(coin, spawnpoint.position, Quaternion.identity);
-            var xPos = 0f;
-            var yPos = 0f;
-            if (numberLoots <= 4)
-            {
-                xPos  = spawnpoint.position.x + Random.Range(-5, 5);
-                yPos  = spawnpoint.position.y + Random.Range(-5, 5);
-                Instantiate(rubis, new Vector3(xPos, yPos, spawnpoint.position.z), Quaternion.identity);
-            }
-            if (numberLoots <= 3)
-            {
-                xPos  = spawnpoint.position.x + Random.Range(-5, 5);
-                yPos  = spawnpoint.position.y + Random.Range(-5, 5);
-                Instantiate(health_potion, new Vector3(xPos, yPos, spawnpoint.position.z), Quaternion.identity);   
-                Instantiate(mana_potion, new Vector3(xPos, yPos, spawnpoint.position.z), Quaternion.identity);
-            }
-            if (numberLoots <= 2)
-            {
-                xPos  = spawnpoint.position.x + Random.Range(-5, 5);
-                yPos  = spawnpoint.position.y + Random.Range(-5, 5);
-                Instantiate(damage_potion, new Vector3(xPos, yPos, spawnpoint.position.z), Quaternion.identity);   
-                Instantiate(shield_potion, new Vector3(xPos, yPos, spawnpoint.position.z), Quaternion.identity);   
-            }
-            if (numberLoots == 1)
-            {
-                xPos  = spawnpoint.position.x + Random.Range(-5, 5);
-                yPos  = spawnpoint.position.y + Random.Range(-5, 5);
-                Instantiate(destruct_potion, new Vector3(xPos, yPos, spawnpoint.position.z), Quaternion.identity);   
-            }
-        }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (!lootSpawned)
-        {
-            lootSpawned = true;
-            
-        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (firstSpawn)
+        if (other.CompareTag("Player"))
         {
-            if (other.CompareTag("Player"))
+            if (firstSpawn)
             {
-                Debug.Log("oe");
-                other.GetComponent<Transform>().position = respawn.position;
+                other.GetComponent<Transform>().position = new Vector3(respawn.position.x, other.GetComponent<Transform>().position.y, respawn.position.z);
                 firstSpawn = false;
+            }
+            else if (!lootSpawned)
+            {
+                lootSpawned = true;
+                foreach (var spawnpoint in spawnpointLoots)
+                {
+                    Instantiate(coin, spawnpoint.position, Quaternion.identity);
+                    var xPos  = spawnpoint.position.x + Random.Range(-5, 5);
+                    var zPos  = spawnpoint.position.z + Random.Range(-5, 5);
+                    Instantiate(rubis, new Vector3(xPos, spawnpoint.position.y, zPos), Quaternion.identity);
+                    Instantiate(health_potion, new Vector3(xPos, spawnpoint.position.y, zPos), Quaternion.identity);   
+                    Instantiate(mana_potion, new Vector3(xPos, spawnpoint.position.y, zPos), Quaternion.identity);
+                    Instantiate(damage_potion, new Vector3(xPos, spawnpoint.position.y, zPos), Quaternion.identity);   
+                    Instantiate(shield_potion, new Vector3(xPos, spawnpoint.position.y, zPos), Quaternion.identity);
+                    Instantiate(destruct_potion, new Vector3(xPos, spawnpoint.position.y, zPos), Quaternion.identity);
+                }
             }
         }
     }
