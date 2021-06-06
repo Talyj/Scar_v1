@@ -1,6 +1,7 @@
 ﻿using UnityEditor;
 using UnityEngine;
 
+#if(UNITY_EDITOR)
 public class OutilDrop : EditorWindow
 {
 
@@ -34,3 +35,4 @@ public class Drop : MonoBehaviour
     float percent_coin;
     float percent_rubis;
 }
+#endif 

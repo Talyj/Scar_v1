@@ -1,11 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI; 
-using System.Linq;
 using System.IO;
 using UnityEngine.SceneManagement;
-using Random = UnityEngine.Random;
 
 public class AmountBoard : MonoBehaviour {
 

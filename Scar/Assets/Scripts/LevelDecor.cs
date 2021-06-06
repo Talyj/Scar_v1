@@ -1,5 +1,4 @@
-﻿using UnityEditor.SceneManagement;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class LevelDecor : MonoBehaviour
@@ -11,7 +10,7 @@ public class LevelDecor : MonoBehaviour
 
     void Start()
     {
-        Scene scene = EditorSceneManager.GetActiveScene();
+        Scene scene = SceneManager.GetActiveScene();
         if(scene.name == "Main")
         {
             marecage.SetActive(true);
