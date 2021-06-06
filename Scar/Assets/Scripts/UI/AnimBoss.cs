@@ -8,9 +8,10 @@ public class AnimBoss : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             Time.timeScale = 0f;
-            bossPanel.transform.Translate(100, 0, 0);
+            bossPanel.SetActive(true);
             new WaitForSeconds(3);
-            bossPanel.transform.Translate(100, 0, 0);
+            bossPanel.SetActive(false);
+            Time.timeScale = 1f;
         }
     }
 }

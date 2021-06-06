@@ -1741,7 +1741,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 82c8a89e7cbd6a140b775fec666253f2, type: 2}
+      objectReference: {fileID: 2100000, guid: 1970584745084ba439e830f7ee863c34, type: 2}
     - target: {fileID: 919132149155446097, guid: 24a73da6f0a962c41870baae59b2071b,
         type: 3}
       propertyPath: m_Name
@@ -1969,7 +1969,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 1b3cd0594f712054d92ea9ce39692d5a, type: 2}
+      objectReference: {fileID: 2100000, guid: a42e5b0f7e99ca64186c2c5b1db9b46f, type: 2}
     - target: {fileID: 919132149155446097, guid: 584628e5a6e9d2940ac26319dc78124a,
         type: 3}
       propertyPath: m_Name
@@ -5926,7 +5926,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 288f9faf6cb989943b7ef7cd87fa8ff6, type: 2}
+      objectReference: {fileID: 2100000, guid: a42e5b0f7e99ca64186c2c5b1db9b46f, type: 2}
     - target: {fileID: 919132149155446097, guid: 584628e5a6e9d2940ac26319dc78124a,
         type: 3}
       propertyPath: m_Name
@@ -6559,7 +6559,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 82c8a89e7cbd6a140b775fec666253f2, type: 2}
+      objectReference: {fileID: 2100000, guid: 1970584745084ba439e830f7ee863c34, type: 2}
     - target: {fileID: 919132149155446097, guid: 24a73da6f0a962c41870baae59b2071b,
         type: 3}
       propertyPath: m_Name
@@ -6881,7 +6881,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 1b3cd0594f712054d92ea9ce39692d5a, type: 2}
+      objectReference: {fileID: 2100000, guid: a42e5b0f7e99ca64186c2c5b1db9b46f, type: 2}
     - target: {fileID: 919132149155446097, guid: 584628e5a6e9d2940ac26319dc78124a,
         type: 3}
       propertyPath: m_Name
@@ -12395,7 +12395,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 82c8a89e7cbd6a140b775fec666253f2, type: 2}
+      objectReference: {fileID: 2100000, guid: 1970584745084ba439e830f7ee863c34, type: 2}
     - target: {fileID: 919132149155446097, guid: 24a73da6f0a962c41870baae59b2071b,
         type: 3}
       propertyPath: m_Name
@@ -13010,7 +13010,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 82c8a89e7cbd6a140b775fec666253f2, type: 2}
+      objectReference: {fileID: 2100000, guid: 1970584745084ba439e830f7ee863c34, type: 2}
     - target: {fileID: 919132149155446097, guid: 24a73da6f0a962c41870baae59b2071b,
         type: 3}
       propertyPath: m_Name
@@ -14480,8 +14480,8 @@ MonoBehaviour:
       enableFptlForForwardOpaque: 0
       enableBigTilePrepass: 0
       isFptlEnabled: 0
-  clearColorMode: 0
-  backgroundColorHDR: {r: 0.025, g: 0.07, b: 0.19, a: 0}
+  clearColorMode: 1
+  backgroundColorHDR: {r: 0, g: 0, b: 0, a: 0}
   clearDepth: 1
   volumeLayerMask:
     serializedVersion: 2
@@ -15943,7 +15943,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 1b3cd0594f712054d92ea9ce39692d5a, type: 2}
+      objectReference: {fileID: 2100000, guid: a42e5b0f7e99ca64186c2c5b1db9b46f, type: 2}
     - target: {fileID: 919132149155446097, guid: 584628e5a6e9d2940ac26319dc78124a,
         type: 3}
       propertyPath: m_Name
