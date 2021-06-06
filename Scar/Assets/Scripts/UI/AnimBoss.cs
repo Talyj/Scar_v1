@@ -8,6 +8,7 @@ public class AnimBoss : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            Debug.Log("essai");
             DisplayPanelOn();
         }
     }
@@ -29,13 +30,6 @@ public class AnimBoss : MonoBehaviour
         {
             Time.timeScale = 1f;
             bossPanel.SetActive(false);   
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
             Destroy(gameObject, 1);
         }
     }
