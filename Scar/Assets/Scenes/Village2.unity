@@ -29353,7 +29353,7 @@ MonoBehaviour:
   amount_slot_object_1: {fileID: 196208267}
   amount_slot_object_2: {fileID: 344706820}
   amount_slot_object_3: {fileID: 1250518437}
-  amount_slot_hotbar_hotbar: {fileID: 0}
+  amount_slot_hotbar_hotbar: {fileID: 991551050}
   first_part_inventory: {fileID: 130844191}
   fifth_part_inventory: {fileID: 1589364767}
   fourth_part_hotbar: {fileID: 1817863978}

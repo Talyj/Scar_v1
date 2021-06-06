@@ -12,7 +12,7 @@ public class BossHealth : MonoBehaviour
 
     private void Start()
     {
-        if (gameObject.name == "Lymule")
+        if (gameObject.name == "Lymule(Clone)")
         {
             BossBehaviour.isAlive = 1;
             currentBoss = 1;
@@ -22,12 +22,12 @@ public class BossHealth : MonoBehaviour
             KorinhBehaviour.isAlive = 1;
             currentBoss = 2;
         }
-        else if (gameObject.name == "Bobb")
+        else if (gameObject.name == "Bobb(Clone)")
         {
             BobbBehaviour.isAlive = 1;
             currentBoss = 3;
         }
-        else if (gameObject.name == "Flue")
+        else if (gameObject.name == "Flue(Clone)")
         {
             FlueBehaviour.isAlive = 1;
             currentBoss = 4;

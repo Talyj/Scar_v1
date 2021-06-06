@@ -22381,9 +22381,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scene: Village
   scene2: 
-  panel: {fileID: 0}
+  panel: {fileID: 88836836}
   panel2: {fileID: 54992420}
-  amountBoard: {fileID: 0}
+  amountBoard: {fileID: 445798003}
 --- !u!114 &817165411
 MonoBehaviour:
   m_ObjectHideFlags: 0
