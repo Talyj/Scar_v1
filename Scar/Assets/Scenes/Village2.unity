@@ -4789,6 +4789,7 @@ GameObject:
   - component: {fileID: 358319906}
   - component: {fileID: 358319905}
   - component: {fileID: 358319909}
+  - component: {fileID: 358319910}
   m_Layer: 0
   m_Name: Camera
   m_TagString: MainCamera
@@ -4868,13 +4869,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 358319904}
-  m_LocalRotation: {x: 0.5307223, y: -0, z: -0, w: 0.84754574}
-  m_LocalPosition: {x: 29.5, y: 34.1, z: -8.8}
+  m_LocalRotation: {x: 0.4326393, y: -0, z: -0, w: 0.90156716}
+  m_LocalPosition: {x: 29.5, y: 35.94, z: -22.35}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 12
-  m_LocalEulerAnglesHint: {x: 64.109, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 51.270004, y: 0, z: 0}
 --- !u!114 &358319909
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4934,8 +4935,8 @@ MonoBehaviour:
       enableFptlForForwardOpaque: 0
       enableBigTilePrepass: 0
       isFptlEnabled: 0
-  clearColorMode: 0
-  backgroundColorHDR: {r: 0.025, g: 0.07, b: 0.19, a: 0}
+  clearColorMode: 1
+  backgroundColorHDR: {r: 0, g: 0, b: 0, a: 0}
   clearDepth: 1
   volumeLayerMask:
     serializedVersion: 2
@@ -4979,6 +4980,25 @@ MonoBehaviour:
       data1: 0
       data2: 0
   defaultFrameSettings: 0
+--- !u!95 &358319910
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 358319904}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bec45bc5c8ed0314b96399ca0935c23f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &364180009
 GameObject:
   m_ObjectHideFlags: 0
@@ -5468,7 +5488,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.2193445, y: 0.1986709}
   m_AnchorMax: {x: 0.7838038, y: 1}
-  m_AnchoredPosition: {x: -0.5839844, y: 1}
+  m_AnchoredPosition: {x: -0.58399963, y: 1}
   m_SizeDelta: {x: -128.37933, y: -96.367676}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &380560461
@@ -11832,7 +11852,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29baaadac62e1b14a94329d0b02d7702, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 0}
+  cam: {fileID: 358319910}
   shop: {fileID: 1583992369}
   inventaire: {fileID: 1982787421}
 --- !u!135 &1044960693
@@ -14605,7 +14625,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.030000001}
   m_AnchorMax: {x: 1, y: 0.24000001}
-  m_AnchoredPosition: {x: 22.769997, y: -0.4299984}
+  m_AnchoredPosition: {x: 22.769997, y: -0.4300003}
   m_SizeDelta: {x: 45.485252, y: 13.800419}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1258341965

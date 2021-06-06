@@ -4717,8 +4717,8 @@ MonoBehaviour:
       enableFptlForForwardOpaque: 0
       enableBigTilePrepass: 0
       isFptlEnabled: 0
-  clearColorMode: 0
-  backgroundColorHDR: {r: 0.025, g: 0.07, b: 0.19, a: 0}
+  clearColorMode: 1
+  backgroundColorHDR: {r: 0, g: 0, b: 0, a: 0}
   clearDepth: 1
   volumeLayerMask:
     serializedVersion: 2
@@ -10237,7 +10237,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.2193445, y: 0.1986709}
   m_AnchorMax: {x: 0.7838038, y: 1}
-  m_AnchoredPosition: {x: -0.5839844, y: 1}
+  m_AnchoredPosition: {x: -0.58399963, y: 1}
   m_SizeDelta: {x: -128.37936, y: -96.367645}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &877915575
