@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class AnimBoss : MonoBehaviour
 {
@@ -7,11 +8,28 @@ public class AnimBoss : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Time.timeScale = 0f;
-            bossPanel.SetActive(true);
-            new WaitForSeconds(3);
-            bossPanel.SetActive(false);
-            Time.timeScale = 1f;
+            DisplayPanelOn();
         }
     }
+
+    private void Update()
+    {
+        DisplayPanelOff();
+    }
+
+    private void DisplayPanelOn()
+    {
+        bossPanel.SetActive(true);
+        Time.timeScale = 0f;
+    }
+    
+    private void DisplayPanelOff()
+    {
+        if (Input.GetMouseButtonDown(1) || Input.GetMouseButtonDown(0))
+        {
+            Time.timeScale = 1f;
+            bossPanel.SetActive(false);   
+        }
+    }
+    
 }
