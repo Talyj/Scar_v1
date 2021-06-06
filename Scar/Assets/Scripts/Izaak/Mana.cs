@@ -4,8 +4,8 @@ using UnityEngine;
 public class Mana : MonoBehaviour
 {
     public Image mana;
-    public float currentMana = 200;
-    public float maxMana = 200;
+    public static float currentMana = 200;
+    public static float maxMana = 200;
     void Start()
     {
         

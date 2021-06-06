@@ -30,9 +30,9 @@ public class ActiveSkills : MonoBehaviour
 
     private void Tourbilol()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1) && ActifRaffale.currentMana >= 50)
+        if (Input.GetKeyDown(KeyCode.Alpha1) && Mana.currentMana >= 50)
         {
-            ActifRaffale.currentMana -= 50;
+            Mana.currentMana -= 50;
             for (int i = 0; i < numBullets; i++)
             {
                 // Determine la position de spawn des balles
