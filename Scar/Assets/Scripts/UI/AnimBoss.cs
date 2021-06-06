@@ -30,7 +30,7 @@ public class AnimBoss : MonoBehaviour
         {
             Time.timeScale = 1f;
             bossPanel.SetActive(false);   
-            Destroy(gameObject, 1);
+            Destroy(gameObject);
         }
     }
 }
