@@ -58,7 +58,7 @@ public class PassiveSkills : MonoBehaviour
                 }
                 else if(HealthPlayer.currentHealth <= HealthPlayer.maxHealth * 0.5 && rempart1 == false)
                 {
-                    EnemyDamages.damageMultiplication = 0f;
+                    EnemyDamages.damageMultiplication = 0.7f;
                     rempart1 = true;
                 }
                 break;

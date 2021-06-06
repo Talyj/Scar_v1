@@ -3969,7 +3969,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.84700006}
   m_AnchorMax: {x: 0.059378125, y: 1}
-  m_AnchoredPosition: {x: -2.5, y: 3.9999847}
+  m_AnchoredPosition: {x: -2.5, y: 4}
   m_SizeDelta: {x: 3.2324753, y: 9.071335}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &147551478
@@ -5267,6 +5267,7 @@ MonoBehaviour:
   scene2: Village
   panel: {fileID: 186498412}
   panel2: {fileID: 0}
+  amountBoard: {fileID: 0}
 --- !u!114 &186498415
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9321,6 +9322,7 @@ MonoBehaviour:
   scene2: 
   panel: {fileID: 1067679953}
   panel2: {fileID: 0}
+  amountBoard: {fileID: 0}
 --- !u!114 &319829360
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11930,6 +11932,9 @@ MonoBehaviour:
   first_part_inventory: {fileID: 1196246646}
   fifth_part_inventory: {fileID: 418481578}
   fourth_part_hotbar: {fileID: 955705166}
+  slotsPiece: {fileID: 0}
+  slotsPotion: {fileID: 0}
+  slotsHotbar: {fileID: 0}
   itemPiece: {fileID: 3747324910241048553, guid: 3a8b845aa3c6f1f428b844d9cd0a00fe,
     type: 3}
   itemRubis: {fileID: 4146231794420661245, guid: 18dbeb3229801ed4cbb69f35120fd3b7,
@@ -15107,8 +15112,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scene: Village
   scene2: 
-  panel: {fileID: 30354813}
+  panel: {fileID: 88836836}
   panel2: {fileID: 30354813}
+  amountBoard: {fileID: 445798003}
 --- !u!114 &545215342
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16198,7 +16204,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.53248334, y: 0.051774226}
   m_AnchorMax: {x: 0.6205167, y: 0.104}
-  m_AnchoredPosition: {x: -0.18999863, y: 0.024047852}
+  m_AnchoredPosition: {x: -0.19000244, y: 0.024047852}
   m_SizeDelta: {x: -1.0908508, y: -0.04815674}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &593137911
@@ -19488,10 +19494,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rooms:
-  - {fileID: 8929544030514046634, guid: 91682580f5f80c947b4fadbe636a70b6, type: 3}
-  - {fileID: 3863299923043075493, guid: db9e2f0df5eae364fbda922938a4cfc5, type: 3}
-  - {fileID: 1368298629727023493, guid: 6dbe5477e85b2f040a3bc17e0dd8ca5a, type: 3}
-  - {fileID: 362459328455236653, guid: 03154af0eb7f5054e8efe6233b2c1b0c, type: 3}
   - {fileID: 4569220351077464686, guid: a896a3808a31f9441b92dd5a3cf32f79, type: 3}
   spawnPoint: {fileID: 1676690107}
   LymuleRoom: {fileID: 0}
@@ -22381,6 +22383,7 @@ MonoBehaviour:
   scene2: 
   panel: {fileID: 0}
   panel2: {fileID: 54992420}
+  amountBoard: {fileID: 0}
 --- !u!114 &817165411
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -16,32 +16,23 @@ public class LevelDecor : MonoBehaviour
         {
             marecage.SetActive(true);
         }
-        else
-        {
-            marecage.SetActive(false);
-        }
+
 
         if (scene.name == "Donjon2")
         {
             arene.SetActive(true);
         }
-        else
-        {
-            arene.SetActive(false);
-        }
+
 
         if (scene.name == "Donjon4")
         {
             cimetiere.SetActive(true);
         }
-        else
-        {
-            cimetiere.SetActive(false);
-        }
+
+        
         if(scene.name == "DonjonEditMap") {
             arene.SetActive(true);
-        } else {
-            arene.SetActive(false);
-        }
+        } 
+
     }
 }

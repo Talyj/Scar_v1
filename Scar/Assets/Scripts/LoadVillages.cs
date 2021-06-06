@@ -28,6 +28,7 @@ public class LoadVillages : MonoBehaviour
                 case 2:
                     Village2Button.SetActive(true);
                     //Village3Button.SetActive(true);
+                    Village4Button.SetActive(true);
                     break;
                 default:
                     Village2Button.SetActive(true);
@@ -35,7 +36,6 @@ public class LoadVillages : MonoBehaviour
                     Village4Button.SetActive(true);
                     break;
             }
-
         }
     }
 

@@ -2862,7 +2862,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5846037657380477721}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64f88b2db767bb14ba752f6b7db3e2f1, type: 3}
+  m_Script: {fileID: 11500000, guid: 0c4dc901306ff7d4f9fae5c514dfb65b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   bossPanel: {fileID: 8807635107004508962}
