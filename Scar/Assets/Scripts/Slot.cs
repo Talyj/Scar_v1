@@ -70,8 +70,8 @@ public class Slot : MonoBehaviour
     //*** Fonction appeler afin de drop une potion en face du joueur  ***//
     private void Process(int i) {
         ChangeNumberOfPotion(i, inventoryPart1.slots[i].transform.childCount - 1);
-        Vector3 playerPos = new Vector3(player.position.x + 3, player.position.y + 2, player.position.z + 2);
-        Instantiate(potion, playerPos, Quaternion.identity);
+        //Vector3 playerPos = new Vector3(player.position.x + 3, player.position.y + 2, player.position.z + 2);
+        //Instantiate(potion, playerPos, Quaternion.identity);
     }
 
     //*** Change l'affichage du nombre de potion dans le slot de l'inventaire ***//

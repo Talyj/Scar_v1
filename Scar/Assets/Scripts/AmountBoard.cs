@@ -54,7 +54,7 @@ public class AmountBoard : MonoBehaviour {
     private string slot2_type;
     private string slot1_type; */
 
-    void Awake() {
+    void Start() {
         if(SceneManager.GetActiveScene().name != "DonjonEditMap") {
             chemin = Application.streamingAssetsPath + "/inventory.json";
             jsonString = File.ReadAllText(chemin);
@@ -72,7 +72,26 @@ public class AmountBoard : MonoBehaviour {
             slot3_type = inventaire.slot3_type;
             slotcard_type = inventaire.slotcard_type;
         }
+        if(amount_slot_1 >= 10) {
+            amount_slot_1 = 10;
+        } 
+        if(amount_slot_2 >= 10) {
+            amount_slot_2 = 10;
+        } 
+        if(amount_slot_3 >= 5) {
+            amount_slot_3 = 5;
+        }
+        if(amount_slot_hotbar >= 5) {
+            amount_slot_hotbar = 5;
+        }
 
+        slotsPiece = fifth_part_inventory.GetComponent<SlotsInventaire>();
+        slotsPotion = first_part_inventory.GetComponent<SlotsInventaire>();
+        slotsHotbar = fourth_part_hotbar.GetComponent<SlotsInventaire>();
+        CheckInventory();
+    }
+
+    void Awake() {
         if(amount_slot_1 >= 10) {
             amount_slot_1 = 10;
         } 
