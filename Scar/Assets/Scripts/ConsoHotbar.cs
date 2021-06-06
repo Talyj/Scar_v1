@@ -1,8 +1,10 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Linq;
+using UnityEditor.Experimental.TerrainAPI;
 
 public class ConsoHotbar : MonoBehaviour
 {
@@ -13,6 +15,10 @@ public class ConsoHotbar : MonoBehaviour
     private SlotsInventaire inventoryPart1;
     private GameObject amountBoard;
     private AmountBoard amounts;
+    private float counter;
+    private float damageCooldown = 10f;
+    private float defenseCooldown = 15f;
+    private GameObject[] enemyBullets;
 
     private void Awake() {
         //player = GameObject.FindGameObjectWithTag("Player");
@@ -22,32 +28,96 @@ public class ConsoHotbar : MonoBehaviour
         inventoryPart1 = inventory1.GetComponent<SlotsInventaire>();
     }
 
+    private void Start()
+    {
+        counter = damageCooldown;
+    }
+
+    IEnumerator DamagePotionCoroutine()
+    {
+        counter -= Time.deltaTime;
+        if(counter <= 0)
+        {
+            GameInfo.rangedDamage /= 2;
+            counter = damageCooldown;
+        }
+        yield return new WaitForSeconds(0);
+    }
+    
+    private void DamagePotionCooldown()
+    {
+        GameInfo.rangedDamage /= 2;
+    }
+    
+    private void DefensePotionCooldown()
+    {
+        EnemyDamages.damageMultiplication = 1f;
+    }
+
+    private void Potions(int potionType) {
+        switch (potionType)
+        {
+            case 0:
+                GameInfo.rangedDamage *= 2;
+                Debug.Log("Damage On");
+                Invoke("DamagePotionCooldown", 10.0f);
+                break;
+            case 1:
+                EnemyDamages.damageMultiplication = 0.5f;
+                Invoke("DefensePotionCooldown", 15.0f);
+                break;
+        }
+    }
+
     public void Update() {
         CheckTypeHotBar();
         CheckTypeSlot1();
         CheckTypeSlot2();
         CheckTypeSlot3();
-        if(Input.GetKeyDown(KeyCode.F) && hotbarPart.isFull[0] == true) { // Si on appuie sur F et que la hotbar est pleine, on utilise la potion
+        if(Input.GetKeyDown(KeyCode.F) && hotbarPart.isFull[0]) { // Si on appuie sur F et que la hotbar est pleine, on utilise la potion
             switch(hotbarPart.slots[0].transform.GetChild(0).gameObject.tag) {
                 case "DamagePotionHotbar":
                     CheckAmountHotBar();
-                    Debug.Log("damage");
+                    Potions(0);
                     break;
                 case "DestructPotionHotbar":
                     CheckAmountHotBar();
-                    Debug.Log("destruct");
+                    enemyBullets = GameObject.FindGameObjectsWithTag("bulEnemy");
+                    foreach (var bullet in enemyBullets)
+                    {
+                        float dist = Vector3.Distance(player.transform.position, bullet.transform.position);
+                        if (dist <= 20)
+                        {
+                            Destroy(bullet);   
+                        }
+                    }
                     break;
                 case "ShieldPotionHotbar":
                     CheckAmountHotBar();
-                    Debug.Log("shield");
+                    Potions(1);
                     break;
                 case "ManaPotionHotbar":
                     CheckAmountHotBar();
-                    Debug.Log("mana");
+                    if (Mana.currentMana < Mana.maxMana)
+                    {
+                        Mana.currentMana += Mana.maxMana * 0.3f;
+                        if (Mana.currentMana > Mana.maxMana)
+                        {
+                            Mana.currentMana = Mana.maxMana;
+                        }
+                    }
                     break;
                 case "HealthPotionHotbar":
                     CheckAmountHotBar();
-                    Debug.Log("health");
+                    if (HealthPlayer.currentHealth < HealthPlayer.maxHealth)
+                    {
+                        HealthPlayer.currentHealth += HealthPlayer.maxHealth * 0.4f;
+                        if (HealthPlayer.currentHealth > HealthPlayer.maxHealth)
+                        {
+                            HealthPlayer.currentHealth = HealthPlayer.maxHealth;
+                        }
+                    }
+                    
                     break;
                 default:
                     break;
