@@ -31,5 +31,12 @@ public class AnimBoss : MonoBehaviour
             bossPanel.SetActive(false);   
         }
     }
-    
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            Destroy(gameObject, 1);
+        }
+    }
 }
