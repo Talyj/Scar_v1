@@ -4,7 +4,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MenuButtons : MonoBehaviour
-{
+{   
+    [SerializeField]private GameObject EditionMap;
     public string scene;
 
     public void DoExitGame() {
@@ -15,8 +16,8 @@ public class MenuButtons : MonoBehaviour
         SceneManager.LoadScene(scene);
     }
 
-    public void LoadOption() {
-        Debug.Log("Options!");
+    public void LoadEditionMap() {
+        EditionMap.SetActive(true);
     }
 }
  

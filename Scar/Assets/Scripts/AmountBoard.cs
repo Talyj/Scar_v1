@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.UI; 
 using System.Linq;
 using System.IO;
+using UnityEngine.SceneManagement;
+using Random = UnityEngine.Random;
 
 public class AmountBoard : MonoBehaviour {
 
@@ -14,11 +16,11 @@ public class AmountBoard : MonoBehaviour {
     public int amount_slot_3 = 0;
     public int amount_slot_card = 0;
     public int amount_slot_hotbar = 0;
-    public string hotbar_type = "";
-    public string slot1_type = "";
-    public string slot2_type = "";
-    public string slot3_type = "";
-    public string slotcard_type = "";
+    public string hotbar_type = "null";
+    public string slot1_type = "null";
+    public string slot2_type = "null";
+    public string slot3_type = "null";
+    public string slotcard_type = "null";
 
     public GameObject amount_piece_object;
     public GameObject amount_rubis_object;
@@ -30,9 +32,9 @@ public class AmountBoard : MonoBehaviour {
     public GameObject fifth_part_inventory;
     public GameObject fourth_part_hotbar;
 
-    private SlotsInventaire slotsPiece;
-    private SlotsInventaire slotsPotion;
-    private SlotsInventaire slotsHotbar;
+    public SlotsInventaire slotsPiece;
+    public SlotsInventaire slotsPotion;
+    public SlotsInventaire slotsHotbar;
     public GameObject itemPiece;
     public GameObject itemRubis;
     public GameObject itemPotion1;
@@ -53,21 +55,23 @@ public class AmountBoard : MonoBehaviour {
     private string slot1_type; */
 
     void Awake() {
-        chemin = Application.streamingAssetsPath + "/inventory.json";
-        jsonString = File.ReadAllText(chemin);
-        VariableForJSON inventaire = JsonUtility.FromJson<VariableForJSON>(jsonString);
-        amount_piece = inventaire.amount_piece;
-        amount_rubis = inventaire.amount_rubis;
-        amount_slot_1 = inventaire.amount_slot_1;
-        amount_slot_2 = inventaire.amount_slot_2;
-        amount_slot_3 = inventaire.amount_slot_3;
-        amount_slot_card = inventaire.amount_slot_card;
-        amount_slot_hotbar = inventaire.amount_slot_hotbar;
-        hotbar_type = inventaire.hotbar_type;
-        slot1_type = inventaire.slot1_type;
-        slot2_type = inventaire.slot2_type;
-        slot3_type = inventaire.slot3_type;
-        slotcard_type = inventaire.slotcard_type;
+        if(SceneManager.GetActiveScene().name != "DonjonEditMap") {
+            chemin = Application.streamingAssetsPath + "/inventory.json";
+            jsonString = File.ReadAllText(chemin);
+            VariableForJSON inventaire = JsonUtility.FromJson<VariableForJSON>(jsonString);
+            amount_piece = inventaire.amount_piece;
+            amount_rubis = inventaire.amount_rubis;
+            amount_slot_1 = inventaire.amount_slot_1;
+            amount_slot_2 = inventaire.amount_slot_2;
+            amount_slot_3 = inventaire.amount_slot_3;
+            amount_slot_card = inventaire.amount_slot_card;
+            amount_slot_hotbar = inventaire.amount_slot_hotbar;
+            hotbar_type = inventaire.hotbar_type;
+            slot1_type = inventaire.slot1_type;
+            slot2_type = inventaire.slot2_type;
+            slot3_type = inventaire.slot3_type;
+            slotcard_type = inventaire.slotcard_type;
+        }
 
         if(amount_slot_1 >= 10) {
             amount_slot_1 = 10;
@@ -214,16 +218,37 @@ public class AmountBoard : MonoBehaviour {
     //*** Permet de changer le nombre de potion dans le slot 1 ***//
     public void SetAmountSlot1(int i) {
         amount_slot_1 = amount_slot_1 - i;
+        var p = amount_slot_object_1.GetComponent<Text>();
+        p.text = amount_slot_1.ToString();
+        if(amount_slot_1 > 0) {
+            amount_slot_object_1.SetActive(true);
+        } else {
+            amount_slot_object_1.SetActive(false);
+        }
     } 
 
     //*** Permet de changer le nombre de potion dans le slot 2 ***//
     public void SetAmountSlot2(int i) {
         amount_slot_2 = amount_slot_2 - i;
+        var p = amount_slot_object_2.GetComponent<Text>();
+        p.text = amount_slot_2.ToString();
+        if(amount_slot_2 > 0) {
+            amount_slot_object_2.SetActive(true);
+        } else {
+            amount_slot_object_2.SetActive(false);
+        }
     }
 
     //*** Permet de changer le nombre de potion dans le slot 3 ***//
     public void SetAmountSlot3(int i) {
         amount_slot_3 = amount_slot_3 - i;
+        var p = amount_slot_object_3.GetComponent<Text>();
+        p.text = amount_slot_3.ToString();
+        if(amount_slot_3 > 0) {
+            amount_slot_object_3.SetActive(true);
+        } else {
+            amount_slot_object_3.SetActive(false);
+        }
     }
 
     //*** Permet de changer le nombre de rubis ***//
@@ -267,7 +292,7 @@ public class AmountBoard : MonoBehaviour {
         amount_slot_1 = amount_slot_1 + x;
         var p = amount_slot_object_1.GetComponent<Text>();
         p.text = amount_slot_1.ToString();
-        if(amount_slot_1 > 0 && amount_slot_1 < 10 && slot.isFull[0] == false) {
+        if(amount_slot_1 > 0 && amount_slot_1 <= 10 && slot.isFull[0] == false) {
             Instantiate(itemPotion1, slot.slots[0].transform, false);
             slot.isFull[0] = true;
             amount_slot_object_1.SetActive(true);
@@ -284,7 +309,7 @@ public class AmountBoard : MonoBehaviour {
         amount_slot_2 = amount_slot_2 + x;
         var p = amount_slot_object_2.GetComponent<Text>();
         p.text = amount_slot_2.ToString();
-        if(amount_slot_2 > 0 && amount_slot_2 < 10 && slot.isFull[1] == false) {
+        if(amount_slot_2 > 0 && amount_slot_2 <= 10 && slot.isFull[1] == false) {
             Instantiate(itemPotion2, slot.slots[1].transform, false);
             slot.isFull[1] = true;
             amount_slot_object_2.SetActive(true);
@@ -301,7 +326,7 @@ public class AmountBoard : MonoBehaviour {
         amount_slot_3 = amount_slot_3 + x;
         var p = amount_slot_object_3.GetComponent<Text>();
         p.text = amount_slot_3.ToString();
-        if(amount_slot_3 > 0  && amount_slot_3 < 5 && slot.isFull[2] == false) {
+        if(amount_slot_3 > 0  && amount_slot_3 <= 5 && slot.isFull[2] == false) {
             Instantiate(item, slot.slots[2].transform, false);
             slot.isFull[2] = true;
             amount_slot_object_3.SetActive(true);

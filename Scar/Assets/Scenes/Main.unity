@@ -760,7 +760,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.13066193, y: 0.08553699}
   m_AnchorMax: {x: 0.93467623, y: 0.83800006}
-  m_AnchoredPosition: {x: 0.2000122, y: -0.60001373}
+  m_AnchoredPosition: {x: 0.2000122, y: -0.6000061}
   m_SizeDelta: {x: 0.638916, y: 0.39898682}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &25513100
@@ -3890,7 +3890,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.84700006}
   m_AnchorMax: {x: 0.059378125, y: 1}
-  m_AnchoredPosition: {x: -2.4999847, y: 4}
+  m_AnchoredPosition: {x: -2.5, y: 4}
   m_SizeDelta: {x: 3.2324753, y: 9.071335}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &147551478
@@ -5187,6 +5187,7 @@ MonoBehaviour:
   scene2: Village
   panel: {fileID: 186498412}
   panel2: {fileID: 0}
+  amountBoard: {fileID: 0}
 --- !u!114 &186498415
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9110,6 +9111,7 @@ MonoBehaviour:
   scene2: 
   panel: {fileID: 1067679953}
   panel2: {fileID: 0}
+  amountBoard: {fileID: 0}
 --- !u!114 &319829360
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14986,6 +14988,7 @@ MonoBehaviour:
   scene2: 
   panel: {fileID: 30354813}
   panel2: {fileID: 30354813}
+  amountBoard: {fileID: 1679914616}
 --- !u!114 &545215342
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16048,7 +16051,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.53248334, y: 0.051774226}
   m_AnchorMax: {x: 0.6205167, y: 0.104}
-  m_AnchoredPosition: {x: -0.18999863, y: 0.024047852}
+  m_AnchoredPosition: {x: -0.19000244, y: 0.024047852}
   m_SizeDelta: {x: -1.0908508, y: -0.04815674}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &593137911
@@ -22198,6 +22201,7 @@ MonoBehaviour:
   scene2: 
   panel: {fileID: 1650028825}
   panel2: {fileID: 54992420}
+  amountBoard: {fileID: 1679914616}
 --- !u!114 &817165411
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42914,6 +42918,9 @@ MonoBehaviour:
   first_part_inventory: {fileID: 1147985400}
   fifth_part_inventory: {fileID: 1573920667}
   fourth_part_hotbar: {fileID: 1679544865}
+  slotsPiece: {fileID: 0}
+  slotsPotion: {fileID: 0}
+  slotsHotbar: {fileID: 0}
   itemPiece: {fileID: 3747324910241048553, guid: 3a8b845aa3c6f1f428b844d9cd0a00fe,
     type: 3}
   itemRubis: {fileID: 4146231794420661245, guid: 18dbeb3229801ed4cbb69f35120fd3b7,
@@ -45146,6 +45153,7 @@ GameObject:
   - component: {fileID: 1767481348}
   - component: {fileID: 1767481347}
   - component: {fileID: 1767481346}
+  - component: {fileID: 1767481350}
   m_Layer: 0
   m_Name: MainCamera
   m_TagString: MainCamera
@@ -45211,8 +45219,8 @@ Camera:
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
   m_TargetEye: 3
-  m_HDR: 1
-  m_AllowMSAA: 1
+  m_HDR: 0
+  m_AllowMSAA: 0
   m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
@@ -45232,6 +45240,110 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
+--- !u!114 &1767481350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1767481345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23c1ce4fb46143f46bc5cb5224c934f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 7
+  m_ObsoleteRenderingPath: 0
+  m_ObsoleteFrameSettings:
+    overrides: 0
+    enableShadow: 0
+    enableContactShadows: 0
+    enableShadowMask: 0
+    enableSSR: 0
+    enableSSAO: 0
+    enableSubsurfaceScattering: 0
+    enableTransmission: 0
+    enableAtmosphericScattering: 0
+    enableVolumetrics: 0
+    enableReprojectionForVolumetrics: 0
+    enableLightLayers: 0
+    enableExposureControl: 1
+    diffuseGlobalDimmer: 0
+    specularGlobalDimmer: 0
+    shaderLitMode: 0
+    enableDepthPrepassWithDeferredRendering: 0
+    enableTransparentPrepass: 0
+    enableMotionVectors: 0
+    enableObjectMotionVectors: 0
+    enableDecals: 0
+    enableRoughRefraction: 0
+    enableTransparentPostpass: 0
+    enableDistortion: 0
+    enablePostprocess: 0
+    enableOpaqueObjects: 0
+    enableTransparentObjects: 0
+    enableRealtimePlanarReflection: 0
+    enableMSAA: 0
+    enableAsyncCompute: 0
+    runLightListAsync: 0
+    runSSRAsync: 0
+    runSSAOAsync: 0
+    runContactShadowsAsync: 0
+    runVolumeVoxelizationAsync: 0
+    lightLoopSettings:
+      overrides: 0
+      enableDeferredTileAndCluster: 0
+      enableComputeLightEvaluation: 0
+      enableComputeLightVariants: 0
+      enableComputeMaterialVariants: 0
+      enableFptlForForwardOpaque: 0
+      enableBigTilePrepass: 0
+      isFptlEnabled: 0
+  clearColorMode: 0
+  backgroundColorHDR: {r: 0.025, g: 0.07, b: 0.19, a: 0}
+  clearDepth: 1
+  volumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  volumeAnchorOverride: {fileID: 0}
+  antialiasing: 0
+  SMAAQuality: 2
+  dithering: 0
+  stopNaNs: 0
+  taaSharpenStrength: 0.6
+  physicalParameters:
+    m_Iso: 200
+    m_ShutterSpeed: 0.005
+    m_Aperture: 16
+    m_BladeCount: 5
+    m_Curvature: {x: 2, y: 11}
+    m_BarrelClipping: 0.25
+    m_Anamorphism: 0
+  flipYMode: 0
+  fullscreenPassthrough: 0
+  allowDynamicResolution: 0
+  customRenderingSettings: 0
+  invertFaceCulling: 0
+  probeLayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  hasPersistentHistory: 0
+  m_RenderingPathCustomFrameSettings:
+    bitDatas:
+      data1: 70297877217101
+      data2: 4539628425463136256
+    lodBias: 1
+    lodBiasMode: 0
+    lodBiasQualityLevel: 0
+    maximumLODLevel: 0
+    maximumLODLevelMode: 0
+    maximumLODLevelQualityLevel: 0
+    materialQuality: 0
+  renderingPathCustomFrameSettingsOverrideMask:
+    mask:
+      data1: 0
+      data2: 0
+  defaultFrameSettings: 0
 --- !u!1001 &1775917007
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -49571,7 +49683,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.33351317, y: 0.289}
   m_AnchorMax: {x: 0.6428117, y: 0.38500002}
-  m_AnchoredPosition: {x: -0.47820282, y: 0.32940674}
+  m_AnchoredPosition: {x: -0.47821045, y: 0.32940674}
   m_SizeDelta: {x: -0.7731018, y: -4.658802}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1904518345

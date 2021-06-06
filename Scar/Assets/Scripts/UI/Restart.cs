@@ -11,6 +11,9 @@ public class Restart : MonoBehaviour
     public GameObject panel;
     private bool active;
     public GameObject panel2;
+    [SerializeField] private AmountBoard amountBoard;
+    private string chemin, jsonString;
+
     public void Reload(int choice)
     {
         if(choice == 0)
@@ -25,11 +28,46 @@ public class Restart : MonoBehaviour
 
     public void loadScene()
     {
+        chemin = Application.streamingAssetsPath + "/inventory.json";
+        jsonString = File.ReadAllText(chemin);
+        VariableForJSON inventaire = JsonUtility.FromJson<VariableForJSON>(jsonString);
+        inventaire.amount_piece = amountBoard.amount_piece;
+        inventaire.amount_rubis = amountBoard.amount_rubis;
+        inventaire.amount_slot_1 = amountBoard.amount_slot_1;
+        inventaire.amount_slot_2 = amountBoard.amount_slot_2;
+        inventaire.amount_slot_3 = amountBoard.amount_slot_3;
+        inventaire.amount_slot_card = amountBoard.amount_slot_card;
+        inventaire.amount_slot_hotbar = amountBoard.amount_slot_hotbar;
+        inventaire.hotbar_type = amountBoard.hotbar_type;
+        inventaire.slot1_type = amountBoard.slot1_type;
+        inventaire.slot2_type = amountBoard.slot2_type;
+        inventaire.slot3_type = amountBoard.slot3_type;
+        inventaire.slotcard_type = amountBoard.slotcard_type;
+        jsonString = JsonUtility.ToJson(inventaire);
+        File.WriteAllText(chemin, jsonString);
+
         SceneManager.LoadScene(scene);
     }
 
     public void Continue()
-    {
+    {   
+        chemin = Application.streamingAssetsPath + "/inventory.json";
+        jsonString = File.ReadAllText(chemin);
+        VariableForJSON inventaire = JsonUtility.FromJson<VariableForJSON>(jsonString);
+        inventaire.amount_piece = 0;
+        inventaire.amount_rubis = 0;
+        inventaire.amount_slot_1 = 0;
+        inventaire.amount_slot_2 = 0;
+        inventaire.amount_slot_3 = 0;
+        inventaire.amount_slot_card = 0;
+        inventaire.amount_slot_hotbar = 0;
+        inventaire.hotbar_type = "";
+        inventaire.slot1_type = "";
+        inventaire.slot2_type = "";
+        inventaire.slot3_type = "";
+        inventaire.slotcard_type = "";
+        jsonString = JsonUtility.ToJson(inventaire);
+        File.WriteAllText(chemin, jsonString);
         Time.timeScale = 1f;
         panel.SetActive(false);
     }

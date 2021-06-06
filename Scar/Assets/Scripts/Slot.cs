@@ -118,38 +118,46 @@ public class Slot : MonoBehaviour
                  SlotTypeSameInHotbar(i);
             } else { // SI L'ITEM N'EST PAS LE MEME QUE CELUI DE LA HOTBAR
                 if(hotbarPart.slots[0].transform.GetChild(0).gameObject.tag == "HealthPotionHotbar") {
-                    for(int j = amounts.GetAmountSlot1(); j < 10 || amounts.GetAmountHotBar() > 0; j = amounts.GetAmountSlot1()) {
-                        amounts.SetHotBarMany(-1);
-                        amounts.SetPotionSlot1(1, heal_potion, inventoryPart1);
-                        if(amounts.GetAmountSlot1() == 10 || amounts.GetAmountHotBar() == 0) {
-                            break;
+                    if(amounts.GetAmountSlot1() < 10) {
+                        for(int j = amounts.GetAmountSlot1(); j < 10 || amounts.GetAmountHotBar() > 0; j = amounts.GetAmountSlot1()) {
+                            amounts.SetHotBarMany(-1);
+                            amounts.SetPotionSlot1(1, heal_potion, inventoryPart1);
+                            if(amounts.GetAmountSlot1() == 10 || amounts.GetAmountHotBar() == 0) {
+                                break;
+                            }
                         }
-                    }
-                    if(amounts.GetAmountHotBar() == 0) {
-                        Destroy(hotbarPart.slots[0].transform.GetChild(0).gameObject);
-                        hotbarPart.isFull[0] = false;
-                        Switch(i);
-                    }
-                    if(amounts.GetAmountSlot1() == 10) {
+                        if(amounts.GetAmountHotBar() == 0) {
+                            Destroy(hotbarPart.slots[0].transform.GetChild(0).gameObject);
+                            hotbarPart.isFull[0] = false;
+                            Switch(i);
+                        }
+                        if(amounts.GetAmountSlot1() == 10) {
+                            AvertissmentFullHotbar("LE SLOT 1 EST PLEIN!");
+                        }
+                    } else if(amounts.GetAmountSlot1() == 10) {
                         AvertissmentFullHotbar("LE SLOT 1 EST PLEIN!");
                     }
                     if(hotbarPart.slots[0].gameObject.transform.GetChild(2).gameObject.tag == tag) {
                         hotbarPart.slots[0].gameObject.transform.GetChild(2).gameObject.transform.SetSiblingIndex(0);
                     }
                 } else if(hotbarPart.slots[0].transform.GetChild(0).gameObject.tag == "ManaPotionHotbar") {
-                    for(int j = amounts.GetAmountSlot2(); j < 10 || amounts.GetAmountHotBar() > 0; j = amounts.GetAmountSlot2()) {
-                        amounts.SetHotBarMany(-1);
-                        amounts.SetPotionSlot2(1, mana_potion, inventoryPart1);
-                        if(amounts.GetAmountSlot2() == 10 || amounts.GetAmountHotBar() == 0) {
-                            break;
+                    if(amounts.GetAmountSlot2() < 10) {
+                        for(int j = amounts.GetAmountSlot2(); j < 10 || amounts.GetAmountHotBar() > 0; j = amounts.GetAmountSlot2()) {
+                            amounts.SetHotBarMany(-1);
+                            amounts.SetPotionSlot2(1, mana_potion, inventoryPart1);
+                            if(amounts.GetAmountSlot2() == 10 || amounts.GetAmountHotBar() == 0) {
+                                break;
+                            }
                         }
-                    }
-                    if(amounts.GetAmountHotBar() == 0) {
-                        Destroy(hotbarPart.slots[0].transform.GetChild(0).gameObject);
-                        hotbarPart.isFull[0] = false;
-                        Switch(i);
-                    }
-                    if(amounts.GetAmountSlot2() == 10) {
+                        if(amounts.GetAmountHotBar() == 0) {
+                            Destroy(hotbarPart.slots[0].transform.GetChild(0).gameObject);
+                            hotbarPart.isFull[0] = false;
+                            Switch(i);
+                        }
+                        if(amounts.GetAmountSlot2() == 10) {
+                            AvertissmentFullHotbar("LE SLOT 2 EST PLEIN!");
+                        }
+                    } else if(amounts.GetAmountSlot2() == 10) {
                         AvertissmentFullHotbar("LE SLOT 2 EST PLEIN!");
                     }
                     if(hotbarPart.slots[0].gameObject.transform.GetChild(2).gameObject.tag == tag) {
@@ -332,7 +340,6 @@ public class Slot : MonoBehaviour
             amounts.SetAmountSlot3(slotAmount);
         }*/
         Switch(i);
-        Debug.Log(hotbarPart.slots[0].transform.GetChild(1).gameObject.name);
         if(i == 0) {
             if(amounts.GetAmountSlot1() == 0) {
                 inventoryPart1.isFull[i] = false; 

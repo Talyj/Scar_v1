@@ -1,17 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI; 
+
 
 public class Shop : MonoBehaviour
 {
     public Animator cam;
     public GameObject shop;
     public GameObject inventaire;
+    public GameObject avertissement;
+    private AmountBoard money;
+    public GameObject amountBoard;
 
-    AmountBoard money;
-    void Start()
+    void Awake()
     {
-        money = GetComponent<AmountBoard>();
+        money = amountBoard.GetComponent<AmountBoard>();
     }
 
     void OnTriggerEnter(Collider other)
@@ -35,43 +39,118 @@ public class Shop : MonoBehaviour
     }
 
     public void Health()
-    {
-        if (money.amount_piece >= 50)
-        {
-            money.amount_piece -= 50;
+    {   
+        if(money.GetAmountSlot1() < 10 || money.GetSlot1Type() == "null") {
+            if (money.amount_piece >= 50) {
+                money.SetAmountSlot1(-1);
+                if(money.GetSlot1Type() == "null") {
+                    Instantiate(money.itemPotion1, money.slotsPotion.slots[0].transform, false);
+                    money.slot1_type = "heal_potion";
+                }
+                money.SetPiece(-50, money.itemPiece, money.slotsPiece);
+            } else {
+                Avertissment("Tu n'as pas assez d'argent!");
+            }
+        } else {
+            Avertissment("Le slot 1 de l'inventaire est plein!");
         }
     }
 
     public void Mana()
     {
-        if (money.amount_piece >= 65)
-        {
-            money.amount_piece -= 65;
+        if(money.GetAmountSlot2() < 10 || money.GetSlot2Type() == "null") {
+            if (money.amount_piece >= 65) {
+                money.SetAmountSlot2(-1);
+                if(money.GetSlot2Type() == "null") {
+                    Instantiate(money.itemPotion2, money.slotsPotion.slots[1].transform, false);
+                    money.slot2_type = "mana_potion";
+                }
+                money.SetPiece(-65, money.itemPiece, money.slotsPiece);
+            } else {
+                Avertissment("Tu n'as pas assez d'argent!");
+            }
+        } else {
+            Avertissment("Le slot 2 de l'inventaire est plein!");
         }
     }
 
     public void ShieldUp()
-    {
-        if (money.amount_piece >= 400)
-        {
-            money.amount_piece -= 400;
+    {   
+        if(money.GetSlot3Type() == "shield_potion" || money.GetSlot3Type() == "null") {
+            if(money.GetAmountSlot3() < 5) {
+                if (money.amount_piece >= 400) {
+                    money.SetAmountSlot3(-1);
+                    if(money.GetSlot3Type() == "null") {
+                        Instantiate(money.itemPotion3Shield, money.slotsPotion.slots[2].transform, false);
+                        money.slot3_type = "shield_potion";
+                    }
+                    money.SetPiece(-400, money.itemPiece, money.slotsPiece);
+                } else {
+                    Avertissment("Tu n'as pas assez d'argent!");
+                }
+            } else {
+                Avertissment("Le slot 3 de l'inventaire est plein!");
+            }
+        } else {
+            Avertissment("Le slot 3 de l'inventaire est déjà pris!");
         }
     }
 
-    public void AttackUp()
-    {
-        if (money.amount_piece >= 300)
-        {
-            money.amount_piece -= 300;
+    public void AttackUp() {
+        if(money.GetSlot3Type() == "damage_potion" || money.GetSlot3Type() == "null") {
+            if(money.GetAmountSlot3() < 5) {
+                if (money.amount_piece >= 300) {
+                    money.SetAmountSlot3(-1);
+                    if(money.GetSlot3Type() == "null") {
+                        Instantiate(money.itemPotion3Damage, money.slotsPotion.slots[2].transform, false);
+                        money.slot3_type = "damage_potion";
+                    }
+                    money.slot3_type = "damage_potion";
+                    money.SetPiece(-300, money.itemPiece, money.slotsPiece);
+                } else {
+                    Avertissment("Tu n'as pas assez d'argent!");
+                }
+            } else {
+                Avertissment("Le slot 3 de l'inventaire est plein!");
+            }
+        } else {
+            Avertissment("Le slot 3 de l'inventaire est déjà pris!");
         }
     }
 
-    public void DeleteBullet()
-    {
-        if (money.amount_piece >= 500)
-        {
-            money.amount_piece -= 500;
+    public void DeleteBullet() {
+        if(money.GetSlot3Type() == "destruction_potion" || money.GetSlot3Type() == "null") {
+            if(money.GetAmountSlot3() < 5) {
+                if (money.amount_piece >= 500) {
+                    money.SetAmountSlot3(-1);
+                    if(money.GetSlot3Type() == "null") {
+                        Instantiate(money.itemPotion3Destruct, money.slotsPotion.slots[2].transform, false);
+                        money.slot3_type = "destruction_potion";
+                    }
+                    money.slot3_type = "destruction_potion";
+                    money.SetPiece(-500, money.itemPiece, money.slotsPiece);
+                } else {
+                    Avertissment("Tu n'as pas assez d'argent!");
+                }
+            } else {    
+                Avertissment("Le slot 3 de l'inventaire est plein!");
+            }
+        } else {
+            Avertissment("Le slot 3 de l'inventaire est déjà pris!");
         }
+    }
+
+    //*** Fonction appeler X secondes après grâce à Invoke ***//
+    private void DesactivateAvertissment() {
+        avertissement.SetActive(false);
+    }
+
+    //*** Fonction appeler afin d'avertir que la hotbar est pleine ***//
+    private void Avertissment(string description) {
+        var texts = avertissement.GetComponent<Text>();
+        texts.text = description; // LANGUAGE
+        avertissement.SetActive(true);
+        Invoke("DesactivateAvertissment", 5.0f);
     }
 
    
