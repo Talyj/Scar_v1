@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PutBehaviour : MonoBehaviour
 {
@@ -14,12 +15,16 @@ public class PutBehaviour : MonoBehaviour
     }
 
     private void Update()
-    {
+    {   
         var enemies = GameObject.FindGameObjectsWithTag("Enemy");
         Deplacement();
         if (enemies.Length == 0)
-        {
-            SpawnEnemy.nbMonster -= 1;
+        {   
+            if(SceneManager.GetActiveScene().name != "DonjonEditMap") { 
+                SpawnEnemy.nbMonster -= 1;
+            } else if(SceneManager.GetActiveScene().name == "DonjonEditMap") {
+                SpawnEnemyEditMap.nbMonster -= 1;
+            }
             Destroy(gameObject);
         }
     }
@@ -37,7 +42,11 @@ public class PutBehaviour : MonoBehaviour
             {
                 BossBehaviour.isAlive = 0;
             }
-            SpawnEnemy.nbMonster -= 1;
+            if(SceneManager.GetActiveScene().name != "DonjonEditMap") { 
+                SpawnEnemy.nbMonster -= 1;
+            } else if(SceneManager.GetActiveScene().name == "DonjonEditMap") {
+                SpawnEnemyEditMap.nbMonster -= 1;
+            }
         }
     }
 }

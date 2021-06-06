@@ -59649,7 +59649,7 @@ MonoBehaviour:
   scene2: 
   panel: {fileID: 1556378924}
   panel2: {fileID: 1556378924}
-  amountBoard: {fileID: 1253021046}
+  amountBoard: {fileID: 0}
 --- !u!114 &1249983770
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59940,97 +59940,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1252287144}
   m_CullTransparentMesh: 0
---- !u!1 &1253021045
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1253021047}
-  - component: {fileID: 1253021046}
-  m_Layer: 0
-  m_Name: AmoutBoard
-  m_TagString: AmountBoard
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1253021046
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1253021045}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39dfb0354dca83a41a429f04ab5a758d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  amount_piece: 0
-  amount_rubis: 0
-  amount_slot_1: 0
-  amount_slot_2: 0
-  amount_slot_3: 0
-  amount_slot_card: 0
-  amount_slot_hotbar: 0
-  hotbar_type: 
-  slot1_type: 
-  slot2_type: 
-  slot3_type: 
-  slotcard_type: 
-  amount_piece_object: {fileID: 0}
-  amount_rubis_object: {fileID: 0}
-  amount_slot_object_1: {fileID: 0}
-  amount_slot_object_2: {fileID: 0}
-  amount_slot_object_3: {fileID: 0}
-  amount_slot_hotbar_hotbar: {fileID: 0}
-  first_part_inventory: {fileID: 0}
-  fifth_part_inventory: {fileID: 0}
-  fourth_part_hotbar: {fileID: 0}
-  slotsPiece: {fileID: 0}
-  slotsPotion: {fileID: 0}
-  slotsHotbar: {fileID: 0}
-  itemPiece: {fileID: 3747324910241048553, guid: 3a8b845aa3c6f1f428b844d9cd0a00fe,
-    type: 3}
-  itemRubis: {fileID: 4146231794420661245, guid: 18dbeb3229801ed4cbb69f35120fd3b7,
-    type: 3}
-  itemPotion1: {fileID: 204990496172806414, guid: a41ac9b62818da3468048b74c39f03d9,
-    type: 3}
-  itemPotion2: {fileID: 5137789085026564077, guid: c1a5aebf87fbc554790e60a75cec1a15,
-    type: 3}
-  itemPotion3Shield: {fileID: 5137789085026564077, guid: 5be7620cfe1f2534d94be542696051cf,
-    type: 3}
-  itemPotion3Destruct: {fileID: 5137789085026564077, guid: d1840a314ed5dcd498e1617858e4749c,
-    type: 3}
-  itemPotion3Damage: {fileID: 5137789085026564077, guid: acdc97e698e2bc1429061566ad5f3ae9,
-    type: 3}
-  itemPotion1Hotbar: {fileID: 204990496172806414, guid: 0b48e3747341b3f4c86f378346177646,
-    type: 3}
-  itemPotion2Hotbar: {fileID: 5137789085026564077, guid: 509ec9739e0f59e48af32308483205e6,
-    type: 3}
-  itemPotion3Hotbar: {fileID: 5137789085026564077, guid: 365665de853df784293487d6618f109f,
-    type: 3}
-  itemPotion4Hotbar: {fileID: 5137789085026564077, guid: f7f78493eda768140bb6d41eb5d9b02c,
-    type: 3}
-  itemPotion5Hotbar: {fileID: 5137789085026564077, guid: 258d2a0e76b9d134db47b143966a0280,
-    type: 3}
---- !u!4 &1253021047
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1253021045}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 523.9002, y: 45.57132, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1253700343
 GameObject:
   m_ObjectHideFlags: 0

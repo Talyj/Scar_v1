@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PatBehaviour : MonoBehaviour
 {
@@ -38,12 +39,15 @@ public class PatBehaviour : MonoBehaviour
         if (transform.position.y <= -2)
         {
             Destroy(gameObject);
-            SpawnEnemy.nbMonster--;
+            if(SceneManager.GetActiveScene().name != "DonjonEditMap") { 
+                SpawnEnemy.nbMonster -= 1;
+            } else if(SceneManager.GetActiveScene().name == "DonjonEditMap") {
+                SpawnEnemyEditMap.nbMonster -= 1;
+            }
             if (gameObject.CompareTag("boss"))
             {
                 BossBehaviour.isAlive = 0;
             }
-            SpawnEnemy.nbMonster -= 1;
         }
     }
 }

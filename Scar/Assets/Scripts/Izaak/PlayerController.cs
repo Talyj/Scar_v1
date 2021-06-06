@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
+     private string chemin, jsonString;
     [SerializeField] private Transform playerTransform;
     [SerializeField] private  float playerSpeed;
     [SerializeField] private Camera mainCamera;
@@ -41,6 +42,11 @@ public class PlayerController : MonoBehaviour
         SpawnEnemy.nbMonster = 0;
         BossBehaviour.isAlive = 1;
         cpt = 0;
+        chemin = Application.streamingAssetsPath + "/ActifPassif.json";
+        jsonString = File.ReadAllText(chemin);
+        JSONActifPassif choosePower = JsonUtility.FromJson<JSONActifPassif>(jsonString);
+        GameInfo.passiveSkill = choosePower.passif;
+        GameInfo.activeSkill = choosePower.actif;
     }
 
     private void Start()

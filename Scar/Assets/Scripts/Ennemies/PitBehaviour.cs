@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PitBehaviour : MonoBehaviour
 {
@@ -24,18 +25,32 @@ public class PitBehaviour : MonoBehaviour
     {
         Deplacement();
         if (healthPit.currentHealth <= 40 && HasSpawn == false)
-        {
-            if (healthPit.maxHealth == 300)
-            {
-                SpawnEnemy.Spawn(2, pit);
-                HasSpawn = true;
-            }
+        {   
+            if(SceneManager.GetActiveScene().name != "DonjonEditMap") { 
+                if (healthPit.maxHealth == 300)
+                {
+                    SpawnEnemy.Spawn(2, pit);
+                    HasSpawn = true;
+                }
             
-            if(healthPit.maxHealth == 150)
-            {
-                SpawnEnemy.Spawn(4, pit);
-                HasSpawn = true;
-            }   
+                if(healthPit.maxHealth == 150)
+                {
+                    SpawnEnemy.Spawn(4, pit);
+                    HasSpawn = true;
+                }   
+            } else if(SceneManager.GetActiveScene().name == "DonjonEditMap") {
+                if (healthPit.maxHealth == 300)
+                {
+                    SpawnEnemyEditMap.Spawn(2, pit);
+                    HasSpawn = true;
+                }
+            
+                if(healthPit.maxHealth == 150)
+                {
+                    SpawnEnemyEditMap.Spawn(4, pit);
+                    HasSpawn = true;
+                }  
+            } 
         }
     }
 
@@ -61,12 +76,15 @@ public class PitBehaviour : MonoBehaviour
         if (transform.position.y <= -2)
         {
             Destroy(gameObject);
-            SpawnEnemy.nbMonster--;
+            if(SceneManager.GetActiveScene().name != "DonjonEditMap") { 
+                SpawnEnemy.nbMonster--;
+            } else if (SceneManager.GetActiveScene().name == "DonjonEditMap") {
+                SpawnEnemyEditMap.nbMonster--;
+            }
             if (gameObject.CompareTag("boss"))
             {
                 BossBehaviour.isAlive = 0;
             }
-            SpawnEnemy.nbMonster -= 1;
         }
     }
     

@@ -124,7 +124,6 @@ public class RunMapEdited : MonoBehaviour
         editionMap.nb_put_15 = salle15.numberPut;
         jsonString = JsonUtility.ToJson(editionMap);
         File.WriteAllText(chemin, jsonString);
-        Debug.Log(jsonString);
         SceneManager.LoadScene(scene);
     }
 

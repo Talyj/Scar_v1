@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class HealthEnemy : MonoBehaviour
 {
@@ -70,7 +71,11 @@ public class HealthEnemy : MonoBehaviour
             DropItem(coin, percent_coin);
             DropItem(rubis, percent_rubis);
 
-            SpawnEnemy.nbMonster -= 1;
+            if(SceneManager.GetActiveScene().name != "DonjonEditMap") { 
+                SpawnEnemy.nbMonster -= 1;
+            } else if(SceneManager.GetActiveScene().name == "DonjonEditMap") {
+                SpawnEnemyEditMap.nbMonster -= 1;
+            }
             new WaitForSeconds(0.1f);
             Destroy(gameObject);
         }

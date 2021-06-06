@@ -74,6 +74,7 @@
      <Compile Include="Assets\Scripts\BulletController.cs" />
      <Compile Include="Assets\Scripts\Carte.cs" />
      <Compile Include="Assets\Scripts\ChangeConso.cs" />
+     <Compile Include="Assets\Scripts\ChoixPassifActif.cs" />
      <Compile Include="Assets\Scripts\CloseGameObject.cs" />
      <Compile Include="Assets\Scripts\ConsoHotbar.cs" />
      <Compile Include="Assets\Scripts\Consommables.cs" />
@@ -103,7 +104,6 @@
      <Compile Include="Assets\Scripts\GodMode.cs" />
      <Compile Include="Assets\Scripts\InformationsForEditMap.cs" />
      <Compile Include="Assets\Scripts\Inventaire.cs" />
-     <Compile Include="Assets\Scripts\Izaak\ActifRaffale.cs" />
      <Compile Include="Assets\Scripts\Izaak\AnimIzaak.cs" />
      <Compile Include="Assets\Scripts\Izaak\GunController.cs" />
      <Compile Include="Assets\Scripts\Izaak\HealthPlayer.cs" />
