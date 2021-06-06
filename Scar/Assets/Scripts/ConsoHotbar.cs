@@ -60,11 +60,11 @@ public class ConsoHotbar : MonoBehaviour
             case 0:
                 GameInfo.rangedDamage *= 2;
                 Debug.Log("Damage On");
-                Invoke("DamagePotionCooldown", 10.0f);
+                Invoke("DamagePotionCooldown", 10);
                 break;
             case 1:
                 EnemyDamages.damageMultiplication = 0.5f;
-                Invoke("DefensePotionCooldown", 15.0f);
+                Invoke("DefensePotionCooldown", 15);
                 break;
         }
     }

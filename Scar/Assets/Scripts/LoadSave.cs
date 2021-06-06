@@ -46,7 +46,8 @@ public class LoadSave : MonoBehaviour
             }
             else if (data.levelBoss == 2)
             {
-                SceneManager.LoadScene("Village3");
+                //SceneManager.LoadScene("Village3");
+                SceneManager.LoadScene("Village4");
             }
             else if (data.levelBoss == 3)
             {
