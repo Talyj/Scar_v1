@@ -131,6 +131,7 @@
     <Compile Include="Assets\Scripts\SlotsInventaire.cs" />
     <Compile Include="Assets\Scripts\SpawnLevel.cs" />
     <Compile Include="Assets\Scripts\SwitchCartes.cs" />
+    <Compile Include="Assets\Scripts\UI\AnimBoss.cs" />
     <Compile Include="Assets\Scripts\UI\InventaireExterne.cs" />
     <Compile Include="Assets\Scripts\UI\Restart.cs" />
     <Compile Include="Assets\Scripts\UI\Share.cs" />
