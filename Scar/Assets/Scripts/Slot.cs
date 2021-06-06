@@ -111,7 +111,6 @@ public class Slot : MonoBehaviour
     //*** Tout le processus pour switch une potion dans la hotbar ***//
     private void ProcessForHotBar(int i, GameObject itemDisplay, string tag) {
         SearchUtileGameObject();
-
         if(hotbarPart.isFull[0] == false) { // SI LA HOTBAR EST VIDE
             Switch(i); // ON REMPLIE
         } else if(hotbarPart.isFull[0] == true) { // SI LA HOTBAR EST PLEINE
@@ -134,6 +133,9 @@ public class Slot : MonoBehaviour
                     if(amounts.GetAmountSlot1() == 10) {
                         AvertissmentFullHotbar("LE SLOT 1 EST PLEIN!");
                     }
+                    if(hotbarPart.slots[0].gameObject.transform.GetChild(2).gameObject.tag == tag) {
+                        hotbarPart.slots[0].gameObject.transform.GetChild(2).gameObject.transform.SetSiblingIndex(0);
+                    }
                 } else if(hotbarPart.slots[0].transform.GetChild(0).gameObject.tag == "ManaPotionHotbar") {
                     for(int j = amounts.GetAmountSlot2(); j < 10 || amounts.GetAmountHotBar() > 0; j = amounts.GetAmountSlot2()) {
                         amounts.SetHotBarMany(-1);
@@ -150,39 +152,78 @@ public class Slot : MonoBehaviour
                     if(amounts.GetAmountSlot2() == 10) {
                         AvertissmentFullHotbar("LE SLOT 2 EST PLEIN!");
                     }
+                    if(hotbarPart.slots[0].gameObject.transform.GetChild(2).gameObject.tag == tag) {
+                        hotbarPart.slots[0].gameObject.transform.GetChild(2).gameObject.transform.SetSiblingIndex(0);
+                    }
                 } else if(hotbarPart.slots[0].transform.GetChild(0).gameObject.tag == "ShieldPotionHotbar") {
                     if(tag == "DestructPotionHotbar") {
                         SlotTypeNotSameInHotBar(2, shield_potion, amounts.GetAmountSlot3());
+                        if(hotbarPart.slots[0].gameObject.transform.GetChild(2).gameObject.tag == tag) {
+                            hotbarPart.slots[0].gameObject.transform.GetChild(2).gameObject.transform.SetSiblingIndex(0);
+                        }
                     } else if(tag == "DamagePotionHotbar") {
                         SlotTypeNotSameInHotBar(2, shield_potion, amounts.GetAmountSlot3());
+                        if(hotbarPart.slots[0].gameObject.transform.GetChild(2).gameObject.tag == tag) {
+                            hotbarPart.slots[0].gameObject.transform.GetChild(2).gameObject.transform.SetSiblingIndex(0);
+                        }
                     } else if(tag == "ManaPotionHotbar" && inventoryPart1.isFull[2] == false) {
                         SlotTypeNotSameInHotBar(1, shield_potion, amounts.GetAmountSlot2());
+                        if(hotbarPart.slots[0].gameObject.transform.GetChild(2).gameObject.tag == tag) {
+                            hotbarPart.slots[0].gameObject.transform.GetChild(2).gameObject.transform.SetSiblingIndex(0);
+                        }
                     } else if(tag == "HealthPotionHotbar" && inventoryPart1.isFull[2] == false) {
                         SlotTypeNotSameInHotBar(0, shield_potion, amounts.GetAmountSlot1());
+                        if(hotbarPart.slots[0].gameObject.transform.GetChild(2).gameObject.tag == tag) {
+                            hotbarPart.slots[0].gameObject.transform.GetChild(2).gameObject.transform.SetSiblingIndex(0);
+                        }
                     } else {
                         AvertissmentFullHotbar("LE SLOT 3 EST PRIS!");
                     }
                 } else if(hotbarPart.slots[0].transform.GetChild(0).gameObject.tag == "DestructPotionHotbar") {
                     if(tag == "ShieldPotionHotbar") {
                         SlotTypeNotSameInHotBar(2, destruct_potion, amounts.GetAmountSlot3());
+                        if(hotbarPart.slots[0].gameObject.transform.GetChild(2).gameObject.tag == tag) {
+                            hotbarPart.slots[0].gameObject.transform.GetChild(2).gameObject.transform.SetSiblingIndex(0);
+                        }
                     } else if(tag == "DamagePotionHotbar") {
                         SlotTypeNotSameInHotBar(2, destruct_potion, amounts.GetAmountSlot3());
+                        if(hotbarPart.slots[0].gameObject.transform.GetChild(2).gameObject.tag == tag) {
+                            hotbarPart.slots[0].gameObject.transform.GetChild(2).gameObject.transform.SetSiblingIndex(0);
+                        }
                     } else if(tag == "ManaPotionHotbar" && inventoryPart1.isFull[2] == false) {
                         SlotTypeNotSameInHotBar(1, destruct_potion, amounts.GetAmountSlot2());
+                        if(hotbarPart.slots[0].gameObject.transform.GetChild(2).gameObject.tag == tag) {
+                            hotbarPart.slots[0].gameObject.transform.GetChild(2).gameObject.transform.SetSiblingIndex(0);
+                        }
                     } else if(tag == "HealthPotionHotbar" && inventoryPart1.isFull[2] == false) {
                         SlotTypeNotSameInHotBar(0, destruct_potion, amounts.GetAmountSlot1());
+                        if(hotbarPart.slots[0].gameObject.transform.GetChild(2).gameObject.tag == tag) {
+                            hotbarPart.slots[0].gameObject.transform.GetChild(2).gameObject.transform.SetSiblingIndex(0);
+                        }
                     } else {
                         AvertissmentFullHotbar("LE SLOT 3 EST PRIS!");
                     }
                 } else if(hotbarPart.slots[0].transform.GetChild(0).gameObject.tag == "DamagePotionHotbar") {
                     if(tag == "ShieldPotionHotbar") {
                         SlotTypeNotSameInHotBar(2, damage_potion, amounts.GetAmountSlot3());
+                        if(hotbarPart.slots[0].gameObject.transform.GetChild(2).gameObject.tag == tag) {
+                            hotbarPart.slots[0].gameObject.transform.GetChild(2).gameObject.transform.SetSiblingIndex(0);
+                        }
                     } else if(tag == "DestructPotionHotbar") {
                         SlotTypeNotSameInHotBar(2, damage_potion, amounts.GetAmountSlot3());
+                        if(hotbarPart.slots[0].gameObject.transform.GetChild(2).gameObject.tag == tag) {
+                            hotbarPart.slots[0].gameObject.transform.GetChild(2).gameObject.transform.SetSiblingIndex(0);
+                        }
                     } else if(tag == "ManaPotionHotbar" && inventoryPart1.isFull[2] == false) {
                         SlotTypeNotSameInHotBar(1, damage_potion, amounts.GetAmountSlot2());
+                        if(hotbarPart.slots[0].gameObject.transform.GetChild(2).gameObject.tag == tag) {
+                            hotbarPart.slots[0].gameObject.transform.GetChild(2).gameObject.transform.SetSiblingIndex(0);
+                        }
                     } else if(tag == "HealthPotionHotbar" && inventoryPart1.isFull[2] == false) {
                         SlotTypeNotSameInHotBar(0, damage_potion, amounts.GetAmountSlot1());
+                        if(hotbarPart.slots[0].gameObject.transform.GetChild(2).gameObject.tag == tag) {
+                            hotbarPart.slots[0].gameObject.transform.GetChild(2).gameObject.transform.SetSiblingIndex(0);
+                        }
                     } else {
                         AvertissmentFullHotbar("LE SLOT 3 EST PRIS!");
                     }
@@ -196,11 +237,21 @@ public class Slot : MonoBehaviour
     //*** Fonction appeler pour switch les potions dans la hotbar ***//
     private void Switch(int i) {
         if(i == 0) {
-            amounts.SetHotBarMany(amounts.GetAmountSlot1(), itemDisplay);
-            amounts.SetPotionSlot1(-1*amounts.GetAmountSlot1(), itemDisplay, inventoryPart1);
+            if(amounts.GetAmountSlot1() <= 5) {
+                amounts.SetHotBarMany(amounts.GetAmountSlot1(), itemDisplay);
+                amounts.SetPotionSlot1(-1*amounts.GetAmountSlot1(), itemDisplay, inventoryPart1);
+            } else {
+                amounts.SetHotBarMany(5, itemDisplay);
+                amounts.SetPotionSlot1(-5, itemDisplay, inventoryPart1);
+            }
         } else if(i == 1) {
-            amounts.SetHotBarMany(amounts.GetAmountSlot2(), itemDisplay);
-            amounts.SetPotionSlot2(-1*amounts.GetAmountSlot2(), itemDisplay, inventoryPart1);
+            if(amounts.GetAmountSlot2() <= 5) {
+                amounts.SetHotBarMany(amounts.GetAmountSlot2(), itemDisplay);
+                amounts.SetPotionSlot2(-1*amounts.GetAmountSlot2(), itemDisplay, inventoryPart1);
+            } else {
+                amounts.SetHotBarMany(5, itemDisplay);
+                amounts.SetPotionSlot2(-5, itemDisplay, inventoryPart1);
+            }
         } else if(i == 2) {
             amounts.SetHotBarMany(amounts.GetAmountSlot3(), itemDisplay);
             amounts.SetPotionSlot3(-1*amounts.GetAmountSlot3(), itemDisplay, inventoryPart1);
@@ -212,10 +263,28 @@ public class Slot : MonoBehaviour
 
     //*** Fonction appeler quand il faut détruire un objet dans un slot de l'inventaire lors du processus ***//
     private void DestroyOnProcess(int i) {
-        inventoryPart1.isFull[i] = false;
-        Destroy(inventoryPart1.slots[i].transform.GetChild(0).gameObject);
-        slotsImage = inventoryPart1.slots[i].transform.GetChild(inventoryPart1.slots[i].transform.childCount - 1).gameObject;
-        slotsImage.SetActive(false);
+        if(i == 0) {
+            if(amounts.GetAmountSlot1() == 0) {
+                inventoryPart1.isFull[i] = false;
+                Destroy(inventoryPart1.slots[i].transform.GetChild(0).gameObject);
+                slotsImage = inventoryPart1.slots[i].transform.GetChild(inventoryPart1.slots[i].transform.childCount - 1).gameObject;
+                slotsImage.SetActive(false);
+            }
+        } else if(i == 1) {
+            if(amounts.GetAmountSlot2() == 0) {
+                inventoryPart1.isFull[i] = false;
+                Destroy(inventoryPart1.slots[i].transform.GetChild(0).gameObject);
+                slotsImage = inventoryPart1.slots[i].transform.GetChild(inventoryPart1.slots[i].transform.childCount - 1).gameObject;
+                slotsImage.SetActive(false);
+            }
+        } else if(i == 2) {
+            if(amounts.GetAmountSlot3() == 0) {
+                inventoryPart1.isFull[i] = false;
+                Destroy(inventoryPart1.slots[i].transform.GetChild(0).gameObject);
+                slotsImage = inventoryPart1.slots[i].transform.GetChild(inventoryPart1.slots[i].transform.childCount - 1).gameObject;
+                slotsImage.SetActive(false);
+            }
+        }   
     }
 
     //*** Fonction appeler quand la potion dans la hotbar est la meme que celle qu'on veut mettre ***//
@@ -242,7 +311,7 @@ public class Slot : MonoBehaviour
                 }
             }
         }
-        if(amounts.GetAmountHotBar() == 5) {
+        if(amounts.GetAmountHotBar() >= 5) {
             AvertissmentFullHotbar("LA HOTBAR EST PLEINE!");
         }
     }
@@ -252,8 +321,7 @@ public class Slot : MonoBehaviour
         amounts.SetHotBarMany(-1*(amounts.GetAmountHotBar()));
         Destroy(hotbarPart.slots[0].transform.GetChild(0).gameObject);
         hotbarPart.isFull[0] = false;
-                        
-        amounts.SetHotBarMany(slotAmount);
+        /*amounts.SetHotBarMany(slotAmount);
         Instantiate(itemDisplay, hotbarPart.slots[0].transform, false);
         hotbarPart.isFull[0] = true;
         if(i == 0) {
@@ -262,11 +330,31 @@ public class Slot : MonoBehaviour
             amounts.SetAmountSlot2(slotAmount);
         } else if(i == 2) {
             amounts.SetAmountSlot3(slotAmount);
+        }*/
+        Switch(i);
+        Debug.Log(hotbarPart.slots[0].transform.GetChild(1).gameObject.name);
+        if(i == 0) {
+            if(amounts.GetAmountSlot1() == 0) {
+                inventoryPart1.isFull[i] = false; 
+                Destroy(inventoryPart1.slots[i].transform.GetChild(0).gameObject); 
+                slotsImage = inventoryPart1.slots[i].transform.GetChild(inventoryPart1.slots[i].transform.childCount - 1).gameObject; 
+                slotsImage.SetActive(false);
+            }
+        } else if(i == 1) {
+            if(amounts.GetAmountSlot2() == 0) {
+                inventoryPart1.isFull[i] = false; 
+                Destroy(inventoryPart1.slots[i].transform.GetChild(0).gameObject); 
+                slotsImage = inventoryPart1.slots[i].transform.GetChild(inventoryPart1.slots[i].transform.childCount - 1).gameObject; 
+                slotsImage.SetActive(false);
+            }
+        } else if(i == 2) {
+            if(amounts.GetAmountSlot3() == 0) {
+                inventoryPart1.isFull[i] = false; 
+                Destroy(inventoryPart1.slots[i].transform.GetChild(0).gameObject); 
+                slotsImage = inventoryPart1.slots[i].transform.GetChild(inventoryPart1.slots[i].transform.childCount - 1).gameObject; 
+                slotsImage.SetActive(false);
+            }
         }
-        inventoryPart1.isFull[i] = false; 
-        Destroy(inventoryPart1.slots[i].transform.GetChild(0).gameObject); 
-        slotsImage = inventoryPart1.slots[i].transform.GetChild(inventoryPart1.slots[i].transform.childCount - 1).gameObject; 
-        slotsImage.SetActive(false);
         amounts.SetPotionSlot3(temp, potion, inventoryPart1);
     }
 

@@ -9,22 +9,39 @@ public class BloquerSortie : MonoBehaviour
     [SerializeField] private GameObject[] sorties;
     [SerializeField] private GameObject entree;
 
+    private Boolean mustBlockEntry;
+    private Boolean mustBlockExit;
+
+    private void Start()
+    {
+        mustBlockEntry = true;
+        mustBlockExit = true;
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            foreach (var spawn in sorties)
+            if (mustBlockEntry)
             {
-                Instantiate(porte, spawn.transform.position, spawn.transform.rotation);
+                foreach (var spawn in sorties)
+                {
+                    Instantiate(porte, spawn.transform.position, spawn.transform.rotation);
+                }
+                mustBlockEntry = false;
             }
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (mustBlockExit)
         {
-            Instantiate(porte, entree.transform.position, entree.transform.rotation); 
+            if (other.CompareTag("Player"))
+            {
+                Instantiate(porte, entree.transform.position, entree.transform.rotation); 
+            }
+            mustBlockExit = false;
         }
     }
 }

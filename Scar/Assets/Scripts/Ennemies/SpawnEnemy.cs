@@ -95,7 +95,7 @@ public class SpawnEnemy : MonoBehaviour
                 gameobject.GetComponent<Animator>().Play("OuverturePorteDonjon", -1, 0f);
                 if (fontaine != null)
                 {
-                    Instantiate(fontaine, spawnpointFontaine.position, Quaternion.identity);   
+                    //Instantiate(fontaine, spawnpointFontaine.position, Quaternion.identity);   
                 }
             }
             hasEnded = true;
