@@ -70,6 +70,7 @@
      <Compile Include="Assets\ParticlesEffectExamples\Shared\Scripts\SimpleCharacterMotor.cs" />
      <Compile Include="Assets\ParticlesEffectExamples\TutorialInfo\Scripts\Readme.cs" />
      <Compile Include="Assets\Scripts\AmountBoard.cs" />
+     <Compile Include="Assets\Scripts\AudioManage.cs" />
      <Compile Include="Assets\Scripts\BloquerSortie.cs" />
      <Compile Include="Assets\Scripts\BulletController.cs" />
      <Compile Include="Assets\Scripts\Carte.cs" />
@@ -130,6 +131,7 @@
      <Compile Include="Assets\Scripts\SpawnLevel.cs" />
      <Compile Include="Assets\Scripts\SpawnLevelEditMap.cs" />
      <Compile Include="Assets\Scripts\SwitchCartes.cs" />
+     <Compile Include="Assets\Scripts\UI\AnimBoss.cs" />
      <Compile Include="Assets\Scripts\UI\InventaireExterne.cs" />
      <Compile Include="Assets\Scripts\UI\Restart.cs" />
      <Compile Include="Assets\Scripts\UI\Share.cs" />
