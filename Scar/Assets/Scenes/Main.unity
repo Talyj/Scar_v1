@@ -19553,7 +19553,7 @@ MonoBehaviour:
   put: {fileID: 2949682024625288999, guid: e49602583d1c23446b28cc9e81633c13, type: 3}
   pit: {fileID: 6197662284072629232, guid: 19efecdc44f2a1f459fcd22703bca32d, type: 3}
   boss: {fileID: 4253006778111087436, guid: d5f4b9a6f9fb2a846ae3e25c6bcc0c60, type: 3}
-  miniBoss: {fileID: 6197662284072629232, guid: 19efecdc44f2a1f459fcd22703bca32d,
+  miniBoss: {fileID: 6240689020977383477, guid: 99b91266a8274924bbc7c644a66e2aee,
     type: 3}
   spawnMonster: {fileID: 1322627554}
   fontaine: {fileID: 0}
