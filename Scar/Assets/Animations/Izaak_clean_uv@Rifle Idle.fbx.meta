@@ -1,12 +1,37 @@
 fileFormatVersion: 2
-guid: 6dc161c8b266e8f4b982c2330cde6d75
+guid: 9246d1c758abf5c4284f31c569f21ddd
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable:
   - first:
       74: -203655887218126122
-    second: Idle Arbalete
-  externalObjects: {}
+    second: Rifle Idle
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Chest
+    second: {fileID: 2100000, guid: c3b9ede7222bafd49903fa67b6522efe, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Hair
+    second: {fileID: 2100000, guid: b22f0b909d459184aaa2304eb8870091, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pants
+    second: {fileID: 2100000, guid: 9dd648932b8d3fa498ee255e6e50dd29, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Shoes
+    second: {fileID: 2100000, guid: d4557c9b5f1ace84fabe629a6823dc87, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Skin
+    second: {fileID: 2100000, guid: 0be109070d01c8a45b548c8114f68fd1, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
@@ -35,11 +60,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Idle Arbalete
+      name: Rifle Idle
       takeName: mixamo.com
       internalID: 0
       firstFrame: 0
-      lastFrame: 165
+      lastFrame: 231
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
