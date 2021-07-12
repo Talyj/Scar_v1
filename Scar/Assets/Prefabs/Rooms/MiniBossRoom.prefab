@@ -6761,7 +6761,7 @@ MonoBehaviour:
     type: 3}
   spawnpointFontaine: {fileID: 1468973273242215157}
   numBoss: 0
-  numMiniBoss: 5
+  numMiniBoss: 2
   hasEnded: 0
 --- !u!65 &1377971639312071092
 BoxCollider:
