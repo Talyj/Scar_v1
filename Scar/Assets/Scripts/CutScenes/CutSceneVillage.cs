@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,6 +13,15 @@ public class CutSceneVillage : MonoBehaviour
     private void Start()
     {
         cameraPlayer = GameObject.FindGameObjectWithTag("MainCamera");
+    }
+
+    private void Update()
+    {
+        if (Input.GetKey(KeyCode.Space))
+        {
+            cameraPlayer.SetActive(true);
+            cutSceneCam.SetActive(false);
+        }
     }
 
     private void OnTriggerEnter(Collider other)

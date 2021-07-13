@@ -19,6 +19,15 @@ public class CutScenesEnter : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         cameraPlayer = GameObject.FindGameObjectWithTag("MainCamera");
     }
+    
+    private void Update()
+    {
+        if (Input.GetKey(KeyCode.Space))
+        {
+            cameraPlayer.SetActive(true);
+            cutSceneCam.SetActive(false);
+        }
+    }
 
     private void OnTriggerEnter(Collider other)
     {
