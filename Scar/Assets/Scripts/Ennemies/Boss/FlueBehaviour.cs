@@ -98,7 +98,6 @@ public class FlueBehaviour : MonoBehaviour
             {
                 Ratatatata();
             }
-
             BigAssAttackOfDoom();
             SpawnInfini();
             yield return new WaitForSeconds(1);
@@ -120,28 +119,24 @@ public class FlueBehaviour : MonoBehaviour
     
     private void BigAssAttackOfDoom()
     {
-        float dist = Vector3.Distance(gameObject.transform.position, player.position);
-        if (dist <= 17)
+        int nbAttack = Random.Range(1, 3);
+        if (nbAttack == 1)
         {
-            int nbAttack = Random.Range(1, 3);
-            if (nbAttack == 1)
+            foreach (var point in hitPoints)
             {
-                foreach (var point in hitPoints)
-                {
-                    AttackZoneController newZone = Instantiate(bossLongAttack, point.position, point.rotation) as AttackZoneController;
-                }   
-            }
-            else if (nbAttack == 2)
+                AttackZoneController newZone = Instantiate(bossLongAttack, point.position, point.rotation) as AttackZoneController;
+            }   
+        }
+        else if (nbAttack == 2)
+        {
+            for (int i = 1; i <= 2; i++)
             {
-                for (int i = 1; i <= 2; i++)
-                {
-                    AttackZoneController newZone = Instantiate(bossLongAttack, hitPoints[i].position, hitPoints[i].rotation) as AttackZoneController;
-                }
+                AttackZoneController newZone = Instantiate(bossLongAttack, hitPoints[i].position, hitPoints[i].rotation) as AttackZoneController;
             }
-            else
-            {
-                AttackZoneController newZone = Instantiate(bossLongAttack, hitPoints[0].position, hitPoints[0].rotation) as AttackZoneController;
-            }
+        }
+        else
+        {
+            AttackZoneController newZone = Instantiate(bossLongAttack, hitPoints[0].position, hitPoints[0].rotation) as AttackZoneController;
         }
     }
 
