@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using TreeEditor;
 using UnityEngine;
+using Debug = UnityEngine.Debug;
 
 public class CameraCutScenes : MonoBehaviour
 {
@@ -21,7 +22,7 @@ public class CameraCutScenes : MonoBehaviour
     private void CameraMovement()
     {
         boss = GameObject.FindGameObjectWithTag("boss").transform;
-        transform.LookAt(new Vector3(boss.position.x, transform.position.y, boss.position.z) - new Vector3(transform.position.x, transform.position.y, transform.position.z));
+        transform.LookAt(new Vector3(boss.position.x, transform.position.y, boss.position.z) - new Vector3(transform.position.x,0, transform.position.z));
         float dist = Vector3.Distance(boss.transform.position, gameObject.transform.position);
         if (dist <= 10)
         {
@@ -29,7 +30,7 @@ public class CameraCutScenes : MonoBehaviour
         }
         else
         {
-            transform.position += transform.forward * Time.deltaTime * speedCamera;   
+            transform.position += transform.forward * Time.deltaTime * speedCamera * 2;   
         }
     }
     

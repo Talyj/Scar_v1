@@ -30,6 +30,7 @@ public class SpawnEnemy : MonoBehaviour
     
     private GameObject door;
     private GameObject spawnPoint;
+    public static Transform spawnPointBoss;
 
     private GameObject[] portes;
 
@@ -43,6 +44,7 @@ public class SpawnEnemy : MonoBehaviour
 
         hasEnded = false;
         player = GameObject.FindGameObjectWithTag("Player").transform;
+        spawnPointBoss = spawnMonster.transform;
         
         if (numMiniBoss > 0 || numBoss > 0)
         {
@@ -102,14 +104,27 @@ public class SpawnEnemy : MonoBehaviour
         }
     }
 
-    public static void Spawn(int numSpawn, GameObject typeMonster)
+    public static void Spawn(int numSpawn, GameObject typeMonster, bool spawnBoss = false)
     {
-        for (int i = 0; i < numSpawn; i++)
+        if (spawnBoss)
         {
-            xPos = Random.Range(xPos - 10, xPos + 10);
-            zPos = Random.Range(zPos - 10, zPos + 10);
-            Instantiate(typeMonster, new Vector3(xPos, player.transform.position.y + 2, zPos), Quaternion.identity);
-            nbMonster += 1;
+            for (int i = 0; i < numSpawn; i++)
+            {
+                xPos = Random.Range(xPos - 10, xPos + 10);
+                zPos = Random.Range(zPos - 10, zPos + 10);
+                Instantiate(typeMonster, new Vector3(spawnPointBoss.position.x, player.transform.position.y + 3, spawnPointBoss.position.z), Quaternion.identity);
+                nbMonster += 1;
+            }    
+        }
+        else
+        {
+            for (int i = 0; i < numSpawn; i++)
+            {
+                xPos = Random.Range(xPos - 10, xPos + 10);
+                zPos = Random.Range(zPos - 10, zPos + 10);
+                Instantiate(typeMonster, new Vector3(xPos, player.transform.position.y + 2, zPos), Quaternion.identity);
+                nbMonster += 1;
+            }   
         }
     }
 
@@ -135,7 +150,7 @@ public class SpawnEnemy : MonoBehaviour
             {
                 if (numBoss > 0)
                 {
-                    Spawn(numBoss, boss);
+                    Spawn(numBoss, boss, true);
                     numBoss -= 1;
                 }
 

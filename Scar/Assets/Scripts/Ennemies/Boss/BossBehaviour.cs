@@ -27,6 +27,8 @@ public class BossBehaviour : MonoBehaviour
     public static int isAlive = 1;
     [SerializeField] private float defaultSpeedMonster;
     private float speed;
+
+    private bool firstSpawn = true; 
     
     // Start is called before the first frame update
     void Start()
@@ -44,6 +46,13 @@ public class BossBehaviour : MonoBehaviour
     // Script principal du boss, ses actions se trouve dans cette méthode
     IEnumerator SpawnBoss()
     {
+        if (firstSpawn)
+        {
+            firstSpawn = false;
+            speed = 0;
+            yield return new WaitForSeconds(7);
+            speed = defaultSpeedMonster;
+        }
         // Tant que le boss est en vie on le fait agir
         while(Boss != null)
         {

@@ -50,8 +50,8 @@ public class FlueBehaviour : MonoBehaviour
     [SerializeField] private LymuleBulletController lymuleBullet;
     private bool ultiUsed;
     private bool lastChanceUsed;
-    
 
+    private bool firstSpawn = true; 
 
     // Start is called before the first frame update
     void Start()
@@ -80,6 +80,13 @@ public class FlueBehaviour : MonoBehaviour
     // Script principal du boss, ses actions se trouve dans cette méthode
     IEnumerator BossBehaviour()
     {
+        if (firstSpawn)
+        {
+            firstSpawn = false;
+            speed = 0;
+            yield return new WaitForSeconds(7);
+            speed = defaultSpeedMonster;
+        }
         // Tant que le boss est en vie on le fait agir
         while(Boss != null)
         {

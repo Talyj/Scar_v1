@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class CutScenesEnter : MonoBehaviour
 {
-    public GameObject cameraPlayer;
+    private GameObject cameraPlayer;
     public GameObject cutSceneCam;
     private bool firstActive = true;
     private float timer;
@@ -17,6 +17,7 @@ public class CutScenesEnter : MonoBehaviour
     {
         boss = GameObject.FindGameObjectWithTag("boss");
         player = GameObject.FindGameObjectWithTag("Player");
+        cameraPlayer = GameObject.FindGameObjectWithTag("MainCamera");
     }
 
     private void OnTriggerEnter(Collider other)
@@ -31,22 +32,9 @@ public class CutScenesEnter : MonoBehaviour
 
         IEnumerator FinishCut()
         {
-            yield return new WaitForSeconds(2);
+            yield return new WaitForSeconds(6);
             cameraPlayer.SetActive(true);
             cutSceneCam.SetActive(false);
-        }
-        
-        IEnumerator ResumeAfterNSeconds(float timePeriod)
-        {
-            yield return new WaitForEndOfFrame();
-            timer += Time.unscaledDeltaTime;
-            if(timer < timePeriod)
-                StartCoroutine(ResumeAfterNSeconds(3.0f));
-            else
-            {
-                Time.timeScale = 1;                //Resume
-                timer = 0;
-            }
         }
     }
 }
