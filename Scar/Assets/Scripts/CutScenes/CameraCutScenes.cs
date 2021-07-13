@@ -31,7 +31,7 @@ public class CameraCutScenes : MonoBehaviour
         }
         else
         {
-            transform.position += transform.forward * Time.deltaTime * speedCamera * 2;   
+            transform.position += transform.forward * Time.deltaTime * speedCamera * 3;   
         }
     }
     
