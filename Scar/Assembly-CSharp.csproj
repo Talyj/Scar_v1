@@ -79,6 +79,7 @@
      <Compile Include="Assets\Scripts\CloseGameObject.cs" />
      <Compile Include="Assets\Scripts\ConsoHotbar.cs" />
      <Compile Include="Assets\Scripts\Consommables.cs" />
+     <Compile Include="Assets\Scripts\CustomCursor.cs" />
      <Compile Include="Assets\Scripts\Data.cs" />
      <Compile Include="Assets\Scripts\EditionMapMenu.cs" />
      <Compile Include="Assets\Scripts\Ennemies\Boss\AttackRotate.cs" />
@@ -100,6 +101,7 @@
      <Compile Include="Assets\Scripts\Ennemies\SpawnEnemy.cs" />
      <Compile Include="Assets\Scripts\Ennemies\SpawnEnemyEditMap.cs" />
      <Compile Include="Assets\Scripts\FirstInList.cs" />
+     <Compile Include="Assets\Scripts\FlecheAnimation.cs" />
      <Compile Include="Assets\Scripts\Fontaine.cs" />
      <Compile Include="Assets\Scripts\GameInfo.cs" />
      <Compile Include="Assets\Scripts\GodMode.cs" />
@@ -125,6 +127,7 @@
      <Compile Include="Assets\Scripts\Pickup.cs" />
      <Compile Include="Assets\Scripts\PlayerFollow.cs" />
      <Compile Include="Assets\Scripts\RunMapEdited.cs" />
+     <Compile Include="Assets\Scripts\Settings.cs" />
      <Compile Include="Assets\Scripts\Shop.cs" />
      <Compile Include="Assets\Scripts\Slot.cs" />
      <Compile Include="Assets\Scripts\SlotsInventaire.cs" />

@@ -3,7 +3,7 @@
 public class VolumeValueChange : MonoBehaviour {
 
     private AudioSource audioSrc;
-    private float musicVolume = 1f;
+    private float musicVolume = 0.5f;
 
 	void Start () {
         audioSrc = GetComponent<AudioSource>();

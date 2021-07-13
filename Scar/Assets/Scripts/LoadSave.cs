@@ -6,11 +6,13 @@ using UnityEngine;
 public class LoadSave : MonoBehaviour
 {
     [SerializeField] private GameObject panel;
+    public Animator anim;
+
     private void Awake()
     {
         string destination = Application.persistentDataPath + "/game.json";
-        if (File.Exists(destination))
-        {
+        if (File.Exists(destination)) {
+
             panel.SetActive(true);   
         }
     }
@@ -37,27 +39,43 @@ public class LoadSave : MonoBehaviour
             GameInfo.passiveLevel = data.passiveLevel;
 
             if (data.levelBoss == 0)
-            {
-                SceneManager.LoadScene("Village"); 
+            {   
+                anim.SetBool("Fade", true);
+                Invoke("LoadVillage1", 1.0f);
             }
             else if (data.levelBoss == 1)
             {
-                SceneManager.LoadScene("Village2");
+                anim.SetBool("Fade", true);
+                Invoke("LoadVillage2", 1.0f);
             }
             else if (data.levelBoss == 2)
             {
-                //SceneManager.LoadScene("Village3");
-                SceneManager.LoadScene("Village4");
+                anim.SetBool("Fade", true);
+                Invoke("LoadVillage4", 1.0f);
             }
             else if (data.levelBoss == 3)
             {
-                SceneManager.LoadScene("Village4");
+                anim.SetBool("Fade", true);
+                Invoke("LoadVillage4", 1.0f);
             }
             else if (data.levelBoss == 4)
             {
-                SceneManager.LoadScene("Village");
+                anim.SetBool("Fade", true);
+                Invoke("LoadVillage1", 1.0f);
             }
         }
+    }
+
+    public void LoadVillage1() {
+        SceneManager.LoadScene("Village");
+    }
+
+    public void LoadVillage2() {
+        SceneManager.LoadScene("Village2");
+    }
+
+    public void LoadVillage4() {
+        SceneManager.LoadScene("Village4");
     }
 
 

@@ -13,6 +13,7 @@ public class Restart : MonoBehaviour
     public GameObject panel2;
     [SerializeField] private AmountBoard amountBoard;
     private string chemin, jsonString;
+    public Animator retour;
 
     public void Reload(int choice)
     {
@@ -74,9 +75,14 @@ public class Restart : MonoBehaviour
         }
         
         Time.timeScale = 1f;
-        panel.SetActive(false);
+        retour.Play("Base Layer.Retour");
+        Invoke("Desactive", 1.5f);
     }
 
+    public void Desactive() {
+        panel.SetActive(false);
+    }
+    
     public void Update()
     {
         if(Input.GetKey(KeyCode.Escape))
@@ -90,6 +96,7 @@ public class Restart : MonoBehaviour
     {
         Application.Quit();
     }
+    
     public void Activate(int choice)
     {
         if (choice == 0)
