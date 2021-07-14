@@ -261,7 +261,7 @@ GameObject:
   - component: {fileID: 8243912106073223163}
   - component: {fileID: 8177643884309140035}
   - component: {fileID: 1489761709086624720}
-  - component: {fileID: 3627264960617320311}
+  - component: {fileID: 965100919876179705}
   m_Layer: 9
   m_Name: Pot
   m_TagString: Enemy
@@ -358,7 +358,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &3627264960617320311
+--- !u!114 &965100919876179705
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -370,6 +370,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 337e57e6788463044ae1a343678cbc41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bullet: {fileID: 7064619592068957810, guid: 53979ef7430e11c469c32220d363511a, type: 3}
+  firePoint: {fileID: 30633124922875865}
+  bulletSpeed: 0
+  timeBetweenShots: 0
 --- !u!1 &4684148138566660013
 GameObject:
   m_ObjectHideFlags: 0

@@ -50,8 +50,8 @@ public class FlueBehaviour : MonoBehaviour
     [SerializeField] private LymuleBulletController lymuleBullet;
     private bool ultiUsed;
     private bool lastChanceUsed;
-    
 
+    private bool firstSpawn = true; 
 
     // Start is called before the first frame update
     void Start()
@@ -80,6 +80,13 @@ public class FlueBehaviour : MonoBehaviour
     // Script principal du boss, ses actions se trouve dans cette méthode
     IEnumerator BossBehaviour()
     {
+        if (firstSpawn)
+        {
+            firstSpawn = false;
+            speed = 0;
+            yield return new WaitForSeconds(7);
+            speed = defaultSpeedMonster;
+        }
         // Tant que le boss est en vie on le fait agir
         while(Boss != null)
         {
@@ -91,7 +98,6 @@ public class FlueBehaviour : MonoBehaviour
             {
                 Ratatatata();
             }
-
             BigAssAttackOfDoom();
             SpawnInfini();
             yield return new WaitForSeconds(1);
@@ -113,28 +119,24 @@ public class FlueBehaviour : MonoBehaviour
     
     private void BigAssAttackOfDoom()
     {
-        float dist = Vector3.Distance(gameObject.transform.position, player.position);
-        if (dist <= 17)
+        int nbAttack = Random.Range(1, 3);
+        if (nbAttack == 1)
         {
-            int nbAttack = Random.Range(1, 3);
-            if (nbAttack == 1)
+            foreach (var point in hitPoints)
             {
-                foreach (var point in hitPoints)
-                {
-                    AttackZoneController newZone = Instantiate(bossLongAttack, point.position, point.rotation) as AttackZoneController;
-                }   
-            }
-            else if (nbAttack == 2)
+                AttackZoneController newZone = Instantiate(bossLongAttack, point.position, point.rotation) as AttackZoneController;
+            }   
+        }
+        else if (nbAttack == 2)
+        {
+            for (int i = 1; i <= 2; i++)
             {
-                for (int i = 1; i <= 2; i++)
-                {
-                    AttackZoneController newZone = Instantiate(bossLongAttack, hitPoints[i].position, hitPoints[i].rotation) as AttackZoneController;
-                }
+                AttackZoneController newZone = Instantiate(bossLongAttack, hitPoints[i].position, hitPoints[i].rotation) as AttackZoneController;
             }
-            else
-            {
-                AttackZoneController newZone = Instantiate(bossLongAttack, hitPoints[0].position, hitPoints[0].rotation) as AttackZoneController;
-            }
+        }
+        else
+        {
+            AttackZoneController newZone = Instantiate(bossLongAttack, hitPoints[0].position, hitPoints[0].rotation) as AttackZoneController;
         }
     }
 
@@ -186,16 +188,18 @@ public class FlueBehaviour : MonoBehaviour
     private void Deplacement()
     {
         float dist = Vector3.Distance(player.transform.position, gameObject.transform.position);
+        Quaternion targetRotation = Quaternion.LookRotation(new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z) - new Vector3(transform.position.x, transform.position.y, transform.position.z));
+        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 3 * Time.deltaTime);
         if (dist <= 20)
         {
-            Quaternion targetRotation = Quaternion.LookRotation(new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z) - new Vector3(transform.position.x, transform.position.y, transform.position.z));
-            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 3 * Time.deltaTime);
+            /*Quaternion targetRotation = Quaternion.LookRotation(new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z) - new Vector3(transform.position.x, transform.position.y, transform.position.z));
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 3 * Time.deltaTime);*/
             transform.position += -transform.forward * Time.deltaTime * speed; 
         }
         else
         {
-            Quaternion targetRotation = Quaternion.LookRotation(new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z) - new Vector3(transform.position.x, transform.position.y, transform.position.z));
-            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 3 * Time.deltaTime);
+            /*Quaternion targetRotation = Quaternion.LookRotation(new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z) - new Vector3(transform.position.x, transform.position.y, transform.position.z));
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 3 * Time.deltaTime);*/
             transform.position += transform.forward * Time.deltaTime * speed;   
         }
 

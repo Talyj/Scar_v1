@@ -20,7 +20,6 @@ public class SpawnLevel : MonoBehaviour
     [SerializeField] private GameObject BobbRoom;
     [SerializeField] private GameObject FlueRoom;
     [SerializeField] private GameObject miniBossRoom;
-    [SerializeField] private GameObject porte;
     [SerializeField] private GameObject room;
     private bool hasSpawn;
     private bool endFirstPart;
