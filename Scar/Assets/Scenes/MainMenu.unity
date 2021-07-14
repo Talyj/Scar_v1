@@ -55296,7 +55296,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Panel: {fileID: 0}
   Panel2: {fileID: 0}
-  scene: Village
+  scene: BossRush
   fadeAnimation: {fileID: 230654365}
   edit1: {fileID: 0}
 --- !u!114 &994505508
