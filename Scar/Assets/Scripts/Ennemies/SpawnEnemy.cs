@@ -70,6 +70,14 @@ public class SpawnEnemy : MonoBehaviour
             {
                 monstreRecup = Random.Range(4, 5);
             }
+            else if (SceneManager.GetActiveScene().name == "BossRush")
+            {
+                monstreRecup = 0;
+            }
+            else
+            {
+                monstreRecup = Random.Range(1, 3);
+            }
         }
         
     }
@@ -110,8 +118,6 @@ public class SpawnEnemy : MonoBehaviour
         {
             for (int i = 0; i < numSpawn; i++)
             {
-                xPos = Random.Range(xPos - 10, xPos + 10);
-                zPos = Random.Range(zPos - 10, zPos + 10);
                 Instantiate(typeMonster, new Vector3(spawnPointBoss.position.x, player.transform.position.y + 3, spawnPointBoss.position.z), Quaternion.identity);
                 nbMonster += 1;
             }    

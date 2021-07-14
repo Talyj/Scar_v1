@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class VictoryCondition : MonoBehaviour
 {
@@ -17,10 +18,21 @@ public class VictoryCondition : MonoBehaviour
 
     void Update()
     {
-        if (BossBehaviour.isAlive == 0 && SpawnEnemy.nbMonster <= 0 || KorinhBehaviour.isAlive == 0 && SpawnEnemy.nbMonster <= 0 || BobbBehaviour.isAlive == 0 && SpawnEnemy.nbMonster <= 0 || FlueBehaviour.isAlive == 0 && SpawnEnemy.nbMonster <= 0)
+        if (SceneManager.GetActiveScene().name == "BossRush")
         {
-            panel.SetActive(true);
-            Time.timeScale = 0f;
+            if (BossBehaviour.isAlive == 0 && KorinhBehaviour.isAlive == 0 && BobbBehaviour.isAlive == 0 && FlueBehaviour.isAlive == 0 && SpawnEnemy.nbMonster <= 0)
+            {
+                panel.SetActive(true);
+                Time.timeScale = 0f;
+            }   
+        }
+        else
+        {
+            if (BossBehaviour.isAlive == 0 && SpawnEnemy.nbMonster <= 0 || KorinhBehaviour.isAlive == 0 && SpawnEnemy.nbMonster <= 0 || BobbBehaviour.isAlive == 0 && SpawnEnemy.nbMonster <= 0 || FlueBehaviour.isAlive == 0 && SpawnEnemy.nbMonster <= 0)
+            {
+                panel.SetActive(true);
+                Time.timeScale = 0f;
+            }   
         }
     }
 }

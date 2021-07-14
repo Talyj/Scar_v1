@@ -19494,7 +19494,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rooms:
-  - {fileID: 7962581779079097406, guid: a2d0fc8f603103748998db74194d908f, type: 3}
+  - {fileID: 8929544030514046634, guid: 91682580f5f80c947b4fadbe636a70b6, type: 3}
+  - {fileID: 3863299923043075493, guid: db9e2f0df5eae364fbda922938a4cfc5, type: 3}
+  - {fileID: 1368298629727023493, guid: 6dbe5477e85b2f040a3bc17e0dd8ca5a, type: 3}
+  - {fileID: 362459328455236653, guid: 03154af0eb7f5054e8efe6233b2c1b0c, type: 3}
+  - {fileID: 4569220351077464686, guid: a896a3808a31f9441b92dd5a3cf32f79, type: 3}
   spawnPoint: {fileID: 1676690107}
   LymuleRoom: {fileID: 0}
   KorinhRoom: {fileID: 0}

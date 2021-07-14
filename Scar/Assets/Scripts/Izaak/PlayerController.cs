@@ -26,15 +26,16 @@ public class PlayerController : MonoBehaviour
     //Movement and Dash variables
     private Vector3 lastDirectionIntent;
     private float dashCounter;
-    //private float dashDistance = 100000;
     private float dashDistance = 200000;
     public static bool isDashing;
 
+    public static int BossRushroomCounter;
 
     public static int cpt;
-    
+
     private void Awake()
     {
+        BossRushroomCounter = 0;
         numberBullets = 0;
         numberDamagesReceived = 0;
         numberDamagesDealt = 0;
