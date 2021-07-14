@@ -5,14 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class MenuButtons : MonoBehaviour
 {   
-    [SerializeField]private GameObject EditionMap;
+    [SerializeField]private GameObject Panel;
+    [SerializeField]private GameObject Panel2;
     public string scene;
-    public Animator anim;
-    public Animator options;
-    public AudioSource audio;
+    public Animator fadeAnimation;
+    public Animator edit1;
 
     public void DoExitGame() {
-        anim.SetBool("Fade", true);
+        fadeAnimation.SetBool("Fade", true);
         Invoke("DoExitGame2", 1.0f);
     }
 
@@ -21,7 +21,7 @@ public class MenuButtons : MonoBehaviour
     }
 
     public void LoadScene() {
-        anim.SetBool("Fade", true);
+        fadeAnimation.SetBool("Fade", true);
         Invoke("LoadScene2", 1.0f);
     }
 
@@ -29,14 +29,18 @@ public class MenuButtons : MonoBehaviour
         SceneManager.LoadScene(scene);
     }
 
-    public void LoadEditionMap() {
-        EditionMap.SetActive(true);
-        options.Play("Base Layer.VenantDuHaut");
-        audio.Play(0);
+    public void LoadPanel() {
+        Panel.SetActive(true);
     }
 
-    public void ActiveMenu() {
-        EditionMap.SetActive(true);
+    public void LoadNewEditGame() {
+        edit1.Play("Base Layer.Retour");
+        Invoke("FermerMenu2", 1.5f);
+    }
+
+    public void FermerMenu2() {
+        Panel.SetActive(false);
+        Panel2.SetActive(true);
     }
 }
  

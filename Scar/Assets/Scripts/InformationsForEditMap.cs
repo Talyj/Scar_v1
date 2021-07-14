@@ -6,6 +6,7 @@ using TMPro;
 public class InformationsForEditMap : MonoBehaviour
 {
     public string typeSalle = "null";
+    public string typeHabillage = "null";
     public int numberPat = 0;
     public int numberPit = 0;
     public int numberPot = 0;
@@ -13,8 +14,9 @@ public class InformationsForEditMap : MonoBehaviour
     [SerializeField]private GameObject salle1;
     [SerializeField]private GameObject salle2;
     [SerializeField]private GameObject salle3;
-    [SerializeField]private GameObject salle4;
-    [SerializeField]private GameObject salle5;
+    [SerializeField]private GameObject habillage1;
+    [SerializeField]private GameObject habillage2;
+    [SerializeField]private GameObject habillage3;
     [SerializeField]private GameObject inputField1;
     [SerializeField]private GameObject inputField2;
     [SerializeField]private GameObject inputField3;
@@ -25,37 +27,36 @@ public class InformationsForEditMap : MonoBehaviour
             salle1.SetActive(true);
             salle2.SetActive(false);
             salle3.SetActive(false);
-            salle4.SetActive(false);
-            salle5.SetActive(false);
             typeSalle = "salle1";
         } else if(salle == "salle2") {
             salle1.SetActive(false);
             salle2.SetActive(true);
             salle3.SetActive(false);
-            salle4.SetActive(false);
-            salle5.SetActive(false);
             typeSalle = "salle2";
         } else if(salle == "salle3") {
             salle1.SetActive(false);
             salle2.SetActive(false);
             salle3.SetActive(true);
-            salle4.SetActive(false);
-            salle5.SetActive(false);
             typeSalle = "salle3";
-        } else if(salle == "salle4") {
-            salle1.SetActive(false);
-            salle2.SetActive(false);
-            salle3.SetActive(false);
-            salle4.SetActive(true);
-            salle5.SetActive(false);
-            typeSalle = "salle4";
-        } else if(salle == "salle5") {
-            salle1.SetActive(false);
-            salle2.SetActive(false);
-            salle3.SetActive(false);
-            salle4.SetActive(false);
-            salle5.SetActive(true);
-            typeSalle = "salle5";
+        }
+    }
+
+    public void ActivateHabillage(string habillage) {
+        if(habillage == "habillage1") {
+            habillage1.SetActive(true);
+            habillage2.SetActive(false);
+            habillage3.SetActive(false);
+            typeHabillage = "habillage1";
+        } else if(habillage == "habillage2") {
+            habillage1.SetActive(false);
+            habillage2.SetActive(true);
+            habillage3.SetActive(false);
+            typeHabillage = "habillage2";
+        } else if(habillage == "habillage3") {
+            habillage1.SetActive(false);
+            habillage2.SetActive(false);
+            habillage3.SetActive(true);
+            typeHabillage = "habillage3";
         }
     }
 

@@ -4,6 +4,7 @@ using UnityEngine;
 using System.IO;
 using TMPro;
 using UnityEngine.SceneManagement;
+using UnityEditor;
 
 public class RunMapEdited : MonoBehaviour
 {
@@ -26,6 +27,20 @@ public class RunMapEdited : MonoBehaviour
     private string chemin, jsonString;
     public string scene;
 
+    public void RunExistantMap() {
+        string path = EditorUtility.OpenFilePanel("Maps", "", "json");
+        if(path != null) {
+            jsonString = File.ReadAllText(path);
+            VariableJSON nouvelleMap = JsonUtility.FromJson<VariableJSON>(jsonString);
+            chemin = Application.streamingAssetsPath + "/EditeurMap.json";
+            jsonString = File.ReadAllText(chemin);
+            VariableJSON editeur = JsonUtility.FromJson<VariableJSON>(jsonString);
+            editeur = nouvelleMap;
+            jsonString = JsonUtility.ToJson(editeur);
+            File.WriteAllText(chemin, jsonString);
+            SceneManager.LoadScene(scene);
+        }
+    }
 
     public void RunEditionMap() {
         salle1.GetNumberOfEnemy();

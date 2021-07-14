@@ -12,6 +12,7 @@ public class CustomCursor : MonoBehaviour {
     public GameObject EditMap;
     public GameObject Options;
     public GameObject Quitter;
+    public AudioSource audioSrc;
 
     void Start()
     {
@@ -24,6 +25,10 @@ public class CustomCursor : MonoBehaviour {
 
     public void ChangeCursorToNormal() {
         Cursor.SetCursor(cursorArrow, Vector2.zero, CursorMode.ForceSoftware);
+    }
+    
+    public void PlayMusic() {
+        audioSrc.Play(0);
     }
 
    /* void Update() {
