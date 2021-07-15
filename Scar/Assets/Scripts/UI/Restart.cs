@@ -3,28 +3,93 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.IO;
 using UnityEngine.UIElements;
+using UnityEditor;
 
 public class Restart : MonoBehaviour
 {
     public string scene;
     public string scene2;
+    private string chemin, jsonString;
     public GameObject panel;
     private bool active;
     public GameObject panel2;
     [SerializeField] private AmountBoard amountBoard;
-    private string chemin, jsonString;
     public Animator retour;
+    public Animator retour2;
+    public Animator fadeAnimation;
 
+    public void Update() {
+        if(Input.GetKeyDown(KeyCode.Escape)) {
+            panel.SetActive(true);
+            Invoke("StopTime", 1.0f);
+        }
+    }
+
+    private void StopTime() {
+        Time.timeScale = 0f;
+    }
+
+    /* Fonction appelé lors du bouton menu principal dans les menus */
     public void Reload(int choice)
     {
         if(choice == 0)
-        {
+        {   
+            Time.timeScale = 1f;
+            ResetJson();
             SceneManager.LoadScene(scene, LoadSceneMode.Single);
         }
         else if(choice == 1)
         {
             SceneManager.LoadScene(scene2, LoadSceneMode.Single);
         }
+    }
+
+    private void ResetJson() {
+        chemin = Application.streamingAssetsPath + "/inventory.json";
+        jsonString = File.ReadAllText(chemin);
+        VariableForJSON inventaire = JsonUtility.FromJson<VariableForJSON>(jsonString);
+        inventaire.amount_piece = amountBoard.amount_piece;
+        inventaire.amount_rubis = amountBoard.amount_rubis;
+        inventaire.amount_slot_1 = amountBoard.amount_slot_1;
+        inventaire.amount_slot_2 = amountBoard.amount_slot_2;
+        inventaire.amount_slot_3 = amountBoard.amount_slot_3;
+        inventaire.amount_slot_card = amountBoard.amount_slot_card;
+        inventaire.amount_slot_hotbar = amountBoard.amount_slot_hotbar;
+        inventaire.hotbar_type = amountBoard.hotbar_type;
+        inventaire.slot1_type = amountBoard.slot1_type;
+        inventaire.slot2_type = amountBoard.slot2_type;
+        inventaire.slot3_type = amountBoard.slot3_type;
+        inventaire.slotcard_type = amountBoard.slotcard_type;
+        jsonString = JsonUtility.ToJson(inventaire);
+        File.WriteAllText(chemin, jsonString);
+    }
+
+    /* Fonction appelé lors du bouton reprendre dans le menu pause */
+    public void Reprendre() {
+        Time.timeScale = 1f;
+        retour.Play("Base Layer.BackToTop");
+        Invoke("Reprendre2", 1.5f);
+    }
+
+    private void Reprendre2() {
+        panel.SetActive(false);
+    }
+
+    /* Fonction appelé lors du bouton statistiques afin d'ouvrir le menu des statistiques et le fermer */
+    public void OpenStats() {
+        panel2.SetActive(true);
+    }
+
+    public void FermerStats() {
+        panel2.SetActive(false);
+    }
+
+    /* Fonction appelé lors du bouton partager dans l'editeur de map */
+    public void Partager() {
+        Time.timeScale = 1f;
+        EditorUtility.RevealInFinder(Application.streamingAssetsPath + "/EditeurMap.json");
+        ResetJson();
+        SceneManager.LoadScene(scene, LoadSceneMode.Single);
     }
 
     public void loadScene()
@@ -81,15 +146,6 @@ public class Restart : MonoBehaviour
 
     public void Desactive() {
         panel.SetActive(false);
-    }
-    
-    public void Update()
-    {
-        if(Input.GetKey(KeyCode.Escape))
-        {
-            Time.timeScale = 0f;
-            panel.SetActive(true);
-        }
     }
 
     public void Quit()

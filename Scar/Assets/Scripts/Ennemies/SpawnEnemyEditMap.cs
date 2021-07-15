@@ -7,11 +7,14 @@ using System.IO;
 
 public class SpawnEnemyEditMap : MonoBehaviour
 {
-     public GameObject pot;
+    public GameObject pot;
     public  GameObject pat;
     public GameObject put;
     public GameObject pit;
-    public  GameObject boss;
+    public  GameObject boss1;
+    public  GameObject boss2;
+    public  GameObject boss3;
+    public  GameObject boss4;
     public GameObject miniBoss;
     public GameObject spawnMonster;
     public GameObject fontaine;
@@ -56,12 +59,10 @@ public class SpawnEnemyEditMap : MonoBehaviour
         
         xPos = Random.Range(spawnPoint.transform.position.x - 15, spawnPoint.transform.position.x) + 15;
         zPos = Random.Range(spawnPoint.transform.position.z - 15, spawnPoint.transform.position.z + 15);
-        Debug.Log("Nombre de monstre : " + nbMonster);
-        Debug.Log("Nombre de wave : " + cptWave); 
         if (nbMonster <= 0 && cptWave > 0) {
             chemin = Application.streamingAssetsPath + "/EditeurMap.json";
             jsonString = File.ReadAllText(chemin);
-            VariableJSON editionMap = JsonUtility.FromJson<VariableJSON>(jsonString);
+            InfosForMapEditor editionMap = JsonUtility.FromJson<InfosForMapEditor>(jsonString);
             switch(PlayerController.cpt) {
                 case 0:
                     SpawnMonster(monstreRecup, editionMap.nb_pot_1, editionMap.nb_pat_1, editionMap.nb_put_1, editionMap.nb_pit_1);
@@ -127,7 +128,6 @@ public class SpawnEnemyEditMap : MonoBehaviour
                     cptWave -= 1;
                     break;
                 default:
-                    Debug.Log("");
                     cptWave -= 1;
                     break;
             }
@@ -156,6 +156,10 @@ public class SpawnEnemyEditMap : MonoBehaviour
     }
 
     private void SpawnMonster(int sizeGroup, int numPot, int numPat, int numPut, int numPit) {
+         chemin = Application.streamingAssetsPath + "/EditeurMap.json";
+        jsonString = File.ReadAllText(chemin);
+        InfosForMapEditor editionMap = JsonUtility.FromJson<InfosForMapEditor>(jsonString);
+
         if (sizeGroup > 0 && nbMonster <= 1) {
             Spawn(numPot, pot); // spawn pot 
             Spawn(numPat, pat); // spawn pat 
@@ -166,7 +170,16 @@ public class SpawnEnemyEditMap : MonoBehaviour
 
         if (sizeGroup == 0) {
             if (numBoss > 0) {
-                Spawn(numBoss, boss);
+                if(editionMap.type_boss == "null" || editionMap.type_boss == "lymul") {
+                    Spawn(numBoss, boss1);
+                    Debug.Log("Lymule!");
+                } else if(editionMap.type_boss == "korinh") {
+                    Spawn(numBoss, boss2);
+                } else if(editionMap.type_boss == "bob") {
+                    Spawn(numBoss, boss3);
+                } else if(editionMap.type_boss == "flue") {
+                    Spawn(numBoss, boss4);
+                }
                 numBoss -= 1;
             }
 

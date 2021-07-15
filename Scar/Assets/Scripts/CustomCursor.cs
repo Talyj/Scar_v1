@@ -30,18 +30,4 @@ public class CustomCursor : MonoBehaviour {
     public void PlayMusic() {
         audioSrc.Play(0);
     }
-
-   /* void Update() {
-        if(OptionsMenu.active || LoadSaveMenu.active) {
-            Jouer.SetActive(false);
-            EditMap.SetActive(false);
-            Options.SetActive(false);
-            Quitter.SetActive(false);
-        } else {
-            Jouer.SetActive(true);
-            EditMap.SetActive(true);
-            Options.SetActive(true);
-            Quitter.SetActive(true);
-        }
-    }*/
 }

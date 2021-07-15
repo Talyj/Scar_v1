@@ -11,6 +11,10 @@ public class MenuButtons : MonoBehaviour
     public Animator fadeAnimation;
     public Animator edit1;
 
+    public void Start() {
+        Time.timeScale = 1f;
+    }
+    
     public void DoExitGame() {
         fadeAnimation.SetBool("Fade", true);
         Invoke("DoExitGame2", 1.0f);
