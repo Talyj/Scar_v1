@@ -16596,7 +16596,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scene: MainMenu
-  scene2: 
+  scene2: MainMenu
   panel: {fileID: 699295008}
   panel2: {fileID: 794107560}
   amountBoard: {fileID: 1889907438}

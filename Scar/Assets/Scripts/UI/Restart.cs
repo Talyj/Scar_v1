@@ -18,6 +18,21 @@ public class Restart : MonoBehaviour
     public Animator retour2;
     public Animator fadeAnimation;
 
+    public void Awake() {
+        if(SceneManager.GetActiveScene().name == "DonjonEditMap" || SceneManager.GetActiveScene().name == "BossRush") {
+            amountBoard.amount_piece = 0;
+            amountBoard.amount_rubis = 0;
+            amountBoard.amount_slot_1 = 0;
+            amountBoard.amount_slot_2 = 0;
+            amountBoard.amount_slot_3 = 0;
+            amountBoard.amount_slot_hotbar = 0;
+            amountBoard.hotbar_type = "null";
+            amountBoard.slot1_type = "null";
+            amountBoard.slot2_type = "null";
+            amountBoard.slot3_type = "null";
+        }
+    }
+
     public void Update() {
         if(Input.GetKeyDown(KeyCode.Escape)) {
             panel.SetActive(true);
@@ -34,12 +49,12 @@ public class Restart : MonoBehaviour
     {
         if(choice == 0)
         {   
-            Time.timeScale = 1f;
-            ResetJson();
             SceneManager.LoadScene(scene, LoadSceneMode.Single);
         }
         else if(choice == 1)
         {
+            Time.timeScale = 1f;
+            ResetJson();
             SceneManager.LoadScene(scene2, LoadSceneMode.Single);
         }
     }
@@ -88,12 +103,12 @@ public class Restart : MonoBehaviour
     public void Partager() {
         Time.timeScale = 1f;
         EditorUtility.RevealInFinder(Application.streamingAssetsPath + "/EditeurMap.json");
-        ResetJson();
-        SceneManager.LoadScene(scene, LoadSceneMode.Single);
+        loadScene();
     }
 
     public void loadScene()
     {   
+        Time.timeScale = 1f;
         if(SceneManager.GetActiveScene().name != "DonjonEditMap") {
             chemin = Application.streamingAssetsPath + "/inventory.json";
             jsonString = File.ReadAllText(chemin);
@@ -114,7 +129,7 @@ public class Restart : MonoBehaviour
             File.WriteAllText(chemin, jsonString);
         }
 
-        SceneManager.LoadScene(scene);
+        SceneManager.LoadScene(scene, LoadSceneMode.Single);
     }
 
     public void Continue()

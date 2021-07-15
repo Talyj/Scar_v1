@@ -44,7 +44,7 @@ public class SpawnEnemyEditMap : MonoBehaviour
     {
         hasEnded = false;
         player = GameObject.FindGameObjectWithTag("Player").transform;
-        
+
         if (numMiniBoss > 0 || numBoss > 0) {
             cptWave = 1;
             monstreRecup = 0;
@@ -52,6 +52,11 @@ public class SpawnEnemyEditMap : MonoBehaviour
             cptWave = 1;
             monstreRecup = 1;
         }
+    }
+
+    void Awake() {
+        nbMonster = 0;
+        cptWave = 1;
     }
 
     private void Update() {
@@ -159,7 +164,6 @@ public class SpawnEnemyEditMap : MonoBehaviour
          chemin = Application.streamingAssetsPath + "/EditeurMap.json";
         jsonString = File.ReadAllText(chemin);
         InfosForMapEditor editionMap = JsonUtility.FromJson<InfosForMapEditor>(jsonString);
-
         if (sizeGroup > 0 && nbMonster <= 1) {
             Spawn(numPot, pot); // spawn pot 
             Spawn(numPat, pat); // spawn pat 
@@ -172,7 +176,6 @@ public class SpawnEnemyEditMap : MonoBehaviour
             if (numBoss > 0) {
                 if(editionMap.type_boss == "null" || editionMap.type_boss == "lymul") {
                     Spawn(numBoss, boss1);
-                    Debug.Log("Lymule!");
                 } else if(editionMap.type_boss == "korinh") {
                     Spawn(numBoss, boss2);
                 } else if(editionMap.type_boss == "bob") {

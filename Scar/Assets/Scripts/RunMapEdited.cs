@@ -68,7 +68,6 @@ public class RunMapEdited : MonoBehaviour
         mapEdited.type_boss = typeBoss.typeBoss;
         mapEdited.type_salle_1 = salle1.typeSalle;
         mapEdited.type_habillage_1 = salle1.typeHabillage;
-        Debug.Log(salle1.numberPat);
         mapEdited.nb_pit_1 = salle1.numberPit;
         mapEdited.nb_pat_1 = salle1.numberPat;
         mapEdited.nb_pot_1 = salle1.numberPot;
@@ -159,6 +158,6 @@ public class RunMapEdited : MonoBehaviour
         mapEdited.nb_put_15 = salle15.numberPut;
         jsonString = JsonUtility.ToJson(mapEdited);
         File.WriteAllText(chemin, jsonString);
-        SceneManager.LoadScene(scene);
+        SceneManager.LoadScene(scene, LoadSceneMode.Single);
     }
 }
