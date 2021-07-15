@@ -4,13 +4,19 @@ using UnityEngine;
 
 public class CloseGameObject : MonoBehaviour
 {
-    [SerializeField]private GameObject EditionMapMenu;
+    [SerializeField]private GameObject Panel;
+    public Animator options;
 
     public void FermerMenu() {
-        EditionMapMenu.SetActive(false);
+        options.Play("Base Layer.Retour");
+        Invoke("FermerMenu2", 1.5f);
+    }
+
+    public void FermerMenu2() {
+        Panel.SetActive(false);
     }
 
     public void OuvrirMenu() {
-        EditionMapMenu.SetActive(true);
+        Panel.SetActive(true);
     }
 }

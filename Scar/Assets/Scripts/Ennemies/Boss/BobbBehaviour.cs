@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Xml;
 using UnityEngine;
 
 public class BobbBehaviour : MonoBehaviour
@@ -33,6 +34,8 @@ public class BobbBehaviour : MonoBehaviour
     //Attaque Ulti
     [SerializeField] private Transform[] attackPoints;
     private bool hasUlti;
+
+    private bool firstSpawn = true;
     
     // Start is called before the first frame update
     void Start()
@@ -47,12 +50,20 @@ public class BobbBehaviour : MonoBehaviour
     {
         Deplacement();
     }
-
+    
+    
     // Script principal du boss, ses actions se trouve dans cette méthode
     IEnumerator BossBehaviour()
     {
         // Tant que le boss est en vie on le fait agir
-        while(Boss != null)
+        if (firstSpawn)
+        {
+            firstSpawn = false;
+            speed = 0;
+            yield return new WaitForSeconds(7);
+            speed = defaultSpeedMonster;
+        }
+        while (Boss != null)
         {
             // Attaque en cas de distance élevé avec le joueur
             Ratatatata();
@@ -68,7 +79,7 @@ public class BobbBehaviour : MonoBehaviour
             {
                 hitCounter = 0;
             }
-            
+
             // Condition actions du boss 75% de vie = spawn petit groupe de monstre 
             if (BossHealth.currentHealth <= BossHealth.maxHealth * 0.75 && premiereChance)
             {
@@ -76,6 +87,7 @@ public class BobbBehaviour : MonoBehaviour
                 SpawnEnemy.Spawn(5, pat);
                 premiereChance = false;
             }
+
             // 25% de vie = spawn groupe de monstre medium
             if (BossHealth.currentHealth <= BossHealth.maxHealth * 0.25 && derniereChance)
             {
@@ -83,6 +95,7 @@ public class BobbBehaviour : MonoBehaviour
                 SpawnEnemy.Spawn(8, pat);
                 derniereChance = false;
             }
+
             yield return new WaitForSeconds(2);
         }
     }

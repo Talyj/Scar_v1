@@ -21,20 +21,20 @@ public class PlayerController : MonoBehaviour
     public static float numberDamagesReceived = 0;
     public static float numberDamagesDealt = 0;
     public static int score = 0;
-    private static bool ArmeAuCaC = false;
     
     //Movement and Dash variables
-    private Vector3 lastDirectionIntent;
+    public static Vector3 lastDirectionIntent;
     private float dashCounter;
-    //private float dashDistance = 100000;
     private float dashDistance = 200000;
     public static bool isDashing;
 
+    public static int BossRushroomCounter;
 
     public static int cpt;
-    
+
     private void Awake()
     {
+        BossRushroomCounter = 0;
         numberBullets = 0;
         numberDamagesReceived = 0;
         numberDamagesDealt = 0;
@@ -64,14 +64,7 @@ public class PlayerController : MonoBehaviour
         Movement();
         View();
         Dashing();
-        if (ArmeAuCaC)
-        {
-            Hitting();
-        }
-        else
-        {
-            Firing();    
-        }
+        Firing();
 
         lastDirectionIntent = lastDirectionIntent.normalized;
     }
@@ -161,7 +154,7 @@ public class PlayerController : MonoBehaviour
         {
             lastDirectionIntent +=  Vector3.back;
         }
-        if (!Input.anyKey)
+        if (!Input.GetKey(KeyCode.Z) && !Input.GetKey(KeyCode.Q) && !Input.GetKey(KeyCode.S) && !Input.GetKey(KeyCode.D))
         {
             // Si on lâche la touche on s'arrête
             lastDirectionIntent = Vector3.zero;
