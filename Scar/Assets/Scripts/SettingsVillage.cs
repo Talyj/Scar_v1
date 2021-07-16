@@ -30,7 +30,13 @@ public class SettingsVillage : MonoBehaviour
     }
 
     public void FRToENPanel() {
-        if(titleConfDonjon != null) titleConfDonjon.text = "Dungeon 1 Gate";
+        if(SceneManager.GetActiveScene().name == "Village") {
+            if(titleConfDonjon != null) titleConfDonjon.text = "Dungeon 1 Gate";
+        } else if(SceneManager.GetActiveScene().name == "Village2") {
+            if(titleConfDonjon != null) titleConfDonjon.text = "Dungeon 2 Gate";
+        } else if(SceneManager.GetActiveScene().name == "Village4") {
+            if(titleConfDonjon != null) titleConfDonjon.text = "Dungeon 3 Gate";
+        }
         if(yesConfDonjon != null) yesConfDonjon.text = "Go";
         if(noConfDonjon != null) noConfDonjon.text = "Not yet..";
         if(confirmVillage != null) confirmVillage.text = "Choose the village you want to go to";
@@ -47,7 +53,13 @@ public class SettingsVillage : MonoBehaviour
     }
 
     public void ENToFRPanel() {
-        if(titleConfDonjon != null) titleConfDonjon.text = "Porte du Donjon 1";
+        if(SceneManager.GetActiveScene().name == "Village") {
+            if(titleConfDonjon != null) titleConfDonjon.text = "Porte du Donjon 1";
+        } else if(SceneManager.GetActiveScene().name == "Village2") {
+            if(titleConfDonjon != null) titleConfDonjon.text = "Porte du Donjon 2";
+        } else if(SceneManager.GetActiveScene().name == "Village4") {
+            if(titleConfDonjon != null) titleConfDonjon.text = "Porte du Donjon 3";
+        }
         if(yesConfDonjon != null) yesConfDonjon.text = "J'y vais";
         if(noConfDonjon != null) noConfDonjon.text = "Pas encore..";
         if(confirmVillage != null) confirmVillage.text = "Choisissez le village vers lequel vous souhaitez vous rendre";

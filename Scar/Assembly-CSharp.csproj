@@ -111,6 +111,7 @@
      <Compile Include="Assets\Scripts\FlecheAnimation.cs" />
      <Compile Include="Assets\Scripts\Fontaine.cs" />
      <Compile Include="Assets\Scripts\GameInfo.cs" />
+     <Compile Include="Assets\Scripts\GestionCardHotBar.cs" />
      <Compile Include="Assets\Scripts\GodMode.cs" />
      <Compile Include="Assets\Scripts\InformationsForEditMap.cs" />
      <Compile Include="Assets\Scripts\InfosForMapEditor.cs" />
@@ -144,6 +145,7 @@
      <Compile Include="Assets\Scripts\SpawnLevel.cs" />
      <Compile Include="Assets\Scripts\SpawnLevelEditMap.cs" />
      <Compile Include="Assets\Scripts\SwitchCartes.cs" />
+     <Compile Include="Assets\Scripts\SwitchLanguagePotion.cs" />
      <Compile Include="Assets\Scripts\UI\AnimBoss.cs" />
      <Compile Include="Assets\Scripts\UI\InventaireExterne.cs" />
      <Compile Include="Assets\Scripts\UI\Restart.cs" />
