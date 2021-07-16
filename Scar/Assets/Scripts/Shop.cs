@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI; 
+using System.IO;
 
 
 public class Shop : MonoBehaviour
@@ -12,6 +13,9 @@ public class Shop : MonoBehaviour
     public GameObject avertissement;
     private AmountBoard money;
     public GameObject amountBoard;
+    public GameObject partiePotion;
+    public GameObject partieCarte;
+    private string chemin, jsonString;
 
     void Awake()
     {
@@ -36,6 +40,16 @@ public class Shop : MonoBehaviour
             shop.SetActive(false);
             inventaire.SetActive(false);
         }
+    }
+
+    public void GoToCardPart() {
+        partiePotion.SetActive(false);
+        partieCarte.SetActive(true);
+    }
+
+    public void GoToPotionPart() {
+        partiePotion.SetActive(true);
+        partieCarte.SetActive(false);
     }
 
     public void Health()
@@ -137,6 +151,62 @@ public class Shop : MonoBehaviour
             }
         } else {
             Avertissment("Le slot 3 de l'inventaire est déjà pris!");
+        }
+    }
+
+    public void AttackCard() {
+        if (money.amount_rubis >= 500) {
+                chemin = Application.streamingAssetsPath + "/ActifPassif.json";
+                jsonString = File.ReadAllText(chemin);
+                JSONActifPassif choixPouvoir = JsonUtility.FromJson<JSONActifPassif>(jsonString);
+                choixPouvoir.passif = "berserker";
+                jsonString = JsonUtility.ToJson(choixPouvoir);
+                File.WriteAllText(chemin, jsonString);
+                money.SetRubis(-500, money.itemRubis, money.slotsPiece);
+        } else {
+            Avertissment("Tu n'as pas assez de rubis!");
+        }
+    }
+
+    public void DefenseCard() {
+        if (money.amount_rubis >= 500) {
+                chemin = Application.streamingAssetsPath + "/ActifPassif.json";
+                jsonString = File.ReadAllText(chemin);
+                JSONActifPassif choixPouvoir = JsonUtility.FromJson<JSONActifPassif>(jsonString);
+                choixPouvoir.passif = "rempart";
+                jsonString = JsonUtility.ToJson(choixPouvoir);
+                File.WriteAllText(chemin, jsonString);
+                money.SetRubis(-500, money.itemRubis, money.slotsPiece);
+        } else {
+            Avertissment("Tu n'as pas assez de rubis!");
+        }
+    }
+
+    public void RenvoieCard() {
+        if (money.amount_rubis >= 500) {
+                chemin = Application.streamingAssetsPath + "/ActifPassif.json";
+                jsonString = File.ReadAllText(chemin);
+                JSONActifPassif choixPouvoir = JsonUtility.FromJson<JSONActifPassif>(jsonString);
+                choixPouvoir.passif = "rewind";
+                jsonString = JsonUtility.ToJson(choixPouvoir);
+                File.WriteAllText(chemin, jsonString);
+                money.SetRubis(-500, money.itemRubis, money.slotsPiece);
+        } else {
+            Avertissment("Tu n'as pas assez de rubis!");
+        }
+    }
+
+    public void TourbilolCard() {
+        if (money.amount_rubis >= 500) {
+                chemin = Application.streamingAssetsPath + "/ActifPassif.json";
+                jsonString = File.ReadAllText(chemin);
+                JSONActifPassif choixPouvoir = JsonUtility.FromJson<JSONActifPassif>(jsonString);
+                choixPouvoir.actif = "tourbilol";
+                jsonString = JsonUtility.ToJson(choixPouvoir);
+                File.WriteAllText(chemin, jsonString);
+                money.SetRubis(-500, money.itemRubis, money.slotsPiece);
+        } else {
+            Avertissment("Tu n'as pas assez de rubis!");
         }
     }
 

@@ -137,6 +137,7 @@
      <Compile Include="Assets\Scripts\RunMapEdited.cs" />
      <Compile Include="Assets\Scripts\Settings.cs" />
      <Compile Include="Assets\Scripts\SettingsPanel.cs" />
+     <Compile Include="Assets\Scripts\SettingsVillage.cs" />
      <Compile Include="Assets\Scripts\Shop.cs" />
      <Compile Include="Assets\Scripts\Slot.cs" />
      <Compile Include="Assets\Scripts\SlotsInventaire.cs" />

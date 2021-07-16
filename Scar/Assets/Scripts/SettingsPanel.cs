@@ -48,18 +48,18 @@ public class SettingsPanel : MonoBehaviour
         if(potionUtiliser != null) potionUtiliser.text = "POTION USED";
         if(potionUtiliserOmbre != null) potionUtiliserOmbre.text = "POTION USED";
         if(avertissement != null) avertissement.text = "THE HOTBAR SLOT IS FULL !";
-        if(SceneManager.GetActiveScene().name != "Main") {
-            if(menuPrincipalPause != null) menuPrincipalPause.text = "Village 1";
-            if(menuPrincipalVictoire != null) menuPrincipalVictoire.text = "Village 1";
-            if(menuPrincipalDefaite != null) menuPrincipalDefaite.text = "Village 1";
-        } else if(SceneManager.GetActiveScene().name != "Donjon2") {
-            if(menuPrincipalPause != null) menuPrincipalPause.text = "Village 2";
-            if(menuPrincipalVictoire != null) menuPrincipalVictoire.text = "Village 2";
-            if(menuPrincipalDefaite != null) menuPrincipalDefaite.text = "Village 2";
-        } else if(SceneManager.GetActiveScene().name != "Donjon4") {
-            if(menuPrincipalPause != null) menuPrincipalPause.text = "Village 3";
-            if(menuPrincipalVictoire != null) menuPrincipalVictoire.text = "Village 3";
-            if(menuPrincipalDefaite != null) menuPrincipalDefaite.text = "Village 3";
+        if(SceneManager.GetActiveScene().name == "Main") {
+            if(menuPrincipalPause != null) menuPrincipalPause.text = "Lakeham";
+            if(menuPrincipalVictoire != null) menuPrincipalVictoire.text = "Lakeham";
+            if(menuPrincipalDefaite != null) menuPrincipalDefaite.text = "Lakeham";
+        } else if(SceneManager.GetActiveScene().name == "Donjon2") {
+            if(menuPrincipalPause != null) menuPrincipalPause.text = "Eastborn";
+            if(menuPrincipalVictoire != null) menuPrincipalVictoire.text = "Eastborn";
+            if(menuPrincipalDefaite != null) menuPrincipalDefaite.text = "Eastborn";
+        } else if(SceneManager.GetActiveScene().name == "Donjon4") {
+            if(menuPrincipalPause != null) menuPrincipalPause.text = "Grimsban";
+            if(menuPrincipalVictoire != null) menuPrincipalVictoire.text = "Grimsban";
+            if(menuPrincipalDefaite != null) menuPrincipalDefaite.text = "Grimsban";
         }
         chemin = Application.streamingAssetsPath + "/Settings.json";
         jsonString = File.ReadAllText(chemin);
@@ -84,17 +84,17 @@ public class SettingsPanel : MonoBehaviour
         if(potionUtiliserOmbre != null) potionUtiliserOmbre.text = "POTION UTILISE";
         if(avertissement != null) avertissement.text = "LE SLOT DE LA HOTBAR EST PLEIN !";
         if(SceneManager.GetActiveScene().name == "Main") {
-            if(menuPrincipalPause != null) menuPrincipalPause.text = "Village 1";
-            if(menuPrincipalVictoire != null) menuPrincipalVictoire.text = "Village 1";
-            if(menuPrincipalDefaite != null) menuPrincipalDefaite.text = "Village 1";
+            if(menuPrincipalPause != null) menuPrincipalPause.text = "Lakeham";
+            if(menuPrincipalVictoire != null) menuPrincipalVictoire.text = "Lakeham";
+            if(menuPrincipalDefaite != null) menuPrincipalDefaite.text = "Lakeham";
         } else if(SceneManager.GetActiveScene().name == "Donjon2") {
-            if(menuPrincipalPause != null) menuPrincipalPause.text = "Village 2";
-            if(menuPrincipalVictoire != null) menuPrincipalVictoire.text = "Village 2";
-            if(menuPrincipalDefaite != null) menuPrincipalDefaite.text = "Village 2";
+            if(menuPrincipalPause != null) menuPrincipalPause.text = "Eastborn";
+            if(menuPrincipalVictoire != null) menuPrincipalVictoire.text = "Eastborn";
+            if(menuPrincipalDefaite != null) menuPrincipalDefaite.text = "Eastborn";
         } else if(SceneManager.GetActiveScene().name == "Donjon4") {
-            if(menuPrincipalPause != null) menuPrincipalPause.text = "Village 3";
-            if(menuPrincipalVictoire != null) menuPrincipalVictoire.text = "Village 3";
-            if(menuPrincipalDefaite != null) menuPrincipalDefaite.text = "Village 3";
+            if(menuPrincipalPause != null) menuPrincipalPause.text = "Grimsban";
+            if(menuPrincipalVictoire != null) menuPrincipalVictoire.text = "Grimsban";
+            if(menuPrincipalDefaite != null) menuPrincipalDefaite.text = "Grimsban";
         }
         chemin = Application.streamingAssetsPath + "/Settings.json";
         jsonString = File.ReadAllText(chemin);

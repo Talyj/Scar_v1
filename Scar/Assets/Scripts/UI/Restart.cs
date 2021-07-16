@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.IO;
 using UnityEngine.UIElements;
+using UnityEngine.SceneManagement;
 using UnityEditor;
 
 public class Restart : MonoBehaviour
@@ -17,6 +18,7 @@ public class Restart : MonoBehaviour
     public Animator retour;
     public Animator retour2;
     public Animator fadeAnimation;
+    public GameObject confirmationDonjon;
 
     public void Awake() {
         if(SceneManager.GetActiveScene().name == "DonjonEditMap" || SceneManager.GetActiveScene().name == "BossRush") {
@@ -34,9 +36,13 @@ public class Restart : MonoBehaviour
     }
 
     public void Update() {
+        if(panel.activeSelf == false) {
+            Time.timeScale = 1f;
+        }
+
         if(Input.GetKeyDown(KeyCode.Escape)) {
             panel.SetActive(true);
-            Invoke("StopTime", 1.0f);
+            Invoke("StopTime", 1.5f);
         }
     }
 
@@ -103,13 +109,12 @@ public class Restart : MonoBehaviour
     public void Partager() {
         Time.timeScale = 1f;
         EditorUtility.RevealInFinder(Application.streamingAssetsPath + "/EditeurMap.json");
-        loadScene();
+        Reload(0);
     }
 
-    public void loadScene()
-    {   
+    public void loadScene() {   
         Time.timeScale = 1f;
-        if(SceneManager.GetActiveScene().name != "DonjonEditMap") {
+        if(SceneManager.GetActiveScene().name != "DonjonEditMap" || SceneManager.GetActiveScene().name != "BossRush") {
             chemin = Application.streamingAssetsPath + "/inventory.json";
             jsonString = File.ReadAllText(chemin);
             VariableForJSON inventaire = JsonUtility.FromJson<VariableForJSON>(jsonString);
@@ -128,8 +133,11 @@ public class Restart : MonoBehaviour
             jsonString = JsonUtility.ToJson(inventaire);
             File.WriteAllText(chemin, jsonString);
         }
-
         SceneManager.LoadScene(scene, LoadSceneMode.Single);
+    }
+
+    public void Retour() {
+        confirmationDonjon.SetActive(false);
     }
 
     public void Continue()

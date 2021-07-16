@@ -5,12 +5,15 @@ using System.IO;
 using UnityEngine;
 
 public class InventaireExterne : MonoBehaviour
-{
+{   
+    public GameObject loading;
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
             Save();
+            StartCoroutine(Rotate());
         }
     }
 
@@ -32,5 +35,14 @@ public class InventaireExterne : MonoBehaviour
         };
         string json = JsonUtility.ToJson(dataToSave);
         File.WriteAllText(destination, json);
+    }
+
+    IEnumerator Rotate() {
+        loading.SetActive(true);
+        for(int i = 0; i < 25; i++) {
+            loading.transform.Rotate(0.0f, 0.0f, 5.0f, Space.Self);
+            yield return new WaitForSeconds(0.1f);
+        }
+        loading.SetActive(false);
     }
 }

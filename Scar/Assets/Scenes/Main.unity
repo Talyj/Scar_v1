@@ -5403,6 +5403,7 @@ MonoBehaviour:
   retour: {fileID: 686026196}
   retour2: {fileID: 0}
   fadeAnimation: {fileID: 2085239520}
+  confirmationDonjon: {fileID: 0}
 --- !u!114 &183047062
 MonoBehaviour:
   m_ObjectHideFlags: 0
