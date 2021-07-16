@@ -1245,7 +1245,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 54790517}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d58fa4acefd93c44b0a680deeb23a98, type: 3}
+  m_Script: {fileID: 11500000, guid: a124431d649099b4eb0e0d6e15fc85a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   cutSceneCam: {fileID: 5313550261548011810}

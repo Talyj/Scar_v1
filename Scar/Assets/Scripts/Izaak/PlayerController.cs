@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.IO;
-using System.Security.Cryptography;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -61,12 +57,15 @@ public class PlayerController : MonoBehaviour
     
     void Update()
     {
-        Movement();
-        View();
-        Dashing();
-        Firing();
+        if (!CutScenesEnter.isCutscene)
+        {
+            Movement();
+            View();
+            Dashing();
+            Firing();
 
-        lastDirectionIntent = lastDirectionIntent.normalized;
+            lastDirectionIntent = lastDirectionIntent.normalized;   
+        }
     }
 
     private void Dashing()
@@ -104,7 +103,7 @@ public class PlayerController : MonoBehaviour
 
     private void Firing()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && Time.timeScale != 0f)
             theGun.isFiring = true;
 
         if (Input.GetMouseButtonUp(0))
