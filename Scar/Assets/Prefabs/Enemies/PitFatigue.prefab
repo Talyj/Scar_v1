@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7535944613197743741}
   - component: {fileID: -3386122530283855300}
   - component: {fileID: -3230153259612278668}
+  - component: {fileID: 7623646574634424019}
   m_Layer: 9
   m_Name: PitFatigue
   m_TagString: Enemy
@@ -121,6 +122,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   degats: 15
+--- !u!95 &7623646574634424019
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7194346021980281851}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e7ed22408ccd3944ba6682bd318b7914, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &8951396647381112677
 GameObject:
   m_ObjectHideFlags: 0
@@ -379,37 +399,37 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 7072a2bfff34e7c45ab547cd32e4b48b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.06
+      value: -2.82
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7072a2bfff34e7c45ab547cd32e4b48b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.5
+      value: -0.41
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7072a2bfff34e7c45ab547cd32e4b48b,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.31
+      value: -1.55
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7072a2bfff34e7c45ab547cd32e4b48b,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.5663247
+      value: -0.06835061
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7072a2bfff34e7c45ab547cd32e4b48b,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.55972177
+      value: 0.9972071
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7072a2bfff34e7c45ab547cd32e4b48b,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.42667577
+      value: -0.015775431
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7072a2bfff34e7c45ab547cd32e4b48b,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.42887726
+      value: 0.025641797
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7072a2bfff34e7c45ab547cd32e4b48b,
         type: 3}
@@ -419,17 +439,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 7072a2bfff34e7c45ab547cd32e4b48b,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: -74.452
+      value: 1.6020001
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7072a2bfff34e7c45ab547cd32e4b48b,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 180.678
+      value: 176.94402
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7072a2bfff34e7c45ab547cd32e4b48b,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: -91.187004
+      value: -7.885
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7072a2bfff34e7c45ab547cd32e4b48b,
         type: 3}
@@ -456,6 +476,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: plante_piranah
       objectReference: {fileID: 0}
+    - target: {fileID: 6514453833496978507, guid: 7072a2bfff34e7c45ab547cd32e4b48b,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: dc00ca47304bdb54cb30cb5ed73f3455, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7072a2bfff34e7c45ab547cd32e4b48b, type: 3}
 --- !u!4 &1602628261120054941 stripped
