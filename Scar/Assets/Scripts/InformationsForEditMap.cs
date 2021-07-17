@@ -7,6 +7,7 @@ public class InformationsForEditMap : MonoBehaviour
 {
     public string typeSalle = "null";
     public string typeHabillage = "null";
+    public string typeBoss = "null";
     public int numberPat = 0;
     public int numberPit = 0;
     public int numberPot = 0;
@@ -17,6 +18,10 @@ public class InformationsForEditMap : MonoBehaviour
     [SerializeField]private GameObject habillage1;
     [SerializeField]private GameObject habillage2;
     [SerializeField]private GameObject habillage3;
+    [SerializeField]private GameObject boss1;
+    [SerializeField]private GameObject boss2;
+    [SerializeField]private GameObject boss3;
+    [SerializeField]private GameObject boss4;
     [SerializeField]private GameObject inputField1;
     [SerializeField]private GameObject inputField2;
     [SerializeField]private GameObject inputField3;
@@ -57,6 +62,34 @@ public class InformationsForEditMap : MonoBehaviour
             habillage2.SetActive(false);
             habillage3.SetActive(true);
             typeHabillage = "habillage3";
+        }
+    }
+
+    public void ActivateBoss(string boss) {
+        if(boss == "lymul") {
+            boss1.SetActive(true);
+            boss2.SetActive(false);
+            boss3.SetActive(false);
+            boss4.SetActive(false);
+            typeBoss = "lymul";
+        } else if(boss == "korinh") {
+            boss1.SetActive(false);
+            boss2.SetActive(true);
+            boss3.SetActive(false);
+            boss4.SetActive(false);
+            typeBoss = "korinh";
+        } else if(boss == "bob") {
+            boss1.SetActive(false);
+            boss2.SetActive(false);
+            boss3.SetActive(true);
+            boss4.SetActive(false);
+            typeBoss = "bob";
+        } else if(boss == "flue") {
+            boss1.SetActive(false);
+            boss2.SetActive(false);
+            boss3.SetActive(false);
+            boss4.SetActive(true);
+            typeBoss = "flue";
         }
     }
 

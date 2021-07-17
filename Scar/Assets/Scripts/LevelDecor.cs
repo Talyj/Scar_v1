@@ -28,10 +28,5 @@ public class LevelDecor : MonoBehaviour
             cimetiere.SetActive(true);
         }
 
-        
-        if(scene.name == "DonjonEditMap") {
-            arene.SetActive(true);
-        } 
-
     }
 }

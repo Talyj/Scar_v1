@@ -5809,8 +5809,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5361639990497422114}
   - component: {fileID: 8840728264162195520}
-  - component: {fileID: 4822310997209016194}
   - component: {fileID: 6443532495900284298}
+  - component: {fileID: 4822310997209016194}
   m_Layer: 8
   m_Name: porteRoom2
   m_TagString: room3
@@ -5856,31 +5856,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.7315358, y: 1, z: 0.8152517}
   m_Center: {x: -0.08720033, y: 0, z: 2.713735}
---- !u!114 &4822310997209016194
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6229807173260064055}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd569735537b10943a065dbf525cbe1a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pot: {fileID: 2301001059543078486, guid: 56db3ed06a1fd154c8df1c44b5bcd991, type: 3}
-  pat: {fileID: 272287531547417062, guid: ed0bb92d1d4c1464ba1fbfc0df8c7401, type: 3}
-  put: {fileID: 2949682024625288999, guid: e49602583d1c23446b28cc9e81633c13, type: 3}
-  pit: {fileID: 6197662284072629232, guid: 19efecdc44f2a1f459fcd22703bca32d, type: 3}
-  boss: {fileID: 7990430383819660219, guid: 557a80434a4fc7941bcd7b8f3dcef679, type: 3}
-  miniBoss: {fileID: 6197662284072629232, guid: 19efecdc44f2a1f459fcd22703bca32d,
-    type: 3}
-  spawnMonster: {fileID: 8677618392221238942}
-  fontaine: {fileID: 0}
-  spawnpointFontaine: {fileID: 0}
-  numBoss: 0
-  numMiniBoss: 0
-  hasEnded: 0
 --- !u!114 &6443532495900284298
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5897,21 +5872,51 @@ MonoBehaviour:
   - {fileID: 8929544030514046634, guid: 3e3ba04dad2989840b9ae0989a629859, type: 3}
   - {fileID: 3863299923043075493, guid: 4f37bcd6aa7d3d444a332d76587597fe, type: 3}
   - {fileID: 1368298629727023493}
-  - {fileID: 362459328455236653, guid: c0f6a94b1e0516e4da86f47d25faa93c, type: 3}
-  - {fileID: 4569220351077464686, guid: 655bfb4c3e4c1734baa0f35a382990ab, type: 3}
+  roomDecor:
+  - {fileID: 616109944342093289, guid: 3e3ba04dad2989840b9ae0989a629859, type: 3}
+  - {fileID: 345337428839693934, guid: 4f37bcd6aa7d3d444a332d76587597fe, type: 3}
+  - {fileID: 9055292013348012145}
   spawnPoint: {fileID: 3911846196557790202}
-  LymuleRoom: {fileID: 9214724944398390981, guid: 2dbb5704b32bf3f46a454dbb758c9496,
+  LymuleRoom: {fileID: 9214724944398390981, guid: 9f7a1f3d7b8c28146b74684dd7463990,
     type: 3}
-  KorinhRoom: {fileID: 7067520651999495149, guid: ff33c8be38f9b9d4e8a3408f18620011,
+  KorinhRoom: {fileID: 7067520651999495149, guid: bee17d3a53c0a234198d7f676fa9bf4b,
     type: 3}
-  BobbRoom: {fileID: 4705855998380642238, guid: 3c0433a96b425314caf41955a7d18de0,
+  BobbRoom: {fileID: 9214724944398390981, guid: 9f7a1f3d7b8c28146b74684dd7463990,
     type: 3}
-  FlueRoom: {fileID: 7962581779079097406, guid: a2d0fc8f603103748998db74194d908f,
+  FlueRoom: {fileID: 7962581779079097406, guid: ec7c67f67e660eb44861b27f63b1c71b,
     type: 3}
   miniBossRoom: {fileID: 3201818116445742577, guid: ab1cf2824082572429ab5378758f452b,
     type: 3}
   porte: {fileID: 5609969776779275046, guid: 19ef8bc1accaee34cb91ad0d76ad2994, type: 3}
   room: {fileID: 1368298629727023493}
+--- !u!114 &4822310997209016194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6229807173260064055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd569735537b10943a065dbf525cbe1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pot: {fileID: 2301001059543078486, guid: 56db3ed06a1fd154c8df1c44b5bcd991, type: 3}
+  pat: {fileID: 272287531547417062, guid: ed0bb92d1d4c1464ba1fbfc0df8c7401, type: 3}
+  put: {fileID: 2949682024625288999, guid: e49602583d1c23446b28cc9e81633c13, type: 3}
+  pit: {fileID: 6197662284072629232, guid: 19efecdc44f2a1f459fcd22703bca32d, type: 3}
+  boss1: {fileID: 7990430383819660219, guid: 557a80434a4fc7941bcd7b8f3dcef679, type: 3}
+  boss2: {fileID: 3021718926569913754, guid: edab4c2b9f17fe14c840620d3862b0a9, type: 3}
+  boss3: {fileID: 4253006778111087436, guid: e218ade88cb73d74daa371a9df030c3b, type: 3}
+  boss4: {fileID: 5222893837564701904, guid: d41a0d2458e665b418e0385a03e3af72, type: 3}
+  miniBoss: {fileID: 6197662284072629232, guid: 19efecdc44f2a1f459fcd22703bca32d,
+    type: 3}
+  spawnMonster: {fileID: 8677618392221238942}
+  fontaine: {fileID: 0}
+  spawnpointFontaine: {fileID: 0}
+  numBoss: 0
+  numMiniBoss: 0
+  hasEnded: 0
 --- !u!1 &6268539157663243424
 GameObject:
   m_ObjectHideFlags: 0

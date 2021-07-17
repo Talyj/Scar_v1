@@ -2,10 +2,12 @@
 using System.Collections;
 using System.Linq;
 using UnityEngine.UI; 
+using System.IO;
 
 
 public class Slot : MonoBehaviour
 {
+    string chemin, jsonString;
     [SerializeField] private GameObject potion;
     [SerializeField] private GameObject description;
     [SerializeField] private GameObject itemDisplay;
@@ -25,6 +27,7 @@ public class Slot : MonoBehaviour
     private GameObject avertissement;
     private AmountBoard amounts;
     private Transform player;
+
 
     private void Awake() {
         SearchUtileGameObject();
@@ -110,6 +113,9 @@ public class Slot : MonoBehaviour
 
     //*** Tout le processus pour switch une potion dans la hotbar ***//
     private void ProcessForHotBar(int i, GameObject itemDisplay, string tag) {
+        chemin = Application.streamingAssetsPath + "/Settings.json";
+        jsonString = File.ReadAllText(chemin);
+        SettingsGame settings = JsonUtility.FromJson<SettingsGame>(jsonString);
         SearchUtileGameObject();
         if(hotbarPart.isFull[0] == false) { // SI LA HOTBAR EST VIDE
             Switch(i); // ON REMPLIE
@@ -132,10 +138,18 @@ public class Slot : MonoBehaviour
                             Switch(i);
                         }
                         if(amounts.GetAmountSlot1() == 10) {
-                            AvertissmentFullHotbar("LE SLOT 1 EST PLEIN!");
+                            if(settings.language == "fr") {
+                                AvertissmentFullHotbar("LE SLOT 1 EST PLEIN!");
+                            } else if(settings.language == "en") {
+                                AvertissmentFullHotbar("SLOT 1 IS FULL!");
+                            }
                         }
                     } else if(amounts.GetAmountSlot1() == 10) {
-                        AvertissmentFullHotbar("LE SLOT 1 EST PLEIN!");
+                        if(settings.language == "fr") {
+                            AvertissmentFullHotbar("LE SLOT 1 EST PLEIN!");
+                        } else if(settings.language == "en") {
+                            AvertissmentFullHotbar("SLOT 1 IS FULL!");
+                        }
                     }
                     if(hotbarPart.slots[0].gameObject.transform.GetChild(2).gameObject.tag == tag) {
                         hotbarPart.slots[0].gameObject.transform.GetChild(2).gameObject.transform.SetSiblingIndex(0);
@@ -155,10 +169,18 @@ public class Slot : MonoBehaviour
                             Switch(i);
                         }
                         if(amounts.GetAmountSlot2() == 10) {
-                            AvertissmentFullHotbar("LE SLOT 2 EST PLEIN!");
+                            if(settings.language == "fr") {
+                                AvertissmentFullHotbar("LE SLOT 2 EST PLEIN!");
+                            } else if(settings.language == "en") {
+                                AvertissmentFullHotbar("SLOT 2 IS FULL!");
+                            }
                         }
                     } else if(amounts.GetAmountSlot2() == 10) {
-                        AvertissmentFullHotbar("LE SLOT 2 EST PLEIN!");
+                        if(settings.language == "fr") {
+                            AvertissmentFullHotbar("LE SLOT 2 EST PLEIN!");
+                        } else if(settings.language == "en") {
+                            AvertissmentFullHotbar("SLOT 2 IS FULL!");
+                        }
                     }
                     if(hotbarPart.slots[0].gameObject.transform.GetChild(2).gameObject.tag == tag) {
                         hotbarPart.slots[0].gameObject.transform.GetChild(2).gameObject.transform.SetSiblingIndex(0);
@@ -185,7 +207,11 @@ public class Slot : MonoBehaviour
                             hotbarPart.slots[0].gameObject.transform.GetChild(2).gameObject.transform.SetSiblingIndex(0);
                         }
                     } else {
-                        AvertissmentFullHotbar("LE SLOT 3 EST PRIS!");
+                        if(settings.language == "fr") {
+                            AvertissmentFullHotbar("LE SLOT 3 EST PRIS!");
+                        } else if(settings.language == "en") {
+                            AvertissmentFullHotbar("SLOT 3 IS TAKEN!");
+                        }
                     }
                 } else if(hotbarPart.slots[0].transform.GetChild(0).gameObject.tag == "DestructPotionHotbar") {
                     if(tag == "ShieldPotionHotbar") {
@@ -209,7 +235,11 @@ public class Slot : MonoBehaviour
                             hotbarPart.slots[0].gameObject.transform.GetChild(2).gameObject.transform.SetSiblingIndex(0);
                         }
                     } else {
-                        AvertissmentFullHotbar("LE SLOT 3 EST PRIS!");
+                        if(settings.language == "fr") {
+                            AvertissmentFullHotbar("LE SLOT 3 EST PRIS!");
+                        } else if(settings.language == "en") {
+                            AvertissmentFullHotbar("SLOT 3 IS TAKEN!");
+                        }
                     }
                 } else if(hotbarPart.slots[0].transform.GetChild(0).gameObject.tag == "DamagePotionHotbar") {
                     if(tag == "ShieldPotionHotbar") {
@@ -233,10 +263,18 @@ public class Slot : MonoBehaviour
                             hotbarPart.slots[0].gameObject.transform.GetChild(2).gameObject.transform.SetSiblingIndex(0);
                         }
                     } else {
-                        AvertissmentFullHotbar("LE SLOT 3 EST PRIS!");
+                        if(settings.language == "fr") {
+                            AvertissmentFullHotbar("LE SLOT 3 EST PRIS!");
+                        } else if(settings.language == "en") {
+                            AvertissmentFullHotbar("SLOT 3 IS TAKEN!");
+                        }
                     }
                 } else {
-                    AvertissmentFullHotbar("ERREUR !");
+                    if(settings.language == "fr") {
+                        AvertissmentFullHotbar("ERREUR!");
+                    } else if(settings.language == "en") {
+                        AvertissmentFullHotbar("ERROR!");
+                    }
                 }
             }
         }
@@ -320,7 +358,14 @@ public class Slot : MonoBehaviour
             }
         }
         if(amounts.GetAmountHotBar() >= 5) {
-            AvertissmentFullHotbar("LA HOTBAR EST PLEINE!");
+            chemin = Application.streamingAssetsPath + "/Settings.json";
+            jsonString = File.ReadAllText(chemin);
+            SettingsGame settings = JsonUtility.FromJson<SettingsGame>(jsonString);
+            if(settings.language == "fr") {
+                AvertissmentFullHotbar("LA HOTBAR EST PLEINE!");
+            } else if(settings.language == "en") {
+                AvertissmentFullHotbar("HOTBAR IS FULL!");
+            }
         }
     }
 

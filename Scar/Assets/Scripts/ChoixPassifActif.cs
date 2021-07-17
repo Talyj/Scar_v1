@@ -8,6 +8,7 @@ public class ChoixPassifActif : MonoBehaviour
     [SerializeField] private GameObject inventaire;
     private string chemin, jsonString;
     public string type;
+    
 
     void Update()
     {
