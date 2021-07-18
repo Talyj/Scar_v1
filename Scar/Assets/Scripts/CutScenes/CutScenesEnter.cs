@@ -30,6 +30,7 @@ public class CutScenesEnter : MonoBehaviour
         {
             cameraPlayer.SetActive(true);
             cutSceneCam.SetActive(false);
+            isCutscene = false;
         }
     }
 

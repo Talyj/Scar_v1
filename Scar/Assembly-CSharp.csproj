@@ -83,7 +83,6 @@
      <Compile Include="Assets\Scripts\Consommables.cs" />
      <Compile Include="Assets\Scripts\CustomCursor.cs" />
      <Compile Include="Assets\Scripts\CutScenes\CameraCutScenes.cs" />
-     <Compile Include="Assets\Scripts\CutScenes\CutSceneVillage.cs" />
      <Compile Include="Assets\Scripts\CutScenes\CutScenesEnter.cs" />
      <Compile Include="Assets\Scripts\CutScenes\VillageCutsceneCam.cs" />
      <Compile Include="Assets\Scripts\Data.cs" />
