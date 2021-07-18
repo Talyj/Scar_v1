@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using System.IO;
 using TMPro;
 using UnityEngine.SceneManagement;
@@ -30,18 +28,20 @@ public class RunMapEdited : MonoBehaviour
 
     /* Fonction appeler pour lancer une partie déjà existante */
     public void RunExistantMap() {
-        string path = EditorUtility.OpenFilePanel("Maps", "", "json");
-        if(path != null) {
-            jsonString = File.ReadAllText(path);
-            InfosForMapEditor nouvelleMap = JsonUtility.FromJson<InfosForMapEditor>(jsonString);
-            chemin = Application.streamingAssetsPath + "/EditeurMap.json";
-            jsonString = File.ReadAllText(chemin);
-            InfosForMapEditor editeur = JsonUtility.FromJson<InfosForMapEditor>(jsonString);
-            editeur = nouvelleMap;
-            jsonString = JsonUtility.ToJson(editeur);
-            File.WriteAllText(chemin, jsonString);
-            SceneManager.LoadScene(scene);
-        }
+        #if UNITY_EDITOR
+            string path = EditorUtility.OpenFilePanel("Maps", "", "json");
+            if(path != null) {
+                jsonString = File.ReadAllText(path);
+                InfosForMapEditor nouvelleMap = JsonUtility.FromJson<InfosForMapEditor>(jsonString);
+                chemin = Application.streamingAssetsPath + "/EditeurMap.json";
+                jsonString = File.ReadAllText(chemin);
+                InfosForMapEditor editeur = JsonUtility.FromJson<InfosForMapEditor>(jsonString);
+                editeur = nouvelleMap;
+                jsonString = JsonUtility.ToJson(editeur);
+                File.WriteAllText(chemin, jsonString);
+                SceneManager.LoadScene(scene);
+            }
+        #endif
     }
 
     /* Fonction appeler pour lancer une nouvelle partie */

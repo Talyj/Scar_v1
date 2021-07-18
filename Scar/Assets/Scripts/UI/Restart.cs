@@ -1,9 +1,6 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.IO;
-using UnityEngine.UIElements;
-using UnityEngine.SceneManagement;
 using UnityEditor;
 
 public class Restart : MonoBehaviour
@@ -108,7 +105,9 @@ public class Restart : MonoBehaviour
     /* Fonction appelé lors du bouton partager dans l'editeur de map */
     public void Partager() {
         Time.timeScale = 1f;
-        EditorUtility.RevealInFinder(Application.streamingAssetsPath + "/EditeurMap.json");
+        #if UNITY_EDITOR
+                EditorUtility.RevealInFinder(Application.streamingAssetsPath + "/EditeurMap.json");
+        #endif
         Reload(0);
     }
 
