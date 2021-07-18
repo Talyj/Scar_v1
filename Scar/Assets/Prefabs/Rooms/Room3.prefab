@@ -5885,6 +5885,7 @@ MonoBehaviour:
     type: 3}
   miniBossRoom: {fileID: 3201818116445742577, guid: 8323930a716e9f045ad46e6f20180d4d,
     type: 3}
+  porte: {fileID: 5609969776779275046, guid: 19ef8bc1accaee34cb91ad0d76ad2994, type: 3}
   room: {fileID: 1368298629727023493}
 --- !u!114 &8032291288035958881
 MonoBehaviour:
@@ -18040,11 +18041,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 2.6376846
       objectReference: {fileID: 0}
-    - target: {fileID: -7511558181221131132, guid: ee6fb6279e1f4644795b947731ba7b6f,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 82c8a89e7cbd6a140b775fec666253f2, type: 2}
     - target: {fileID: 919132149155446097, guid: ee6fb6279e1f4644795b947731ba7b6f,
         type: 3}
       propertyPath: m_Name
@@ -48935,11 +48931,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 2.6376846
       objectReference: {fileID: 0}
-    - target: {fileID: -7511558181221131132, guid: ee6fb6279e1f4644795b947731ba7b6f,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 82c8a89e7cbd6a140b775fec666253f2, type: 2}
     - target: {fileID: 919132149155446097, guid: ee6fb6279e1f4644795b947731ba7b6f,
         type: 3}
       propertyPath: m_Name
@@ -55830,11 +55821,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 7.3095
       objectReference: {fileID: 0}
-    - target: {fileID: -7511558181221131132, guid: 31a635f966ff96743a599277c77cf1be,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 82c8a89e7cbd6a140b775fec666253f2, type: 2}
     - target: {fileID: 919132149155446097, guid: 31a635f966ff96743a599277c77cf1be,
         type: 3}
       propertyPath: m_Name
