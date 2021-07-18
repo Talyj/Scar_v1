@@ -13,7 +13,6 @@ using System.IO;
 public class SpawnLevelEditMap : MonoBehaviour
 {
     public GameObject[] rooms;
-    public LevelDecor[] roomDecor;
     public GameObject spawnPoint;
     private int firstPart;
     private int secondPart;
@@ -33,7 +32,7 @@ public class SpawnLevelEditMap : MonoBehaviour
     private void Awake() { 
         chemin = Application.streamingAssetsPath + "/EditeurMap.json";
         jsonString = File.ReadAllText(chemin);
-        InfosForMapEditor editionMap = JsonUtility.FromJson<InfosForMapEditor>(jsonString);
+        VariableJSON editionMap = JsonUtility.FromJson<VariableJSON>(jsonString);
     }
 
     private void Start()
@@ -47,7 +46,7 @@ public class SpawnLevelEditMap : MonoBehaviour
         {
             chemin = Application.streamingAssetsPath + "/EditeurMap.json";
             jsonString = File.ReadAllText(chemin);
-            InfosForMapEditor editionMap = JsonUtility.FromJson<InfosForMapEditor>(jsonString);
+            VariableJSON editionMap = JsonUtility.FromJson<VariableJSON>(jsonString);
             if (PlayerController.cpt == Mathf.Round(editionMap.nb_salles/2) && endFirstPart != true)
             {
                 Instantiate(miniBossRoom, spawnPoint.transform.position, spawnPoint.transform.rotation);
@@ -56,16 +55,8 @@ public class SpawnLevelEditMap : MonoBehaviour
                 endFirstPart = true;
             }
             else if( PlayerController.cpt >= editionMap.nb_salles)
-            {   
-                if(editionMap.type_boss == "null" || editionMap.type_boss == "lymul") {
-                    Instantiate(LymuleRoom, spawnPoint.transform.position, spawnPoint.transform.rotation);
-                } else if(editionMap.type_boss == "korinh") {
-                    Instantiate(KorinhRoom, spawnPoint.transform.position, spawnPoint.transform.rotation);
-                } else if(editionMap.type_boss == "bob") {
-                    Instantiate(BobbRoom, spawnPoint.transform.position, spawnPoint.transform.rotation);
-                } else if(editionMap.type_boss == "flue") {
-                    Instantiate(FlueRoom, spawnPoint.transform.position, spawnPoint.transform.rotation);
-                }
+            {
+                Instantiate(LymuleRoom, spawnPoint.transform.position, spawnPoint.transform.rotation);
                 hasSpawn = true;   
             }
             else
@@ -77,19 +68,10 @@ public class SpawnLevelEditMap : MonoBehaviour
                         typeRoom = 1;
                     } else if(editionMap.type_salle_1 == "salle3") {
                         typeRoom = 2;
-                    }
-                    if(editionMap.type_habillage_1 == "null" || editionMap.type_habillage_1 == "habillage1") {
-                        roomDecor[typeRoom].marecage.SetActive(true);
-                        roomDecor[typeRoom].arene.SetActive(false);
-                        roomDecor[typeRoom].cimetiere.SetActive(false);
-                    } else if(editionMap.type_habillage_1 == "habillage2") {
-                        roomDecor[typeRoom].marecage.SetActive(false);
-                        roomDecor[typeRoom].arene.SetActive(false);
-                        roomDecor[typeRoom].cimetiere.SetActive(true);
-                    } else if(editionMap.type_habillage_1 == "habillage3") {
-                        roomDecor[typeRoom].marecage.SetActive(false);
-                        roomDecor[typeRoom].arene.SetActive(true);
-                        roomDecor[typeRoom].cimetiere.SetActive(false);
+                    } else if(editionMap.type_salle_1 == "salle4") {
+                        typeRoom = 3;
+                    } else if(editionMap.type_salle_1 == "salle5") {
+                        typeRoom = 4;
                     }
                 } else if(PlayerController.cpt == 2) {
                     if(editionMap.type_salle_2 == "null" || editionMap.type_salle_2 == "salle1") {
@@ -98,19 +80,10 @@ public class SpawnLevelEditMap : MonoBehaviour
                         typeRoom = 1;
                     } else if(editionMap.type_salle_2 == "salle3") {
                         typeRoom = 2;
-                    }
-                    if(editionMap.type_habillage_2 == "null" || editionMap.type_habillage_2 == "habillage1") {
-                        roomDecor[typeRoom].marecage.SetActive(true);
-                        roomDecor[typeRoom].arene.SetActive(false);
-                        roomDecor[typeRoom].cimetiere.SetActive(false);
-                    } else if(editionMap.type_habillage_2 == "habillage2") {
-                        roomDecor[typeRoom].marecage.SetActive(false);
-                        roomDecor[typeRoom].arene.SetActive(false);
-                        roomDecor[typeRoom].cimetiere.SetActive(true);
-                    } else if(editionMap.type_habillage_2 == "habillage3") {
-                        roomDecor[typeRoom].marecage.SetActive(false);
-                        roomDecor[typeRoom].arene.SetActive(true);
-                        roomDecor[typeRoom].cimetiere.SetActive(false);
+                    } else if(editionMap.type_salle_2 == "salle4") {
+                        typeRoom = 3;
+                    } else if(editionMap.type_salle_2 == "salle5") {
+                        typeRoom = 4;
                     }
                 } else if(PlayerController.cpt == 3) {
                     if(editionMap.type_salle_3 == "null" || editionMap.type_salle_3 == "salle1") {
@@ -119,19 +92,10 @@ public class SpawnLevelEditMap : MonoBehaviour
                         typeRoom = 1;
                     } else if(editionMap.type_salle_3 == "salle3") {
                         typeRoom = 2;
-                    }
-                    if(editionMap.type_habillage_3 == "null" || editionMap.type_habillage_3 == "habillage1") {
-                        roomDecor[typeRoom].marecage.SetActive(true);
-                        roomDecor[typeRoom].arene.SetActive(false);
-                        roomDecor[typeRoom].cimetiere.SetActive(false);
-                    } else if(editionMap.type_habillage_3 == "habillage2") {
-                        roomDecor[typeRoom].marecage.SetActive(false);
-                        roomDecor[typeRoom].arene.SetActive(false);
-                        roomDecor[typeRoom].cimetiere.SetActive(true);
-                    } else if(editionMap.type_habillage_3 == "habillage3") {
-                        roomDecor[typeRoom].marecage.SetActive(false);
-                        roomDecor[typeRoom].arene.SetActive(true);
-                        roomDecor[typeRoom].cimetiere.SetActive(false);
+                    } else if(editionMap.type_salle_3 == "salle4") {
+                        typeRoom = 3;
+                    } else if(editionMap.type_salle_3 == "salle5") {
+                        typeRoom = 4;
                     }
                 } else if(PlayerController.cpt == 4) {
                     if(editionMap.type_salle_4 == "null" || editionMap.type_salle_4 == "salle1") {
@@ -140,19 +104,10 @@ public class SpawnLevelEditMap : MonoBehaviour
                         typeRoom = 1;
                     } else if(editionMap.type_salle_4 == "salle3") {
                         typeRoom = 2;
-                    }
-                    if(editionMap.type_habillage_4 == "null" || editionMap.type_habillage_4 == "habillage1") {
-                        roomDecor[typeRoom].marecage.SetActive(true);
-                        roomDecor[typeRoom].arene.SetActive(false);
-                        roomDecor[typeRoom].cimetiere.SetActive(false);
-                    } else if(editionMap.type_habillage_4 == "habillage2") {
-                        roomDecor[typeRoom].marecage.SetActive(false);
-                        roomDecor[typeRoom].arene.SetActive(false);
-                        roomDecor[typeRoom].cimetiere.SetActive(true);
-                    } else if(editionMap.type_habillage_4 == "habillage3") {
-                        roomDecor[typeRoom].marecage.SetActive(false);
-                        roomDecor[typeRoom].arene.SetActive(true);
-                        roomDecor[typeRoom].cimetiere.SetActive(false);
+                    } else if(editionMap.type_salle_4 == "salle4") {
+                        typeRoom = 3;
+                    } else if(editionMap.type_salle_4 == "salle5") {
+                        typeRoom = 4;
                     }
                 } else if(PlayerController.cpt == 5) {
                     if(editionMap.type_salle_5 == "null" || editionMap.type_salle_5 == "salle1") {
@@ -161,19 +116,10 @@ public class SpawnLevelEditMap : MonoBehaviour
                         typeRoom = 1;
                     } else if(editionMap.type_salle_5 == "salle3") {
                         typeRoom = 2;
-                    }
-                    if(editionMap.type_habillage_5 == "null" || editionMap.type_habillage_5 == "habillage1") {
-                        roomDecor[typeRoom].marecage.SetActive(true);
-                        roomDecor[typeRoom].arene.SetActive(false);
-                        roomDecor[typeRoom].cimetiere.SetActive(false);
-                    } else if(editionMap.type_habillage_5 == "habillage2") {
-                        roomDecor[typeRoom].marecage.SetActive(false);
-                        roomDecor[typeRoom].arene.SetActive(false);
-                        roomDecor[typeRoom].cimetiere.SetActive(true);
-                    } else if(editionMap.type_habillage_5 == "habillage3") {
-                        roomDecor[typeRoom].marecage.SetActive(false);
-                        roomDecor[typeRoom].arene.SetActive(true);
-                        roomDecor[typeRoom].cimetiere.SetActive(false);
+                    } else if(editionMap.type_salle_5 == "salle4") {
+                        typeRoom = 3;
+                    } else if(editionMap.type_salle_5 == "salle5") {
+                        typeRoom = 4;
                     }
                 } else if(PlayerController.cpt == 6) {
                     if(editionMap.type_salle_6 == "null" || editionMap.type_salle_6 == "salle1") {
@@ -182,19 +128,10 @@ public class SpawnLevelEditMap : MonoBehaviour
                         typeRoom = 1;
                     } else if(editionMap.type_salle_6 == "salle3") {
                         typeRoom = 2;
-                    }
-                    if(editionMap.type_habillage_6 == "null" || editionMap.type_habillage_6 == "habillage1") {
-                        roomDecor[typeRoom].marecage.SetActive(true);
-                        roomDecor[typeRoom].arene.SetActive(false);
-                        roomDecor[typeRoom].cimetiere.SetActive(false);
-                    } else if(editionMap.type_habillage_6 == "habillage2") {
-                        roomDecor[typeRoom].marecage.SetActive(false);
-                        roomDecor[typeRoom].arene.SetActive(false);
-                        roomDecor[typeRoom].cimetiere.SetActive(true);
-                    } else if(editionMap.type_habillage_6 == "habillage3") {
-                        roomDecor[typeRoom].marecage.SetActive(false);
-                        roomDecor[typeRoom].arene.SetActive(true);
-                        roomDecor[typeRoom].cimetiere.SetActive(false);
+                    } else if(editionMap.type_salle_6 == "salle4") {
+                        typeRoom = 3;
+                    } else if(editionMap.type_salle_6 == "salle5") {
+                        typeRoom = 4;
                     }
                 } else if(PlayerController.cpt == 7) {
                     if(editionMap.type_salle_7 == "null" || editionMap.type_salle_7 == "salle1") {
@@ -203,19 +140,10 @@ public class SpawnLevelEditMap : MonoBehaviour
                         typeRoom = 1;
                     } else if(editionMap.type_salle_7 == "salle3") {
                         typeRoom = 2;
-                    }
-                    if(editionMap.type_habillage_7 == "null" || editionMap.type_habillage_7 == "habillage1") {
-                        roomDecor[typeRoom].marecage.SetActive(true);
-                        roomDecor[typeRoom].arene.SetActive(false);
-                        roomDecor[typeRoom].cimetiere.SetActive(false);
-                    } else if(editionMap.type_habillage_7 == "habillage2") {
-                        roomDecor[typeRoom].marecage.SetActive(false);
-                        roomDecor[typeRoom].arene.SetActive(false);
-                        roomDecor[typeRoom].cimetiere.SetActive(true);
-                    } else if(editionMap.type_habillage_7 == "habillage3") {
-                        roomDecor[typeRoom].marecage.SetActive(false);
-                        roomDecor[typeRoom].arene.SetActive(true);
-                        roomDecor[typeRoom].cimetiere.SetActive(false);
+                    } else if(editionMap.type_salle_7 == "salle4") {
+                        typeRoom = 3;
+                    } else if(editionMap.type_salle_7 == "salle5") {
+                        typeRoom = 4;
                     }
                 } else if(PlayerController.cpt == 8) {
                     if(editionMap.type_salle_8 == "null" || editionMap.type_salle_8 == "salle1") {
@@ -224,19 +152,10 @@ public class SpawnLevelEditMap : MonoBehaviour
                         typeRoom = 1;
                     } else if(editionMap.type_salle_8 == "salle3") {
                         typeRoom = 2;
-                    }
-                    if(editionMap.type_habillage_8 == "null" || editionMap.type_habillage_8 == "habillage1") {
-                        roomDecor[typeRoom].marecage.SetActive(true);
-                        roomDecor[typeRoom].arene.SetActive(false);
-                        roomDecor[typeRoom].cimetiere.SetActive(false);
-                    } else if(editionMap.type_habillage_8 == "habillage2") {
-                        roomDecor[typeRoom].marecage.SetActive(false);
-                        roomDecor[typeRoom].arene.SetActive(false);
-                        roomDecor[typeRoom].cimetiere.SetActive(true);
-                    } else if(editionMap.type_habillage_8 == "habillage3") {
-                        roomDecor[typeRoom].marecage.SetActive(false);
-                        roomDecor[typeRoom].arene.SetActive(true);
-                        roomDecor[typeRoom].cimetiere.SetActive(false);
+                    } else if(editionMap.type_salle_8 == "salle4") {
+                        typeRoom = 3;
+                    } else if(editionMap.type_salle_8 == "salle5") {
+                        typeRoom = 4;
                     }
                 } else if(PlayerController.cpt == 9) {
                     if(editionMap.type_salle_9 == "null" || editionMap.type_salle_9 == "salle1") {
@@ -245,19 +164,10 @@ public class SpawnLevelEditMap : MonoBehaviour
                         typeRoom = 1;
                     } else if(editionMap.type_salle_9 == "salle3") {
                         typeRoom = 2;
-                    }
-                    if(editionMap.type_habillage_9 == "null" || editionMap.type_habillage_9 == "habillage1") {
-                        roomDecor[typeRoom].marecage.SetActive(true);
-                        roomDecor[typeRoom].arene.SetActive(false);
-                        roomDecor[typeRoom].cimetiere.SetActive(false);
-                    } else if(editionMap.type_habillage_9 == "habillage2") {
-                        roomDecor[typeRoom].marecage.SetActive(false);
-                        roomDecor[typeRoom].arene.SetActive(false);
-                        roomDecor[typeRoom].cimetiere.SetActive(true);
-                    } else if(editionMap.type_habillage_9 == "habillage3") {
-                        roomDecor[typeRoom].marecage.SetActive(false);
-                        roomDecor[typeRoom].arene.SetActive(true);
-                        roomDecor[typeRoom].cimetiere.SetActive(false);
+                    } else if(editionMap.type_salle_9 == "salle4") {
+                        typeRoom = 3;
+                    } else if(editionMap.type_salle_9 == "salle5") {
+                        typeRoom = 4;
                     }
                 } else if(PlayerController.cpt == 10) {
                     if(editionMap.type_salle_10 == "null" || editionMap.type_salle_10 == "salle1") {
@@ -266,19 +176,10 @@ public class SpawnLevelEditMap : MonoBehaviour
                         typeRoom = 1;
                     } else if(editionMap.type_salle_10 == "salle3") {
                         typeRoom = 2;
-                    }
-                    if(editionMap.type_habillage_10 == "null" || editionMap.type_habillage_10 == "habillage1") {
-                        roomDecor[typeRoom].marecage.SetActive(true);
-                        roomDecor[typeRoom].arene.SetActive(false);
-                        roomDecor[typeRoom].cimetiere.SetActive(false);
-                    } else if(editionMap.type_habillage_10 == "habillage2") {
-                        roomDecor[typeRoom].marecage.SetActive(false);
-                        roomDecor[typeRoom].arene.SetActive(false);
-                        roomDecor[typeRoom].cimetiere.SetActive(true);
-                    } else if(editionMap.type_habillage_10 == "habillage3") {
-                        roomDecor[typeRoom].marecage.SetActive(false);
-                        roomDecor[typeRoom].arene.SetActive(true);
-                        roomDecor[typeRoom].cimetiere.SetActive(false);
+                    } else if(editionMap.type_salle_10 == "salle4") {
+                        typeRoom = 3;
+                    } else if(editionMap.type_salle_10 == "salle5") {
+                        typeRoom = 4;
                     }
                 } else if(PlayerController.cpt == 11) {
                     if(editionMap.type_salle_11 == "null" || editionMap.type_salle_11 == "salle1") {
@@ -287,19 +188,10 @@ public class SpawnLevelEditMap : MonoBehaviour
                         typeRoom = 1;
                     } else if(editionMap.type_salle_11 == "salle3") {
                         typeRoom = 2;
-                    }
-                    if(editionMap.type_habillage_11 == "null" || editionMap.type_habillage_11 == "habillage1") {
-                        roomDecor[typeRoom].marecage.SetActive(true);
-                        roomDecor[typeRoom].arene.SetActive(false);
-                        roomDecor[typeRoom].cimetiere.SetActive(false);
-                    } else if(editionMap.type_habillage_11 == "habillage2") {
-                        roomDecor[typeRoom].marecage.SetActive(false);
-                        roomDecor[typeRoom].arene.SetActive(false);
-                        roomDecor[typeRoom].cimetiere.SetActive(true);
-                    } else if(editionMap.type_habillage_11 == "habillage3") {
-                        roomDecor[typeRoom].marecage.SetActive(false);
-                        roomDecor[typeRoom].arene.SetActive(true);
-                        roomDecor[typeRoom].cimetiere.SetActive(false);
+                    } else if(editionMap.type_salle_11 == "salle4") {
+                        typeRoom = 3;
+                    } else if(editionMap.type_salle_11 == "salle5") {
+                        typeRoom = 4;
                     }
                 } else if(PlayerController.cpt == 12) {
                     if(editionMap.type_salle_12 == "null" || editionMap.type_salle_12 == "salle1") {
@@ -308,19 +200,10 @@ public class SpawnLevelEditMap : MonoBehaviour
                         typeRoom = 1;
                     } else if(editionMap.type_salle_12 == "salle3") {
                         typeRoom = 2;
-                    }
-                    if(editionMap.type_habillage_12 == "null" || editionMap.type_habillage_12 == "habillage1") {
-                        roomDecor[typeRoom].marecage.SetActive(true);
-                        roomDecor[typeRoom].arene.SetActive(false);
-                        roomDecor[typeRoom].cimetiere.SetActive(false);
-                    } else if(editionMap.type_habillage_12 == "habillage2") {
-                        roomDecor[typeRoom].marecage.SetActive(false);
-                        roomDecor[typeRoom].arene.SetActive(false);
-                        roomDecor[typeRoom].cimetiere.SetActive(true);
-                    } else if(editionMap.type_habillage_12 == "habillage3") {
-                        roomDecor[typeRoom].marecage.SetActive(false);
-                        roomDecor[typeRoom].arene.SetActive(true);
-                        roomDecor[typeRoom].cimetiere.SetActive(false);
+                    } else if(editionMap.type_salle_12 == "salle4") {
+                        typeRoom = 3;
+                    } else if(editionMap.type_salle_12 == "salle5") {
+                        typeRoom = 4;
                     }
                 } else if(PlayerController.cpt == 13) {
                     if(editionMap.type_salle_13 == "null" || editionMap.type_salle_13 == "salle1") {
@@ -329,19 +212,10 @@ public class SpawnLevelEditMap : MonoBehaviour
                         typeRoom = 1;
                     } else if(editionMap.type_salle_13 == "salle3") {
                         typeRoom = 2;
-                    }
-                    if(editionMap.type_habillage_13 == "null" || editionMap.type_habillage_13 == "habillage1") {
-                        roomDecor[typeRoom].marecage.SetActive(true);
-                        roomDecor[typeRoom].arene.SetActive(false);
-                        roomDecor[typeRoom].cimetiere.SetActive(false);
-                    } else if(editionMap.type_habillage_13 == "habillage2") {
-                        roomDecor[typeRoom].marecage.SetActive(false);
-                        roomDecor[typeRoom].arene.SetActive(false);
-                        roomDecor[typeRoom].cimetiere.SetActive(true);
-                    } else if(editionMap.type_habillage_13 == "habillage3") {
-                        roomDecor[typeRoom].marecage.SetActive(false);
-                        roomDecor[typeRoom].arene.SetActive(true);
-                        roomDecor[typeRoom].cimetiere.SetActive(false);
+                    } else if(editionMap.type_salle_13 == "salle4") {
+                        typeRoom = 3;
+                    } else if(editionMap.type_salle_13 == "salle5") {
+                        typeRoom = 4;
                     }
                 } else if(PlayerController.cpt == 14) {
                     if(editionMap.type_salle_14 == "null" || editionMap.type_salle_14 == "salle1") {
@@ -350,29 +224,23 @@ public class SpawnLevelEditMap : MonoBehaviour
                         typeRoom = 1;
                     } else if(editionMap.type_salle_14 == "salle3") {
                         typeRoom = 2;
-                    }
-                    if(editionMap.type_habillage_14 == "null" || editionMap.type_habillage_14 == "habillage1") {
-                        roomDecor[typeRoom].marecage.SetActive(true);
-                        roomDecor[typeRoom].arene.SetActive(false);
-                        roomDecor[typeRoom].cimetiere.SetActive(false);
-                    } else if(editionMap.type_habillage_14 == "habillage2") {
-                        roomDecor[typeRoom].marecage.SetActive(false);
-                        roomDecor[typeRoom].arene.SetActive(false);
-                        roomDecor[typeRoom].cimetiere.SetActive(true);
-                    } else if(editionMap.type_habillage_14 == "habillage3") {
-                        roomDecor[typeRoom].marecage.SetActive(false);
-                        roomDecor[typeRoom].arene.SetActive(true);
-                        roomDecor[typeRoom].cimetiere.SetActive(false);
+                    } else if(editionMap.type_salle_14 == "salle4") {
+                        typeRoom = 3;
+                    } else if(editionMap.type_salle_14 == "salle5") {
+                        typeRoom = 4;
                     }
                 }
                 GameObject newRoom = Instantiate(rooms[typeRoom], spawnPoint.transform.position, spawnPoint.transform.rotation);
                 PlayerController.cpt++;
                 hasSpawn = true;
+                Debug.Log("Numéro de la salle : " + PlayerController.cpt);
+                Debug.Log("Type de la salle : " + typeRoom + " (de 0 à 4)");
             }
         }
     }
 
-    private void OnTriggerExit(Collider other) {
+    private void OnTriggerExit(Collider other)
+    {
         if (other.CompareTag("Player"))
         {
             Destroy(room, 1);
