@@ -2,13 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
 
 public class HealthPlayer : MonoBehaviour
 {
     [SerializeField]
     public Image healthFill;
-    [SerializeField] TextMeshProUGUI statHealth;
+    public Text statHealth;
     public static float maxHealth;
     public static float currentHealth;
     public float degatsBalle = 10;

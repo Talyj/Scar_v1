@@ -3,23 +3,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CutScenesEnter : MonoBehaviour
+public class CutSceneVillage : MonoBehaviour
 {
     private GameObject cameraPlayer;
     public GameObject cutSceneCam;
     private bool firstActive = true;
     private float timer;
 
-    private GameObject boss;
-    private GameObject player;
-
     private void Start()
     {
-        boss = GameObject.FindGameObjectWithTag("boss");
-        player = GameObject.FindGameObjectWithTag("Player");
         cameraPlayer = GameObject.FindGameObjectWithTag("MainCamera");
     }
-    
+
     private void Update()
     {
         if (Input.GetKey(KeyCode.Space))
@@ -36,12 +31,12 @@ public class CutScenesEnter : MonoBehaviour
             firstActive = false;
             cutSceneCam.SetActive(true);
             cameraPlayer.SetActive(false);
-            StartCoroutine(FinishCut());
+            StartCoroutine(FinishCut(13));
         }
 
-        IEnumerator FinishCut()
+        IEnumerator FinishCut(int seconds)
         {
-            yield return new WaitForSeconds(6);
+            yield return new WaitForSeconds(seconds);
             cameraPlayer.SetActive(true);
             cutSceneCam.SetActive(false);
         }

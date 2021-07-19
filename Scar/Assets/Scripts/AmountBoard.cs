@@ -100,14 +100,6 @@ public class AmountBoard : MonoBehaviour {
         if(amount_slot_hotbar >= 5) {
             amount_slot_hotbar = 5;
         }
-        chemin = Application.streamingAssetsPath + "/inventory.json";
-        jsonString = File.ReadAllText(chemin);
-        VariableForJSON inventaire = JsonUtility.FromJson<VariableForJSON>(jsonString);
-        hotbar_type = inventaire.hotbar_type;
-        slot1_type = inventaire.slot1_type;
-        slot2_type = inventaire.slot2_type;
-        slot3_type = inventaire.slot3_type;
-        slotcard_type = inventaire.slotcard_type;
 
         slotsPiece = fifth_part_inventory.GetComponent<SlotsInventaire>();
         slotsPotion = first_part_inventory.GetComponent<SlotsInventaire>();
