@@ -12,6 +12,7 @@ public class KorinhBehaviour : MonoBehaviour
     [SerializeField] private GameObject Boss;
     [SerializeField] private BossHealth BossHealth;
     private Transform player;
+    public Animator anim;
     
     // Derniere Chance
     [SerializeField] private GameObject pat;
@@ -125,6 +126,7 @@ public class KorinhBehaviour : MonoBehaviour
        float dist = Vector3.Distance(gameObject.transform.position, player.position);
        if (dist <= 20)
        {
+            anim.Play("Spin", -1, 0f);
            AttackZoneController newZone =
            Instantiate(bossBaseAttack, BasePoint.position, BasePoint.rotation) as AttackZoneController;
        }

@@ -1213,7 +1213,6 @@ MonoBehaviour:
     type: 3}
   miniBossRoom: {fileID: 3201818116445742577, guid: 8323930a716e9f045ad46e6f20180d4d,
     type: 3}
-  porte: {fileID: 5609969776779275046, guid: 19ef8bc1accaee34cb91ad0d76ad2994, type: 3}
   room: {fileID: 8929544030514046634}
 --- !u!114 &623845636042207356
 MonoBehaviour:
