@@ -132,7 +132,18 @@ public class Restart : MonoBehaviour
             jsonString = JsonUtility.ToJson(inventaire);
             File.WriteAllText(chemin, jsonString);
         }
-        SceneManager.LoadScene(scene, LoadSceneMode.Single);
+        chemin = Application.streamingAssetsPath + "/Settings.json";
+        jsonString = File.ReadAllText(chemin);
+        SettingsGame settings = JsonUtility.FromJson<SettingsGame>(jsonString);
+        
+        if(settings.slides == 1 && SceneManager.GetActiveScene().name == "Donjon4") {
+            settings.slides = 2;
+            jsonString = JsonUtility.ToJson(settings);
+            File.WriteAllText(chemin, jsonString);
+            SceneManager.LoadScene("Slides");
+        } else {
+            SceneManager.LoadScene(scene, LoadSceneMode.Single);
+        }
     }
 
     public void Retour() {
@@ -158,6 +169,13 @@ public class Restart : MonoBehaviour
             inventaire.slot3_type = "";
             inventaire.slotcard_type = "";
             jsonString = JsonUtility.ToJson(inventaire);
+            File.WriteAllText(chemin, jsonString);
+
+            chemin = Application.streamingAssetsPath + "/Settings.json";
+            jsonString = File.ReadAllText(chemin);
+            SettingsGame settings = JsonUtility.FromJson<SettingsGame>(jsonString);
+            settings.slides = 0;
+            jsonString = JsonUtility.ToJson(settings);
             File.WriteAllText(chemin, jsonString);
         }
         

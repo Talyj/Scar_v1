@@ -116,4 +116,5 @@ public class Settings : MonoBehaviour {
 public class SettingsGame {
     public float volume;
     public string language;
+    public int slides;
 }

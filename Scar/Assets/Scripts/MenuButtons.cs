@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
 using UnityEngine.SceneManagement;
 
 public class MenuButtons : MonoBehaviour
@@ -10,6 +11,7 @@ public class MenuButtons : MonoBehaviour
     public string scene;
     public Animator fadeAnimation;
     public Animator edit1;
+    string chemin, jsonString;
 
     public void Start() {
         Time.timeScale = 1f;
@@ -30,7 +32,14 @@ public class MenuButtons : MonoBehaviour
     }
 
     public void LoadScene2() {
-        SceneManager.LoadScene(scene);
+        chemin = Application.streamingAssetsPath + "/Settings.json";
+        jsonString = File.ReadAllText(chemin);
+        SettingsGame settings = JsonUtility.FromJson<SettingsGame>(jsonString);
+        if(settings.slides == 0) {
+            SceneManager.LoadScene("Slides"); 
+        } else {
+            SceneManager.LoadScene(scene);
+        }
     }
 
     public void LoadPanel() {

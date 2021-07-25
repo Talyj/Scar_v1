@@ -2,7 +2,6 @@
 using System.IO;
 using TMPro;
 using UnityEngine.SceneManagement;
-using UnityEditor;
 
 public class RunMapEdited : MonoBehaviour
 {
@@ -23,25 +22,23 @@ public class RunMapEdited : MonoBehaviour
     [SerializeField] private InformationsForEditMap salle15; 
     [SerializeField] private InformationsForEditMap typeBoss;
     [SerializeField] private GameObject numberOfSalle;
+    [SerializeField] private TMP_InputField path;
     private string chemin, jsonString;
     public string scene;
 
     /* Fonction appeler pour lancer une partie déjà existante */
     public void RunExistantMap() {
-        #if UNITY_EDITOR
-            string path = EditorUtility.OpenFilePanel("Maps", "", "json");
-            if(path != null) {
-                jsonString = File.ReadAllText(path);
-                InfosForMapEditor nouvelleMap = JsonUtility.FromJson<InfosForMapEditor>(jsonString);
-                chemin = Application.streamingAssetsPath + "/EditeurMap.json";
-                jsonString = File.ReadAllText(chemin);
-                InfosForMapEditor editeur = JsonUtility.FromJson<InfosForMapEditor>(jsonString);
-                editeur = nouvelleMap;
-                jsonString = JsonUtility.ToJson(editeur);
-                File.WriteAllText(chemin, jsonString);
-                SceneManager.LoadScene(scene);
-            }
-        #endif
+        if(path.text != null) {
+            jsonString = File.ReadAllText(path.text);
+            InfosForMapEditor nouvelleMap = JsonUtility.FromJson<InfosForMapEditor>(jsonString);
+            chemin = Application.streamingAssetsPath + "/EditeurMap.json";
+            jsonString = File.ReadAllText(chemin);
+            InfosForMapEditor editeur = JsonUtility.FromJson<InfosForMapEditor>(jsonString);
+            editeur = nouvelleMap;
+            jsonString = JsonUtility.ToJson(editeur);
+            File.WriteAllText(chemin, jsonString);
+            SceneManager.LoadScene(scene);
+        }
     }
 
     /* Fonction appeler pour lancer une nouvelle partie */
