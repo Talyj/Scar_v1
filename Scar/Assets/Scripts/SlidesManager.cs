@@ -58,7 +58,7 @@ public class SlidesManager : MonoBehaviour
         if(textSlide2 != null) textSlide2.text = "Trois heros vinrent elimines ces brigants, pensant ainsi sauver le village d'Izaak. \nCependant, ils firent totalement le contraire...";
         if(textSlide3 != null) textSlide3.text = "Sans la protection de ces brigands, le village finit par etre attaque et detruit. \nMettant la faute sur ces trois heros..";
         if(textSlide4 != null) textSlide4.text = "Izaak se jura de les poursuivre et de venger son village... ";
-        if(textSlideWin != null) textSlideWin.text = "Apres un long et dur voyage, Izaak finit par mettre la main sur ces héros. \nRempli de haine, il finira par tuer les trois, vengeant selon lui son village natale.";
+        if(textSlideWin != null) textSlideWin.text = "Apres un long et dur voyage, Izaak finit par mettre la main sur ces heros. \nRempli de haine, il finira par tuer les trois, vengeant selon lui son village natale.";
         chemin = Application.streamingAssetsPath + "/Settings.json";
         jsonString = File.ReadAllText(chemin);
         SettingsGame settings = JsonUtility.FromJson<SettingsGame>(jsonString);
